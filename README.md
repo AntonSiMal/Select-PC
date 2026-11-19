@@ -2,7 +2,7 @@
 
 Una herramienta web interactiva, gratuita y sin necesidad de instalación que te ayuda a elegir la laptop perfecta según tus necesidades reales, decodificar especificaciones técnicas complejas y evaluar ofertas en tiempo real. Diseñada tanto para principiantes como para usuarios que buscan evitar malas compras.
 
-🔗 **Enlace al proyecto**: [Select-PC en GitHub](https://github.com/AntonSiMal/Select-PC)
+🔗 **Enlace al proyecto**: [Select-PC en GitHub](https://antonsimal.github.io/Select-PC/)
 
 ## 🚀 Características Principales
 
