@@ -282,85 +282,6 @@
         <div id="os-guide-content" class="space-y-4"></div>
       </div>
 
-      <!-- Interactive CPU Name Decoder -->
-      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-          <div>
-            <h3 class="text-lg font-bold text-slate-900">Decodificador de nombres de procesador</h3>
-            <p class="text-xs sm:text-sm text-slate-500">Selecciona la familia y el modelo exacto (o toca un ejemplo rápido) para saber si es moderno, potente o ahorrador de batería.</p>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-2 mb-3">
-          <button type="button" data-cpu="Intel Core Ultra 5 226V" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel Core Ultra 5 226V</button>
-          <button type="button" data-cpu="Intel Core i5-1335U" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel Core i5-1335U</button>
-          <button type="button" data-cpu="Intel Core Ultra 7 255H" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel Core Ultra 7 255H</button>
-          <button type="button" data-cpu="Intel Core Ultra 9 285H" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel Core Ultra 9 285H</button>
-          <button type="button" data-cpu="AMD Ryzen AI 7 350" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">AMD Ryzen AI 7 350</button>
-          <button type="button" data-cpu="AMD Ryzen 5 7520U" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">AMD Ryzen 5 7520U</button>
-          <button type="button" data-cpu="Apple A18 Pro (MacBook Neo)" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Apple A18 Pro (MacBook Neo)</button>
-          <button type="button" data-cpu="Apple M4" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Apple M4</button>
-          <button type="button" data-cpu="Intel Celeron N4020" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel Celeron N4020</button>
-          <button type="button" data-cpu="Intel Processor N100" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel Processor N100</button>
-          <button type="button" data-cpu="Intel Core Ultra 7 366H" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel Core Ultra 7 366H</button>
-          <button type="button" data-cpu="AMD Ryzen 9 9955HX" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">AMD Ryzen 9 9955HX</button>
-          <button type="button" data-cpu="AMD Ryzen AI Max+ 395" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">AMD Ryzen AI Max+ 395</button>
-          <button type="button" data-cpu="AMD Athlon Gold 7220U" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">AMD Athlon Gold 7220U</button>
-          <button type="button" data-cpu="Intel Core 3 100U" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel Core 3 100U</button>
-          <button type="button" data-cpu="AMD Ryzen 3 7320U" class="cpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">AMD Ryzen 3 7320U</button>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-2 mb-4">
-          <select id="cpu-brand-select" class="sm:w-56 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            <option value="intel_ultra">Intel Core Ultra (1 / 2 / 3)</option>
-            <option value="intel_core">Intel Core i3/i5/i7/i9 y Core 3</option>
-            <option value="intel_n">Intel Celeron / Pentium / Serie N</option>
-            <option value="amd_ai">AMD Ryzen AI y 9000HX</option>
-            <option value="amd_ryzen">AMD Athlon y Ryzen 3–9</option>
-            <option value="apple">Apple Silicon (Neo y M1–M5)</option>
-          </select>
-          <select id="cpu-input" class="flex-1 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"></select>
-          <button type="button" id="btn-decode-cpu" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition">
-            Analizar
-          </button>
-        </div>
-
-        <div id="cpu-decode-result" class="rounded-xl border border-slate-200 bg-slate-50 p-4"></div>
-      </div>
-
-      <!-- Interactive GPU Decoder -->
-      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
-        <h3 class="text-lg font-bold text-slate-900">Decodificador de tarjetas gráficas (GPU)</h3>
-        <p class="text-xs sm:text-sm text-slate-500 mb-3">Selecciona la marca y el modelo exacto (o toca un ejemplo rápido) para conocer su gama, VRAM y para qué alcanza.</p>
-
-        <div class="flex flex-wrap gap-2 mb-3">
-          <button type="button" data-gpu="NVIDIA RTX 5060" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">RTX 5060</button>
-          <button type="button" data-gpu="NVIDIA RTX 4060" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">RTX 4060</button>
-          <button type="button" data-gpu="NVIDIA RTX 3050" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">RTX 3050</button>
-          <button type="button" data-gpu="NVIDIA GTX 1650" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">GTX 1650</button>
-          <button type="button" data-gpu="AMD Radeon 780M" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Radeon 780M</button>
-          <button type="button" data-gpu="AMD Radeon 890M" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Radeon 890M</button>
-          <button type="button" data-gpu="Intel Arc 140V" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel Arc 140V</button>
-          <button type="button" data-gpu="Intel UHD Graphics" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Intel UHD</button>
-          <button type="button" data-gpu="Apple M4 GPU" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Apple M4 GPU</button>
-          <button type="button" data-gpu="Qualcomm Adreno X1-85" class="gpu-sample-btn text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 font-medium text-slate-700 transition">Adreno X1-85</button>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-2 mb-4">
-          <select id="gpu-brand-select" class="sm:w-56 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            <option value="nvidia">NVIDIA Dedicadas (GTX 16 – RTX 50)</option>
-            <option value="amd_ded">AMD Dedicadas (RX 6000M / 7000M)</option>
-            <option value="amd_int">AMD Radeon Integradas</option>
-            <option value="intel">Intel (UHD / Iris Xe / Arc)</option>
-            <option value="apple">Apple Silicon (Memoria Unificada)</option>
-            <option value="qualcomm">Qualcomm Adreno (ARM)</option>
-          </select>
-          <select id="gpu-input" class="flex-1 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"></select>
-          <button type="button" id="btn-decode-gpu" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition">Analizar</button>
-        </div>
-        <div id="gpu-decode-result" class="rounded-xl border border-slate-200 bg-slate-50 p-4"></div>
-      </div>
-
       <!-- Offer Evaluator ("¿Esta laptop me sirve?") -->
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
         <h3 class="text-lg font-bold text-slate-900">🚦 Evaluador de ofertas: ¿Esta laptop que estoy viendo me sirve?</h3>
@@ -372,9 +293,9 @@
           </label>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-4 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4 text-xs">
           <label class="block">
-            <span class="font-bold text-slate-700 block mb-1">Sistema Operativo</span>
+            <span class="font-bold text-slate-700 block mb-1">1. Sistema Operativo</span>
             <select id="eval-os" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500">
               <option value="windows_home">Windows 11 Home</option>
               <option value="windows_pro">Windows 11 Pro</option>
@@ -383,35 +304,31 @@
             </select>
           </label>
           <label class="block">
-            <span class="font-bold text-slate-700 block mb-1">Procesador (CPU)</span>
+            <span class="font-bold text-slate-700 block mb-1">2. Familia de Procesador (CPU)</span>
+            <select id="eval-cpu-family" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500"></select>
+          </label>
+          <label class="block">
+            <span class="font-bold text-slate-700 block mb-1">3. Modelo exacto de CPU</span>
             <select id="eval-cpu" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500"></select>
           </label>
           <label class="block">
-            <span class="font-bold text-slate-700 block mb-1">Memoria RAM</span>
-            <select id="eval-ram" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500">
-              <option value="4">4 GB</option>
-              <option value="8">8 GB</option>
-              <option value="12">12 GB</option>
-              <option value="16" selected>16 GB</option>
-              <option value="24">24 GB</option>
-              <option value="32">32 GB</option>
-              <option value="64">64 GB o más</option>
-            </select>
+            <span class="font-bold text-slate-700 block mb-1">4. Familia de Gráfica (GPU)</span>
+            <select id="eval-gpu-family" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500"></select>
           </label>
           <label class="block">
-            <span class="font-bold text-slate-700 block mb-1">Gráfica (GPU)</span>
+            <span class="font-bold text-slate-700 block mb-1">5. Modelo exacto de GPU</span>
             <select id="eval-gpu" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500"></select>
           </label>
-          <label class="block">
-            <span class="font-bold text-slate-700 block mb-1">Almacenamiento</span>
-            <select id="eval-ssd" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500">
-              <option value="emmc">64–128 GB eMMC / HDD</option>
-              <option value="256">256 GB SSD</option>
-              <option value="512" selected>512 GB SSD</option>
-              <option value="1024">1 TB SSD</option>
-              <option value="2048">2 TB+ SSD</option>
-            </select>
-          </label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="block">
+              <span class="font-bold text-slate-700 block mb-1">6. RAM</span>
+              <select id="eval-ram" class="w-full px-2.5 py-2 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500"></select>
+            </label>
+            <label class="block">
+              <span class="font-bold text-slate-700 block mb-1">7. Disco SSD</span>
+              <select id="eval-ssd" class="w-full px-2.5 py-2 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500"></select>
+            </label>
+          </div>
         </div>
 
         <button type="button" id="btn-eval-offer" class="px-5 py-2.5 rounded-xl text-sm font-bold bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm transition mb-4">
@@ -420,7 +337,97 @@
         <div id="eval-offer-result" class="rounded-xl border p-4 text-xs sm:text-sm"></div>
       </div>
 
-      <!-- Battery, SSD & Screen Health Guide -->
+      <!-- Interactive CPU Name Decoder -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Decodificador de nombres de procesador</h3>
+            <p class="text-xs sm:text-sm text-slate-500">Selecciona la familia y el modelo exacto tal como aparece en la PC para conocer su generación y para qué programas alcanza.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2 mb-4">
+          <select id="cpu-brand-select" class="sm:w-56 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="intel_ultra">Intel Core Ultra (1 / 2 / 3)</option>
+            <option value="intel_core">Intel Core 11.ª–14.ª Gen y Core 3</option>
+            <option value="intel_legacy">Intel Core 8.ª–10.ª Gen (Seminuevas / Win 11)</option>
+            <option value="intel_n">Intel Celeron / Pentium / Serie N</option>
+            <option value="amd_ai">AMD Ryzen AI y 9000HX</option>
+            <option value="amd_ryzen">AMD Athlon y Ryzen 5000–8000</option>
+            <option value="amd_legacy">AMD Ryzen 2000–5000 y 3015e/3050e (Seminuevas)</option>
+            <option value="qualcomm">Qualcomm Snapdragon X / X Plus / X Elite (ARM)</option>
+            <option value="apple">Apple Silicon (Neo y M1–M5)</option>
+          </select>
+          <select id="cpu-input" class="flex-1 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"></select>
+          <button type="button" id="btn-decode-cpu" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition">
+            Analizar
+          </button>
+        </div>
+
+        <div id="cpu-decode-result" class="rounded-xl border border-slate-200 bg-slate-50 p-4"></div>
+        <p class="mt-3 text-xs bg-amber-50 border border-amber-200 text-amber-900 rounded-xl p-3"><strong>Recuerda:</strong> no basta con que diga "Core i7" o "Ryzen 7"; identifica siempre el <em>modelo completo</em> (generación, arquitectura y letra de consumo). <strong>¿Tu procesador no aparece en la lista?</strong> Si el modelo que ves en la computadora no está en este decodificador, muy probablemente se trata de <strong>hardware antiguo</strong> (por ejemplo Intel de 7.ª generación o anterior, o AMD FX / Serie A), sin soporte oficial para Windows 11. Solo conviene para uso muy básico o para revivirlo con Linux ligero.</p>
+      </div>
+
+      <!-- Interactive GPU Decoder -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
+        <h3 class="text-lg font-bold text-slate-900">Decodificador de tarjetas gráficas (GPU)</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mb-3">Selecciona la marca y el modelo exacto tal como aparece en la PC para conocer su arquitectura, VRAM y para qué programas alcanza.</p>
+
+        <div class="flex flex-col sm:flex-row gap-2 mb-4">
+          <select id="gpu-brand-select" class="sm:w-56 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="nvidia">NVIDIA Dedicadas (GTX 16 – RTX 50)</option>
+            <option value="nvidia_legacy">NVIDIA MX / GTX 10 / Quadro (2017–2020)</option>
+            <option value="amd_legacy">AMD Radeon 500 / RX 5000M / Pro WX (2017–2020)</option>
+            <option value="amd_ded">AMD Dedicadas (RX 6000M / 7000M)</option>
+            <option value="amd_int">AMD Radeon Integradas</option>
+            <option value="intel">Intel (UHD / Iris Xe / Arc)</option>
+            <option value="apple">Apple Silicon (Memoria Unificada)</option>
+            <option value="qualcomm">Qualcomm Adreno (ARM)</option>
+          </select>
+          <select id="gpu-input" class="flex-1 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"></select>
+          <button type="button" id="btn-decode-gpu" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition">Analizar</button>
+        </div>
+        <div id="gpu-decode-result" class="rounded-xl border border-slate-200 bg-slate-50 p-4"></div>
+        <p class="mt-3 text-xs bg-amber-50 border border-amber-200 text-amber-900 rounded-xl p-3"><strong>¿Tu tarjeta gráfica no aparece en la lista?</strong> Si la GPU que ves en el equipo no figura en este decodificador, muy probablemente se trata de <strong>hardware antiguo</strong> (anterior a 2017, como GeForce GT/GTX 900 o Radeon R5/R7/HD), sin controladores modernos ni soporte para funciones actuales de video, CAD o juegos.</p>
+      </div>
+
+      <!-- Interactive RAM Decoder -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
+        <h3 class="text-lg font-bold text-slate-900">Decodificador de Memoria RAM</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mb-3">Selecciona el tipo y la capacidad que ves en el Administrador de tareas o ficha técnica para saber si es moderna, ampliable y para qué programas alcanza.</p>
+        <div class="flex flex-col sm:flex-row gap-2 mb-4">
+          <select id="ram-type-select" class="sm:w-64 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="ddr5">DDR5 (SO-DIMM ampliable)</option>
+            <option value="lpddr5">LPDDR5 / LPDDR5X (Soldada rápida)</option>
+            <option value="ddr4">DDR4 (SO-DIMM ampliable)</option>
+            <option value="lpddr4">LPDDR4 / LPDDR4X (Soldada eficiente)</option>
+            <option value="apple_uni">Memoria Unificada Apple Silicon</option>
+            <option value="ddr3">DDR3 / DDR3L (Antigua)</option>
+          </select>
+          <select id="ram-size-select" class="flex-1 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"></select>
+          <button type="button" id="btn-decode-ram" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition">Analizar</button>
+        </div>
+        <div id="ram-decode-result" class="rounded-xl border border-slate-200 bg-slate-50 p-4"></div>
+      </div>
+
+      <!-- Interactive OS Decoder -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
+        <h3 class="text-lg font-bold text-slate-900">Decodificador de Sistema Operativo (SO)</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mb-3">Selecciona el sistema y la versión que tiene la laptop para confirmar si sigue con soporte de seguridad oficial y para qué programas alcanza.</p>
+        <div class="flex flex-col sm:flex-row gap-2 mb-4">
+          <select id="os-fam-select" class="sm:w-56 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="windows">Microsoft Windows</option>
+            <option value="macos">Apple macOS</option>
+            <option value="linux">Linux (Ubuntu / Mint / Fedora / Debian)</option>
+            <option value="chromeos">Google ChromeOS</option>
+          </select>
+          <select id="os-ver-select" class="flex-1 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"></select>
+          <button type="button" id="btn-decode-os" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition">Analizar</button>
+        </div>
+        <div id="os-decode-result" class="rounded-xl border border-slate-200 bg-slate-50 p-4"></div>
+      </div>
+
+            <!-- Battery, SSD & Screen Health Guide -->
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
         <h3 class="text-lg font-bold text-slate-900 mb-1">🔋 Cómo revisar batería, disco SSD y pantalla (nuevas o usadas)</h3>
         <p class="text-xs sm:text-sm text-slate-500 mb-4">Comprueba estos 3 puntos en menos de 1 minuto antes de pagar:</p>
@@ -428,15 +435,15 @@
           <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
             <h4 class="font-bold text-slate-900 mb-1.5">1. Salud y ciclos de batería</h4>
             <ul class="space-y-1.5 text-slate-600 list-disc list-inside">
-              <li><strong>Windows:</strong> Abre CMD/PowerShell y escribe <code>powercfg /batteryreport</code>. Abre el archivo HTML que genera y compara <em>Design Capacity</em> vs <em>Full Charge Capacity</em> (ideal >85%).</li>
+              <li><strong>Windows:</strong> Abre CMD/PowerShell y escribe <code>powercfg /batteryreport</code>. Compara <em>Design Capacity</em> vs <em>Full Charge Capacity</em> según antigüedad: nueva ~95–100%; usada 1–2 años &gt;85%; seminueva 3–5 años 75–85% es normal (&lt;70% suele pedir reemplazo).</li>
               <li><strong>macOS:</strong> Menú  → <em>Acerca de esta Mac → Más información → Informe del sistema → Alimentación</em>. Revisa <strong>Conteo de ciclos</strong> (nueva: &lt;10; usada saludable: &lt;300).</li>
               <li><strong>Linux:</strong> Ejecuta <code>upower -i $(upower -e | grep BAT)</code> en terminal.</li>
             </ul>
           </div>
           <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
-            <h4 class="font-bold text-slate-900 mb-1.5">2. Confirmar que el disco sea SSD NVMe</h4>
+            <h4 class="font-bold text-slate-900 mb-1.5">2. Confirmar disco SSD (SATA o NVMe)</h4>
             <ul class="space-y-1.5 text-slate-600 list-disc list-inside">
-              <li><strong>Windows:</strong> Abre <span class="kbd-key">Ctrl</span>+<span class="kbd-key">Shift</span>+<span class="kbd-key">Esc</span> → <em>Rendimiento → Disco 0</em>. Arriba debe decir <strong>SSD (NVMe)</strong>, nunca <em>HDD</em> ni <em>eMMC</em>.</li>
+              <li><strong>Windows:</strong> Abre <span class="kbd-key">Ctrl</span>+<span class="kbd-key">Shift</span>+<span class="kbd-key">Esc</span> → <em>Rendimiento → Disco 0</em>. Debe decir <strong>SSD</strong> (evita <em>HDD</em> mecánico o <em>eMMC</em>). Un <strong>SSD SATA</strong> rinde muy bien en oficina/clases; elige <strong>NVMe</strong> si editas video 4K, CAD pesado o IA local.</li>
               <li><strong>macOS / Linux:</strong> Todas las Mac Apple Silicon traen SSD soldado; en Linux usa <code>lsblk -d -o name,rota,model</code> (<code>ROTA = 0</code> significa SSD).</li>
             </ul>
           </div>
@@ -504,7 +511,31 @@
         </div>
       </div>
 
-      <!-- Interactive RAM Simulator -->
+      <!-- Why More RAM Is Better -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
+        <h3 class="text-lg font-bold text-slate-900 mb-2">📏 ¿Por qué entre más memoria RAM es mejor?</h3>
+        <p class="text-xs sm:text-sm text-slate-600 mb-3">A diferencia del procesador, quedarte corto de RAM hace que incluso una laptop cara se sienta lenta de inmediato. Tener más RAM mejora tu experiencia por 4 razones clave:</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+          <div class="rounded-xl bg-slate-50 border border-slate-200 p-3">
+            <strong class="text-indigo-800 block mb-1">1. Evita que se trabe (Swap)</strong>
+            <span class="text-slate-600">Cuando la RAM se llena, la PC usa el disco SSD como memoria de emergencia, que es mucho más lento y provoca congelamientos.</span>
+          </div>
+          <div class="rounded-xl bg-slate-50 border border-slate-200 p-3">
+            <strong class="text-indigo-800 block mb-1">2. Multitarea real sin cerrar apps</strong>
+            <span class="text-slate-600">Puedes mantener 15–20 pestañas del navegador, Excel, Zoom y Spotify abiertos al mismo tiempo con total fluidez.</span>
+          </div>
+          <div class="rounded-xl bg-slate-50 border border-slate-200 p-3">
+            <strong class="text-indigo-800 block mb-1">3. Mejora la GPU integrada y Mac</strong>
+            <span class="text-slate-600">En gráficas integradas (Intel/AMD) y Apple Silicon, la RAM también se usa como memoria de video (VRAM). Más RAM = mejor rendimiento gráfico e IA.</span>
+          </div>
+          <div class="rounded-xl bg-slate-50 border border-slate-200 p-3">
+            <strong class="text-indigo-800 block mb-1">4. Más años de vida útil</strong>
+            <span class="text-slate-600">Cada actualización de Windows, macOS, Chrome y Office consume más memoria; comprar 16–32 GB hoy evita que quede obsoleta en 2 años.</span>
+          </div>
+        </div>
+      </div>
+
+            <!-- Interactive RAM Simulator -->
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
           <div>
@@ -549,7 +580,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
           <div>
             <h3 class="text-lg font-bold text-slate-900">💾 Calculadora de Almacenamiento (SSD): ¿256 GB, 512 GB, 1 TB o 2 TB?</h3>
-            <p class="text-xs sm:text-sm text-slate-500">Activa lo que vas a instalar y guardar para calcular el espacio real (incluye 20% de margen libre para que el SSD no se vuelva lento).</p>
+            <p class="text-xs sm:text-sm text-slate-500">Se sincroniza automáticamente con el Simulador de RAM de arriba (y también puedes activar o desactivar bloques manualmente). Incluye 20% de margen libre.</p>
           </div>
           <div class="text-right">
             <span class="text-xs text-slate-500 block">Espacio requerido (+20% margen)</span>
@@ -611,11 +642,43 @@
         </table>
       </div>
 
-      <!-- Intel vs AMD & Suffixes & Commercial Models -->
+      <!-- OS End-of-Support Warning Card -->
+      <div class="bg-white rounded-2xl border border-rose-200 shadow-sm p-5 sm:p-6">
+        <h3 class="text-lg font-bold text-rose-900 mb-1">⚠️ Sistemas Operativos sin soporte oficial (Actualizado a Noviembre 2026)</h3>
+        <p class="text-xs sm:text-sm text-slate-600 mb-4">Un sistema sin soporte sigue encendiendo, pero <strong>deja de recibir parches de seguridad</strong>, queda expuesto a virus/ransomware y los programas nuevos (Office, navegadores, Adobe) dejan de instalarse.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div class="rounded-xl bg-rose-50/70 border border-rose-200 p-3.5">
+            <strong class="text-rose-900 block mb-1">🪟 Windows (Sin soporte)</strong>
+            <ul class="list-disc list-inside space-y-1 text-slate-700">
+              <li><strong>Windows 10:</strong> terminó su soporte oficial el <strong>14 de octubre de 2025</strong> (solo continúa con programa ESU de pago).</li>
+              <li><strong>Windows 8.1, 8 y 7:</strong> obsoletos desde hace años.</li>
+              <li class="text-emerald-800 font-semibold">Vigente: Windows 11 (24H2 / 25H2+).</li>
+            </ul>
+          </div>
+          <div class="rounded-xl bg-rose-50/70 border border-rose-200 p-3.5">
+            <strong class="text-rose-900 block mb-1">🍎 macOS (Sin soporte)</strong>
+            <ul class="list-disc list-inside space-y-1 text-slate-700">
+              <li><strong>macOS 14 Sonoma</strong> (fin de soporte en otoño 2026), <strong>13 Ventura</strong> (2025), <strong>12 Monterey</strong> (2024), <strong>11 Big Sur</strong> y anteriores.</li>
+              <li>Las Mac Intel antiguas atrapadas en estas versiones ya no reciben actualizaciones de seguridad ni Office/Adobe nuevos.</li>
+              <li class="text-emerald-800 font-semibold">Vigentes: macOS 15 Sequoia y macOS 26 Tahoe+.</li>
+            </ul>
+          </div>
+          <div class="rounded-xl bg-rose-50/70 border border-rose-200 p-3.5">
+            <strong class="text-rose-900 block mb-1">🐧 Linux (Sin soporte estándar)</strong>
+            <ul class="list-disc list-inside space-y-1 text-slate-700">
+              <li><strong>Ubuntu 20.04 LTS</strong> (fin de soporte estándar en mayo 2025; solo con Ubuntu Pro ESM), <strong>18.04 LTS</strong> y anteriores.</li>
+              <li>Versiones intermedias antiguas (Ubuntu 23.10/24.10) y <strong>Fedora</strong> con más de 13 meses.</li>
+              <li class="text-emerald-800 font-semibold">Vigentes: Ubuntu 24.04 / 26.04 LTS, Ubuntu 22.04 LTS (hasta 2027), Linux Mint 22.x y Debian 12/13.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+            <!-- Intel vs AMD & Suffixes & Commercial Models -->
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 space-y-6">
         <div>
           <h3 class="text-lg font-bold text-slate-900">Equivalencias Intel vs. AMD y Guía de Terminaciones</h3>
-          <p class="text-xs sm:text-sm text-slate-500">Para comparar rápido en la tienda (equivalencias aproximadas por gama comercial):</p>
+          <p class="text-xs sm:text-sm text-slate-500">Referencia rápida por gama comercial (ojo: un Core i5 y un Ryzen 5 NO garantizan el mismo rendimiento; siempre importa el modelo completo, generación, arquitectura y refrigeración):</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -663,6 +726,8 @@
           <h4 class="text-sm font-bold text-slate-800 mb-2">Modelos comerciales más comunes en tiendas (clic para analizar en el decodificador)</h4>
           <div class="flex flex-wrap gap-2 mb-3">
             <button type="button" data-cpufam="intel_core" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 text-white shadow-sm transition">Intel Core 11ª–14ª</button>
+            <button type="button" data-cpufam="intel_8_10" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Intel 8ª–10ª (Seminuevas)</button>
+            <button type="button" data-cpufam="amd_2000_5000" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">AMD 2000–5000 (Seminuevas)</button>
             <button type="button" data-cpufam="intel_ultra" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Intel Core Ultra 1 / 2 / 3</button>
             <button type="button" data-cpufam="intel_n" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Celeron / Pentium / Serie N</button>
             <button type="button" data-cpufam="amd_ryzen" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">AMD Athlon y Ryzen 3–9</button>
@@ -757,6 +822,7 @@
             <button type="button" data-gpufam="amd_ded" class="gpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">AMD Dedicadas (RX 6000M / 7000M)</button>
             <button type="button" data-gpufam="intel_ded" class="gpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Intel Arc Dedicadas</button>
             <button type="button" data-gpufam="integrated" class="gpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Integradas (AMD, Intel, Apple, Qualcomm)</button>
+            <button type="button" data-gpufam="legacy_gpu" class="gpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Seminuevas 2017–2020 (MX / GTX 10 / RX 5000M / Quadro)</button>
           </div>
           <div id="gpufam-list" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs"></div>
         </div>
@@ -802,6 +868,13 @@
           <div>
             <h3 class="text-lg font-bold text-slate-900">Requisitos Mínimos, Recomendados y Profesionales por Programa</h3>
             <p class="text-xs text-slate-500">Consulta la compatibilidad nativa (Windows 11, Linux, macOS) y qué hardware pide cada herramienta.</p>
+        <div class="mt-3 mb-4 flex flex-wrap gap-1.5 text-[11px]">
+          <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-200 font-semibold">Oficial / Nativo</span>
+          <span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 border border-amber-200 font-semibold">Traducción / Emulación (Proton, Whisky, Sober)</span>
+          <span class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-800 border border-sky-200 font-semibold">VM / Nube (Parallels, Cloud Gaming)</span>
+          <span class="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 border border-indigo-200 font-semibold">Alternativa libre nativa</span>
+          <span class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-800 border border-rose-200 font-semibold">Sin compatibilidad práctica</span>
+        </div>
           </div>
           <select id="prog-search" class="w-full md:w-72 px-3 py-2 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"><option value="">Todos los programas</option></select>
         </div>
@@ -1205,7 +1278,7 @@
         cat: 'cad',
         catLabel: 'Ingeniería CAD (Exclusivo Windows)',
         use: 'Diseño mecánico 3D, simulación, ensamblajes y planos técnicos.',
-        compat: { win: 'Sí', linux: 'No', mac: 'No' },
+        compat: { win: 'Oficial / Nativo', linux: 'Alternativa libre (FreeCAD)', mac: 'VM / Alternativa (FreeCAD)' },
         min: 'Windows 11 Pro/Edu 64-bit • CPU x86_64 alta frecuencia (3.3+ GHz rec.) • 16 GB RAM • GPU profesional certificada (OpenGL 4.5) • 20 GB SSD NVMe',
         rec: 'Intel Core i7 / Ryzen 7 (alta frecuencia por núcleo) • 32 GB RAM • GPU NVIDIA RTX / Radeon Pro certificada',
         pro: 'Core i9 / Ryzen 9 • 64 GB RAM • GPU NVIDIA RTX profesional certificada • SSD NVMe rápido',
@@ -1326,7 +1399,7 @@
         cat: 'gaming',
         catLabel: 'Videojuegos',
         use: 'Juego de mundo abierto en PC (Historia y GTA Online).',
-        compat: { win: 'Sí', linux: 'Parcial', mac: 'Parcial' },
+        compat: { win: 'Oficial / Nativo', linux: 'Traducción (Proton — sin Online)', mac: 'Traducción (Whisky/Wine)' },
         min: 'Windows Enhanced: Core i7-4770 / FX-9590 • 8 GB RAM • GTX 1630 / RX 6400 (4 GB VRAM) • 105 GB SSD obligatorio (Legacy: 4 GB RAM, 125 GB)',
         rec: 'Intel Core i5 / Ryzen 5 moderno • 16 GB RAM • GPU 6–8 GB VRAM (RTX 3060 / 4050) • SSD NVMe',
         pro: 'Core i7 / Ryzen 7 • 16–32 GB RAM • RTX 4060 / 5060+ para gráficos altos/Ultra',
@@ -1337,7 +1410,7 @@
         cat: 'gaming',
         catLabel: 'Videojuegos',
         use: 'Battle Royale con construcción y modos competitivos.',
-        compat: { win: 'Sí', linux: 'No', mac: 'No' },
+        compat: { win: 'Oficial / Nativo', linux: 'Solo Nube (sin soporte práctico local)', mac: 'Solo Nube (sin soporte práctico local)' },
         min: 'Windows 10 22H2 / 11 • Core i3-3225 (3.3 GHz) • 8 GB RAM • Intel HD 4000 / Vega 8 (DX11) • 40–50 GB libres',
         rec: 'Core i5 / Ryzen 5 moderno • 16 GB RAM • RTX 3050 / 4050+ (6–8 GB VRAM) • SSD 500+ GB',
         pro: 'Core i7 / Ryzen 7 • 16–32 GB RAM • RTX 4060 / 5060+ para 120–240 FPS competitivos',
@@ -1359,7 +1432,7 @@
         cat: 'gaming',
         catLabel: 'Videojuegos',
         use: 'Plataforma de experiencias y juegos en línea.',
-        compat: { win: 'Sí', linux: 'Parcial', mac: 'Sí' },
+        compat: { win: 'Oficial / Nativo', linux: 'Emulación/Capa (Sober)', mac: 'Oficial / Nativo' },
         min: 'Windows 10/11 (1.6+ GHz, 1 GB mín. / 4 GB rec., DX10+, 300 MB) • macOS 10.13+ (Core i5 o Apple M1+ nativo, 1–4 GB RAM, Metal, ~1 GB)',
         rec: '8–16 GB RAM • Cualquier GPU integrada moderna (Intel UHD / Iris Xe / Radeon / Apple M)',
         pro: 'Para Roblox Studio y experiencias pesadas: 16 GB RAM + Core i5 / Ryzen 5',
@@ -1682,7 +1755,7 @@
       if (osChoice === 'windows') {
         if (needsNoArm) compatIssues.push('<strong>Restricción de arquitectura:</strong> SOLIDWORKS, FlexSim, Minitab o Datamine <strong>no admiten procesadores ARM (Snapdragon X)</strong>; exige Intel o AMD x86-64.');
         if (needsWinPro) compatIssues.push('<strong>Edición de Windows:</strong> SOLIDWORKS / Datamine requieren <strong>Windows 11 Pro / Education</strong> de 64 bits (no Windows Home).');
-        if (needsCertGpu) compatIssues.push('<strong>Certificación gráfica:</strong> SOLIDWORKS exige GPU profesional certificada (NVIDIA RTX Workstation / Quadro o AMD Radeon Pro) para soporte oficial.');
+        if (needsCertGpu) compatIssues.push('<strong>Certificación vs. ejecución en SOLIDWORKS:</strong> puede ejecutarse en Windows 11 con GPUs GeForce/Radeon para estudio o piezas simples, pero el <em>soporte oficial y la certificación</em> de Dassault Systèmes aplican a Windows 11 Pro/Edu y GPUs profesionales certificadas (Quadro/RTX Workstation/Radeon Pro).');
       }
 
       const compatWarning = compatIssues.length > 0
@@ -1722,8 +1795,9 @@
       } else if (maxRam === 8 && (useProfile === 'office' || useProfile === 'dev' || useProfile === 'gaming')) {
         recRam = 16;
       }
-      const ramName = `${recRam} GB de RAM (Mínimo oficial base: ${maxRam} GB)`;
-      const ramWhy = `Requisito mínimo base: ${maxRam} GB para ${bottleneckApp}. Recomendación práctica: ${recRam} GB para trabajar fluido sin cuellos de botella.`;
+      const proRam = recRam >= 32 ? 64 : 32;
+      const ramName = `Mínimo: ${maxRam} GB • Recomendado: ${recRam} GB • Profesional: ${proRam} GB`;
+      const ramWhy = `Mínimo funcional (${maxRam} GB): ejecuta ${bottleneckApp}. Recomendado (${recRam} GB): trabajo cómodo. Profesional (${proRam} GB): proyectos pesados y mayor vida útil.`;
 
       // 4. Procesador (CPU) influido activamente por MOVILIDAD (high / medium / desk)
       const mobilityNote = mobility === 'high'
@@ -1815,7 +1889,7 @@
 
       const extra = [
         mobilityNote,
-        has('gtav') ? 'Almacenamiento SSD obligatorio: mínimo 512 GB–1 TB (GTA V Enhanced exige 105 GB libres en SSD).' : 'Almacenamiento SSD NVMe: mínimo 512 GB (1–2 TB para video 4K, CAD o modelos LLM).',
+        has('gtav') ? 'Almacenamiento SSD obligatorio: mínimo 512 GB–1 TB (GTA V Enhanced exige 105 GB libres en SSD).' : 'Almacenamiento SSD (SATA es suficiente para oficina/uso diario; NVMe recomendado para edición 4K, CAD pesado o modelos LLM).',
         'Pantalla Full HD (1920×1080) IPS o mejor (2K/4K recomendada para AutoCAD y edición).'
       ];
 
@@ -2005,7 +2079,14 @@
         suffixInfo = '<strong>U:</strong> Bajo consumo para portátiles ligeras (Office, estudios y batería larga).';
       }
 
-      if (lower.includes('a18') || lower.includes('neo')) {
+      if (lower.includes('snapdragon') || lower.includes('qualcomm')) {
+        brand = 'Qualcomm Snapdragon X (Arquitectura ARM64)';
+        tier = lower.includes('elite') ? 'Snapdragon X Elite (Gama alta eficiente)' : lower.includes('plus') ? 'Snapdragon X Plus (Gama media eficiente)' : 'Snapdragon X (Entrada ARM)';
+        gen = 'Arquitectura Oryon ARM64 (2024–2026) con NPU 45 TOPS y GPU Adreno X1';
+        suffixInfo = 'Excelente autonomía (15–20 h) y silencio en Office, navegador y apps ARM nativas. Atención: programas x86 específicos como SOLIDWORKS, FlexSim, Minitab o Datamine NO son compatibles en ARM.';
+        verdict = 'Gran batería (verificar compatibilidad x86)';
+        badgeColor = 'bg-amber-100 text-amber-800';
+      } else if (lower.includes('a18') || lower.includes('neo')) {
         brand = 'Apple Silicon (MacBook Neo — Entrada 2026)';
         tier = 'Chip A18 Pro (6 núcleos CPU: 2 rendimiento + 4 eficiencia)';
         gen = '2026 • GPU integrada de 5 núcleos (con trazado de rayos), 60 GB/s';
@@ -2034,15 +2115,22 @@
         verdict = mGen >= 3 ? 'Excelente compra' : mGen === 2 ? 'Buena para productividad (si el precio es bueno)' : 'Generación antigua (solo uso ligero)';
         badgeColor = mGen >= 3 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800';
       } else if (lower.includes('celeron') || lower.includes('pentium') || /\bprocessor\s*n\d+/i.test(lower) || /\bintel\s*n\d+/i.test(lower)) {
-        brand = lower.includes('celeron') ? 'Intel Celeron (Serie N)' : lower.includes('pentium') ? 'Intel Pentium Silver' : 'Intel Processor Serie N';
-        const nMatch = lower.match(/n(\d{2,4})/i);
+        brand = lower.includes('celeron') ? 'Intel Celeron' : lower.includes('pentium') ? 'Intel Pentium (Gold / Silver)' : 'Intel Processor Serie N';
+        const isJ = /\bj\d{4}/i.test(lower);
+        const nMatch = lower.match(/[nj](\d{2,4})/i);
         const nNum = nMatch ? parseInt(nMatch[1], 10) : 0;
-        tier = nNum >= 200 && nNum <= 305 ? 'Entrada / Intermedio básico (N200/N300/N305)' : 'Gama de entrada económica';
-        gen = 'Familia Serie N (no sigue la numeración de generaciones Core)';
-        suffixInfo = 'Adecuado para Office, navegación y clases; NO recomendable para SOLIDWORKS, AutoCAD 3D, Adobe, DaVinci ni gaming.';
-        verdict = (nNum >= 100 && nNum <= 305) ? 'Solo para Office y tareas ligeras' : 'Muy básico (evitar si buscas fluidez)';
-        badgeColor = (nNum >= 100 && nNum <= 305) ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-800';
-      } else if (lower.includes('athlon')) {
+        tier = isJ ? 'Serie J (Mini PC / equipos compactos de bajo consumo)' : (nNum >= 200 && nNum <= 305) ? 'Intermedio básico (N200/N300/N305)' : 'Gama de entrada económica';
+        gen = /6305|7505/.test(lower) ? 'Tiger Lake entrada (relacionado a 11ª gen)' : /5205|5305|6405/.test(lower) ? 'Comet Lake entrada' : /6500y/.test(lower) ? 'Amber Lake (bajo consumo pasivo)' : /4500|5100|6000|6412/.test(lower) ? 'Jasper Lake (Atom — no es Core)' : /4000|4020|4120|5000|5030|4125|5040/.test(lower) ? 'Gemini Lake (Atom — no es Core)' : 'Familia Serie N / Entrada';
+        suffixInfo = isJ ? 'Serie J: bajo consumo pensada para mini PCs y equipos compactos. Ideal para Office, web y Linux ligero.' : 'Adecuado para Office, ONLYOFFICE, navegación, clases y Linux ligero; no recomendable para CAD 3D, Adobe ni gaming pesado.';
+        verdict = (nNum >= 100 && nNum <= 305) || /7505|6000|5100|6412/.test(lower) ? 'Aprovechable para Office, clases y Linux ligero' : 'Uso muy básico (Office ligero / navegador)';
+        badgeColor = 'bg-amber-100 text-amber-800';
+      } else if (lower.includes('athlon') || /\b3015e\b|\b3020e\b|\ba[468]-\d+/i.test(lower)) {
+        brand = /\ba[468]-\d+/i.test(lower) ? 'AMD Serie A (anterior)' : /3015e|3020e/.test(lower) ? 'AMD 3000e (Bajo consumo)' : 'AMD Athlon';
+        tier = lower.includes('gold') ? 'Athlon Gold (Entrada)' : 'Gama económica (equivalente a Celeron / Pentium N)';
+        gen = /3015e|3020e|3050e|300u/.test(lower) ? 'Zen / Zen+ bajo consumo (≈ Celeron N4020–N5100 / Pentium N5000)' : 'Equivalente aproximado a Intel Celeron / Pentium';
+        verdict = 'Solo para Office básico, navegación y Linux ligero';
+        badgeColor = 'bg-amber-100 text-amber-800';
+      } else if (false) {
         brand = 'AMD Athlon';
         tier = lower.includes('gold') ? 'Athlon Gold (Entrada)' : 'Athlon Silver (Entrada muy básica)';
         gen = 'Equivalente aproximado a Intel Celeron / Pentium';
@@ -2079,17 +2167,29 @@
         const genMatch = lower.match(/i[3579][-\s]*(\d{4,5})/i);
         if (genMatch) {
           const digits = genMatch[1];
-          const genNum = digits.length === 5 ? parseInt(digits.slice(0, 2), 10) : parseInt(digits[0], 10);
-          gen = `${genNum}ª Generación (${genNum === 11 ? '2020–21' : genNum === 12 ? '2022' : genNum === 13 ? '2023' : genNum === 14 ? '2024' : ''})`;
+          const genNum = /^(10|11|12|13|14)/.test(digits) ? parseInt(digits.slice(0, 2), 10) : parseInt(digits[0], 10);
+          const archMap = {
+            8: '8ª Gen (2017–18 • Kaby Lake-R / Coffee Lake / Whiskey Lake • DDR4, PCIe 3.0, Win 11 oficial)',
+            9: '9ª Gen (2019 • Coffee Lake Refresh • DDR4-2666, UHD 630, Win 11 oficial)',
+            10: /g[147]/i.test(text) ? '10ª Gen (2019–20 • Ice Lake 10nm con Iris Plus • Win 11 oficial)' : '10ª Gen (2019–20 • Comet Lake 14nm • DDR4, Win 11 oficial)',
+            11: '11ª Gen (2020–21 • Tiger Lake 10nm con Iris Xe / PCIe 4.0 • Win 11 oficial)',
+            12: '12ª Gen (2022 • Alder Lake híbrida)',
+            13: '13ª Gen (2023 • Raptor Lake híbrida)',
+            14: '14ª Gen (2024 • Raptor Lake Refresh HX)'
+          };
+          gen = archMap[genNum] || `${genNum}ª Generación`;
           if (genNum >= 13) {
-            verdict = 'Buena opción vigente (H/HX ideal para trabajo pesado)';
+            verdict = 'Excelente opción vigente (H/HX ideal para trabajo pesado)';
             badgeColor = 'bg-emerald-100 text-emerald-800';
-          } else if (genNum === 12) {
-            verdict = 'Vigente a buen precio (serie H sigue rindiendo bien)';
+          } else if (genNum >= 11) {
+            verdict = 'Muy aprovechable (11ª/12ª gen: gran relación valor-precio)';
+            badgeColor = 'bg-emerald-100 text-emerald-800';
+          } else if (genNum >= 8) {
+            verdict = 'Gran opción seminueva / reacondicionada (Win 11 oficial y Linux)';
             badgeColor = 'bg-amber-100 text-amber-800';
           } else {
-            verdict = 'Generación anterior (11ª o menor: solo si está muy económica)';
-            badgeColor = 'bg-amber-100 text-amber-800';
+            verdict = 'Anterior a 8ª gen (sin soporte oficial Win 11; ideal revivir con Linux)';
+            badgeColor = 'bg-rose-100 text-rose-800';
           }
         }
       } else if (lower.includes('ryzen')) {
@@ -2132,10 +2232,38 @@
             verdict = 'Buena opción vigente';
             badgeColor = 'bg-emerald-100 text-emerald-800';
           } else {
-            verdict = 'Generación anterior (verificar precio)';
-            badgeColor = 'bg-amber-100 text-amber-800';
+            const firstD = code[0];
+            const eqMap = {
+              '2': 'Serie 2000 (Zen • ≈ Intel 8ª gen; ej. 2500U ≈ i5-8250U)',
+              '3': 'Serie 3000 (Zen+ • ≈ Intel 8ª/9ª/10ª gen; ej. 3500U ≈ i5-8265U, 3550H ≈ i5-9300H)',
+              '4': 'Serie 4000 (Zen 2 • ≈ Intel 10ª gen; ej. 4500U ≈ i5-1035G7, 4600H/4800H ≈ i7-10750H)',
+              '5': 'Serie 5000 (Zen 2/3 • ≈ Intel 11ª gen; ej. 5500U ≈ i5-1135G7, 5800H ≈ i7-11800H)',
+              '6': 'Serie 6000 (Zen 3+ • Radeon 660M/680M)'
+            };
+            if (eqMap[firstD]) gen = eqMap[firstD];
+            verdict = firstD >= '5' ? 'Muy aprovechable (gran relación valor-precio)' : firstD >= '3' ? 'Buena opción seminueva / usada (Win 11 / Linux)' : 'Generación anterior (útil para Office/Linux a buen precio)';
+            badgeColor = firstD >= '5' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800';
           }
         }
+      }
+
+      let useReach = 'Ofimática (Excel/Word/ONLYOFFICE), navegación, clases, VS Code y multimedia.';
+      if (/celeron|pentium|athlon|3015e|3020e|3050e|\bn(50|95|100|150|200|300|305)\b|\bj\d{4}/i.test(lower)) {
+        useReach = 'Excel/Word/ONLYOFFICE básico, navegación con pocas pestañas, clases en línea, Minitab básico y Linux ligero. No recomendado para SOLIDWORKS, AutoCAD 3D, Adobe pesado ni gaming moderno.';
+      } else if (/snapdragon|qualcomm/i.test(lower)) {
+        useReach = 'Excelente en Office 365, ONLYOFFICE, VS Code, Photoshop ARM, navegación y videollamadas con batería para todo el día. Sin compatibilidad práctica para SOLIDWORKS, FlexSim, Minitab, Datamine o juegos con antitrampas x86.';
+      } else if (/a18|neo/i.test(lower)) {
+        useReach = 'Microsoft Office, ONLYOFFICE, navegación, programación ligera, Photoshop y Premiere ligeros. Limitada por sus 8 GB fijos en After Effects, Blender complejo, CAD 3D y LLM locales.';
+      } else if (/max|pro|hx3d|9955|14900|13980|285h|275h|388h|475|370|395|5900/i.test(lower)) {
+        useReach = 'Prácticamente todo sin límites: SOLIDWORKS (en Windows), AutoCAD 3D, Premiere/After Effects/DaVinci 4K, Blender 5.3, modelos LLM locales (14B–70B según RAM/VRAM) y gaming exigente.';
+      } else if (/\bi7\b|\bi9\b|ultra\s*[79]|ryzen\s*[79]|ai\s*[79]|\bhx\b|\bhs\b|\bh\b/i.test(lower)) {
+        useReach = 'Excel avanzado, programación, Photoshop, AutoCAD 2D/3D, FlexSim (11ª+/Ryzen 5000+), edición de video HD/4K, Blender, GTA V, Fortnite, Warzone y emulación PS2 (acompañado de RAM/GPU adecuada).';
+      } else if (/\bm[1-5]\b/i.test(lower)) {
+        useReach = 'Office, VS Code, Photoshop, AutoCAD Mac, Premiere/DaVinci, Blender 5.x, Minecraft Java, PCSX2 y modelos LLM locales (dependiendo de si tiene 16 GB, 24 GB o 32+ GB de memoria unificada).';
+      } else if (/\bi5\b|ultra\s*5|ryzen\s*5|ai\s*5/i.test(lower)) {
+        useReach = 'Oficina intensa (Excel grande, 15+ pestañas, videollamadas), programación, Photoshop, AutoCAD 2D, ArtCraft, Minecraft, Roblox, N64/PS2 y gaming ligero/medio.';
+      } else if (/\bi3\b|core\s*3|ryzen\s*3/i.test(lower)) {
+        useReach = 'Excel, Word, ONLYOFFICE, clases, navegación fluida, VS Code, Minitab, Roblox, emulación N64 y Photoshop ligero. Para CAD 3D o edición 4K conviene subir a gama 5 o 7.';
       }
 
       box.innerHTML = `
@@ -2148,6 +2276,7 @@
           <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Nivel / Gama</span><strong class="text-slate-800">${tier}</strong></div>
           <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Generación / Serie</span><strong class="text-slate-800">${gen}</strong></div>
           <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Terminación / Uso</span><span class="text-slate-700">${suffixInfo}</span></div>
+          <div class="sm:col-span-2 bg-indigo-50/70 p-3 rounded-lg border border-indigo-200"><span class="text-indigo-700 font-bold block mb-0.5">¿Para qué alcanza?</span><span class="text-slate-800">${useReach}</span></div>
         </div>
       `;
     }
@@ -2273,6 +2402,7 @@
         verdictBox.className = 'rounded-xl p-4 border text-xs sm:text-sm bg-rose-50 border-rose-200 text-rose-900';
         verdictBox.innerHTML = `<strong>Nivel profesional: 64 GB de RAM.</strong> Para proyectos simultáneos pesados de CAD, 4K, Blender e IA local, 64 GB es el punto de equilibrio ideal${linuxBonus}`;
       }
+      if (typeof syncSsdFromRamSimulator === 'function') syncSsdFromRamSimulator();
     }
 
     document.querySelectorAll('.sim-os-btn').forEach(btn => {
@@ -2284,12 +2414,13 @@
 
     // ==================== TAB 4: PROGRAMS CATALOG ====================
     function compatBadge(label, status) {
-      const cls = status === 'Sí'
-        ? 'bg-emerald-100 text-emerald-800 border-emerald-200'
-        : status === 'Parcial'
-          ? 'bg-amber-100 text-amber-800 border-amber-200'
-          : 'bg-rose-100 text-rose-800 border-rose-200';
-      return `<span class="text-[11px] font-semibold px-2 py-0.5 rounded-md border ${cls}">${label}: ${status}</span>`;
+      const st = status === 'Sí' ? 'Oficial / Nativo' : status === 'No' ? 'Sin soporte nativo' : status;
+      let cls = 'bg-rose-100 text-rose-800 border-rose-200';
+      if (/Oficial|Nativo|Sí/i.test(st)) cls = 'bg-emerald-100 text-emerald-800 border-emerald-200';
+      else if (/Traducción|Emulación|Parcial/i.test(st)) cls = 'bg-amber-100 text-amber-800 border-amber-200';
+      else if (/Nube|VM/i.test(st)) cls = 'bg-sky-100 text-sky-800 border-sky-200';
+      else if (/Alternativa/i.test(st)) cls = 'bg-indigo-100 text-indigo-800 border-indigo-200';
+      return `<span class="text-[11px] font-semibold px-2 py-0.5 rounded-md border ${cls}">${label}: ${st}</span>`;
     }
 
     function renderPrograms() {
@@ -2343,10 +2474,8 @@
         });
         renderPrograms();
     syncGpuDecoderSelect('NVIDIA RTX 4060');
-    syncProgramSelectOptions();
-    syncEvalTargetAppSelect();
-    syncOfferListboxes('init');
-    renderSsdCalculator();
+
+
     renderCpuFamily('intel_core');
     renderGpuFamily('nvidia');
       });
@@ -2359,6 +2488,16 @@
 
     // ==================== TAB 3: COMMERCIAL CPU CATALOG ====================
     const CPU_FAMILIES = {
+      amd_2000_5000: [
+        { title: 'Equipos usados económicos (≈ Celeron/i3 8ª)', models: ['AMD 3015e', 'AMD 3020e', 'AMD Athlon Silver 3050e', 'AMD Ryzen 3 2200U', 'AMD Ryzen 3 3200U', 'AMD Ryzen 3 5300U'], note: '3015e/3020e equivalen a Celeron N4020/Pentium N5000; Ryzen 3 2200U/3200U equivalen a Core i3-8130U/10110U.' },
+        { title: 'Gama media seminueva (≈ i5 8ª–11ª U)', models: ['AMD Ryzen 5 2500U', 'AMD Ryzen 5 3500U', 'AMD Ryzen 5 4500U', 'AMD Ryzen 5 5500U', 'AMD Ryzen 7 4700U', 'AMD Ryzen 7 5700U'], note: '2500U ≈ i5-8250U; 4500U ≈ i5-1035G7; 5500U ≈ i5-1135G7. No compares un chip U (15 W) contra un H (45 W).' },
+        { title: 'Alto rendimiento usado (≈ i7/i9 8ª–11ª H)', models: ['AMD Ryzen 5 3550H', 'AMD Ryzen 5 4600H', 'AMD Ryzen 5 5600H', 'AMD Ryzen 7 4800H', 'AMD Ryzen 7 5800H', 'AMD Ryzen 9 4900H', 'AMD Ryzen 9 5900HX'], note: '4600H ≈ i7-8750H; 4800H ≈ i7-10750H; 5800H ≈ i7-11800H; 5900HX ≈ i9-11980HK.' }
+      ],
+      intel_8_10: [
+        { title: '10.ª Gen (Comet Lake & Ice Lake)', models: ['Intel Core i3-10110U', 'Intel Core i5-10210U', 'Intel Core i5-1035G7', 'Intel Core i5-10300H', 'Intel Core i7-1065G7', 'Intel Core i7-10750H', 'Intel Core i9-10980HK'], note: 'Ice Lake (G4/G7) incluye mejores gráficos Iris Plus. Excelente en laptops seminuevas con 16 GB RAM y SSD.' },
+        { title: '9.ª Gen (Coffee Lake Refresh — Serie H)', models: ['Intel Core i5-9300H', 'Intel Core i7-9750H', 'Intel Core i9-9880H', 'Intel Core i9-9980HK'], note: 'En laptops se enfocó en serie H/HK de alto rendimiento (DDR4-2666, UHD 630 + GPU dedicada).' },
+        { title: '8.ª Gen (Kaby Lake-R / Whiskey Lake)', models: ['Intel Core i3-8130U', 'Intel Core i5-8250U', 'Intel Core i5-8350U', 'Intel Core i5-8300H', 'Intel Core i7-8550U', 'Intel Core i7-8750H', 'Intel Core i9-8950HK'], note: 'Primera generación con soporte oficial de Windows 11. Con 16 GB RAM y SSD sigue rindiendo muy bien en Office, VS Code, Linux y estudio.' }
+      ],
       intel_core: [
         { title: '14.ª Gen (2024 — Serie HX)', models: ['Intel Core i5-14450HX', 'Intel Core i5-14500HX', 'Intel Core i7-14650HX', 'Intel Core i7-14700HX', 'Intel Core i9-14900HX'], note: 'Enfocada en alto rendimiento para gaming, CAD y render.' },
         { title: '13.ª Gen (2023)', models: ['Intel Core i3-1315U', 'Intel Core i5-1335U', 'Intel Core i5-13500H', 'Intel Core i7-1355U', 'Intel Core i7-13700H', 'Intel Core i7-13850HX', 'Intel Core i9-13980HX'], note: 'Muy comercial; busca H/HX para trabajo pesado y U para oficina.' },
@@ -2446,6 +2585,12 @@
       intel_ded: [
         { title: 'Intel Arc A-Series Dedicadas (Xe-HPG)', items: 'Arc A350M / A370M (4 GB GDDR6) • Arc A530M / A550M / A570M (8 GB) • Arc A730M (12 GB) • Arc A770M (16 GB GDDR6, 120–150W).' },
         { title: 'Aclaración importante', items: 'Las Intel Arc B370 y B390 recientes son gráficas integradas dentro del procesador, no tarjetas dedicadas.' }
+      ],
+      legacy_gpu: [
+        { title: 'NVIDIA MX y GTX 10 / 16 / RTX 20 (2017–2020)', items: 'Entrada: MX110–MX450 • Media: GTX 1050/Ti (2–4 GB), GTX 1060 (6 GB), GTX 1650/Ti (4 GB), GTX 1660 Ti (6 GB) • Alta: GTX 1070/1080, RTX 2060 (6 GB), RTX 2070/2080/Super (8 GB). Revisa si es variante Max-Q (menor TGP).' },
+        { title: 'AMD Radeon 500 y RX 5000M (2017–2020)', items: 'Entrada: Radeon 520/530/540, RX 550 • Media: RX 560X, RX 5300M (3 GB), RX 5500M (4 GB) • Media-Alta: RX 5600M (6 GB). Nota: Vega 10/11 son integradas, no dedicadas.' },
+        { title: 'Workstations Seminuevas (Quadro y Radeon Pro)', items: 'NVIDIA Quadro P500–P5200 y Quadro RTX 3000/4000/5000 • AMD Radeon Pro WX 3100–7100 y Pro 5500M. Muy buscadas en Dell Precision / HP ZBook / ThinkPad P para SOLIDWORKS certificado.' },
+        { title: 'Consejo clave al comprar usada (2017–2020)', items: 'No te fíes solo de "Core i7": un Core i5 con GTX 1650 o Quadro P1000 rinde mucho más en gráficos, CAD y juegos que un Core i7 con Intel UHD 620 integrada.' }
       ],
       integrated: [
         { title: 'AMD Radeon Integradas (comparten RAM)', items: 'Vega 3–8 (Ryzen 4000/5000) • 610M/660M/680M (RDNA 2) • 740M/760M/780M (RDNA 3) • 840M/860M/880M/890M (RDNA 3.5) • Radeon 8060S (40 CU en Ryzen AI Max, alto rendimiento).' },
@@ -2581,34 +2726,43 @@
         ];
       }
 
-      // Windows 11 o Linux (escalando desde el mínimo real de la app más exigente)
+      // Windows 11 o Linux (escalando desde hardware seminuevo aprovechable / mínimo real hasta tope 2026)
       const mob = ctx.mobility || 'medium';
-      let startCpu = `Intel N100–N305 / Core i3-1215U / Core 3 100U o Ryzen 3 5425U/7335U${noArmTag}`;
+      const hasFlexSim = (ctx.apps || []).includes('flexsim') && osMode === 'windows';
+      let startCpu = hasFlexSim
+        ? `Intel Core i5-1135G7 / i5-1235U o AMD Ryzen 5 5500U / 5600H${noArmTag}`
+        : `Intel Core i5-8250U / i5-10210U / Core 3 100U o AMD Ryzen 5 3500U / 4500U / Ryzen 3 5425U${noArmTag}`;
       if (mLevel >= 3) {
-        startCpu = mob === 'high' ? `Intel Core Ultra 5 226V / i5-1335U o AMD Ryzen 5 7535U/8645HS${noArmTag}` : `Intel Core i5 11ª–13ª gen (H) o AMD Ryzen 5 5000/7000+${noArmTag}`;
+        startCpu = hasFlexSim
+          ? `Intel Core i5-11400H / i7-11800H o AMD Ryzen 5 5600H / Ryzen 7 5800H${noArmTag}`
+          : mob === 'high'
+            ? `Intel Core i5-1135G7 / Ultra 5 226V o AMD Ryzen 5 5500U / 7535U${noArmTag}`
+            : `Intel Core i7-9750H / i7-10750H / i5-11400H o AMD Ryzen 5 4600H / Ryzen 7 4800H / 5800H${noArmTag}`;
       } else if (mLevel === 2) {
-        startCpu = `Intel Core i3-1315U / Core i5-1235U o AMD Ryzen 3 7440U / Ryzen 5 5500U${noArmTag}`;
+        startCpu = hasFlexSim
+          ? `Intel Core i5-1135G7 / i5-1235U o AMD Ryzen 5 5500U / 5600H${noArmTag}`
+          : `Intel Core i5-1035G7 / i5-1135G7 / i3-1215U o AMD Ryzen 5 4500U / 5500U${noArmTag}`;
       }
 
       const startGpu = ctx.needsCertGpu
-        ? 'GPU profesional certificada básica (OpenGL 4.5)'
+        ? 'GPU certificada (Quadro P2000 / Quadro RTX 3000 / Radeon Pro WX o RTX Ada)'
         : mVram >= 6
-          ? `GPU dedicada ${mVram} GB VRAM (RTX 3050/4050+)`
+          ? `GPU dedicada ${mVram} GB VRAM (RTX 2060 / RTX 3060 / RTX 4050)`
           : mVram >= 2
-            ? `GPU ${mVram}+ GB VRAM (Radeon 780M / Arc / GTX 1650)`
-            : 'GPU integrada (UHD / Iris Xe / Radeon)';
+            ? `GPU ${mVram}+ GB VRAM (GTX 1650 / RTX 3050 / RX 6600M o Radeon 780M)`
+            : 'GPU integrada (UHD 620 / Iris Plus / Iris Xe / Radeon Vega–660M)';
 
       const startRam = mRam >= 16 ? '16 GB RAM' : mRam === 12 ? '12–16 GB RAM' : '8 GB RAM';
       const bronzeRam = mRam >= 16 ? '16–24 GB RAM' : '16 GB RAM';
       const silverRam = mRam >= 16 ? '32 GB RAM' : '16–24 GB RAM';
 
       return [
-        { name: 'Opción Inicial', badge: `Mínimo real para ${bApp}`, cpu: startCpu, ram: startRam, gpu: startGpu, ssd: `${ctx.maxSsd || 256}–512 GB SSD`, ideal: `Hardware mínimo funcional real para ejecutar ${bApp} correctamente.` },
-        { name: 'Opción Bronce', badge: 'Escalón fluido', cpu: `Intel Core i5-1335U / Ultra 5 225U o Ryzen 5 7535U / 8540U${noArmTag}`, ram: bronzeRam, gpu: mVram >= 4 ? 'NVIDIA RTX 3050 / 4050 (6 GB)' : 'Integrada Radeon 760M/780M o Arc', ssd: '512 GB SSD', ideal: 'Más margen de memoria y fluidez con varias ventanas abiertas.' },
-        { name: 'Opción Plata', badge: 'Equilibrio sólido', cpu: `Intel Core Ultra 5 225H / 226V o Ryzen 5 8645HS / AI 5 340${noArmTag}`, ram: silverRam, gpu: mVram >= 2 ? 'NVIDIA RTX 4050 / 4060 (6–8 GB)' : 'Integrada Arc 140V / Radeon 880M', ssd: '1 TB SSD', ideal: 'Excelente punto medio para trabajar y jugar sin tirones.' },
+        { name: 'Opción Inicial', badge: `Mínimo real (incluye seminuevas) para ${bApp}`, cpu: startCpu, ram: startRam, gpu: startGpu, ssd: `${ctx.maxSsd || 256}–512 GB SSD`, ideal: `Hardware mínimo funcional real (nuevo económico o seminuevo 8ª–11ª / Ryzen 3000–5000) para ${bApp}.` },
+        { name: 'Opción Bronce', badge: 'Escalón fluido (12ª–13ª / Ryzen 7000)', cpu: `Intel Core i5-1235U / i5-1335U / Ultra 5 225U o Ryzen 5 7535U / 8540U${noArmTag}`, ram: bronzeRam, gpu: mVram >= 4 ? 'NVIDIA RTX 3050 / 4050 (6 GB) o RX 6600M' : 'Integrada Iris Xe / Radeon 760M/780M', ssd: '512 GB SSD', ideal: 'Equipos recientes con mayor autonomía y fluidez en multitarea.' },
+        { name: 'Opción Plata', badge: 'Equilibrio moderno (2024–2026)', cpu: `Intel Core Ultra 5 225H / 226V o Ryzen 5 8645HS / AI 5 340${noArmTag}`, ram: silverRam, gpu: mVram >= 2 ? 'NVIDIA RTX 4050 / 4060 (6–8 GB) o RX 7600M' : 'Integrada Arc 140V / Radeon 880M', ssd: '1 TB SSD', ideal: 'Punto medio moderno para trabajar, editar y jugar sin tirones.' },
         { name: 'Opción Oro', badge: 'Rendimiento alto', cpu: `Intel Core i7-13700H / Ultra 7 255H o Ryzen 7 8845HS / AI 7 350${noArmTag}`, ram: '32 GB RAM', gpu: 'NVIDIA RTX 4060 / 5060 (8 GB VRAM)', ssd: '1 TB SSD NVMe', ideal: 'CAD 3D, edición 4K, gaming alto y modelos LLM 7B–8B.' },
         { name: 'Opción Diamante', badge: 'Nivel profesional', cpu: `Intel Core i7-14700HX / Ultra 7 265H o Ryzen AI 9 HX 370 / 475`, ram: '32–64 GB RAM', gpu: 'NVIDIA RTX 4070 / 5070 Ti (8–12 GB VRAM)', ssd: '1–2 TB SSD NVMe', ideal: 'Proyectos pesados de ingeniería, After Effects 4K y LLM 14B.' },
-        { name: 'Opción Doble Diamante', badge: 'Estación móvil extrema', cpu: `Intel Core i9-14900HX / Ultra 9 285HX o Ryzen 9 9955HX / AI Max+ 395`, ram: '64–128 GB DDR5', gpu: 'NVIDIA RTX 4080/4090/5080/5090 (16–24 GB)', ssd: '2–4 TB SSD NVMe', ideal: 'Máxima potencia móvil para cualquier software sin límites.' }
+        { name: 'Opción Doble Diamante', badge: 'Estación móvil extrema (2026)', cpu: `Intel Core i9-14900HX / Ultra 9 285HX o Ryzen 9 9955HX / AI Max+ 395`, ram: '64–128 GB DDR5', gpu: 'NVIDIA RTX 4080/4090/5080/5090 (16–24 GB)', ssd: '2–4 TB SSD NVMe', ideal: 'Máxima potencia portátil para cualquier software sin límites.' }
       ];
     }
 
@@ -2616,6 +2770,20 @@
       const text = cpuText || '';
       const cpus = [];
       const patterns = [
+        { re: /i5-8250U/i, label: 'Core i5-8250U', term: '"i5-8250U"' },
+        { re: /i5-10210U/i, label: 'Core i5-10210U', term: '"i5-10210U"' },
+        { re: /i5-1035G7/i, label: 'Core i5-1035G7', term: '"i5-1035G7"' },
+        { re: /i5-1135G7/i, label: 'Core i5-1135G7', term: '"i5-1135G7"' },
+        { re: /i5-11400H/i, label: 'Core i5-11400H', term: '"i5-11400H"' },
+        { re: /i7-9750H/i, label: 'Core i7-9750H', term: '"i7-9750H"' },
+        { re: /i7-10750H/i, label: 'Core i7-10750H', term: '"i7-10750H"' },
+        { re: /i7-11800H/i, label: 'Core i7-11800H', term: '"i7-11800H"' },
+        { re: /3500U/i, label: 'Ryzen 5 3500U', term: '"Ryzen 5" "3500U"' },
+        { re: /4500U/i, label: 'Ryzen 5 4500U', term: '"Ryzen 5" "4500U"' },
+        { re: /4600H/i, label: 'Ryzen 5 4600H', term: '"Ryzen 5" "4600H"' },
+        { re: /5600H/i, label: 'Ryzen 5 5600H', term: '"Ryzen 5" "5600H"' },
+        { re: /4800H/i, label: 'Ryzen 7 4800H', term: '"Ryzen 7" "4800H"' },
+        { re: /5800H/i, label: 'Ryzen 7 5800H', term: '"Ryzen 7" "5800H"' },
         { re: /N100[–-]N305/i, label: 'Intel N100 / N305', term: '("Intel N100" OR "Intel N305")' },
         { re: /i3-1215U/i, label: 'Core i3-1215U', term: '"i3-1215U"' },
         { re: /i3-1315U/i, label: 'Core i3-1315U', term: '"i3-1315U"' },
@@ -2714,6 +2882,10 @@
         { re: /\b4060\b/i, label: 'RTX 4060', term: '"RTX 4060"' },
         { re: /\b4050\b/i, label: 'RTX 4050', term: '"RTX 4050"' },
         { re: /\b3050\b/i, label: 'RTX 3050', term: '"RTX 3050"' },
+        { re: /\b3060\b/i, label: 'RTX 3060', term: '"RTX 3060"' },
+        { re: /\b2060\b/i, label: 'RTX 2060', term: '"RTX 2060"' },
+        { re: /RX\s*7600M/i, label: 'Radeon RX 7600M', term: '"RX 7600M"' },
+        { re: /RX\s*6600M/i, label: 'Radeon RX 6600M', term: '"RX 6600M"' },
         { re: /\b1650\b/i, label: 'GTX 1650', term: '"GTX 1650"' },
         { re: /certificada/i, label: 'RTX Workstation', term: '("RTX A1000" OR "RTX 2000 Ada" OR "RTX 3500 Ada")' },
         { re: /Arc\s*140V/i, label: 'Intel Arc 140V', term: '"Intel Arc" "140V"' },
@@ -2856,7 +3028,31 @@
         vram = /4050|3060/.test(l) ? '6 GB GDDR6' : /a770m/i.test(l) ? '16 GB GDDR6' : '8 GB GDDR6/GDDR7';
         useCase = 'Punto dulce para edición HD/4K ligera, Blender, AutoCAD, GTA V, Fortnite y Warzone.';
         verdict = 'Muy recomendable (revisa TGP ≥75 W)'; badge = 'bg-emerald-100 text-emerald-800';
-      } else if (/3050|1650|1660|2060|6500m|a350m|a370m/i.test(l)) {
+      } else if (/quadro|radeon\s*pro/i.test(l)) {
+        type = 'Workstation Profesional Certificada (2017–2020)';
+        arch = /quadro\s*rtx/i.test(l) ? 'NVIDIA Turing (Quadro RTX)' : /quadro/i.test(l) ? 'NVIDIA Pascal (Quadro P)' : 'AMD Polaris / RDNA (Radeon Pro)';
+        vram = /rtx\s*5000/i.test(l) ? '16 GB GDDR6' : /rtx\s*4000|p4000|p5000|wx\s*7100/i.test(l) ? '8 GB VRAM' : /rtx\s*3000/i.test(l) ? '6 GB GDDR6' : '4 GB VRAM (o 2 GB en P500/P600)';
+        useCase = 'Excelente en estaciones seminuevas (Dell Precision, HP ZBook, ThinkPad P) para SOLIDWORKS, AutoCAD y CAD certificado.';
+        verdict = 'Certificada para CAD / SOLIDWORKS'; badge = 'bg-emerald-100 text-emerald-800';
+      } else if (/rtx\s*2070|rtx\s*2080|gtx\s*1070|gtx\s*1080/i.test(l)) {
+        type = 'Dedicada — Gama Alta (2017–2020)';
+        arch = /rtx\s*20/i.test(l) ? 'NVIDIA Turing (con Ray Tracing / Tensor)' : 'NVIDIA Pascal';
+        vram = '8 GB GDDR5X / GDDR6 (ojo con variantes Max-Q de menor potencia)';
+        useCase = 'Siguen rindiendo muy bien en gaming 1080p, Premiere, Blender, AutoCAD 3D y LLM pequeños (7B).';
+        verdict = 'Gran opción seminueva (8 GB VRAM)'; badge = 'bg-emerald-100 text-emerald-800';
+      } else if (/rx\s*5600m|1660\s*ti|2060/i.test(l)) {
+        type = 'Dedicada — Gama Media-Alta (2019–2020)';
+        arch = /5600m/i.test(l) ? 'AMD RDNA 1' : 'NVIDIA Turing';
+        vram = '6 GB GDDR6';
+        useCase = 'Muy capaz en laptops usadas para GTA V, Fortnite, Warzone, AutoCAD, Photoshop y video HD.';
+        verdict = 'Buena gama media seminueva (6 GB)'; badge = 'bg-emerald-100 text-emerald-800';
+      } else if (/mx\d{3}|radeon\s*5[2345]0|rx\s*5[45]0/i.test(l)) {
+        type = 'Dedicada — Gama de Entrada Ligera (2017–2020)';
+        arch = /mx/i.test(l) ? 'NVIDIA Pascal / Turing ligera' : 'AMD Polaris ligera';
+        vram = '2 GB a 4 GB GDDR5';
+        useCase = 'Oficina, Photoshop ligero, AutoCAD 2D y juegos poco exigentes. Supera a Intel UHD 620, pero no apta para 3D pesado ni 4K.';
+        verdict = 'Entrada ligera (mejor que UHD 620)'; badge = 'bg-amber-100 text-amber-800';
+      } else if (/3050|1650|1050|1060|5300m|5500m|560x|560|570|580|6500m|a350m|a370m/i.test(l)) {
         type = 'Dedicada — Entrada'; arch = /3050/.test(l) ? 'NVIDIA Ampere' : /6500m/i.test(l) ? 'AMD RDNA 2' : 'Generación anterior';
         vram = /1660|2060/.test(l) ? '6 GB GDDR6' : '4 GB GDDR6';
         useCase = 'GTA V, Fortnite, Free Fire, Photoshop, AutoCAD 2D y Premiere HD. Limitada en 4K o LLM >7B.';
@@ -2877,7 +3073,7 @@
         useCase = 'Office, web y multimedia con gran batería. Ojo: incompatible con SOLIDWORKS, FlexSim, Minitab y Datamine.';
         verdict = 'Solo productividad (NO para CAD x86)'; badge = 'bg-amber-100 text-amber-800';
       } else if (/uhd|iris|vega|610m|660m|740m/i.test(l)) {
-        type = 'Integrada Básica / Estándar'; arch = /iris/i.test(l) ? 'Intel Iris Xe' : /vega|610m|660m|740m/i.test(l) ? 'AMD Radeon integrada' : 'Intel UHD';
+        type = 'Integrada Básica / Estándar'; arch = /iris\s*plus/i.test(l) ? 'Intel Iris Plus (10ª Gen Ice Lake)' : /iris/i.test(l) ? 'Intel Iris Xe' : /vega|610m|660m|740m/i.test(l) ? 'AMD Radeon integrada' : 'Intel UHD';
         vram = 'Comparte RAM del sistema';
         useCase = 'Office, ONLYOFFICE, clases, navegación, Roblox, N64 y Photoshop ligero. No apta para 3D pesado ni juegos AAA.';
         verdict = 'Suficiente para oficina y estudio'; badge = 'bg-amber-100 text-amber-800';
@@ -2909,157 +3105,161 @@
     function populateSelect(el, options, preferredVal) {
       if (!el) return;
       const prev = el.value;
-      el.innerHTML = options.map(o => `<option value="${o.value}">${o.label}</option>`).join('');
-      const vals = options.map(o => o.value);
-      if (vals.includes(prev)) el.value = prev;
-      else if (preferredVal && vals.includes(preferredVal)) el.value = preferredVal;
+      const flatVals = [];
+      el.innerHTML = options.map(o => {
+        if (o.group) {
+          o.items.forEach(i => flatVals.push(i.value));
+          return `<optgroup label="${o.group}">${o.items.map(i => `<option value="${i.value}">${i.label}</option>`).join('')}</optgroup>`;
+        }
+        flatVals.push(o.value);
+        return `<option value="${o.value}">${o.label}</option>`;
+      }).join('');
+      if (flatVals.includes(prev)) el.value = prev;
+      else if (preferredVal && flatVals.includes(preferredVal)) el.value = preferredVal;
     }
 
     function syncOfferListboxes(changedField) {
       const osVal = document.getElementById('eval-os').value;
+      const cpuFamEl = document.getElementById('eval-cpu-family');
       const cpuEl = document.getElementById('eval-cpu');
-      const ramEl = document.getElementById('eval-ram');
+      const gpuFamEl = document.getElementById('eval-gpu-family');
       const gpuEl = document.getElementById('eval-gpu');
+      const ramEl = document.getElementById('eval-ram');
       const ssdEl = document.getElementById('eval-ssd');
 
-      // 1. CPU options depending on OS
+      // 1. CPU Family depending on OS
       if (changedField === 'init' || changedField === 'os') {
         if (osVal === 'apple') {
-          populateSelect(cpuEl, [
-            { value: 'apple_a18', label: 'Apple A18 Pro (MacBook Neo)' },
-            { value: 'apple_m1', label: 'Apple M1 (MacBook Air / Pro)' },
-            { value: 'apple_m2', label: 'Apple M2 / M3 (MacBook Air / Pro)' },
-            { value: 'apple_m4', label: 'Apple M4 / M5 (MacBook Air / Pro)' },
-            { value: 'apple_pro', label: 'Apple M4 Pro / M5 Pro (MacBook Pro)' },
-            { value: 'apple_max', label: 'Apple M4 Max / M5 Max (MacBook Pro)' }
-          ], 'apple_m4');
+          populateSelect(cpuFamEl, [
+            { value: 'apple', label: 'Apple Silicon (Neo A18 Pro y M1–M5)' }
+          ], 'apple');
         } else {
-          const pcCpus = [
-            { value: 'celeron', label: 'Intel Celeron / Pentium / AMD Athlon' },
-            { value: 'intel_n', label: 'Intel Processor N100 / N150 / N200 / N305' },
-            { value: 'entry_3', label: 'Intel Core i3 / Core 3 100U / AMD Ryzen 3' },
-            { value: 'mid_5_u', label: 'Intel Core i5 (U) / Ultra 5 (U/V) / Ryzen 5 (U)' },
-            { value: 'mid_5_h', label: 'Intel Core i5 (H) / Ultra 5 (H) / Ryzen 5 (HS)' },
-            { value: 'high_7', label: 'Intel Core i7 / Ultra 7 / AMD Ryzen 7 / AI 7' },
-            { value: 'top_9', label: 'Intel Core i9 / Ultra 9 / AMD Ryzen 9 / AI 9 / Max+' }
+          const fams = [
+            { value: 'intel_ultra', label: 'Intel Core Ultra (Series 1 / 2 / 3)' },
+            { value: 'intel_core', label: 'Intel Core 11.ª–14.ª Gen y Core 3' },
+            { value: 'intel_legacy', label: 'Intel Core 8.ª–10.ª Gen (Seminuevas)' },
+            { value: 'intel_n', label: 'Intel Celeron / Pentium / Serie N y J' },
+            { value: 'amd_ai', label: 'AMD Ryzen AI y 9000HX' },
+            { value: 'amd_ryzen', label: 'AMD Athlon y Ryzen 5000–8000' },
+            { value: 'amd_legacy', label: 'AMD Ryzen 2000–5000 y 3015e (Seminuevas)' }
           ];
           if (osVal.startsWith('windows')) {
-            pcCpus.push({ value: 'snapdragon_arm', label: 'Qualcomm Snapdragon X (ARM)' });
+            fams.push({ value: 'qualcomm', label: 'Qualcomm Snapdragon X (ARM)' });
           }
-          populateSelect(cpuEl, pcCpus, 'mid_5_h');
+          populateSelect(cpuFamEl, fams, 'intel_core');
         }
       }
 
-      const cpuVal = cpuEl.value;
+      // 2. Exact CPU Model from CPU_DECODER_OPTIONS
+      if (changedField === 'init' || changedField === 'os' || changedField === 'cpuFam') {
+        const list = (typeof CPU_DECODER_OPTIONS !== 'undefined' && CPU_DECODER_OPTIONS[cpuFamEl.value]) || ['Intel Core i5-13500H'];
+        const pref = cpuFamEl.value === 'intel_core' ? 'Intel Core i5-13500H' : cpuFamEl.value === 'apple' ? 'Apple M4' : list[0];
+        populateSelect(cpuEl, list.map(m => ({ value: m, label: m })), pref);
+      }
 
-      // 2. RAM options depending on OS + CPU
+      const cpuModel = cpuEl.value || '';
+      const isNeo = /A18|Neo/i.test(cpuModel);
+      const isApplePro = /M[1-5]\s*Pro/i.test(cpuModel);
+      const isAppleMax = /M[1-5]\s*Max/i.test(cpuModel);
+      const isSnapdragon = /Snapdragon/i.test(cpuModel);
+
+      // 3. GPU Family depending on OS + CPU
+      if (changedField === 'init' || changedField === 'os' || changedField === 'cpuFam' || changedField === 'cpu') {
+        if (osVal === 'apple') {
+          populateSelect(gpuFamEl, [{ value: 'apple', label: 'Apple Silicon (Memoria Unificada)' }], 'apple');
+        } else if (isSnapdragon) {
+          populateSelect(gpuFamEl, [{ value: 'qualcomm', label: 'Qualcomm Adreno (ARM)' }], 'qualcomm');
+        } else {
+          populateSelect(gpuFamEl, [
+            { value: 'nvidia', label: 'NVIDIA Dedicadas (GTX 16 – RTX 50)' },
+            { value: 'nvidia_legacy', label: 'NVIDIA MX / GTX 10 / Quadro (2017–2020)' },
+            { value: 'amd_ded', label: 'AMD Dedicadas (RX 6000M / 7000M)' },
+            { value: 'amd_legacy', label: 'AMD Radeon 500 / RX 5000M / Pro WX' },
+            { value: 'amd_int', label: 'AMD Radeon Integradas' },
+            { value: 'intel', label: 'Intel (UHD / Iris Plus / Iris Xe / Arc)' }
+          ], 'nvidia');
+        }
+      }
+
+      // 4. Exact GPU Model from GPU_DECODER_OPTIONS
+      if (changedField === 'init' || changedField === 'os' || changedField === 'cpuFam' || changedField === 'cpu' || changedField === 'gpuFam') {
+        if (osVal === 'apple') {
+          const macGpu = isNeo ? 'Apple A18 Pro GPU (5 núcleos)'
+            : cpuModel.includes('M5 Max') ? 'Apple M5 Max GPU'
+            : cpuModel.includes('M5 Pro') ? 'Apple M5 Pro GPU'
+            : cpuModel.includes('M5') ? 'Apple M5 GPU'
+            : cpuModel.includes('M4 Max') ? 'Apple M4 Max GPU'
+            : cpuModel.includes('M4 Pro') ? 'Apple M4 Pro GPU'
+            : cpuModel.includes('M4') ? 'Apple M4 GPU'
+            : cpuModel.includes('M3') ? 'Apple M3 GPU'
+            : cpuModel.includes('M2') ? 'Apple M2 GPU'
+            : 'Apple M1 GPU';
+          populateSelect(gpuEl, [{ value: macGpu, label: macGpu }], macGpu);
+        } else {
+          const gList = (typeof GPU_DECODER_OPTIONS !== 'undefined' && GPU_DECODER_OPTIONS[gpuFamEl.value]) || ['Intel Iris Xe Graphics'];
+          const gPref = gpuFamEl.value === 'nvidia' ? 'NVIDIA RTX 4050' : gList[0];
+          populateSelect(gpuEl, gList.map(m => ({ value: m, label: m })), gPref);
+        }
+      }
+
+      // 5. RAM options depending on OS + exact CPU
       if (osVal === 'apple') {
-        if (cpuVal === 'apple_a18') {
-          populateSelect(ramEl, [{ value: '8', label: '8 GB unificada (fija en MacBook Neo)' }], '8');
-        } else if (cpuVal === 'apple_m1' || cpuVal === 'apple_m2') {
+        if (isNeo) {
+          populateSelect(ramEl, [{ value: '8', label: '8 GB (fija)' }], '8');
+        } else if (isAppleMax) {
           populateSelect(ramEl, [
-            { value: '8', label: '8 GB unificada' },
-            { value: '16', label: '16 GB unificada' },
-            { value: '24', label: '24 GB unificada' }
-          ], '16');
-        } else if (cpuVal === 'apple_m4') {
+            { value: '36', label: '36 GB' }, { value: '48', label: '48 GB' },
+            { value: '64', label: '64 GB' }, { value: '96', label: '96 GB' }, { value: '128', label: '128 GB' }
+          ], '64');
+        } else if (isApplePro) {
           populateSelect(ramEl, [
-            { value: '16', label: '16 GB unificada' },
-            { value: '24', label: '24 GB unificada' },
-            { value: '32', label: '32 GB unificada' }
-          ], '16');
-        } else if (cpuVal === 'apple_pro') {
-          populateSelect(ramEl, [
-            { value: '24', label: '24 GB unificada' },
-            { value: '36', label: '36 GB unificada' },
-            { value: '48', label: '48 GB unificada' }
+            { value: '18', label: '18 GB' }, { value: '24', label: '24 GB' },
+            { value: '36', label: '36 GB' }, { value: '48', label: '48 GB' }
           ], '36');
+        } else if (/M4|M5/.test(cpuModel)) {
+          populateSelect(ramEl, [
+            { value: '16', label: '16 GB' }, { value: '24', label: '24 GB' }, { value: '32', label: '32 GB' }
+          ], '16');
         } else {
           populateSelect(ramEl, [
-            { value: '36', label: '36 GB unificada' },
-            { value: '48', label: '48 GB unificada' },
-            { value: '64', label: '64 GB unificada' },
-            { value: '128', label: '128 GB unificada' }
-          ], '64');
+            { value: '8', label: '8 GB' }, { value: '16', label: '16 GB' }, { value: '24', label: '24 GB' }
+          ], '16');
         }
       } else {
         populateSelect(ramEl, [
-          { value: '4', label: '4 GB RAM' },
-          { value: '8', label: '8 GB RAM' },
-          { value: '12', label: '12 GB RAM' },
-          { value: '16', label: '16 GB RAM' },
-          { value: '24', label: '24 GB RAM' },
-          { value: '32', label: '32 GB RAM' },
-          { value: '64', label: '64 GB RAM o más' }
+          { value: '4', label: '4 GB' }, { value: '8', label: '8 GB' }, { value: '12', label: '12 GB' },
+          { value: '16', label: '16 GB' }, { value: '24', label: '24 GB' }, { value: '32', label: '32 GB' }, { value: '64', label: '64 GB+' }
         ], '16');
       }
 
-      // 3. GPU options depending on OS + CPU
-      if (osVal === 'apple') {
-        if (cpuVal === 'apple_a18') {
-          populateSelect(gpuEl, [{ value: 'apple_5c', label: 'GPU Apple integrada 5 núcleos (60 GB/s)' }], 'apple_5c');
-        } else if (cpuVal === 'apple_pro') {
-          populateSelect(gpuEl, [{ value: 'apple_pro_gpu', label: 'GPU Apple Silicon Pro (16–20 núcleos, 307 GB/s)' }], 'apple_pro_gpu');
-        } else if (cpuVal === 'apple_max') {
-          populateSelect(gpuEl, [{ value: 'apple_max_gpu', label: 'GPU Apple Silicon Max (32–40 núcleos, 614 GB/s)' }], 'apple_max_gpu');
-        } else {
-          populateSelect(gpuEl, [{ value: 'apple_base_gpu', label: 'GPU Apple Silicon integrada (7–10 núcleos, Metal)' }], 'apple_base_gpu');
-        }
-      } else if (cpuVal === 'snapdragon_arm') {
-        populateSelect(gpuEl, [{ value: 'adreno_arm', label: 'Qualcomm Adreno X1 (integrada ARM)' }], 'adreno_arm');
-      } else if (cpuVal === 'celeron' || cpuVal === 'intel_n' || cpuVal === 'entry_3') {
-        populateSelect(gpuEl, [
-          { value: 'int_basic', label: 'Gráficos integrados básicos (Intel UHD / Radeon 610M)' },
-          { value: 'int_iris', label: 'Gráficos integrados medios (Intel Iris Xe / Radeon 660M–740M)' }
-        ], 'int_basic');
-      } else {
-        populateSelect(gpuEl, [
-          { value: 'int_iris', label: 'Integrada estándar (Intel Iris Xe / Radeon 660M–760M)' },
-          { value: 'int_strong', label: 'Integrada potente (Radeon 780M/890M/8060S / Intel Arc 140V)' },
-          { value: 'gtx_rtx_entry', label: 'Dedicada entrada (GTX 1650 / RTX 3050 — 4 GB VRAM)' },
-          { value: 'rtx_mid_6', label: 'Dedicada media (RTX 3060 / RTX 4050 — 6 GB VRAM)' },
-          { value: 'rtx_mid_8', label: 'Dedicada media-alta (RTX 4060 / 5060 / RX 7600M — 8 GB)' },
-          { value: 'rtx_high', label: 'Dedicada alta (RTX 4070 / 4080 / 5070 Ti — 8 a 12 GB)' },
-          { value: 'rtx_ultra', label: 'Dedicada tope (RTX 4090 / 5080 / 5090 — 16 a 24 GB)' },
-          { value: 'rtx_cert', label: 'Profesional certificada (NVIDIA RTX Workstation / Radeon Pro)' }
-        ], 'rtx_mid_6');
-      }
-
-      // 4. SSD options depending on OS + CPU
-      if (osVal === 'apple' && cpuVal === 'apple_a18') {
-        populateSelect(ssdEl, [
-          { value: '256', label: '256 GB SSD' },
-          { value: '512', label: '512 GB SSD (con Touch ID)' }
-        ], '512');
+      // 6. SSD options depending on OS + CPU
+      if (osVal === 'apple' && isNeo) {
+        populateSelect(ssdEl, [{ value: '256', label: '256 GB SSD' }, { value: '512', label: '512 GB SSD' }], '512');
       } else if (osVal === 'apple') {
         populateSelect(ssdEl, [
-          { value: '256', label: '256 GB SSD' },
-          { value: '512', label: '512 GB SSD' },
-          { value: '1024', label: '1 TB SSD' },
-          { value: '2048', label: '2 TB+ SSD' }
+          { value: '256', label: '256 GB SSD' }, { value: '512', label: '512 GB SSD' },
+          { value: '1024', label: '1 TB SSD' }, { value: '2048', label: '2 TB+ SSD' }
         ], '512');
       } else {
         populateSelect(ssdEl, [
-          { value: 'emmc', label: '64–128 GB eMMC / Disco mecánico HDD' },
-          { value: '256', label: '256 GB SSD' },
-          { value: '512', label: '512 GB SSD NVMe' },
-          { value: '1024', label: '1 TB SSD NVMe' },
-          { value: '2048', label: '2 TB+ SSD NVMe' }
+          { value: 'emmc', label: 'eMMC / HDD' }, { value: '256', label: '256 GB SSD' },
+          { value: '512', label: '512 GB SSD' }, { value: '1024', label: '1 TB SSD' }, { value: '2048', label: '2 TB+ SSD' }
         ], '512');
       }
 
       evaluateOffer();
     }
 
-    ['eval-os', 'eval-cpu', 'eval-ram', 'eval-gpu', 'eval-ssd'].forEach(id => {
+    ['eval-os', 'eval-cpu-family', 'eval-cpu', 'eval-gpu-family', 'eval-gpu', 'eval-ram', 'eval-ssd'].forEach(id => {
       document.getElementById(id).addEventListener('change', () => {
         if (id === 'eval-os') syncOfferListboxes('os');
+        else if (id === 'eval-cpu-family') syncOfferListboxes('cpuFam');
         else if (id === 'eval-cpu') syncOfferListboxes('cpu');
+        else if (id === 'eval-gpu-family') syncOfferListboxes('gpuFam');
         else evaluateOffer();
       });
     });
 
-    // ==================== OFFER EVALUATOR ("¿ESTA LAPTOP ME SIRVE?") ====================
     function evaluateAppsForOs(chosenApps, osMode) {
       let maxRam = 8, maxVram = 0, maxSsd = 256, maxCpuLevel = 1;
       let needsNoArm = false, needsWinPro = false, needsCertGpu = false;
@@ -3112,21 +3312,18 @@
 
     function evaluateOffer() {
       const osVal = document.getElementById('eval-os').value;
-      const cpuVal = document.getElementById('eval-cpu').value;
-      const cpuLabel = document.getElementById('eval-cpu').selectedOptions?.[0]?.textContent || cpuVal;
+      const cpuModel = document.getElementById('eval-cpu').value || '';
+      const cpuLower = cpuModel.toLowerCase();
       const ramVal = parseInt(document.getElementById('eval-ram').value, 10) || 8;
-      const gpuVal = document.getElementById('eval-gpu').value;
-      const gpuLabel = document.getElementById('eval-gpu').selectedOptions?.[0]?.textContent || gpuVal;
+      const gpuModel = document.getElementById('eval-gpu').value || '';
+      const gpuLower = gpuModel.toLowerCase();
       const ssdVal = document.getElementById('eval-ssd').value;
 
       const targetChoice = document.getElementById('eval-target-app')?.value || 'quiz';
       const evalOsMode = osVal === 'apple' ? 'apple' : osVal === 'linux' ? 'linux' : 'windows';
-      let targetApps = ['office365'];
-      if (targetChoice === 'quiz') {
-        targetApps = (state.answers.apps && state.answers.apps.length > 0) ? state.answers.apps : ['none'];
-      } else {
-        targetApps = [targetChoice];
-      }
+      const targetApps = targetChoice === 'quiz'
+        ? ((state.answers.apps && state.answers.apps.length > 0) ? state.answers.apps : ['none'])
+        : [targetChoice];
       const ev = evaluateAppsForOs(targetApps, evalOsMode);
       const ctx = {
         apps: targetApps,
@@ -3150,56 +3347,67 @@
       if (osVal === 'windows_home' && ctx.needsWinPro) {
         blockers.push('El equipo trae <strong>Windows Home</strong>, pero tus programas (SOLIDWORKS / Datamine) exigen <strong>Windows 11 Pro / Education</strong>.');
       }
-      if (osVal === 'apple' && (ctx.apps || []).some(a => ['solidworks', 'flexsim', 'datamine', 'fortnite'].includes(a))) {
+      if (osVal === 'apple' && ctx.apps.some(a => ['solidworks', 'flexsim', 'datamine', 'fortnite'].includes(a))) {
         cautions.push('En <strong>macOS</strong> no hay versión nativa de SOLIDWORKS, FlexSim, Datamine o Fortnite (tendrás que usar alternativas libres o juego en la nube).');
       }
-      if (osVal === 'linux' && (ctx.apps || []).some(a => ['solidworks', 'autocad', 'photoshop', 'premiere', 'after_effects', 'fortnite'].includes(a))) {
+      if (osVal === 'linux' && ctx.apps.some(a => ['solidworks', 'autocad', 'photoshop', 'premiere', 'after_effects', 'fortnite'].includes(a))) {
         cautions.push('En <strong>Linux</strong> varios programas elegidos no son nativos (requerirás alternativas libres como FreeCAD, GIMP, DaVinci o nube).');
       }
 
-      // 2. CPU check
-      if ((cpuVal === 'celeron' || cpuVal === 'intel_n') && ctx.maxCpuLevel >= 2) {
-        blockers.push(`El procesador (<strong>${cpuLabel}</strong>) es demasiado básico para ${ctx.bottleneckApp}.`);
-      } else if (cpuVal === 'snapdragon_arm' && ctx.needsNoArm) {
-        blockers.push('Procesador <strong>ARM (Snapdragon X)</strong> incompatible con SOLIDWORKS, FlexSim, Minitab o Datamine.');
-      } else if (cpuVal === 'apple_a18' && (ctx.maxCpuLevel >= 2 || ctx.minMacChip === 'M1')) {
-        cautions.push('<strong>MacBook Neo (A18 Pro, 8 GB fijos)</strong> es ideal para ofimática y uso cotidiano, pero limitada para 3D, CAD, edición pesada o Minecraft/Blender (una M1/M4 de 16 GB rinde mejor).');
+      // 2. Exact CPU model evaluation
+      const isEntryCpu = /celeron|pentium|athlon|3015e|3020e|3050e|\bn(50|95|100|150|200|300|305)\b|\bj\d{4}/i.test(cpuLower);
+      const isArmCpu = /snapdragon|qualcomm/i.test(cpuLower);
+      const isLegacyIntel = /i[3579]-(8|9|10)\d{2,3}/i.test(cpuLower);
+      const isLegacyAmd = /ryzen\s*[3579]\s*[234]\d{3}/i.test(cpuLower);
+      const isNeo = /a18|neo/i.test(cpuLower);
+
+      if (isEntryCpu && ctx.maxCpuLevel >= 2) {
+        blockers.push(`El procesador <strong>${cpuModel}</strong> es demasiado básico para ${ctx.bottleneckApp}.`);
+      } else if (isArmCpu && ctx.needsNoArm) {
+        blockers.push(`<strong>${cpuModel}</strong> (ARM) no es compatible con SOLIDWORKS, FlexSim, Minitab ni Datamine.`);
+      } else if ((isLegacyIntel || isLegacyAmd) && ctx.apps.includes('flexsim') && osVal.startsWith('windows')) {
+        blockers.push(`<strong>FlexSim 27.0</strong> exige Intel 11.ª gen+ o AMD Ryzen 5000+ (<strong>${cpuModel}</strong> es anterior).`);
+      } else if (isNeo && (ctx.maxCpuLevel >= 2 || ctx.minMacChip === 'M1')) {
+        cautions.push('<strong>MacBook Neo (A18 Pro, 8 GB fijos)</strong> es ideal para oficina y web, pero limitada en 3D, CAD, edición pesada o Minecraft/Blender (una M1/M4 de 16 GB rinde mejor).');
       } else {
-        passes.push(`Procesador adecuado (${cpuLabel}).`);
+        passes.push(`Procesador adecuado (${cpuModel}).`);
       }
 
-      // 3. RAM check
+      // 3. RAM evaluation
       if (ramVal < ctx.maxRam) {
         blockers.push(`Tiene solo <strong>${ramVal} GB de RAM</strong>, por debajo del mínimo real (${ctx.maxRam} GB) para ${ctx.bottleneckApp}.`);
-      } else if (ramVal < (ctx.recRam || 16)) {
-        cautions.push(`Cumple el mínimo (${ramVal} GB RAM), pero conviene <strong>${ctx.recRam || 16} GB</strong> para mayor fluidez.`);
+      } else if (ramVal < ctx.recRam) {
+        cautions.push(`Cumple el mínimo (${ramVal} GB RAM), pero conviene <strong>${ctx.recRam} GB</strong> para mayor fluidez.`);
       } else {
         passes.push(`Memoria RAM adecuada (${ramVal} GB).`);
       }
 
-      // 4. GPU check
-      const gpuPower = {
-        int_basic: 0, adreno_arm: 1, apple_5c: 1, int_iris: 2,
-        int_strong: 4, apple_base_gpu: 4, gtx_rtx_entry: 4,
-        rtx_mid_6: 6, rtx_mid_8: 8, apple_pro_gpu: 8,
-        rtx_high: 12, rtx_cert: 12, rtx_ultra: 16, apple_max_gpu: 16
-      };
-      const eqVram = gpuPower[gpuVal] ?? 2;
-      if (ctx.needsCertGpu && osVal.startsWith('windows') && gpuVal !== 'rtx_cert') {
-        cautions.push('Para <strong>SOLIDWORKS</strong> oficial se recomienda GPU profesional certificada (RTX Workstation / Radeon Pro).');
+      // 4. Exact GPU model evaluation
+      let eqVram = 2;
+      const isCert = /quadro|radeon\s*pro/i.test(gpuLower);
+      if (/5090|5080|4090|7900m|a770m|m[3-5]\s*max|rtx\s*5000/i.test(gpuLower)) eqVram = 16;
+      else if (/4080|5070\s*ti|7800m|6800m|rtx\s*4000/i.test(gpuLower)) eqVram = 12;
+      else if (/4060|4070|5050|5060|5070|3070|3080|2070|2080|1070|1080|7600m|7700s|6600m|m[3-5]\s*pro|8060s/i.test(gpuLower)) eqVram = 8;
+      else if (/4050|3060|2060|1660|1060|5600m|rtx\s*3000/i.test(gpuLower)) eqVram = 6;
+      else if (/3050|1650|1050\s*ti|5500m|6500m|a350m|a550m|780m|880m|890m|140v|b390|p1000|p2000|wx\s*4|wx\s*7|apple\s*m[1-5]/i.test(gpuLower)) eqVram = 4;
+      else if (/mx\d{3}|1050|5300m|560x|iris|660m|680m|740m|760m|130v|b370|p620|wx\s*3/i.test(gpuLower)) eqVram = 2;
+      else if (/uhd|vega|610m|530|550|a18|adreno/i.test(gpuLower)) eqVram = 1;
+
+      if (ctx.needsCertGpu && osVal.startsWith('windows') && !isCert) {
+        cautions.push(`Para <strong>SOLIDWORKS</strong> oficial se recomienda GPU certificada (Quadro P/RTX o Radeon Pro WX); <strong>${gpuModel}</strong> no está certificada.`);
       }
       if (ctx.maxVram >= 6 && eqVram < 6) {
-        blockers.push(`La gráfica (<strong>${gpuLabel}</strong>) se queda corta para ${ctx.bottleneckApp} (requiere 6+ GB VRAM o GPU Pro/Max).`);
+        blockers.push(`La gráfica <strong>${gpuModel}</strong> se queda corta para ${ctx.bottleneckApp} (requiere 6+ GB VRAM o Apple Pro/Max).`);
       } else if (ctx.maxVram >= 2 && eqVram < 2) {
-        cautions.push(`Gráfica integrada básica (<strong>${gpuLabel}</strong>): puede quedarse justa en 3D o juegos de ${ctx.bottleneckApp}.`);
+        cautions.push(`Gráfica básica (<strong>${gpuModel}</strong>): puede quedarse justa en 3D o juegos de ${ctx.bottleneckApp}.`);
       } else {
-        passes.push(`Gráficos adecuados (${gpuLabel}).`);
+        passes.push(`Gráficos adecuados (${gpuModel}).`);
       }
 
-      // 5. SSD check
+      // 5. SSD evaluation
       if (ssdVal === 'emmc') {
         blockers.push('Evita discos <strong>HDD o eMMC</strong>: vuelven muy lenta la laptop.');
-      } else if (parseInt(ssdVal, 10) < (ctx.maxSsd || 256)) {
+      } else if (parseInt(ssdVal, 10) < ctx.maxSsd) {
         cautions.push(`SSD de ${ssdVal} GB puede llenarse rápido (se recomiendan al menos ${ctx.maxSsd} GB).`);
       } else {
         passes.push(`Almacenamiento SSD suficiente (${parseInt(ssdVal, 10) >= 1024 ? (parseInt(ssdVal, 10) / 1024) + ' TB' : ssdVal + ' GB'}).`);
@@ -3208,13 +3416,13 @@
       const box = document.getElementById('eval-offer-result');
       if (blockers.length > 0) {
         box.className = 'rounded-xl border p-4 text-xs sm:text-sm bg-rose-50 border-rose-300 text-rose-950';
-        box.innerHTML = `<div class="font-extrabold text-sm mb-2">🔴 No te conviene para tus programas (${ctx.bottleneckApp})</div><ul class="list-disc list-inside space-y-1">${blockers.concat(cautions).map(x => `<li>${x}</li>`).join('')}</ul>`;
+        box.innerHTML = `<div class="font-extrabold text-sm mb-2">🔴 No te conviene para ${ctx.bottleneckApp}</div><ul class="list-disc list-inside space-y-1">${blockers.concat(cautions).map(x => `<li>${x}</li>`).join('')}</ul>`;
       } else if (cautions.length > 0) {
         box.className = 'rounded-xl border p-4 text-xs sm:text-sm bg-amber-50 border-amber-300 text-amber-950';
-        box.innerHTML = `<div class="font-extrabold text-sm mb-2">🟡 Te sirve, pero con advertencias</div><ul class="list-disc list-inside space-y-1">${cautions.map(x => `<li>${x}</li>`).join('')}${passes.map(x => `<li class="text-emerald-800">✓ ${x}</li>`).join('')}</ul>`;
+        box.innerHTML = `<div class="font-extrabold text-sm mb-2">🟡 Te sirve para ${ctx.bottleneckApp}, pero con advertencias</div><ul class="list-disc list-inside space-y-1">${cautions.map(x => `<li>${x}</li>`).join('')}${passes.map(x => `<li class="text-emerald-800">✓ ${x}</li>`).join('')}</ul>`;
       } else {
         box.className = 'rounded-xl border p-4 text-xs sm:text-sm bg-emerald-50 border-emerald-300 text-emerald-950';
-        box.innerHTML = `<div class="font-extrabold text-sm mb-2">🟢 ¡Excelente opción! Cumple con todo lo que necesitas</div><ul class="list-disc list-inside space-y-1">${passes.map(x => `<li>✓ ${x}</li>`).join('')}</ul>`;
+        box.innerHTML = `<div class="font-extrabold text-sm mb-2">🟢 ¡Excelente opción para ${ctx.bottleneckApp}!</div><ul class="list-disc list-inside space-y-1">${passes.map(x => `<li>✓ ${x}</li>`).join('')}</ul>`;
       }
     }
 
@@ -3235,18 +3443,41 @@
     let ssdState = {};
     SSD_ITEMS.forEach(i => { ssdState[i.id] = i.checked; });
 
+    const SSD_OS_BASE = {
+      windows: { name: 'Sistema Operativo Windows 11 + actualizaciones', gb: 65 },
+      macos:   { name: 'Sistema Operativo macOS + actualizaciones', gb: 55 },
+      linux:   { name: 'Sistema Operativo Linux (Ubuntu / Mint / Fedora)', gb: 25 }
+    };
+
+    function syncSsdFromRamSimulator() {
+      const a = state.simApps || {};
+      ssdState.os_base = true;
+      ssdState.docs = !!(a.office || a.web5 || a.web20);
+      ssdState.cad_suite = !!a.cad;
+      ssdState.adobe_suite = !!(a.photo || a.video);
+      ssdState.video_proj = !!a.video;
+      ssdState.gtav_game = !!a.game;
+      ssdState.br_games = !!a.game;
+      ssdState.llm_models = !!a.dev;
+      renderSsdCalculator();
+    }
+
     function renderSsdCalculator() {
       const container = document.getElementById('ssd-toggles');
       container.innerHTML = '';
       let rawGb = 0;
+      const osSsd = SSD_OS_BASE[state.simOs] || SSD_OS_BASE.windows;
       SSD_ITEMS.forEach(item => {
+        const isOs = item.id === 'os_base';
+        const itemName = isOs ? osSsd.name : item.name;
+        const itemGb = isOs ? osSsd.gb : item.gb;
         const active = !!ssdState[item.id];
-        if (active) rawGb += item.gb;
+        if (active) rawGb += itemGb;
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.disabled = !!item.locked;
         btn.className = `text-left p-3 rounded-xl border transition flex items-center justify-between gap-2 ${active ? 'border-indigo-500 bg-indigo-50 text-indigo-950' : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'} ${item.locked ? 'opacity-85 cursor-default' : 'cursor-pointer'}`;
-        btn.innerHTML = `<div><div class="text-xs font-bold">${item.name}</div><div class="text-[11px] text-slate-500">+${item.gb} GB aprox.</div></div><span class="w-9 h-5 rounded-full p-0.5 flex items-center shrink-0 ${active ? 'bg-indigo-600 justify-end' : 'bg-slate-300 justify-start'}"><span class="w-4 h-4 rounded-full bg-white shadow-sm"></span></span>`;
+        btn.innerHTML = `<div><div class="text-xs font-bold">${itemName}</div><div class="text-[11px] text-slate-500">+${itemGb} GB aprox.</div></div><span class="w-9 h-5 rounded-full p-0.5 flex items-center shrink-0 ${active ? 'bg-indigo-600 justify-end' : 'bg-slate-300 justify-start'}"><span class="w-4 h-4 rounded-full bg-white shadow-sm"></span></span>`;
         if (!item.locked) btn.addEventListener('click', () => { ssdState[item.id] = !ssdState[item.id]; renderSsdCalculator(); });
         container.appendChild(btn);
       });
@@ -3280,17 +3511,22 @@
     const CPU_DECODER_OPTIONS = {
       intel_ultra: ['Intel Core Ultra 5 125U', 'Intel Core Ultra 5 125H', 'Intel Core Ultra 5 225U', 'Intel Core Ultra 5 225H', 'Intel Core Ultra 5 226V', 'Intel Core Ultra 5 325', 'Intel Core Ultra 7 155H', 'Intel Core Ultra 7 255H', 'Intel Core Ultra 7 258V', 'Intel Core Ultra 7 265H', 'Intel Core Ultra 7 366H', 'Intel Core Ultra 9 185H', 'Intel Core Ultra 9 275HX', 'Intel Core Ultra 9 285H', 'Intel Core Ultra 9 285HX', 'Intel Core Ultra 9 388H'],
       intel_core: ['Intel Core 3 100U', 'Intel Core i3-1115G4', 'Intel Core i3-1215U', 'Intel Core i3-1305U', 'Intel Core i3-1315U', 'Intel Core i5-1135G7', 'Intel Core i5-1235U', 'Intel Core i5-1240P', 'Intel Core i5-1335U', 'Intel Core i5-13500H', 'Intel Core i5-14500HX', 'Intel Core i7-11800H', 'Intel Core i7-12700H', 'Intel Core i7-13700H', 'Intel Core i7-13850HX', 'Intel Core i7-14700HX', 'Intel Core i9-13980HX', 'Intel Core i9-14900HX'],
-      intel_n: ['Intel Celeron N4020', 'Intel Celeron N4500', 'Intel Celeron N5100', 'Intel Pentium Silver N5030', 'Intel Pentium Silver N6000', 'Intel Processor N50', 'Intel Processor N95', 'Intel Processor N100', 'Intel Processor N150', 'Intel Processor N200', 'Intel Processor N300', 'Intel Processor N305'],
+      intel_legacy: ['Intel Core i3-8130U', 'Intel Core i3-8145U', 'Intel Core i5-8250U', 'Intel Core i5-8350U', 'Intel Core i5-8265U', 'Intel Core i5-8300H', 'Intel Core i7-8550U', 'Intel Core i7-8650U', 'Intel Core i7-8750H', 'Intel Core i9-8950HK', 'Intel Core i5-9300H', 'Intel Core i7-9750H', 'Intel Core i9-9880H', 'Intel Core i9-9980HK', 'Intel Core i3-1005G1', 'Intel Core i3-10110U', 'Intel Core i5-10210U', 'Intel Core i5-1035G7', 'Intel Core i5-10300H', 'Intel Core i7-10510U', 'Intel Core i7-1065G7', 'Intel Core i7-10750H', 'Intel Core i9-10980HK'],
+      intel_n: ['Intel Celeron N4000', 'Intel Celeron N4020', 'Intel Celeron N4120', 'Intel Celeron N4500', 'Intel Celeron N5100', 'Intel Celeron 5205U', 'Intel Celeron 6305', 'Intel Celeron J4125', 'Intel Celeron J6412', 'Intel Pentium Silver N5000', 'Intel Pentium Silver N5030', 'Intel Pentium Silver N6000', 'Intel Pentium J5040', 'Intel Pentium Gold 6500Y', 'Intel Pentium Gold 7505', 'Intel Processor N50', 'Intel Processor N95', 'Intel Processor N100', 'Intel Processor N150', 'Intel Processor N200', 'Intel Processor N300', 'Intel Processor N305'],
       amd_ai: ['AMD Ryzen AI 5 340', 'AMD Ryzen AI 5 430', 'AMD Ryzen AI 7 350', 'AMD Ryzen AI 7 450', 'AMD Ryzen AI 9 365', 'AMD Ryzen AI 9 HX 370', 'AMD Ryzen AI 9 HX 475', 'AMD Ryzen AI Max 385', 'AMD Ryzen AI Max+ 395', 'AMD Ryzen 9 9955HX', 'AMD Ryzen 9 9955HX3D'],
-      amd_ryzen: ['AMD Athlon Silver 7120U', 'AMD Athlon Gold 7220U', 'AMD Ryzen 3 4300U', 'AMD Ryzen 3 5300U', 'AMD Ryzen 3 5400U', 'AMD Ryzen 3 5425U', 'AMD Ryzen 3 7320U', 'AMD Ryzen 3 7330U', 'AMD Ryzen 3 7335U', 'AMD Ryzen 3 7440U', 'AMD Ryzen 5 5500U', 'AMD Ryzen 5 5600U', 'AMD Ryzen 5 7520U', 'AMD Ryzen 5 7535U', 'AMD Ryzen 5 7640HS', 'AMD Ryzen 5 8540U', 'AMD Ryzen 5 8645HS', 'AMD Ryzen 5 230', 'AMD Ryzen 7 7840HS', 'AMD Ryzen 7 8840U', 'AMD Ryzen 7 8845HS', 'AMD Ryzen 7 260', 'AMD Ryzen 9 7945HX', 'AMD Ryzen 9 8945HS'],
+      amd_legacy: ['AMD 3015e', 'AMD 3020e', 'AMD Athlon Silver 3050e', 'AMD Athlon 300U', 'AMD Athlon Gold 3150U', 'AMD Ryzen 3 2200U', 'AMD Ryzen 3 3200U', 'AMD Ryzen 3 3250U', 'AMD Ryzen 5 2500U', 'AMD Ryzen 5 3500U', 'AMD Ryzen 5 3550H', 'AMD Ryzen 5 4500U', 'AMD Ryzen 5 4600H', 'AMD Ryzen 5 5500U', 'AMD Ryzen 5 5600H', 'AMD Ryzen 7 2700U', 'AMD Ryzen 7 3700U', 'AMD Ryzen 7 4700U', 'AMD Ryzen 7 4800H', 'AMD Ryzen 7 5700U', 'AMD Ryzen 7 5800H', 'AMD Ryzen 9 4900H', 'AMD Ryzen 9 5900HX'],
+      amd_ryzen: ['AMD Athlon Silver 7120U', 'AMD Athlon Gold 7220U', 'AMD Ryzen 3 4300U', 'AMD Ryzen 3 5300U', 'AMD Ryzen 3 5400U', 'AMD Ryzen 3 5425U', 'AMD Ryzen 3 7320U', 'AMD Ryzen 3 7330U', 'AMD Ryzen 3 7335U', 'AMD Ryzen 3 7440U', 'AMD Ryzen 5 5500U', 'AMD Ryzen 5 5600U', 'AMD Ryzen 5 6600U', 'AMD Ryzen 7 6800U', 'AMD Ryzen 7 6800H', 'AMD Ryzen 9 6900HX', 'AMD Ryzen 5 7520U', 'AMD Ryzen 5 7535U', 'AMD Ryzen 5 7640HS', 'AMD Ryzen 5 8540U', 'AMD Ryzen 5 8645HS', 'AMD Ryzen 5 230', 'AMD Ryzen 7 7840HS', 'AMD Ryzen 7 8840U', 'AMD Ryzen 7 8845HS', 'AMD Ryzen 7 260', 'AMD Ryzen 9 7945HX', 'AMD Ryzen 9 8945HS'],
+      qualcomm: ['Qualcomm Snapdragon X Plus (ARM)', 'Qualcomm Snapdragon X Elite (ARM)'],
       apple: ['Apple A18 Pro (MacBook Neo)', 'Apple M1', 'Apple M1 Pro', 'Apple M1 Max', 'Apple M2', 'Apple M2 Pro', 'Apple M2 Max', 'Apple M3', 'Apple M3 Pro', 'Apple M3 Max', 'Apple M4', 'Apple M4 Pro', 'Apple M4 Max', 'Apple M5', 'Apple M5 Pro', 'Apple M5 Max']
     };
 
     const GPU_DECODER_OPTIONS = {
+      nvidia_legacy: ['NVIDIA GeForce MX130', 'NVIDIA GeForce MX150', 'NVIDIA GeForce MX250', 'NVIDIA GeForce MX350', 'NVIDIA GeForce MX450', 'NVIDIA GTX 1050 (2/3 GB)', 'NVIDIA GTX 1050 Ti (4 GB)', 'NVIDIA GTX 1060 (6 GB)', 'NVIDIA GTX 1070 (8 GB)', 'NVIDIA GTX 1080 (8 GB)', 'NVIDIA RTX 2070 (8 GB)', 'NVIDIA RTX 2080 Super (8 GB)', 'NVIDIA Quadro P620', 'NVIDIA Quadro P1000', 'NVIDIA Quadro P2000', 'NVIDIA Quadro RTX 3000', 'NVIDIA Quadro RTX 4000', 'NVIDIA Quadro RTX 5000'],
+      amd_legacy: ['AMD Radeon 530', 'AMD Radeon RX 550', 'AMD Radeon RX 560X', 'AMD Radeon RX 5300M (3 GB)', 'AMD Radeon RX 5500M (4 GB)', 'AMD Radeon RX 5600M (6 GB)', 'AMD Radeon Pro WX 3200', 'AMD Radeon Pro WX 4150', 'AMD Radeon Pro WX 7100', 'AMD Radeon Pro 5500M'],
       nvidia: ['NVIDIA GTX 1650', 'NVIDIA GTX 1660 Ti', 'NVIDIA RTX 2060', 'NVIDIA RTX 3050', 'NVIDIA RTX 3060', 'NVIDIA RTX 3070', 'NVIDIA RTX 3080 Ti', 'NVIDIA RTX 4050', 'NVIDIA RTX 4060', 'NVIDIA RTX 4070', 'NVIDIA RTX 4080', 'NVIDIA RTX 4090', 'NVIDIA RTX 5050', 'NVIDIA RTX 5060', 'NVIDIA RTX 5070', 'NVIDIA RTX 5070 Ti', 'NVIDIA RTX 5080', 'NVIDIA RTX 5090'],
       amd_ded: ['AMD Radeon RX 6500M', 'AMD Radeon RX 6600M', 'AMD Radeon RX 6700S', 'AMD Radeon RX 6800M', 'AMD Radeon RX 7600M', 'AMD Radeon RX 7600M XT', 'AMD Radeon RX 7700S', 'AMD Radeon RX 7800M', 'AMD Radeon RX 7900M'],
       amd_int: ['AMD Radeon Vega 8', 'AMD Radeon 610M', 'AMD Radeon 660M', 'AMD Radeon 680M', 'AMD Radeon 740M', 'AMD Radeon 760M', 'AMD Radeon 780M', 'AMD Radeon 860M', 'AMD Radeon 880M', 'AMD Radeon 890M', 'AMD Radeon 8060S'],
-      intel: ['Intel UHD Graphics', 'Intel Iris Xe Graphics', 'Intel Arc A350M', 'Intel Arc A550M', 'Intel Arc A770M', 'Intel Arc 130V', 'Intel Arc 140V', 'Intel Arc B370', 'Intel Arc B390'],
+      intel: ['Intel UHD Graphics 620 / 630', 'Intel Iris Plus G4 / G7', 'Intel Iris Xe Graphics', 'Intel Arc A350M', 'Intel Arc A550M', 'Intel Arc A770M', 'Intel Arc 130V', 'Intel Arc 140V', 'Intel Arc B370', 'Intel Arc B390'],
       apple: ['Apple A18 Pro GPU (5 núcleos)', 'Apple M1 GPU', 'Apple M2 GPU', 'Apple M3 GPU', 'Apple M4 GPU', 'Apple M4 Pro GPU', 'Apple M4 Max GPU', 'Apple M5 GPU', 'Apple M5 Pro GPU', 'Apple M5 Max GPU'],
       qualcomm: ['Qualcomm Adreno X1-45', 'Qualcomm Adreno X1-65', 'Qualcomm Adreno X1-85']
     };
@@ -3341,10 +3577,163 @@
     document.getElementById('gpu-brand-select').addEventListener('change', () => syncGpuDecoderSelect());
     document.getElementById('gpu-input').addEventListener('change', (e) => decodeGpu(e.target.value));
 
+    // ==================== RAM DECODER & OS DECODER ====================
+    const RAM_DECODER_SIZES = {
+      ddr5: ['8 GB', '16 GB', '24 GB', '32 GB', '64 GB', '128 GB'],
+      lpddr5: ['8 GB', '16 GB', '24 GB', '32 GB', '64 GB'],
+      ddr4: ['4 GB', '8 GB', '12 GB', '16 GB', '32 GB', '64 GB'],
+      lpddr4: ['4 GB', '8 GB', '16 GB'],
+      apple_uni: ['8 GB (MacBook Neo / Air base)', '16 GB', '18–24 GB', '32–36 GB', '48–64 GB', '96–128 GB'],
+      ddr3: ['4 GB', '8 GB', '16 GB']
+    };
+
+    const RAM_TYPE_META = {
+      ddr5: { label: 'DDR5 (4800–5600+ MHz)', gen: 'Generación actual (2022–2026)', upgrade: 'Sí (módulos SO-DIMM: revisa si hay ranura libre en Administrador de tareas).', speed: 'Alto ancho de banda; ideal para CPUs modernas, edición y multitarea pesada.' },
+      lpddr5: { label: 'LPDDR5 / LPDDR5X (6400–8533 MHz)', gen: 'Generación actual ultraportátil (2023–2026)', upgrade: 'No ampliable (soldada a la placa base; elige bien la capacidad antes de comprar).', speed: 'Muy rápida y ahorradora de batería; mejora el rendimiento de GPUs integradas (Arc 140V / Radeon 780M–890M).' },
+      ddr4: { label: 'DDR4 (2400–3200 MHz)', gen: 'Vigente en gama económica y seminuevas (8.ª–13.ª gen / Ryzen 2000–5000)', upgrade: 'Sí (SO-DIMM; fácil y económica de ampliar a 16 o 32 GB).', speed: 'Buen rendimiento probado para oficina, estudios, programación y gaming medio.' },
+      lpddr4: { label: 'LPDDR4 / LPDDR4X', gen: 'Generación anterior ultraportátil (2018–2022)', upgrade: 'No ampliable (soldada de fábrica).', speed: 'Menor consumo eléctrico, pero limitada si solo tiene 4 u 8 GB.' },
+      apple_uni: { label: 'Memoria Unificada Apple Silicon', gen: 'Apple M1–M5 y A18 Pro (60 a 614 GB/s)', upgrade: 'No ampliable nunca (integrada en el chip).', speed: 'CPU y GPU comparten la misma memoria de altísima velocidad; clave para Blender 5.x, video y LLM locales.' },
+      ddr3: { label: 'DDR3 / DDR3L', gen: 'Hardware antiguo (anterior a 2017)', upgrade: 'Limitada (equipos muy antiguos).', speed: 'Lenta para software actual; conviene solo para revivir equipos con Linux ligero.' }
+    };
+
+    function syncRamDecoderSelect() {
+      const typeEl = document.getElementById('ram-type-select');
+      const sizeEl = document.getElementById('ram-size-select');
+      if (!typeEl || !sizeEl) return;
+      const sizes = RAM_DECODER_SIZES[typeEl.value] || ['16 GB'];
+      const prev = sizeEl.value;
+      sizeEl.innerHTML = sizes.map(sz => `<option value="${sz}">${sz}</option>`).join('');
+      if (sizes.includes(prev)) sizeEl.value = prev;
+      else if (sizes.includes('16 GB')) sizeEl.value = '16 GB';
+      decodeRam();
+    }
+
+    function decodeRam() {
+      const typeKey = document.getElementById('ram-type-select').value;
+      const sizeText = document.getElementById('ram-size-select').value || '16 GB';
+      const meta = RAM_TYPE_META[typeKey] || RAM_TYPE_META.ddr5;
+      const gb = parseInt((sizeText.match(/\d+/) || ['16'])[0], 10);
+
+      let verdict = 'Equilibrada y recomendable';
+      let badge = 'bg-emerald-100 text-emerald-800';
+      let reach = '';
+
+      if (typeKey === 'ddr3' || gb <= 4) {
+        verdict = 'Insuficiente / Hardware antiguo';
+        badge = 'bg-rose-100 text-rose-800';
+        reach = 'Con 4 GB o DDR3 Windows 11 se vuelve muy lento. Solo alcanza para navegación muy ligera o revivir una laptop antigua con Linux ligero + LibreOffice.';
+      } else if (gb === 8) {
+        verdict = 'Mínimo funcional (justa a mediano plazo)';
+        badge = 'bg-amber-100 text-amber-800';
+        reach = 'Alcanza para Word/Excel/ONLYOFFICE, clases en línea, VS Code básico, Minitab, Roblox, N64 y Photoshop muy ligero. Se queda corta para 20+ pestañas, SOLIDWORKS, FlexSim (pide 16 GB), After Effects o IA local.';
+      } else if (gb === 12) {
+        verdict = 'Intermedia funcional';
+        badge = 'bg-amber-100 text-amber-800';
+        reach = 'Cumple con Minecraft Java en GPU integrada (12 GB), oficina con muchas pestañas y diseño moderado, aunque 16 GB es el estándar más recomendable.';
+      } else if (gb === 16) {
+        verdict = 'Estándar recomendado hoy';
+        badge = 'bg-emerald-100 text-emerald-800';
+        reach = 'Excelente para multitarea intensa, Excel avanzado, Photoshop, AutoCAD, FlexSim, Premiere HD, ArtCraft, GTA V, Fortnite, Warzone y modelos LLM pequeños (7B–8B).';
+      } else if (gb <= 24) {
+        verdict = 'Muy cómoda (creativo intermedio)';
+        badge = 'bg-emerald-100 text-emerald-800';
+        reach = 'Margen holgado para edición de video, AutoCAD 2D/3D, Blender 5.x, DaVinci Resolve, programación con contenedores y varios años sin quedarse corta.';
+      } else if (gb <= 48) {
+        verdict = 'Nivel Profesional';
+        badge = 'bg-emerald-100 text-emerald-800';
+        reach = 'Ideal para SOLIDWORKS 2026/2027, Datamine 3D, AutoCAD 3D pesado, Premiere/After Effects/DaVinci 4K, Blender complejo y modelos LLM de 14B.';
+      } else {
+        verdict = 'Estación de trabajo extrema';
+        badge = 'bg-emerald-100 text-emerald-800';
+        reach = 'Sobra para proyectos 4K/8K, simulaciones masivas, múltiples máquinas virtuales y modelos LLM locales grandes (30B–70B+).';
+      }
+
+      document.getElementById('ram-decode-result').innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <span class="text-sm font-extrabold text-slate-900">${sizeText} — ${meta.label}</span>
+          <span class="text-xs font-bold px-2.5 py-1 rounded-full ${badge}">${verdict}</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Generación</span><strong class="text-slate-800">${meta.gen}</strong></div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">¿Se puede ampliar después?</span><span class="text-slate-700">${meta.upgrade}</span></div>
+          <div class="sm:col-span-2 bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Velocidad y rendimiento</span><span class="text-slate-700">${meta.speed}</span></div>
+          <div class="sm:col-span-2 bg-indigo-50/70 p-3 rounded-lg border border-indigo-200"><span class="text-indigo-700 font-bold block mb-0.5">¿Para qué alcanza?</span><span class="text-slate-800">${reach}</span></div>
+        </div>
+      `;
+    }
+
+    const OS_DECODER_VERSIONS = {
+      windows: [
+        { id: 'win11_pro', label: 'Windows 11 Pro / Education (64 bits)', status: 'Vigente con soporte oficial', badge: 'bg-emerald-100 text-emerald-800', security: 'Recibe parches de seguridad y funciones activas (24H2 / 25H2+).', compat: 'Soporte oficial máximo: único que cumple certificación de SOLIDWORKS y Datamine (x86-64).', reach: 'Alcanza para TODOS los programas y juegos de esta guía: SOLIDWORKS, AutoCAD, FlexSim, Minitab, Datamine, Office, Adobe, Blender, LLM y videojuegos con antitrampas.' },
+        { id: 'win11_home', label: 'Windows 11 Home (64 bits)', status: 'Vigente con soporte oficial', badge: 'bg-emerald-100 text-emerald-800', security: 'Recibe actualizaciones de seguridad activas.', compat: 'Compatible con casi todo (excepto requisitos Pro/Edu de Datamine o entornos corporativos).', reach: 'Excelente para Office, AutoCAD, FlexSim, Minitab, Photoshop, Premiere, After Effects, Blender, LLM y todos los videojuegos de PC.' },
+        { id: 'win11_arm', label: 'Windows 11 en ARM (Snapdragon X)', status: 'Vigente (con límites x86)', badge: 'bg-amber-100 text-amber-800', security: 'Soporte oficial activo y gran eficiencia de batería.', compat: 'Apps ARM nativas y emulación Prism; NO compatible con SOLIDWORKS, FlexSim, Minitab, Datamine ni algunos antitrampas.', reach: 'Ideal para Office 365, ONLYOFFICE, VS Code, Photoshop ARM, navegación y batería de 15+ horas. Evítalo para CAD/ingeniería x86.' },
+        { id: 'win10', label: 'Windows 10 (Home / Pro)', status: 'Sin soporte oficial (14 oct 2025)', badge: 'bg-rose-100 text-rose-800', security: 'Terminó soporte gratuito el 14 de octubre de 2025 (solo parches vía ESU de pago).', compat: 'Varios programas nuevos (Premiere/After Effects 27, AutoCAD 2027, SOLIDWORKS 2026) ya piden Windows 11.', reach: 'Si el equipo tiene Intel 8.ª gen+ o Ryzen 3000+, actualízalo gratis a Windows 11; si no es compatible, considera migrar a Linux.' },
+        { id: 'win_old', label: 'Windows 8.1 / Windows 7', status: 'Obsoleto — Sin soporte', badge: 'bg-rose-100 text-rose-800', security: 'Alto riesgo de seguridad; navegadores y apps modernas ya no lo soportan.', compat: 'Sin soporte para software actual.', reach: 'No recomendable para navegar ni trabajar conectado a internet; conviene instalar una distribución Linux ligera.' }
+      ],
+      macos: [
+        { id: 'mac_26', label: 'macOS 26 Tahoe (Actual)', status: 'Vigente con soporte oficial', badge: 'bg-emerald-100 text-emerald-800', security: 'Versión vigente con actualizaciones de seguridad y Apple Intelligence.', compat: 'Nativo en Apple Silicon para Office, AutoCAD Mac, Adobe 27/28, DaVinci, Blender 5.3, ArtCraft y LLM. Sin SOLIDWORKS ni Fortnite nativo.', reach: 'Excelente para diseño, edición 4K, programación, estudios, AutoCAD Mac y modelos LLM con memoria unificada.' },
+        { id: 'mac_15', label: 'macOS 15 Sequoia', status: 'Vigente con soporte oficial', badge: 'bg-emerald-100 text-emerald-800', security: 'Recibe actualizaciones de seguridad activas (hasta finales de 2027 aprox.).', compat: 'Cumple con Premiere/After Effects 27, Photoshop 28, AutoCAD 2027 y Blender 5.3 (en Apple Silicon).', reach: 'Totalmente vigente para trabajo profesional creativo, ofimática, programación y uso diario.' },
+        { id: 'mac_14', label: 'macOS 14 Sonoma', status: 'Fin de soporte (Otoño 2026)', badge: 'bg-amber-100 text-amber-800', security: 'Finalizó su ciclo de soporte estándar a finales de 2026.', compat: 'Premiere/After Effects 27 ya piden macOS 15+. Si tu Mac lo permite, actualiza a Sequoia o Tahoe.', reach: 'Funcional hoy para Office/ONLYOFFICE y tareas diarias, pero conviene actualizar si tu hardware es compatible.' },
+        { id: 'mac_old', label: 'macOS 13 Ventura / 12 Monterey / anteriores', status: 'Sin soporte oficial', badge: 'bg-rose-100 text-rose-800', security: 'Ya no reciben parches de seguridad de Apple.', compat: 'Office 2024/365, Adobe actual y muchos navegadores han retirado o limitan soporte.', reach: 'Evita comprar una Mac usada que quede atrapada en Ventura/Monterey o con procesador Intel antiguo.' }
+      ],
+      linux: [
+        { id: 'ubuntu_24_26', label: 'Ubuntu 24.04 LTS / 26.04 LTS', status: 'Vigente con soporte oficial (LTS)', badge: 'bg-emerald-100 text-emerald-800', security: '5 años de soporte estándar gratuito y actualizaciones de seguridad constantes.', compat: 'Nativo para ONLYOFFICE, LibreOffice, VS Code, ArtCraft, Blender 5.3, DaVinci, LLM, Minecraft y PCSX2. Alternativas libres para CAD/Adobe.', reach: 'Excelente para programación, IA local (Ollama/CUDA), servidores, privacidad, estudio y revivir laptops con 8–16 GB RAM.' },
+        { id: 'ubuntu_22', label: 'Ubuntu 22.04 LTS', status: 'Vigente (soporte estándar hasta 2027)', badge: 'bg-emerald-100 text-emerald-800', security: 'Soporte estándar activo hasta abril/junio de 2027.', compat: 'Muy estable con glibc 2.35+ (cumple ArtCraft, Blender 5.x, VS Code).', reach: 'Aún muy confiable; planea actualizar a 24.04 LTS o 26.04 LTS antes de mediados de 2027.' },
+        { id: 'mint_fedora_deb', label: 'Linux Mint 22.x / Fedora actual / Debian 12–13', status: 'Vigente con soporte oficial', badge: 'bg-emerald-100 text-emerald-800', security: 'Mint 22 y Debian ofrecen soporte largo; Fedora se actualiza cada 6 meses (soporte ~13 meses por versión).', compat: 'Linux Mint es la opción más amigable para principiantes que vienen de Windows.', reach: 'Ideal para ofimática libre (ONLYOFFICE/LibreOffice), navegación, programación, emuladores, Roblox vía Sober y aprovechamiento de hardware seminuevo.' },
+        { id: 'linux_old', label: 'Ubuntu 20.04 LTS o anteriores / Distros sin soporte', status: 'Sin soporte estándar', badge: 'bg-rose-100 text-rose-800', security: 'Ubuntu 20.04 LTS terminó su soporte estándar en mayo de 2025 (solo continúa con Ubuntu Pro ESM).', compat: 'Bibliotecas antiguas (glibc <2.35) impiden instalar apps modernas como ArtCraft o versiones nuevas.', reach: 'Actualiza a Ubuntu 24.04/26.04 LTS, Linux Mint 22 o Debian 12/13.' }
+      ],
+      chromeos: [
+        { id: 'chromeos_cur', label: 'ChromeOS (Chromebook con soporte activo)', status: 'Vigente (hasta 10 años desde lanzamiento)', badge: 'bg-emerald-100 text-emerald-800', security: 'Actualizaciones automáticas de Google y entorno aislado muy seguro.', compat: 'Apps web (Google Docs, Office Web), Android y contenedor Linux básico; NO corre software Windows/Mac pesado.', reach: 'Muy buena para clases en línea, documentos web, navegación y equipos económicos de 8 GB RAM; no apta para SOLIDWORKS, AutoCAD, Adobe ni gaming local.' }
+      ]
+    };
+
+    function syncOsDecoderSelect() {
+      const famEl = document.getElementById('os-fam-select');
+      const verEl = document.getElementById('os-ver-select');
+      if (!famEl || !verEl) return;
+      const list = OS_DECODER_VERSIONS[famEl.value] || [];
+      verEl.innerHTML = list.map(v => `<option value="${v.id}">${v.label}</option>`).join('');
+      decodeOs();
+    }
+
+    function decodeOs() {
+      const famEl = document.getElementById('os-fam-select');
+      const verEl = document.getElementById('os-ver-select');
+      if (!famEl || !verEl) return;
+      const list = OS_DECODER_VERSIONS[famEl.value] || [];
+      const item = list.find(v => v.id === verEl.value) || list[0];
+      if (!item) return;
+
+      document.getElementById('os-decode-result').innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <span class="text-sm font-extrabold text-slate-900">${item.label}</span>
+          <span class="text-xs font-bold px-2.5 py-1 rounded-full ${item.badge}">${item.status}</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Soporte y seguridad</span><span class="text-slate-700">${item.security}</span></div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Compatibilidad de software</span><span class="text-slate-700">${item.compat}</span></div>
+          <div class="sm:col-span-2 bg-indigo-50/70 p-3 rounded-lg border border-indigo-200"><span class="text-indigo-700 font-bold block mb-0.5">¿Para qué alcanza?</span><span class="text-slate-800">${item.reach}</span></div>
+        </div>
+      `;
+    }
+
+    document.getElementById('ram-type-select').addEventListener('change', syncRamDecoderSelect);
+    document.getElementById('ram-size-select').addEventListener('change', decodeRam);
+    document.getElementById('btn-decode-ram').addEventListener('click', decodeRam);
+    document.getElementById('os-fam-select').addEventListener('change', syncOsDecoderSelect);
+    document.getElementById('os-ver-select').addEventListener('change', decodeOs);
+    document.getElementById('btn-decode-os').addEventListener('click', decodeOs);
+
     // ==================== INIT ====================
     renderQuizStep();
     renderOsGuide('windows');
     syncCpuDecoderSelect('Intel Core Ultra 5 226V');
+    syncProgramSelectOptions();
+    syncEvalTargetAppSelect();
+    syncOfferListboxes('init');
+    syncSsdFromRamSimulator();
+    syncRamDecoderSelect();
+    syncOsDecoderSelect();
     renderChecklist();
     renderRamSimulator();
     renderPrograms();
