@@ -348,7 +348,8 @@
 
         <div class="flex flex-col sm:flex-row gap-2 mb-4">
           <select id="cpu-brand-select" class="sm:w-56 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            <option value="intel_ultra">Intel Core Ultra (1 / 2 / 3)</option>
+            <option value="intel_ultra">Intel Core Ultra (Series 1 / 2 / 3 y Ultra X)</option>
+            <option value="intel_core_new">Intel Core Convencional (Serie 1 y 2 — sin Ultra)</option>
             <option value="intel_core">Intel Core 11.ª–14.ª Gen y Core 3</option>
             <option value="intel_legacy">Intel Core 8.ª–10.ª Gen (Seminuevas / Win 11)</option>
             <option value="intel_n">Intel Celeron / Pentium / Serie N</option>
@@ -728,7 +729,8 @@
             <button type="button" data-cpufam="intel_core" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 text-white shadow-sm transition">Intel Core 11ª–14ª</button>
             <button type="button" data-cpufam="intel_8_10" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Intel 8ª–10ª (Seminuevas)</button>
             <button type="button" data-cpufam="amd_2000_5000" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">AMD 2000–5000 (Seminuevas)</button>
-            <button type="button" data-cpufam="intel_ultra" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Intel Core Ultra 1 / 2 / 3</button>
+            <button type="button" data-cpufam="intel_ultra" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Intel Core Ultra 1 / 2 / 3 / X</button>
+            <button type="button" data-cpufam="intel_core_new" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Intel Core Serie 1 y 2 (sin Ultra)</button>
             <button type="button" data-cpufam="intel_n" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Celeron / Pentium / Serie N</button>
             <button type="button" data-cpufam="amd_ryzen" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">AMD Athlon y Ryzen 3–9</button>
             <button type="button" data-cpufam="amd_ai" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">AMD Ryzen AI y 9000HX</button>
@@ -825,6 +827,48 @@
             <button type="button" data-gpufam="legacy_gpu" class="gpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Seminuevas 2017–2020 (MX / GTX 10 / RX 5000M / Quadro)</button>
           </div>
           <div id="gpufam-list" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs"></div>
+          <div class="mt-4 rounded-xl bg-emerald-50/70 border border-emerald-200 p-4 text-xs">
+            <h5 class="font-bold text-emerald-950 mb-1.5">💡 Top procesadores con mejor GPU integrada (sin necesitar NVIDIA RTX dedicada)</h5>
+            <p class="text-slate-700 mb-2">Una iGPU moderna con buena RAM rápida (16–32 GB) permite jugar, editar foto/video y diseñar en laptops delgadas y silenciosas:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div class="bg-white rounded-lg p-2.5 border border-emerald-200">
+                <strong class="text-slate-900 block mb-1">AMD Radeon Integradas</strong>
+                <ul class="list-disc list-inside text-slate-600 space-y-0.5">
+                  <li><strong>Ryzen AI 9 HX 370</strong> → Radeon 890M (16 CU RDNA 3.5)</li>
+                  <li><strong>Ryzen AI 9 365</strong> → Radeon 880M (12 CU RDNA 3.5)</li>
+                  <li><strong>Ryzen 7 8845HS</strong> → Radeon 780M (12 CU RDNA 3)</li>
+                </ul>
+              </div>
+              <div class="bg-white rounded-lg p-2.5 border border-emerald-200">
+                <strong class="text-slate-900 block mb-1">Intel Arc Integradas</strong>
+                <ul class="list-disc list-inside text-slate-600 space-y-0.5">
+                  <li><strong>Core Ultra 7 258V / 268V</strong> → Intel Arc 140V (8 núcleos Xe2)</li>
+                  <li><strong>Core Ultra 7 255H / 265H / Ultra 9 285H</strong> → Intel Arc 140T (8 núcleos Xe)</li>
+                  <li><strong>Core Ultra X7 368H / X9 388H</strong> → Panther Lake gráficos avanzados</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-3 overflow-x-auto bg-white rounded-lg border border-emerald-200 p-2.5">
+              <table class="w-full text-left border-collapse text-[11px] min-w-[520px]">
+                <thead>
+                  <tr class="border-b border-slate-200 text-slate-500 uppercase">
+                    <th class="py-1 pr-2">Orden orientativo</th>
+                    <th class="py-1 pr-2">Arquitectura</th>
+                    <th class="py-1 pr-2">Unidades</th>
+                    <th class="py-1">Frecuencia / Destacado</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 text-slate-700">
+                  <tr><td class="py-1 pr-2 font-bold">1. AMD Radeon 890M</td><td class="py-1 pr-2">RDNA 3.5</td><td class="py-1 pr-2">16 CU (1,024 shaders)</td><td class="py-1">2,900–3,100 MHz • DX12 Ultimate</td></tr>
+                  <tr><td class="py-1 pr-2 font-bold">2. AMD Radeon 880M</td><td class="py-1 pr-2">RDNA 3.5</td><td class="py-1 pr-2">12 CU (768 shaders)</td><td class="py-1">Hasta 2,900 MHz • DX12 Ultimate</td></tr>
+                  <tr><td class="py-1 pr-2 font-bold">3. Intel Arc 140V</td><td class="py-1 pr-2">Xe2 (Lunar Lake)</td><td class="py-1 pr-2">8 núcleos Xe2 + 8 RT</td><td class="py-1">2,000 MHz • 66 TOPS IA (XMX) • AV1</td></tr>
+                  <tr><td class="py-1 pr-2 font-bold">4. Intel Arc 140T</td><td class="py-1 pr-2">Xe LPG+ (Arrow Lake-H)</td><td class="py-1 pr-2">8 núcleos Xe + 8 RT</td><td class="py-1">2,300 MHz • 75 TOPS IA • Quick Sync / AV1</td></tr>
+                  <tr><td class="py-1 pr-2 font-bold">5. AMD Radeon 780M</td><td class="py-1 pr-2">RDNA 3</td><td class="py-1 pr-2">12 CU (768 shaders)</td><td class="py-1">Hasta 2,700 MHz • DX12 Ultimate</td></tr>
+                </tbody>
+              </table>
+              <p class="mt-2 text-[11px] text-emerald-900"><strong>Fundamental para estas 5 GPU:</strong> como usan la RAM del sistema como memoria gráfica, prioriza <strong>32 GB de RAM rápida (LPDDR5X) o doble canal</strong> siempre que sea posible; el orden real puede variar según potencia y refrigeración del equipo.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2041,6 +2085,57 @@
     });
 
     // ==================== TAB 2: CPU DECODER ====================
+    const CPU_EXACT_SPECS = {
+      'intel core 3 100u': { arch: 'Raptor Lake (Intel 7)', cores: '6 núcleos (2 P + 4 E) / 8 hilos', freq: 'Hasta 4.7 GHz • Caché: 10 MB', gpu: 'Intel Graphics (hasta 1.25 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-5200, LPDDR4X-4267)', tdp: 'Base: 15 W • Turbo máx.: 55 W', launch: 'Q1 2024' },
+      'intel core 5 120u': { arch: 'Raptor Lake (Intel 7)', cores: '10 núcleos (2 P + 8 E) / 12 hilos', freq: 'Hasta 5.0 GHz • Caché: 12 MB', gpu: 'Intel Graphics (hasta 1.25 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 15 W • Turbo máx.: 55 W', launch: 'Q1 2024' },
+      'intel core 7 150u': { arch: 'Raptor Lake (Intel 7)', cores: '10 núcleos (2 P + 8 E) / 12 hilos', freq: 'Hasta 5.4 GHz • Caché: 12 MB', gpu: 'Intel Graphics (hasta 1.30 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 15 W • Turbo máx.: 55 W', launch: 'Q1 2024' },
+      'intel core 5 210h': { arch: 'Raptor Lake (Intel 7)', cores: '8 núcleos (4 P + 4 E) / 12 hilos', freq: 'Hasta 4.8 GHz • Caché: 12 MB', gpu: 'Intel Graphics (hasta 1.40 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 45 W • Turbo máx.: 115 W', launch: 'Q4 2024' },
+      'intel core 5 220h': { arch: 'Raptor Lake (Intel 7)', cores: '12 núcleos (4 P + 8 E) / 16 hilos', freq: 'Hasta 4.9 GHz • Caché: 18 MB', gpu: 'Intel Graphics (hasta 1.50 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 45 W • Turbo máx.: 115 W', launch: 'Q4 2024' },
+      'intel core 7 240h': { arch: 'Raptor Lake (Intel 7)', cores: '10 núcleos (6 P + 4 E) / 16 hilos', freq: 'Hasta 5.2 GHz • Caché: 24 MB', gpu: 'Intel Graphics (hasta 1.55 GHz)', ram: 'Hasta 96 GB (DDR5-5600, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 45 W • Turbo máx.: 115 W', launch: 'Q4 2024' },
+      'intel core 7 250h': { arch: 'Raptor Lake (Intel 7)', cores: '14 núcleos (6 P + 8 E) / 20 hilos', freq: 'Hasta 5.4 GHz • Caché: 24 MB', gpu: 'Intel Graphics (hasta 1.55 GHz)', ram: 'Hasta 96 GB (DDR5-5600, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 45 W • Turbo máx.: 115 W', launch: 'Q4 2024' },
+      'intel core 9 270h': { arch: 'Raptor Lake (Intel 7)', cores: '14 núcleos (6 P + 8 E) / 20 hilos', freq: 'Hasta 5.8 GHz • Caché: 24 MB', gpu: 'Intel Graphics (hasta 1.55 GHz)', ram: 'Hasta 96 GB (DDR5-5600, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 45 W • Turbo máx.: 115 W', launch: 'Q4 2024' },
+      'intel core 5 220u': { arch: 'Raptor Lake (Intel 7)', cores: '10 núcleos (2 P + 8 E) / 12 hilos', freq: 'Hasta 5.0 GHz • Caché: 12 MB', gpu: 'Intel Graphics (hasta 1.25 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 15 W • Turbo máx.: 55 W', launch: 'Q4 2024' },
+      'intel core 7 250u': { arch: 'Raptor Lake (Intel 7)', cores: '10 núcleos (2 P + 8 E) / 12 hilos', freq: 'Hasta 5.4 GHz • Caché: 12 MB', gpu: 'Intel Graphics (hasta 1.30 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 15 W • Turbo máx.: 55 W', launch: 'Q4 2024' }
+    };
+
+    const CPU_IGPU_MAP = {
+      'intel core ultra 5 125h': 'Intel Arc integrada (Meteor Lake) — Juegos y edición ligera',
+      'intel core ultra 5 135h': 'Intel Arc integrada (Meteor Lake) — Juegos y edición ligera',
+      'intel core ultra 7 155h': 'Intel Arc integrada (Meteor Lake) — Juegos y creación moderada',
+      'intel core ultra 7 165h': 'Intel Arc integrada (Meteor Lake) — Juegos y creación moderada',
+      'intel core ultra 9 185h': 'Intel Arc integrada (Meteor Lake) — Juegos y creación moderada',
+      'intel core ultra 5 125u': 'Intel Graphics básica — Ofimática, videos y navegación',
+      'intel core ultra 5 134u': 'Intel Graphics básica — Ofimática, videos y navegación',
+      'intel core ultra 5 135u': 'Intel Graphics básica — Ofimática, videos y navegación',
+      'intel core ultra 7 155u': 'Intel Graphics básica — Ofimática, videos y navegación',
+      'intel core ultra 7 164u': 'Intel Graphics básica — Ofimática, videos y navegación',
+      'intel core ultra 7 165u': 'Intel Graphics básica — Ofimática, videos y navegación',
+      'intel core ultra 5 226v': 'Intel Arc 130V (7 núcleos Xe2) — Juegos y edición ligera',
+      'intel core ultra 5 228v': 'Intel Arc 130V (7 núcleos Xe2) — Juegos y edición ligera',
+      'intel core ultra 5 236v': 'Intel Arc 130V (7 núcleos Xe2) — Juegos y edición ligera',
+      'intel core ultra 5 238v': 'Intel Arc 130V (7 núcleos Xe2) — Juegos y edición ligera',
+      'intel core ultra 7 256v': 'Intel Arc 140V (8 núcleos Xe2) — Juegos y creación de contenido',
+      'intel core ultra 7 258v': 'Intel Arc 140V (8 núcleos Xe2) — Juegos y creación de contenido',
+      'intel core ultra 7 266v': 'Intel Arc 140V (8 núcleos Xe2) — Juegos y creación de contenido',
+      'intel core ultra 7 268v': 'Intel Arc 140V (8 núcleos Xe2) — Juegos y creación de contenido',
+      'intel core ultra 5 225h': 'Intel Arc 130T (7 núcleos Xe) — Juegos y edición ligera',
+      'intel core ultra 7 255h': 'Intel Arc 140T (8 núcleos Xe) — Juegos y creación de contenido',
+      'intel core ultra 7 265h': 'Intel Arc 140T (8 núcleos Xe) — Juegos y creación de contenido',
+      'intel core ultra 9 285h': 'Intel Arc 140T (8 núcleos Xe) — Juegos y creación de contenido',
+      'amd ryzen 5 7520u': 'AMD Radeon 610M — Ofimática y multimedia',
+      'amd ryzen 5 7530u': 'AMD Radeon Vega 7 — Juegos ligeros y multimedia',
+      'amd ryzen 7 7730u': 'AMD Radeon Vega 8 — Juegos ligeros y multimedia',
+      'amd ryzen 5 7535u': 'AMD Radeon 660M — Juegos ligeros y algunos exigentes',
+      'amd ryzen 7 7735u': 'AMD Radeon 680M — Juegos y edición ligera',
+      'amd ryzen 5 8645hs': 'AMD Radeon 760M — Juegos y edición',
+      'amd ryzen 7 8845hs': 'AMD Radeon 780M (12 CU RDNA 3) — Juegos y edición de mayor exigencia',
+      'amd ryzen ai 5 340': 'AMD Radeon 840M — Oficina, multimedia y juegos ligeros',
+      'amd ryzen ai 7 350': 'AMD Radeon 860M — Juegos y creación moderada',
+      'amd ryzen ai 9 365': 'AMD Radeon 880M (12 CU RDNA 3.5) — Juegos y creación de contenido',
+      'amd ryzen ai 9 hx 370': 'AMD Radeon 890M (16 CU RDNA 3.5) — Juegos y creación de contenido exigente',
+      'amd ryzen ai max+ 395': 'AMD Radeon 8060S (40 CU RDNA 3.5) — Creación pesada y gaming sin GPU dedicada'
+    };
+
     function decodeCpu(raw) {
       const text = (raw || '').trim();
       const box = document.getElementById('cpu-decode-result');
@@ -2137,29 +2232,39 @@
         verdict = 'Solo para Office básico y navegación';
         badgeColor = 'bg-rose-100 text-rose-800';
       } else if (lower.includes('core ultra')) {
-        brand = 'Intel Core Ultra';
+        const isX = /ultra\s*x[79]/i.test(lower);
+        brand = isX ? 'Intel Core Ultra X (Premium con gráficos integrados avanzados)' : 'Intel Core Ultra (Gama Premium)';
         const tMatch = lower.match(/ultra\s*(x?[3579])/i);
-        tier = tMatch ? `Gama ${tMatch[1].toUpperCase()} (5=Media, 7=Media-Alta, 9=Alta)` : 'Core Ultra';
+        tier = tMatch ? `Gama ${tMatch[1].toUpperCase()}${isX ? ' — GPU integrada avanzada' : ' (5=Media, 7=Media-Alta, 9=Alta)'}` : 'Core Ultra';
         const numMatch = lower.match(/\b([123]\d{2})[a-z]*\b/i);
         if (numMatch) {
-          const seriesDigit = numMatch[1][0];
-          gen = `Series ${seriesDigit} (${seriesDigit === '1' ? '2023–2024' : seriesDigit === '2' ? '2024–2025' : 'Nueva familia 2026'})`;
+          const sd = numMatch[1][0];
+          if (sd === '1') gen = 'Serie 1 (2023–2024 • Meteor Lake con NPU IA)';
+          else if (sd === '2') gen = /\d{3}v\b/i.test(lower) ? 'Serie 2 (2024–2025 • Lunar Lake 200V — batería máxima + Arc Xe2)' : /plus/i.test(lower) ? 'Serie 2 (2026 • Arrow Lake HX Plus de máximo rendimiento)' : 'Serie 2 (2024–2025 • Arrow Lake 200H/200U/200HX)';
+          else gen = 'Serie 3 (2026 • Arquitectura Panther Lake — nueva generación)';
         } else {
           gen = 'Arquitectura moderna con aceleración IA';
         }
-        verdict = 'Procesador moderno y recomendable';
+        verdict = isX ? 'Premium 2026 con gráficos integrados avanzados' : 'Procesador moderno y recomendable';
         badgeColor = 'bg-emerald-100 text-emerald-800';
-      } else if (/\bcore\s*[357]\s*\d{3}[a-z]*\b/i.test(lower) && !lower.includes('ultra') && !lower.includes('core i')) {
-        const cMatch = lower.match(/core\s*([357])\s*(\d{3}[a-z]*)/i);
+      } else if (/\bcore\s*[3579]\s*\d{3}[a-z]*\b/i.test(lower) && !lower.includes('ultra') && !lower.includes('core i')) {
+        const cMatch = lower.match(/core\s*([3579])\s*(\d{3}[a-z]*)/i);
         const cTier = cMatch ? cMatch[1] : '3';
         const cModel = cMatch ? cMatch[2].toUpperCase() : '';
-        brand = 'Intel Core (Nueva nomenclatura)';
-        tier = `Core ${cTier} (reemplaza a Core i${cTier} en modelos recientes)`;
-        gen = cModel === '100U'
-          ? 'Serie 1 (2024–2026) • 6 núcleos / 8 hilos, hasta 4.70 GHz, gráficos Intel UHD'
-          : 'Generación reciente (2024–2026)';
-        verdict = 'Excelente para Office, navegación, programación ligera y multitarea';
-        badgeColor = 'bg-emerald-100 text-emerald-800';
+        const isEmb = /(TE|E)$/.test(cModel);
+        brand = 'Intel Core Convencional (Nueva nomenclatura sin "i" ni Ultra)';
+        tier = `Core ${cTier} (gama ${cTier === '3' ? 'básica' : cTier === '5' ? 'media' : cTier === '7' ? 'media-alta' : 'alta'})`;
+        gen = cModel.startsWith('1')
+          ? `Serie 1 (2024${cModel === '100U' ? ' • 6 núcleos / 8 hilos, hasta 4.70 GHz' : ''})`
+          : `Serie 2 (2024–2026${isEmb ? ' • Variante integrada/especializada E/TE' : ''})`;
+        if (isEmb) {
+          suffixInfo = '<strong>E / TE:</strong> Variante integrada o industrial/especializada (no es el modelo habitual de laptop de consumo; busca terminación U o H).';
+          verdict = 'Modelo especializado / embebido (no laptop estándar)';
+          badgeColor = 'bg-amber-100 text-amber-800';
+        } else {
+          verdict = cTier >= '7' ? 'Muy capaz para productividad exigente y creación' : 'Excelente opción moderna (no confundir con Core Ultra)';
+          badgeColor = 'bg-emerald-100 text-emerald-800';
+        }
       } else if (lower.includes('core i') || /\bi[3579]\b/i.test(lower)) {
         brand = 'Intel Core (Familia tradicional)';
         const iMatch = lower.match(/i([3579])/i);
@@ -2254,13 +2359,15 @@
         useReach = 'Excelente en Office 365, ONLYOFFICE, VS Code, Photoshop ARM, navegación y videollamadas con batería para todo el día. Sin compatibilidad práctica para SOLIDWORKS, FlexSim, Minitab, Datamine o juegos con antitrampas x86.';
       } else if (/a18|neo/i.test(lower)) {
         useReach = 'Microsoft Office, ONLYOFFICE, navegación, programación ligera, Photoshop y Premiere ligeros. Limitada por sus 8 GB fijos en After Effects, Blender complejo, CAD 3D y LLM locales.';
-      } else if (/max|pro|hx3d|9955|14900|13980|285h|275h|388h|475|370|395|5900/i.test(lower)) {
+      } else if (/max|pro|hx3d|9955|14900|13980|285h|275h|290hx|270hx|386h|388h|378h|368h|358h|270h|475|370|395|5900/i.test(lower)) {
         useReach = 'Prácticamente todo sin límites: SOLIDWORKS (en Windows), AutoCAD 3D, Premiere/After Effects/DaVinci 4K, Blender 5.3, modelos LLM locales (14B–70B según RAM/VRAM) y gaming exigente.';
       } else if (/\bi7\b|\bi9\b|ultra\s*[79]|ryzen\s*[79]|ai\s*[79]|\bhx\b|\bhs\b|\bh\b/i.test(lower)) {
         useReach = 'Excel avanzado, programación, Photoshop, AutoCAD 2D/3D, FlexSim (11ª+/Ryzen 5000+), edición de video HD/4K, Blender, GTA V, Fortnite, Warzone y emulación PS2 (acompañado de RAM/GPU adecuada).';
       } else if (/\bm[1-5]\b/i.test(lower)) {
         useReach = 'Office, VS Code, Photoshop, AutoCAD Mac, Premiere/DaVinci, Blender 5.x, Minecraft Java, PCSX2 y modelos LLM locales (dependiendo de si tiene 16 GB, 24 GB o 32+ GB de memoria unificada).';
-      } else if (/\bi5\b|ultra\s*5|ryzen\s*5|ai\s*5/i.test(lower)) {
+      } else if (/\bi7\b|core\s*7|ultra\s*7|ryzen\s*7|ai\s*7/i.test(lower)) {
+        useReach = 'Excel avanzado, programación, Photoshop, AutoCAD 2D/3D, FlexSim, edición de video HD/4K, Blender y gaming (según GPU/RAM).';
+      } else if (/\bi5\b|core\s*5|ultra\s*5|ryzen\s*5|ai\s*5/i.test(lower)) {
         useReach = 'Oficina intensa (Excel grande, 15+ pestañas, videollamadas), programación, Photoshop, AutoCAD 2D, ArtCraft, Minecraft, Roblox, N64/PS2 y gaming ligero/medio.';
       } else if (/\bi3\b|core\s*3|ryzen\s*3/i.test(lower)) {
         useReach = 'Excel, Word, ONLYOFFICE, clases, navegación fluida, VS Code, Minitab, Roblox, emulación N64 y Photoshop ligero. Para CAD 3D o edición 4K conviene subir a gama 5 o 7.';
@@ -2276,6 +2383,27 @@
           <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Nivel / Gama</span><strong class="text-slate-800">${tier}</strong></div>
           <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Generación / Serie</span><strong class="text-slate-800">${gen}</strong></div>
           <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Terminación / Uso</span><span class="text-slate-700">${suffixInfo}</span></div>
+          ${(() => {
+            const sp = CPU_EXACT_SPECS[lower];
+            const igpu = CPU_IGPU_MAP[lower];
+            if (!sp && igpu) {
+              return `<div class="sm:col-span-2 bg-emerald-50/70 p-2.5 rounded-lg border border-emerald-200 text-xs"><span class="text-emerald-800 font-bold block mb-0.5">GPU Integrada (iGPU) incluida en este procesador</span><span class="text-slate-800">${igpu}</span></div>`;
+            }
+            if (!sp) return '';
+            return `
+              <div class="sm:col-span-2 bg-white p-3 rounded-lg border border-slate-200 space-y-1.5">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Ficha técnica exacta del modelo (${sp.launch})</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-[11px] text-slate-700">
+                  <div><strong>Arquitectura / Litografía:</strong> ${sp.arch}</div>
+                  <div><strong>Núcleos / Hilos:</strong> ${sp.cores}</div>
+                  <div><strong>Frecuencia / Caché:</strong> ${sp.freq}</div>
+                  <div><strong>GPU integrada:</strong> ${sp.gpu}</div>
+                  <div><strong>Consumo (TDP):</strong> ${sp.tdp}</div>
+                  <div><strong>RAM admitida:</strong> ${sp.ram}</div>
+                </div>
+                <p class="text-[10px] text-slate-500 italic">Nota: la potencia turbo máxima no es consumo constante; depende del fabricante y la refrigeración de la laptop.</p>
+              </div>`;
+          })()}
           <div class="sm:col-span-2 bg-indigo-50/70 p-3 rounded-lg border border-indigo-200"><span class="text-indigo-700 font-bold block mb-0.5">¿Para qué alcanza?</span><span class="text-slate-800">${useReach}</span></div>
         </div>
       `;
@@ -2504,9 +2632,14 @@
         { title: '12.ª Gen (2022) y 11.ª Gen (2020–21)', models: ['Intel Core i3-1215U', 'Intel Core i5-1235U', 'Intel Core i5-1240P', 'Intel Core i7-12700H', 'Intel Core i5-1135G7', 'Intel Core i7-11800H'], note: '12ª gen H sigue siendo válida en gama media; 11ª gen solo si es económica.' }
       ],
       intel_ultra: [
-        { title: 'Core Ultra Series 3 (2026)', models: ['Intel Core Ultra 5 325', 'Intel Core Ultra 5 335', 'Intel Core Ultra 7 355', 'Intel Core Ultra 7 366H', 'Intel Core Ultra 9 386H', 'Intel Core Ultra 9 388H'], note: 'Nueva generación 2026 de Intel para laptops.' },
-        { title: 'Core Ultra Series 2 (2024–2025)', models: ['Intel Core Ultra 5 225H', 'Intel Core Ultra 5 226V', 'Intel Core Ultra 7 255H', 'Intel Core Ultra 7 258V', 'Intel Core Ultra 7 265H', 'Intel Core Ultra 9 275HX', 'Intel Core Ultra 9 285HX'], note: 'Serie V para batería máxima; series H y HX para potencia profesional.' },
-        { title: 'Core Ultra Series 1 (2023–2024)', models: ['Intel Core Ultra 5 125U', 'Intel Core Ultra 5 125H', 'Intel Core Ultra 7 155U', 'Intel Core Ultra 7 155H', 'Intel Core Ultra 9 185H'], note: 'Primera generación con NPU dedicada para IA.' }
+        { title: 'Core Ultra Serie 3 y Ultra X (2026 — Panther Lake)', models: ['Intel Core Ultra 5 325', 'Intel Core Ultra 5 338H', 'Intel Core Ultra 7 366H', 'Intel Core Ultra 9 386H', 'Intel Core Ultra X7 368H', 'Intel Core Ultra X9 388H'], note: 'Nueva arquitectura Panther Lake; los modelos X7/X9 destacan por gráficos integrados avanzados.' },
+        { title: 'Core Ultra Serie 2 (2024–2025 — Lunar / Arrow Lake)', models: ['Intel Core Ultra 5 225U', 'Intel Core Ultra 5 226V', 'Intel Core Ultra 7 255H', 'Intel Core Ultra 7 258V', 'Intel Core Ultra 7 265H', 'Intel Core Ultra 9 285H', 'Intel Core Ultra 9 285HX', 'Intel Core Ultra 9 290HX Plus'], note: '200V = Lunar Lake (batería máxima); 200H/U/HX = Arrow Lake (alto rendimiento).' },
+        { title: 'Core Ultra Serie 1 (2023–2024 — Meteor Lake)', models: ['Intel Core Ultra 5 125U', 'Intel Core Ultra 5 125H', 'Intel Core Ultra 7 155U', 'Intel Core Ultra 7 155H', 'Intel Core Ultra 9 185H'], note: 'Primera serie Core Ultra con NPU dedicada para IA.' }
+      ],
+      intel_core_new: [
+        { title: 'Intel Core Serie 1 (2024 — sin Ultra)', models: ['Intel Core 3 100U', 'Intel Core 5 120U', 'Intel Core 7 150U'], note: 'Reemplazaron a Core i3/i5/i7 de bajo consumo (terminación U).' },
+        { title: 'Intel Core Serie 2 (2024–2026 — Laptop U y H)', models: ['Intel Core 5 210H', 'Intel Core 5 220U', 'Intel Core 5 220H', 'Intel Core 7 240H', 'Intel Core 7 250U', 'Intel Core 7 250H', 'Intel Core 9 270H'], note: 'No confundir Core 7 250H con Core Ultra 7 255H; prioriza U para batería y H para potencia.' },
+        { title: 'Variantes especializadas (E / TE)', models: ['Intel Core 3 201E', 'Intel Core 5 211E', 'Intel Core 5 221TE', 'Intel Core 7 251E'], note: 'Son para equipos embebidos/industriales, no laptops de consumo.' }
       ],
       intel_n: [
         { title: 'Intel Processor Serie N (Actual)', models: ['Intel Processor N50', 'Intel Processor N95', 'Intel Processor N100', 'Intel Processor N150', 'Intel Processor N200', 'Intel Processor N300', 'Intel Processor N305'], note: 'Reemplazaron a Celeron/Pentium. Buenos para Office y web; no para CAD/Adobe/Gaming.' },
@@ -2758,11 +2891,11 @@
 
       return [
         { name: 'Opción Inicial', badge: `Mínimo real (incluye seminuevas) para ${bApp}`, cpu: startCpu, ram: startRam, gpu: startGpu, ssd: `${ctx.maxSsd || 256}–512 GB SSD`, ideal: `Hardware mínimo funcional real (nuevo económico o seminuevo 8ª–11ª / Ryzen 3000–5000) para ${bApp}.` },
-        { name: 'Opción Bronce', badge: 'Escalón fluido (12ª–13ª / Ryzen 7000)', cpu: `Intel Core i5-1235U / i5-1335U / Ultra 5 225U o Ryzen 5 7535U / 8540U${noArmTag}`, ram: bronzeRam, gpu: mVram >= 4 ? 'NVIDIA RTX 3050 / 4050 (6 GB) o RX 6600M' : 'Integrada Iris Xe / Radeon 760M/780M', ssd: '512 GB SSD', ideal: 'Equipos recientes con mayor autonomía y fluidez en multitarea.' },
+        { name: 'Opción Bronce', badge: 'Escalón fluido (12ª–13ª / Ryzen 7000)', cpu: `Intel Core 5 220U / i5-1335U / Ultra 5 225U o Ryzen 5 7535U / 8540U${noArmTag}`, ram: bronzeRam, gpu: mVram >= 4 ? 'NVIDIA RTX 3050 / 4050 (6 GB) o RX 6600M' : 'Integrada Iris Xe / Radeon 760M/780M', ssd: '512 GB SSD', ideal: 'Equipos recientes con mayor autonomía y fluidez en multitarea.' },
         { name: 'Opción Plata', badge: 'Equilibrio moderno (2024–2026)', cpu: `Intel Core Ultra 5 225H / 226V o Ryzen 5 8645HS / AI 5 340${noArmTag}`, ram: silverRam, gpu: mVram >= 2 ? 'NVIDIA RTX 4050 / 4060 (6–8 GB) o RX 7600M' : 'Integrada Arc 140V / Radeon 880M', ssd: '1 TB SSD', ideal: 'Punto medio moderno para trabajar, editar y jugar sin tirones.' },
-        { name: 'Opción Oro', badge: 'Rendimiento alto', cpu: `Intel Core i7-13700H / Ultra 7 255H o Ryzen 7 8845HS / AI 7 350${noArmTag}`, ram: '32 GB RAM', gpu: 'NVIDIA RTX 4060 / 5060 (8 GB VRAM)', ssd: '1 TB SSD NVMe', ideal: 'CAD 3D, edición 4K, gaming alto y modelos LLM 7B–8B.' },
+        { name: 'Opción Oro', badge: 'Rendimiento alto', cpu: `Intel Core 7 250H / Ultra 7 255H / Ultra X7 368H o Ryzen 7 8845HS / AI 7 350${noArmTag}`, ram: '32 GB RAM', gpu: 'NVIDIA RTX 4060 / 5060 (8 GB VRAM)', ssd: '1 TB SSD NVMe', ideal: 'CAD 3D, edición 4K, gaming alto y modelos LLM 7B–8B.' },
         { name: 'Opción Diamante', badge: 'Nivel profesional', cpu: `Intel Core i7-14700HX / Ultra 7 265H o Ryzen AI 9 HX 370 / 475`, ram: '32–64 GB RAM', gpu: 'NVIDIA RTX 4070 / 5070 Ti (8–12 GB VRAM)', ssd: '1–2 TB SSD NVMe', ideal: 'Proyectos pesados de ingeniería, After Effects 4K y LLM 14B.' },
-        { name: 'Opción Doble Diamante', badge: 'Estación móvil extrema (2026)', cpu: `Intel Core i9-14900HX / Ultra 9 285HX o Ryzen 9 9955HX / AI Max+ 395`, ram: '64–128 GB DDR5', gpu: 'NVIDIA RTX 4080/4090/5080/5090 (16–24 GB)', ssd: '2–4 TB SSD NVMe', ideal: 'Máxima potencia portátil para cualquier software sin límites.' }
+        { name: 'Opción Doble Diamante', badge: 'Estación móvil extrema (2026)', cpu: `Intel Core Ultra 9 285HX / 386H / Ultra X9 388H o Ryzen 9 9955HX / AI Max+ 395`, ram: '64–128 GB DDR5', gpu: 'NVIDIA RTX 4080/4090/5080/5090 (16–24 GB)', ssd: '2–4 TB SSD NVMe', ideal: 'Máxima potencia portátil para cualquier software sin límites.' }
       ];
     }
 
@@ -2788,6 +2921,11 @@
         { re: /i3-1215U/i, label: 'Core i3-1215U', term: '"i3-1215U"' },
         { re: /i3-1315U/i, label: 'Core i3-1315U', term: '"i3-1315U"' },
         { re: /Core\s*3\s*100U/i, label: 'Core 3 100U', term: '"Core 3 100U"' },
+        { re: /Core\s*5\s*220U/i, label: 'Core 5 220U', term: '"Core 5 220U"' },
+        { re: /Core\s*7\s*250H/i, label: 'Core 7 250H', term: '"Core 7 250H"' },
+        { re: /Ultra\s*X7\s*368H/i, label: 'Core Ultra X7 368H', term: '"Core Ultra X7" "368H"' },
+        { re: /\b386H\b/i, label: 'Core Ultra 9 386H', term: '"Core Ultra 9" "386H"' },
+        { re: /Ultra\s*X9\s*388H/i, label: 'Core Ultra X9 388H', term: '"Core Ultra X9" "388H"' },
         { re: /5425U/i, label: 'Ryzen 3 5425U', term: '"Ryzen 3" "5425U"' },
         { re: /7335U/i, label: 'Ryzen 3 7335U', term: '"Ryzen 3" "7335U"' },
         { re: /7440U/i, label: 'Ryzen 3 7440U', term: '"Ryzen 3" "7440U"' },
@@ -3003,6 +3141,14 @@
     });
 
     // ==================== GPU DECODER ====================
+    const GPU_EXACT_SPECS = {
+      'amd radeon 890m': { rank: '#1 Integrada (orientativa)', arch: 'AMD RDNA 3.5', units: '16 CU • 1,024 shaders • 64 TMU • 32 ROP', freq: 'Hasta 2,900 MHz (HX 370) / 3,100 MHz (HX 470)', apis: 'DirectX 12 Ultimate • Vulkan • OpenGL • Ray Tracing por hardware', cpus: 'Ryzen AI 9 HX 370, HX 375, HX 470', ramTip: 'Comparte RAM del sistema: rinde mucho mejor con 32 GB LPDDR5X / doble canal.' },
+      'amd radeon 880m': { rank: '#2 Integrada (orientativa)', arch: 'AMD RDNA 3.5', units: '12 CU • 768 shaders • 48 TMU • 32 ROP', freq: 'Hasta 2,900 MHz (Ryzen AI 9 365)', apis: 'DirectX 12 Ultimate • Vulkan • OpenGL • Ray Tracing por hardware', cpus: 'Ryzen AI 9 365, Ryzen AI 9 465', ramTip: 'Comparte RAM del sistema: prioriza 16–32 GB de alta velocidad en doble canal.' },
+      'intel arc 140v':  { rank: '#3 Integrada (orientativa)', arch: 'Intel Xe2 (Battlemage / Lunar Lake)', units: '8 núcleos Xe2 • 8 unidades Ray Tracing', freq: '400 MHz base • hasta 2,000 MHz • IA GPU hasta 66 TOPS (INT8, XMX)', apis: 'DirectX 12.2 • OpenGL 4.6 • OpenCL 3.0 • AV1 encode/decode', cpus: 'Core Ultra 7 256V, 258V, 266V, 268V', ramTip: 'Usa memoria LPDDR5X integrada en el paquete (16 o 32 GB) con gran eficiencia.' },
+      'intel arc 140t':  { rank: '#4 Integrada (orientativa)', arch: 'Intel Xe LPG+ (Arrow Lake-H)', units: '8 núcleos Xe • 8 unidades Ray Tracing', freq: 'Hasta 2,300 MHz • IA GPU hasta 75 TOPS (INT8)', apis: 'DirectX 12.2 • OpenGL 4.6 • OpenCL 3.0 • AV1 • Intel Quick Sync Video', cpus: 'Core Ultra 7 255H, 265H y Core Ultra 9 285H', ramTip: 'Comparte RAM del sistema: ideal con 32 GB de alta velocidad (DDR5/LPDDR5X).' },
+      'amd radeon 780m': { rank: '#5 Integrada (orientativa)', arch: 'AMD RDNA 3', units: '12 CU • 768 shaders • 48 TMU • 32 ROP', freq: 'Hasta 2,700 MHz (Ryzen 7 8845HS)', apis: 'DirectX 12 Ultimate • Vulkan • OpenGL • Ray Tracing por hardware', cpus: 'Ryzen 7 7840U, 8840U, 8840HS, 8845HS y Ryzen 9 8945HS', ramTip: 'Comparte RAM del sistema: el doble canal y RAM rápida marcan gran diferencia.' }
+    };
+
     function decodeGpu(raw) {
       const text = (raw || '').trim();
       const box = document.getElementById('gpu-decode-result');
@@ -3057,8 +3203,8 @@
         vram = /1660|2060/.test(l) ? '6 GB GDDR6' : '4 GB GDDR6';
         useCase = 'GTA V, Fortnite, Free Fire, Photoshop, AutoCAD 2D y Premiere HD. Limitada en 4K o LLM >7B.';
         verdict = 'Cumple en entrada (4–6 GB VRAM)'; badge = 'bg-amber-100 text-amber-800';
-      } else if (/8060s|890m|880m|780m|140v|130v|b390|b370/i.test(l)) {
-        type = 'Integrada de Alto Rendimiento'; arch = /8060s|890m|880m/i.test(l) ? 'AMD RDNA 3.5' : /780m/i.test(l) ? 'AMD RDNA 3' : 'Intel Xe2 / Arc integrada';
+      } else if (/8060s|890m|880m|780m|140v|130v|140t|130t|860m|b390|b370/i.test(l)) {
+        type = 'Integrada de Alto Rendimiento'; arch = /8060s|890m|880m|860m/i.test(l) ? 'AMD RDNA 3.5 (12–16+ CU)' : /780m/i.test(l) ? 'AMD RDNA 3 (12 CU)' : /140t|130t/i.test(l) ? 'Intel Arrow Lake-H (7–8 núcleos Xe)' : 'Intel Lunar Lake Xe2 (7–8 núcleos Xe2) / Arc';
         vram = 'Memoria compartida del sistema (ideal 16–32 GB RAM)';
         useCase = 'Laptops delgadas: Photoshop, diseño, Minecraft, GTA V/Fortnite en ajustes medios y edición HD.';
         verdict = 'Excelente gráfica integrada'; badge = 'bg-emerald-100 text-emerald-800';
@@ -3072,7 +3218,7 @@
         vram = 'Memoria compartida del sistema';
         useCase = 'Office, web y multimedia con gran batería. Ojo: incompatible con SOLIDWORKS, FlexSim, Minitab y Datamine.';
         verdict = 'Solo productividad (NO para CAD x86)'; badge = 'bg-amber-100 text-amber-800';
-      } else if (/uhd|iris|vega|610m|660m|740m/i.test(l)) {
+      } else if (/uhd|iris|vega|610m|660m|680m|740m|760m|840m/i.test(l)) {
         type = 'Integrada Básica / Estándar'; arch = /iris\s*plus/i.test(l) ? 'Intel Iris Plus (10ª Gen Ice Lake)' : /iris/i.test(l) ? 'Intel Iris Xe' : /vega|610m|660m|740m/i.test(l) ? 'AMD Radeon integrada' : 'Intel UHD';
         vram = 'Comparte RAM del sistema';
         useCase = 'Office, ONLYOFFICE, clases, navegación, Roblox, N64 y Photoshop ligero. No apta para 3D pesado ni juegos AAA.';
@@ -3089,6 +3235,22 @@
           <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">Arquitectura</span><strong class="text-slate-800">${arch}</strong></div>
           <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">VRAM / Memoria</span><strong class="text-slate-800">${vram}</strong></div>
           <div class="bg-white p-2.5 rounded-lg border border-slate-200"><span class="text-slate-400 block">¿Para qué alcanza?</span><span class="text-slate-700">${useCase}</span></div>
+          ${(() => {
+            const gsp = GPU_EXACT_SPECS[l];
+            if (!gsp) return '';
+            return `
+              <div class="sm:col-span-2 bg-indigo-50/70 p-3 rounded-lg border border-indigo-200 space-y-1.5">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Ficha técnica exacta (${gsp.rank})</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-[11px] text-slate-800">
+                  <div><strong>Arquitectura:</strong> ${gsp.arch}</div>
+                  <div><strong>Unidades gráficas:</strong> ${gsp.units}</div>
+                  <div><strong>Frecuencia / IA:</strong> ${gsp.freq}</div>
+                  <div><strong>APIs / Video:</strong> ${gsp.apis}</div>
+                  <div class="sm:col-span-2"><strong>Procesadores que la incluyen:</strong> ${gsp.cpus}</div>
+                  <div class="sm:col-span-2 text-indigo-900"><strong>Clave de memoria RAM:</strong> ${gsp.ramTip}</div>
+                </div>
+              </div>`;
+          })()}
         </div>
       `;
     }
@@ -3102,7 +3264,7 @@
     });
 
     // ==================== DYNAMIC CASCADING LISTBOXES FOR OFFER EVALUATOR ====================
-    function populateSelect(el, options, preferredVal) {
+    function populateSelect(el, options, preferredVal, forcePreferred = false) {
       if (!el) return;
       const prev = el.value;
       const flatVals = [];
@@ -3114,8 +3276,9 @@
         flatVals.push(o.value);
         return `<option value="${o.value}">${o.label}</option>`;
       }).join('');
-      if (flatVals.includes(prev)) el.value = prev;
+      if (!forcePreferred && flatVals.includes(prev)) el.value = prev;
       else if (preferredVal && flatVals.includes(preferredVal)) el.value = preferredVal;
+      else if (flatVals.length) el.value = flatVals[0];
     }
 
     function syncOfferListboxes(changedField) {
@@ -3127,7 +3290,7 @@
       const ramEl = document.getElementById('eval-ram');
       const ssdEl = document.getElementById('eval-ssd');
 
-      // 1. CPU Family depending on OS
+      // 1. Familia de CPU según Sistema Operativo
       if (changedField === 'init' || changedField === 'os') {
         if (osVal === 'apple') {
           populateSelect(cpuFamEl, [
@@ -3135,7 +3298,8 @@
           ], 'apple');
         } else {
           const fams = [
-            { value: 'intel_ultra', label: 'Intel Core Ultra (Series 1 / 2 / 3)' },
+            { value: 'intel_ultra', label: 'Intel Core Ultra (Series 1 / 2 / 3 y Ultra X)' },
+            { value: 'intel_core_new', label: 'Intel Core Convencional (Serie 1 y 2 — sin Ultra)' },
             { value: 'intel_core', label: 'Intel Core 11.ª–14.ª Gen y Core 3' },
             { value: 'intel_legacy', label: 'Intel Core 8.ª–10.ª Gen (Seminuevas)' },
             { value: 'intel_n', label: 'Intel Celeron / Pentium / Serie N y J' },
@@ -3150,38 +3314,69 @@
         }
       }
 
-      // 2. Exact CPU Model from CPU_DECODER_OPTIONS
+      // 2. Modelo exacto de CPU según Familia
+      const cpuFam = cpuFamEl.value;
       if (changedField === 'init' || changedField === 'os' || changedField === 'cpuFam') {
-        const list = (typeof CPU_DECODER_OPTIONS !== 'undefined' && CPU_DECODER_OPTIONS[cpuFamEl.value]) || ['Intel Core i5-13500H'];
-        const pref = cpuFamEl.value === 'intel_core' ? 'Intel Core i5-13500H' : cpuFamEl.value === 'apple' ? 'Apple M4' : list[0];
+        const list = (typeof CPU_DECODER_OPTIONS !== 'undefined' && CPU_DECODER_OPTIONS[cpuFam]) || ['Intel Core i5-13500H'];
+        const pref = cpuFam === 'intel_core' ? 'Intel Core i5-13500H' : cpuFam === 'apple' ? 'Apple M4' : list[0];
         populateSelect(cpuEl, list.map(m => ({ value: m, label: m })), pref);
       }
 
       const cpuModel = cpuEl.value || '';
-      const isNeo = /A18|Neo/i.test(cpuModel);
-      const isApplePro = /M[1-5]\s*Pro/i.test(cpuModel);
-      const isAppleMax = /M[1-5]\s*Max/i.test(cpuModel);
-      const isSnapdragon = /Snapdragon/i.test(cpuModel);
+      const cpuL = cpuModel.toLowerCase();
+      const isNeo = /a18|neo/i.test(cpuModel);
+      const isApplePro = /m[1-5]\s*pro/i.test(cpuModel);
+      const isAppleMax = /m[1-5]\s*max/i.test(cpuModel);
+      const isSnapdragon = /snapdragon/i.test(cpuModel);
+      const isIntelCpu = cpuFam.startsWith('intel');
+      const isAmdCpu = cpuFam.startsWith('amd');
+      const isUltraLowEntry = cpuFam === 'intel_n' || /athlon|3015e|3020e|celeron|pentium/i.test(cpuModel);
+      const isLunarLakeV = /ultra\s*[579]\s*2\d{2}v/i.test(cpuModel);
+      const isLegacyGen = cpuFam === 'intel_legacy' || (cpuFam === 'amd_legacy' && !/5\d{3}/.test(cpuModel));
 
-      // 3. GPU Family depending on OS + CPU
+      // 3. Familia de GPU en cascada estricta según SO + Marca/Generación de CPU
       if (changedField === 'init' || changedField === 'os' || changedField === 'cpuFam' || changedField === 'cpu') {
         if (osVal === 'apple') {
           populateSelect(gpuFamEl, [{ value: 'apple', label: 'Apple Silicon (Memoria Unificada)' }], 'apple');
         } else if (isSnapdragon) {
           populateSelect(gpuFamEl, [{ value: 'qualcomm', label: 'Qualcomm Adreno (ARM)' }], 'qualcomm');
-        } else {
+        } else if (isUltraLowEntry) {
+          // Entrada económica: solo su gráfica integrada real
+          populateSelect(gpuFamEl, isIntelCpu
+            ? [{ value: 'intel', label: 'Intel Integrada (UHD / Graphics)' }]
+            : [{ value: 'amd_int', label: 'AMD Radeon Integrada' }],
+            isIntelCpu ? 'intel' : 'amd_int');
+        } else if (isLunarLakeV) {
+          // Lunar Lake 200V: ultraportátil con Intel Arc 130V/140V integrada
           populateSelect(gpuFamEl, [
-            { value: 'nvidia', label: 'NVIDIA Dedicadas (GTX 16 – RTX 50)' },
-            { value: 'nvidia_legacy', label: 'NVIDIA MX / GTX 10 / Quadro (2017–2020)' },
+            { value: 'intel', label: 'Intel Arc Integrada (130V / 140V)' },
+            { value: 'nvidia', label: 'NVIDIA Dedicada (si el equipo la incluye)' }
+          ], 'intel');
+        } else if (isLegacyGen) {
+          // Seminuevas 2017–2020: solo integrada de su marca + dedicadas de su época
+          const legGpus = [];
+          if (isIntelCpu) legGpus.push({ value: 'intel', label: 'Intel Integrada (UHD 620/630 / Iris Plus)' });
+          if (isAmdCpu) legGpus.push({ value: 'amd_int', label: 'AMD Radeon Integrada (Vega)' });
+          legGpus.push(
+            { value: 'nvidia_legacy', label: 'NVIDIA MX / GTX 10 / GTX 16 / RTX 20 / Quadro (2017–2020)' },
+            { value: 'amd_legacy', label: 'AMD Radeon 500 / RX 5000M / Pro WX (2017–2020)' }
+          );
+          populateSelect(gpuFamEl, legGpus, isIntelCpu ? 'intel' : 'amd_int');
+        } else {
+          // Modernas (11ª–14ª, Core Serie 1/2, Core Ultra, Ryzen 5000–AI): nunca mezclar iGPU de la marca contraria
+          const modGpus = [];
+          if (isIntelCpu) modGpus.push({ value: 'intel', label: 'Intel Integrada / Arc (UHD / Iris Xe / Arc 130T–140T / B390)' });
+          if (isAmdCpu) modGpus.push({ value: 'amd_int', label: 'AMD Radeon Integrada (660M–890M / 8060S)' });
+          modGpus.push(
+            { value: 'nvidia', label: 'NVIDIA Dedicadas (RTX 30 / 40 / 50)' },
             { value: 'amd_ded', label: 'AMD Dedicadas (RX 6000M / 7000M)' },
-            { value: 'amd_legacy', label: 'AMD Radeon 500 / RX 5000M / Pro WX' },
-            { value: 'amd_int', label: 'AMD Radeon Integradas' },
-            { value: 'intel', label: 'Intel (UHD / Iris Plus / Iris Xe / Arc)' }
-          ], 'nvidia');
+            { value: 'nvidia_legacy', label: 'NVIDIA Quadro / Workstation / GTX 16' }
+          );
+          populateSelect(gpuFamEl, modGpus, isIntelCpu ? 'intel' : 'amd_int');
         }
       }
 
-      // 4. Exact GPU Model from GPU_DECODER_OPTIONS
+      // 4. Modelo exacto de GPU en cascada (preseleccionando la iGPU real del CPU si existe!)
       if (changedField === 'init' || changedField === 'os' || changedField === 'cpuFam' || changedField === 'cpu' || changedField === 'gpuFam') {
         if (osVal === 'apple') {
           const macGpu = isNeo ? 'Apple A18 Pro GPU (5 núcleos)'
@@ -3196,13 +3391,41 @@
             : 'Apple M1 GPU';
           populateSelect(gpuEl, [{ value: macGpu, label: macGpu }], macGpu);
         } else {
-          const gList = (typeof GPU_DECODER_OPTIONS !== 'undefined' && GPU_DECODER_OPTIONS[gpuFamEl.value]) || ['Intel Iris Xe Graphics'];
-          const gPref = gpuFamEl.value === 'nvidia' ? 'NVIDIA RTX 4050' : gList[0];
-          populateSelect(gpuEl, gList.map(m => ({ value: m, label: m })), gPref);
+          let gList = (typeof GPU_DECODER_OPTIONS !== 'undefined' && GPU_DECODER_OPTIONS[gpuFamEl.value]) || ['Intel Iris Xe Graphics'];
+          let gPref = gList[0];
+
+          // Detección inteligente de la iGPU exacta del CPU elegido
+          if (gpuFamEl.value === 'intel') {
+            if (/226v|228v|236v|238v/i.test(cpuL)) gPref = 'Intel Arc 130V';
+            else if (/256v|258v|266v|268v|288v/i.test(cpuL)) gPref = 'Intel Arc 140V';
+            else if (/225h|235h/i.test(cpuL)) gPref = 'Intel Arc 130T';
+            else if (/255h|265h|285h/i.test(cpuL)) gPref = 'Intel Arc 140T';
+            else if (/x[79]\s*3[5678]8h/i.test(cpuL)) gPref = 'Intel Arc B390';
+            else if (/10\d{2}g[47]/i.test(cpuL)) gPref = 'Intel Iris Plus G4 / G7';
+            else if (/11\d{2}g7|12\d{2}[up]|13\d{2}[up]/i.test(cpuL)) gPref = 'Intel Iris Xe Graphics';
+            else if (isLegacyGen || isUltraLowEntry) gPref = 'Intel UHD Graphics 620 / 630';
+          } else if (gpuFamEl.value === 'amd_int') {
+            if (/hx\s*370|hx\s*375|hx\s*470|hx\s*475/i.test(cpuL)) gPref = 'AMD Radeon 890M';
+            else if (/ai\s*9\s*(365|465)/i.test(cpuL)) gPref = 'AMD Radeon 880M';
+            else if (/ai\s*7\s*(350|450)/i.test(cpuL)) gPref = 'AMD Radeon 860M';
+            else if (/ai\s*5\s*(340|430)/i.test(cpuL)) gPref = 'AMD Radeon 840M';
+            else if (/max\+?\s*395/i.test(cpuL)) gPref = 'AMD Radeon 8060S';
+            else if (/7840|8840|8845|8945/i.test(cpuL)) gPref = 'AMD Radeon 780M';
+            else if (/7640|8645/i.test(cpuL)) gPref = 'AMD Radeon 760M';
+            else if (/7440/i.test(cpuL)) gPref = 'AMD Radeon 740M';
+            else if (/7735|6800/i.test(cpuL)) gPref = 'AMD Radeon 680M';
+            else if (/7535|7335|6600/i.test(cpuL)) gPref = 'AMD Radeon 660M';
+            else if (/7520|7320/i.test(cpuL)) gPref = 'AMD Radeon 610M';
+            else if (/7530/i.test(cpuL)) gPref = 'AMD Radeon Vega 7';
+            else gPref = 'AMD Radeon Vega 8';
+          } else if (gpuFamEl.value === 'nvidia') {
+            gPref = 'NVIDIA RTX 4060';
+          }
+          populateSelect(gpuEl, gList.map(m => ({ value: m, label: m })), gPref, changedField !== 'gpuFam');
         }
       }
 
-      // 5. RAM options depending on OS + exact CPU
+      // 5. RAM en cascada según SO + CPU
       if (osVal === 'apple') {
         if (isNeo) {
           populateSelect(ramEl, [{ value: '8', label: '8 GB (fija)' }], '8');
@@ -3216,7 +3439,7 @@
             { value: '18', label: '18 GB' }, { value: '24', label: '24 GB' },
             { value: '36', label: '36 GB' }, { value: '48', label: '48 GB' }
           ], '36');
-        } else if (/M4|M5/.test(cpuModel)) {
+        } else if (/m4|m5/i.test(cpuModel)) {
           populateSelect(ramEl, [
             { value: '16', label: '16 GB' }, { value: '24', label: '24 GB' }, { value: '32', label: '32 GB' }
           ], '16');
@@ -3225,17 +3448,27 @@
             { value: '8', label: '8 GB' }, { value: '16', label: '16 GB' }, { value: '24', label: '24 GB' }
           ], '16');
         }
+      } else if (isLunarLakeV) {
+        // Lunar Lake 200V solo existe con 16 GB o 32 GB LPDDR5X integrados en paquete
+        populateSelect(ramEl, [
+          { value: '16', label: '16 GB (LPDDR5X integrada)' },
+          { value: '32', label: '32 GB (LPDDR5X integrada)' }
+        ], '16');
+      } else if (isUltraLowEntry) {
+        populateSelect(ramEl, [
+          { value: '4', label: '4 GB' }, { value: '8', label: '8 GB' }, { value: '16', label: '16 GB' }
+        ], '8');
       } else {
         populateSelect(ramEl, [
-          { value: '4', label: '4 GB' }, { value: '8', label: '8 GB' }, { value: '12', label: '12 GB' },
+          { value: '8', label: '8 GB' }, { value: '12', label: '12 GB' },
           { value: '16', label: '16 GB' }, { value: '24', label: '24 GB' }, { value: '32', label: '32 GB' }, { value: '64', label: '64 GB+' }
         ], '16');
       }
 
-      // 6. SSD options depending on OS + CPU
+      // 6. SSD en cascada según SO + CPU
       if (osVal === 'apple' && isNeo) {
         populateSelect(ssdEl, [{ value: '256', label: '256 GB SSD' }, { value: '512', label: '512 GB SSD' }], '512');
-      } else if (osVal === 'apple') {
+      } else if (osVal === 'apple' || isLunarLakeV) {
         populateSelect(ssdEl, [
           { value: '256', label: '256 GB SSD' }, { value: '512', label: '512 GB SSD' },
           { value: '1024', label: '1 TB SSD' }, { value: '2048', label: '2 TB+ SSD' }
@@ -3389,8 +3622,8 @@
       else if (/4080|5070\s*ti|7800m|6800m|rtx\s*4000/i.test(gpuLower)) eqVram = 12;
       else if (/4060|4070|5050|5060|5070|3070|3080|2070|2080|1070|1080|7600m|7700s|6600m|m[3-5]\s*pro|8060s/i.test(gpuLower)) eqVram = 8;
       else if (/4050|3060|2060|1660|1060|5600m|rtx\s*3000/i.test(gpuLower)) eqVram = 6;
-      else if (/3050|1650|1050\s*ti|5500m|6500m|a350m|a550m|780m|880m|890m|140v|b390|p1000|p2000|wx\s*4|wx\s*7|apple\s*m[1-5]/i.test(gpuLower)) eqVram = 4;
-      else if (/mx\d{3}|1050|5300m|560x|iris|660m|680m|740m|760m|130v|b370|p620|wx\s*3/i.test(gpuLower)) eqVram = 2;
+      else if (/3050|1650|1050\s*ti|5500m|6500m|a350m|a550m|780m|860m|880m|890m|140v|140t|b390|p1000|p2000|wx\s*4|wx\s*7|apple\s*m[1-5]/i.test(gpuLower)) eqVram = 4;
+      else if (/mx\d{3}|1050|5300m|560x|iris|660m|680m|740m|760m|840m|130v|130t|b370|p620|wx\s*3/i.test(gpuLower)) eqVram = 2;
       else if (/uhd|vega|610m|530|550|a18|adreno/i.test(gpuLower)) eqVram = 1;
 
       if (ctx.needsCertGpu && osVal.startsWith('windows') && !isCert) {
@@ -3509,7 +3742,27 @@
 
     // ==================== ZERO-TYPING CASCADING LISTBOXES (CPU, GPU, PROGRAMS) ====================
     const CPU_DECODER_OPTIONS = {
-      intel_ultra: ['Intel Core Ultra 5 125U', 'Intel Core Ultra 5 125H', 'Intel Core Ultra 5 225U', 'Intel Core Ultra 5 225H', 'Intel Core Ultra 5 226V', 'Intel Core Ultra 5 325', 'Intel Core Ultra 7 155H', 'Intel Core Ultra 7 255H', 'Intel Core Ultra 7 258V', 'Intel Core Ultra 7 265H', 'Intel Core Ultra 7 366H', 'Intel Core Ultra 9 185H', 'Intel Core Ultra 9 275HX', 'Intel Core Ultra 9 285H', 'Intel Core Ultra 9 285HX', 'Intel Core Ultra 9 388H'],
+      intel_ultra: [
+        'Intel Core Ultra 5 125U', 'Intel Core Ultra 5 125H', 'Intel Core Ultra 5 134U', 'Intel Core Ultra 5 135U', 'Intel Core Ultra 5 135H',
+        'Intel Core Ultra 7 155U', 'Intel Core Ultra 7 155H', 'Intel Core Ultra 7 164U', 'Intel Core Ultra 7 165U', 'Intel Core Ultra 7 165H',
+        'Intel Core Ultra 9 185H',
+        'Intel Core Ultra 5 226V', 'Intel Core Ultra 5 228V', 'Intel Core Ultra 5 236V', 'Intel Core Ultra 5 238V',
+        'Intel Core Ultra 5 225U', 'Intel Core Ultra 5 225H', 'Intel Core Ultra 5 235U', 'Intel Core Ultra 5 235H', 'Intel Core Ultra 5 235HX', 'Intel Core Ultra 5 245HX',
+        'Intel Core Ultra 7 256V', 'Intel Core Ultra 7 258V', 'Intel Core Ultra 7 266V', 'Intel Core Ultra 7 268V',
+        'Intel Core Ultra 7 255U', 'Intel Core Ultra 7 255H', 'Intel Core Ultra 7 255HX', 'Intel Core Ultra 7 265U', 'Intel Core Ultra 7 265H', 'Intel Core Ultra 7 265HX',
+        'Intel Core Ultra 9 288V', 'Intel Core Ultra 9 275HX', 'Intel Core Ultra 9 285H', 'Intel Core Ultra 9 285HX', 'Intel Core Ultra 9 270HX Plus', 'Intel Core Ultra 9 290HX Plus',
+        'Intel Core Ultra 5 322', 'Intel Core Ultra 5 325', 'Intel Core Ultra 5 332', 'Intel Core Ultra 5 335', 'Intel Core Ultra 5 336H', 'Intel Core Ultra 5 338H',
+        'Intel Core Ultra 7 355', 'Intel Core Ultra 7 356H', 'Intel Core Ultra 7 365', 'Intel Core Ultra 7 366H',
+        'Intel Core Ultra 9 386H',
+        'Intel Core Ultra X7 358H', 'Intel Core Ultra X7 368H', 'Intel Core Ultra X9 378H', 'Intel Core Ultra X9 388H'
+      ],
+      intel_core_new: [
+        'Intel Core 3 100U', 'Intel Core 5 120U', 'Intel Core 7 150U',
+        'Intel Core 5 210H', 'Intel Core 5 220U', 'Intel Core 5 220H',
+        'Intel Core 7 240H', 'Intel Core 7 250U', 'Intel Core 7 250H',
+        'Intel Core 9 270H',
+        'Intel Core 3 201E', 'Intel Core 5 211E', 'Intel Core 5 221TE', 'Intel Core 7 251E'
+      ],
       intel_core: ['Intel Core 3 100U', 'Intel Core i3-1115G4', 'Intel Core i3-1215U', 'Intel Core i3-1305U', 'Intel Core i3-1315U', 'Intel Core i5-1135G7', 'Intel Core i5-1235U', 'Intel Core i5-1240P', 'Intel Core i5-1335U', 'Intel Core i5-13500H', 'Intel Core i5-14500HX', 'Intel Core i7-11800H', 'Intel Core i7-12700H', 'Intel Core i7-13700H', 'Intel Core i7-13850HX', 'Intel Core i7-14700HX', 'Intel Core i9-13980HX', 'Intel Core i9-14900HX'],
       intel_legacy: ['Intel Core i3-8130U', 'Intel Core i3-8145U', 'Intel Core i5-8250U', 'Intel Core i5-8350U', 'Intel Core i5-8265U', 'Intel Core i5-8300H', 'Intel Core i7-8550U', 'Intel Core i7-8650U', 'Intel Core i7-8750H', 'Intel Core i9-8950HK', 'Intel Core i5-9300H', 'Intel Core i7-9750H', 'Intel Core i9-9880H', 'Intel Core i9-9980HK', 'Intel Core i3-1005G1', 'Intel Core i3-10110U', 'Intel Core i5-10210U', 'Intel Core i5-1035G7', 'Intel Core i5-10300H', 'Intel Core i7-10510U', 'Intel Core i7-1065G7', 'Intel Core i7-10750H', 'Intel Core i9-10980HK'],
       intel_n: ['Intel Celeron N4000', 'Intel Celeron N4020', 'Intel Celeron N4120', 'Intel Celeron N4500', 'Intel Celeron N5100', 'Intel Celeron 5205U', 'Intel Celeron 6305', 'Intel Celeron J4125', 'Intel Celeron J6412', 'Intel Pentium Silver N5000', 'Intel Pentium Silver N5030', 'Intel Pentium Silver N6000', 'Intel Pentium J5040', 'Intel Pentium Gold 6500Y', 'Intel Pentium Gold 7505', 'Intel Processor N50', 'Intel Processor N95', 'Intel Processor N100', 'Intel Processor N150', 'Intel Processor N200', 'Intel Processor N300', 'Intel Processor N305'],
@@ -3525,8 +3778,8 @@
       amd_legacy: ['AMD Radeon 530', 'AMD Radeon RX 550', 'AMD Radeon RX 560X', 'AMD Radeon RX 5300M (3 GB)', 'AMD Radeon RX 5500M (4 GB)', 'AMD Radeon RX 5600M (6 GB)', 'AMD Radeon Pro WX 3200', 'AMD Radeon Pro WX 4150', 'AMD Radeon Pro WX 7100', 'AMD Radeon Pro 5500M'],
       nvidia: ['NVIDIA GTX 1650', 'NVIDIA GTX 1660 Ti', 'NVIDIA RTX 2060', 'NVIDIA RTX 3050', 'NVIDIA RTX 3060', 'NVIDIA RTX 3070', 'NVIDIA RTX 3080 Ti', 'NVIDIA RTX 4050', 'NVIDIA RTX 4060', 'NVIDIA RTX 4070', 'NVIDIA RTX 4080', 'NVIDIA RTX 4090', 'NVIDIA RTX 5050', 'NVIDIA RTX 5060', 'NVIDIA RTX 5070', 'NVIDIA RTX 5070 Ti', 'NVIDIA RTX 5080', 'NVIDIA RTX 5090'],
       amd_ded: ['AMD Radeon RX 6500M', 'AMD Radeon RX 6600M', 'AMD Radeon RX 6700S', 'AMD Radeon RX 6800M', 'AMD Radeon RX 7600M', 'AMD Radeon RX 7600M XT', 'AMD Radeon RX 7700S', 'AMD Radeon RX 7800M', 'AMD Radeon RX 7900M'],
-      amd_int: ['AMD Radeon Vega 8', 'AMD Radeon 610M', 'AMD Radeon 660M', 'AMD Radeon 680M', 'AMD Radeon 740M', 'AMD Radeon 760M', 'AMD Radeon 780M', 'AMD Radeon 860M', 'AMD Radeon 880M', 'AMD Radeon 890M', 'AMD Radeon 8060S'],
-      intel: ['Intel UHD Graphics 620 / 630', 'Intel Iris Plus G4 / G7', 'Intel Iris Xe Graphics', 'Intel Arc A350M', 'Intel Arc A550M', 'Intel Arc A770M', 'Intel Arc 130V', 'Intel Arc 140V', 'Intel Arc B370', 'Intel Arc B390'],
+      amd_int: ['AMD Radeon Vega 7', 'AMD Radeon Vega 8', 'AMD Radeon 610M', 'AMD Radeon 660M', 'AMD Radeon 680M', 'AMD Radeon 740M', 'AMD Radeon 760M', 'AMD Radeon 780M', 'AMD Radeon 840M', 'AMD Radeon 860M', 'AMD Radeon 880M', 'AMD Radeon 890M', 'AMD Radeon 8060S'],
+      intel: ['Intel UHD Graphics 620 / 630', 'Intel Iris Plus G4 / G7', 'Intel Iris Xe Graphics', 'Intel Arc A350M', 'Intel Arc A550M', 'Intel Arc A770M', 'Intel Arc 130V', 'Intel Arc 140V', 'Intel Arc 130T', 'Intel Arc 140T', 'Intel Arc B370', 'Intel Arc B390'],
       apple: ['Apple A18 Pro GPU (5 núcleos)', 'Apple M1 GPU', 'Apple M2 GPU', 'Apple M3 GPU', 'Apple M4 GPU', 'Apple M4 Pro GPU', 'Apple M4 Max GPU', 'Apple M5 GPU', 'Apple M5 Pro GPU', 'Apple M5 Max GPU'],
       qualcomm: ['Qualcomm Adreno X1-45', 'Qualcomm Adreno X1-65', 'Qualcomm Adreno X1-85']
     };
