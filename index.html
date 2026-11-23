@@ -219,10 +219,17 @@
                 <h3 class="text-base sm:text-lg font-extrabold text-slate-900">Opciones de compra en 6 niveles (desde lo mínimo funcional para tus programas)</h3>
                 <p id="tiers-subtitle" class="text-xs text-slate-500">La Opción Inicial parte exactamente de lo mínimo que sí funciona bien para lo que elegiste.</p>
               </div>
-              <div class="flex bg-slate-100 p-1 rounded-xl gap-1 shrink-0">
-                <button type="button" data-tiermode="windows" class="tier-mode-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition bg-white text-indigo-700 shadow-sm">Windows 11</button>
-                <button type="button" data-tiermode="apple" class="tier-mode-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">macOS (Apple)</button>
-                <button type="button" data-tiermode="linux" class="tier-mode-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">Linux</button>
+              <div class="flex flex-wrap items-center gap-2 shrink-0">
+                <div class="flex bg-slate-100 p-1 rounded-xl gap-1">
+                  <button type="button" data-tiermode="windows" class="tier-mode-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition bg-white text-indigo-700 shadow-sm">Windows 11</button>
+                  <button type="button" data-tiermode="apple" class="tier-mode-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">macOS (Apple)</button>
+                  <button type="button" data-tiermode="linux" class="tier-mode-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">Linux</button>
+                </div>
+                <div class="flex bg-slate-100 p-1 rounded-xl gap-1">
+                  <button type="button" data-tiercond="all" class="tier-cond-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition bg-white text-indigo-700 shadow-sm">Mixto</button>
+                  <button type="button" data-tiercond="current" class="tier-cond-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">Hardware actual</button>
+                  <button type="button" data-tiercond="refurb" class="tier-cond-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">Reacondicionados</button>
+                </div>
               </div>
             </div>
             <div id="os-software-map" class="mb-4 rounded-xl bg-slate-50 border border-slate-200 p-3 text-xs text-slate-700"></div>
@@ -377,7 +384,8 @@
         <div class="flex flex-col sm:flex-row gap-2 mb-4">
           <select id="gpu-brand-select" class="sm:w-56 px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
             <option value="nvidia">NVIDIA Dedicadas (GTX 16 – RTX 50)</option>
-            <option value="nvidia_legacy">NVIDIA MX / GTX 10 / Quadro (2017–2020)</option>
+            <option value="nvidia_legacy">NVIDIA MX / GTX 10 / 900M–700M (Seminuevas)</option>
+            <option value="nvidia_pro">NVIDIA Workstation (Quadro / RTX Ada & Ampere)</option>
             <option value="amd_legacy">AMD Radeon 500 / RX 5000M / Pro WX (2017–2020)</option>
             <option value="amd_ded">AMD Dedicadas (RX 6000M / 7000M)</option>
             <option value="amd_int">AMD Radeon Integradas</option>
@@ -718,12 +726,34 @@
               <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="kbd-key mr-1">HX</span> Máximo rendimiento móvil / Gaming / CAD</div>
               <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="kbd-key mr-1">HK</span> Alto rendimiento desbloqueado (Intel)</div>
               <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="kbd-key mr-1">C</span> / <span class="kbd-key">PRO</span> Chromebook (C) o empresarial (PRO)</div>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="kbd-key mr-1">Y</span> / <span class="kbd-key">m3</span> Ultra bajo consumo (5–7 W sin ventilador)</div>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="kbd-key mr-1">HF</span> / <span class="kbd-key">F</span> Sin gráficos integrados (exige GPU dedicada)</div>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="kbd-key mr-1">G</span> Kaby Lake-G (8ª con Vega M) o Iris Plus (10ª)</div>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="kbd-key mr-1">H35</span> / <span class="kbd-key">E/TE</span> 35 W delgadas (11ª) • E/TE = embebidos</div>
             </div>
           </div>
         </div>
 
         <!-- Commercial Models Explorer -->
         <div class="pt-4 border-t border-slate-100">
+          <div class="mb-4 rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 overflow-x-auto">
+            <h5 class="text-xs font-bold text-slate-800 mb-2">Referencia rápida para laptops seminuevas/usadas (Intel 8.ª–11.ª vs. AMD 2000–5000)</h5>
+            <table class="w-full text-left border-collapse text-[11px] min-w-[520px]">
+              <thead>
+                <tr class="border-b border-slate-200 text-slate-500 uppercase">
+                  <th class="py-1 pr-2">Segmento usado</th>
+                  <th class="py-1 pr-2">Intel Laptop</th>
+                  <th class="py-1 pr-2">AMD equivalente aproximado</th>
+                  <th class="py-1">Nota clave</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200/70 text-slate-700">
+                <tr><td class="py-1 pr-2 font-semibold">Económico</td><td class="py-1 pr-2">Celeron N4020 / Pentium N5000 / i3-8130U</td><td class="py-1 pr-2">AMD 3015e / 3020e / Ryzen 3 2200U</td><td class="py-1">Solo Office ligero y Linux; evitar AMD Serie A (A4–A12)</td></tr>
+                <tr><td class="py-1 pr-2 font-semibold">Gama media (U)</td><td class="py-1 pr-2">i5-8250U / i5-1035G7 / i5-1135G7</td><td class="py-1 pr-2">Ryzen 5 2500U / Ryzen 5 4500U / Ryzen 5 5500U</td><td class="py-1">15 W eficientes; no comparar un chip U contra un H de 45 W</td></tr>
+                <tr><td class="py-1 pr-2 font-semibold">Alto rendimiento (H)</td><td class="py-1 pr-2">i7-8750H / i7-10750H / i7-11800H</td><td class="py-1 pr-2">Ryzen 5 4600H / Ryzen 7 4800H / Ryzen 7 5800H</td><td class="py-1">45 W para CAD, edición y juegos (acompañados de GTX/RTX)</td></tr>
+              </tbody>
+            </table>
+          </div>
           <h4 class="text-sm font-bold text-slate-800 mb-2">Modelos comerciales más comunes en tiendas (clic para analizar en el decodificador)</h4>
           <div class="flex flex-wrap gap-2 mb-3">
             <button type="button" data-cpufam="intel_core" class="cpufam-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 text-white shadow-sm transition">Intel Core 11ª–14ª</button>
@@ -1154,6 +1184,51 @@
           apple:   { desc: 'Nativo macOS 11+ (mín. Apple M1+ o Intel con GPU dedicada Metal, 4–8 GB RAM).', ram: 8, vram: 0, ssd: 256, cpuLevel: 2, minMac: 'M1', appName: 'PCSX2 v2.6+' },
           linux:   { desc: 'Nativo Linux x64 AppImage/Flatpak (mín. AVX2, 4–8 GB RAM, Vulkan 1.1 + 2 GB VRAM).', ram: 8, vram: 2, ssd: 256, cpuLevel: 2, appName: 'PCSX2 v2.6+' }
         }
+      },
+      {
+        value: 'emu_switch',
+        label: 'Emulador de Nintendo Switch (Eden / Ryubing)',
+        specs: {
+          windows: { desc: 'Nativo Windows 10/11 x64 (mín. laptop 12 GB RAM, 4 GB VRAM Vulkan 1.1/OpenGL 4.6; rec. 16 GB + 6 GB VRAM).', ram: 12, vram: 4, ssd: 512, cpuLevel: 2, noArm: false, winPro: false, appName: 'Eden / Ryubing (Switch)' },
+          apple:   { desc: 'Nativo macOS Apple Silicon (Eden / Ryubing / Kenji-NX; mín. 12–16 GB RAM unificada rec., M1+).', ram: 16, vram: 0, ssd: 512, cpuLevel: 2, minMac: 'M1', appName: 'Eden / Ryubing (Switch)' },
+          linux:   { desc: 'Nativo Linux x64 (Eden / Ryubing; mín. laptop 12 GB RAM, 4 GB VRAM Vulkan 1.1+, SSD).', ram: 12, vram: 4, ssd: 512, cpuLevel: 2, appName: 'Eden / Ryubing (Switch)' }
+        }
+      },
+      {
+        value: 'emu_ps3',
+        label: 'Emulador de PlayStation 3 (RPCS3)',
+        specs: {
+          windows: { desc: 'Nativo Windows x64 — muy exigente en CPU por núcleo (mín. 6 núcleos, 8 GB RAM, Vulkan; rec. 16 GB + RTX 2060/RX 6600).', ram: 16, vram: 6, ssd: 512, cpuLevel: 3, noArm: false, winPro: false, appName: 'RPCS3 (PS3)' },
+          apple:   { desc: 'Nativo macOS Apple Silicon (RPCS3; requiere alto rendimiento por núcleo y 16 GB RAM rec.).', ram: 16, vram: 0, ssd: 512, cpuLevel: 3, minMac: 'M1', appName: 'RPCS3 (PS3)' },
+          linux:   { desc: 'Nativo Linux x64 (RPCS3; mín. 6 núcleos + Vulkan, rec. 16 GB RAM + RTX 2060/RX 6600, SSD).', ram: 16, vram: 6, ssd: 512, cpuLevel: 3, appName: 'RPCS3 (PS3)' }
+        }
+      },
+      {
+        value: 'emu_x360',
+        label: 'Emulador de Xbox 360 (Xenia / Xenia Canary)',
+        specs: {
+          windows: { desc: 'Nativo Windows 10/11 x64 (AVX/AVX2, DX12/Vulkan; rec. 6+ núcleos, 16 GB RAM y GPU NVIDIA dedicada — evita integradas/AMD).', ram: 16, vram: 6, ssd: 512, cpuLevel: 3, noArm: true, winPro: false, appName: 'Xenia Canary (Xbox 360)' },
+          apple:   { desc: '⚠️ Experimental (Xenia Edge — no recomendado como instalación convencional; mejor en Windows).', ram: 16, vram: 0, ssd: 512, cpuLevel: 3, minMac: 'M1', appName: 'Xenia Edge (Experimental)' },
+          linux:   { desc: 'Traducción vía Proton (Xenia Canary; rec. 6+ núcleos, 16 GB RAM y GPU NVIDIA dedicada).', ram: 16, vram: 6, ssd: 512, cpuLevel: 3, appName: 'Xenia Canary (vía Proton)' }
+        }
+      },
+      {
+        value: 'emu_ps4',
+        label: 'Emulador de PlayStation 4 (shadPS4)',
+        specs: {
+          windows: { desc: 'Nativo Windows 10/11 (mín. oficial: 4C/6H >2.5 GHz x86-64-v3, 8 GB RAM, 2 GB VRAM Vulkan 1.3; rec. 16 GB + RTX 3060).', ram: 16, vram: 6, ssd: 512, cpuLevel: 3, noArm: true, winPro: false, appName: 'shadPS4 (PS4)' },
+          apple:   { desc: 'Nativo macOS 15.4+ (shadPS4; mín. 8 GB, rec. 16–32 GB unificada en Apple Silicon).', ram: 16, vram: 0, ssd: 512, cpuLevel: 3, minMac: 'M1', appName: 'shadPS4 (PS4)' },
+          linux:   { desc: 'Nativo Ubuntu 22.04+ x64 (mín. oficial: x86-64-v3, 8 GB RAM, 2 GB VRAM Vulkan 1.3; rec. 16 GB + GPU dedicada).', ram: 16, vram: 6, ssd: 512, cpuLevel: 3, appName: 'shadPS4 (PS4)' }
+        }
+      },
+      {
+        value: 'emu_ps5',
+        label: 'Emulador de PlayStation 5 (Experimental: PS5PCEM / SharpEmu)',
+        specs: {
+          windows: { desc: '⚠️ Fase temprana experimental (PS5PCEM mín.: x86-64-v3 AVX2/BMI2/FMA, Vulkan 1.2; orientativo: 32 GB DDR5 + RTX 4070+).', ram: 32, vram: 8, ssd: 1024, cpuLevel: 3, noArm: true, winPro: false, appName: 'PS5PCEM / SharpEmu / KytyPS5' },
+          apple:   { desc: '⚠️ Fase muy temprana (SharpEmu en macOS; compatibilidad comercial muy limitada aún).', ram: 32, vram: 0, ssd: 1024, cpuLevel: 3, minMac: 'M1', appName: 'SharpEmu (Experimental)' },
+          linux:   { desc: '⚠️ Fase temprana experimental (PS5PCEM / SharpEmu / AnyPS5; mín. x86-64-v3 + Vulkan 1.2; orientativo 32 GB + RTX 4070+).', ram: 32, vram: 8, ssd: 1024, cpuLevel: 3, appName: 'PS5PCEM / SharpEmu (Experimental)' }
+        }
       }
     ];
 
@@ -1309,10 +1384,11 @@
       { id: 'web20', name: 'Navegador pesado (20+ pestañas)', gb: 4.5, checked: false },
       { id: 'call', name: 'Videollamada (Zoom / Teams / Meet)', gb: 1.5, checked: false },
       { id: 'office', name: 'Office / Excel avanzado (Power Query)', gb: 2.5, checked: false },
-      { id: 'cad', name: 'AutoCAD / SOLIDWORKS (Ensamblajes)', gb: 8.0, checked: false },
+      { id: 'cad', name: 'AutoCAD / SOLIDWORKS / FlexSim / Datamine', gb: 8.0, checked: false },
       { id: 'photo', name: 'Photoshop 28 / Diseño gráfico', gb: 4.5, checked: false },
       { id: 'video', name: 'Premiere / After Effects / DaVinci 4K', gb: 12.0, checked: false },
-      { id: 'game', name: 'Videojuegos (Warzone / Fortnite / Free Fire)', gb: 6.5, checked: false },
+      { id: 'game', name: 'Videojuegos (GTA V / Fortnite / Warzone / Minecraft)', gb: 6.5, checked: false },
+      { id: 'emu_mod', name: 'Emuladores (Switch / PS3 / Xbox 360 / PS4)', gb: 7.5, checked: false },
       { id: 'dev', name: 'Modelos LLM locales (7B–14B) o Blender', gb: 12.0, checked: false }
     ];
 
@@ -1404,6 +1480,61 @@
         rec: '8 GB RAM • GPU integrada moderna o dedicada con 2–4 GB VRAM • SSD para ISOs (1.5–4.5 GB c/u)',
         pro: 'Core i5/Ryzen 5 moderno o Apple M3–M5 • 16 GB RAM para escalado 3x/4x (1080p–4K)',
         note: 'Software libre oficial en los tres sistemas operativos.'
+      },
+      {
+        name: 'Emulación Nintendo Switch (Eden / Ryubing)',
+        cat: 'gaming',
+        catLabel: 'Emulación consola moderna',
+        use: 'Proyectos activos en 2026: Eden (derivado Yuzu), Ryubing (continuación Ryujinx), Kenji-NX y Lemon (Android). Yuzu, Ryujinx original y Sudachi están discontinuados.',
+        compat: { win: 'Oficial / Nativo', linux: 'Oficial / Nativo', mac: 'Oficial / Nativo' },
+        min: 'Oficial Eden: Core i5-4430 / Ryzen 3 1200 • 8 GB escritorio / 12 GB laptops • GTX 1050 4 GB / RX 550 / UHD 620 • Vulkan 1.1 / OpenGL 4.6 • SSD',
+        rec: 'Equilibrado: Core i5-11400 / Ryzen 5 3600+ • 16 GB RAM • GTX 1660 6 GB / RX 5500 8 GB • Vulkan • SSD',
+        pro: 'Óptimo: Core i9-13900K / Ryzen 7 7800X3D (o gama alta móvil) • 32 GB RAM • RTX 3060 12 GB / RX 6700 • SSD NVMe',
+        note: 'Citron Neo sufrió interrupciones en nov. 2026; Eden y Ryubing son las referencias principales.'
+      },
+      {
+        name: 'Emulación PlayStation 3 (RPCS3)',
+        cat: 'gaming',
+        catLabel: 'Emulación consola exigente en CPU',
+        use: 'Emulador activo de referencia para PS3 (arquitectura Cell + RSX) con escalado HD/4K.',
+        compat: { win: 'Oficial / Nativo', linux: 'Oficial / Nativo', mac: 'Oficial / Nativo' },
+        min: 'CPU Intel 4ª gen+ o Ryzen 1000+ (preferible 6 núcleos) • 8 GB RAM • GTX 960 / RX 470 con Vulkan',
+        rec: 'Core i5-12400 / Ryzen 5 5600 (alto rendimiento por núcleo) • 16 GB RAM • RTX 2060 / RX 6600 • SSD',
+        pro: 'Óptimo: Core i7-13700K / Ryzen 7 7800X3D • 32 GB RAM • RTX 4070 / RX 7800 XT • SSD NVMe',
+        note: 'RPCS3 depende mucho del rendimiento por núcleo del CPU (6–8 núcleos modernos superan a CPUs antiguos con más núcleos).'
+      },
+      {
+        name: 'Emulación Xbox 360 (Xenia / Xenia Canary)',
+        cat: 'gaming',
+        catLabel: 'Emulación consola exigente en GPU',
+        use: 'Xenia Canary (primera opción) y Xenia estable; Xenia Edge es experimental (ARM64/macOS).',
+        compat: { win: 'Oficial / Nativo', linux: 'Traducción (Proton)', mac: 'Experimental (Xenia Edge)' },
+        min: 'CPU x86-64 con AVX/AVX2 • 4 GB RAM • GPU Direct3D 12 o Vulkan • Win 10 64-bit',
+        rec: 'CPU 6+ núcleos modernos • 16 GB RAM • GPU NVIDIA dedicada (GTX 980 Ti o superior) • Win 11 • SSD',
+        pro: 'Óptimo orientativo: Ryzen 7 7700X / Core i7-13700K • 32 GB RAM • NVIDIA RTX 3060 Ti / RTX 4070 • SSD NVMe',
+        note: 'Advertencia Xenia Canary: las GPU AMD no son recomendables por fallos de controladores y las GPU integradas suelen ser insuficientes.'
+      },
+      {
+        name: 'Emulación PlayStation 4 (shadPS4)',
+        cat: 'gaming',
+        catLabel: 'Emulación PS4 activa',
+        use: 'shadPS4 ya ejecuta títulos comerciales (Bloodborne, Dark Souls Remastered, RDR). fpPS4 y GPCS4 son experimentales.',
+        compat: { win: 'Oficial / Nativo', linux: 'Oficial / Nativo', mac: 'Oficial / Nativo' },
+        min: 'Oficial shadPS4: CPU 4 núcleos/6 hilos >2.5 GHz x86-64-v3 • 8 GB RAM • GPU 2 GB VRAM Vulkan 1.3 • Win 10 / Ubuntu 22.04 / macOS 15.4+',
+        rec: 'Orientativo: Ryzen 5 5600 / Core i5-12400 • 16 GB RAM • RTX 3060 12 GB / RX 6600 • SSD NVMe',
+        pro: 'Óptimo orientativo: Ryzen 7 7800X3D/9800X3D • 32 GB RAM • RTX 4070 Super+ • SSD NVMe 1–2 TB',
+        note: 'Los niveles Recomendado y Óptimo son orientativos para fluidez, no requisitos oficiales del proyecto.'
+      },
+      {
+        name: 'Emulación PlayStation 5 (Experimental: PS5PCEM / SharpEmu / KytyPS5 / AnyPS5)',
+        cat: 'gaming',
+        catLabel: 'Emulación PS5 — Etapa temprana',
+        use: 'Proyectos experimentales en desarrollo (2026). Todavía no existe emulación madura para todo el catálogo comercial.',
+        compat: { win: 'Experimental (PS5PCEM/Kyty)', linux: 'Experimental (PS5PCEM/SharpEmu)', mac: 'Experimental (SharpEmu)' },
+        min: 'Publicado PS5PCEM: CPU x86-64-v3 (AVX2, BMI2, FMA) • GPU Vulkan 1.2 • Win 10 2004+ o Linux',
+        rec: 'Orientativo: Ryzen 7 7700X / Core i7-13700K • 32 GB DDR5 • NVIDIA RTX 4070+ • 2 TB SSD NVMe',
+        pro: 'Gama alta orientativa: Ryzen 7 9800X3D • 64 GB DDR5 • NVIDIA RTX 5080 • 2–4 TB SSD NVMe',
+        note: 'Aviso: la compatibilidad del software sigue siendo el principal límite; ningún equipo garantiza 60 FPS estables aún.'
       },
       {
         name: 'Microsoft Office / 365 (Excel, Word, PowerPoint)',
@@ -1796,6 +1927,12 @@
         }
       });
 
+      if (has('emu_x360')) {
+        compatIssues.push('<strong>Emulación Xbox 360 (Xenia Canary):</strong> se recomienda GPU dedicada <strong>NVIDIA</strong> (las GPU AMD presentan problemas conocidos de controladores y las GPU integradas suelen ser insuficientes). En Linux corre vía Proton y en macOS es solo experimental.');
+      }
+      if (has('emu_ps5')) {
+        compatIssues.push('<strong>Emulación PS5 (KytyPS5 / SharpEmu / PS5PCEM / AnyPS5):</strong> aún está en etapa muy temprana en 2026; la compatibilidad del software es el principal obstáculo y ningún hardware garantiza 60 FPS en el catálogo comercial.');
+      }
       if (osChoice === 'windows') {
         if (needsNoArm) compatIssues.push('<strong>Restricción de arquitectura:</strong> SOLIDWORKS, FlexSim, Minitab o Datamine <strong>no admiten procesadores ARM (Snapdragon X)</strong>; exige Intel o AMD x86-64.');
         if (needsWinPro) compatIssues.push('<strong>Edición de Windows:</strong> SOLIDWORKS / Datamine requieren <strong>Windows 11 Pro / Education</strong> de 64 bits (no Windows Home).');
@@ -1807,7 +1944,7 @@
         : '';
 
       // 2. Clasificación real en los 5 perfiles de uso
-      const hasGamingApps = has('gtav') || has('fortnite') || has('freefire') || has('warzone') || has('minecraft') || has('roblox') || has('emu_n64') || has('emu_ps2');
+      const hasGamingApps = has('gtav') || has('fortnite') || has('freefire') || has('warzone') || has('minecraft') || has('roblox') || has('emu_n64') || has('emu_ps2') || has('emu_switch') || has('emu_ps3') || has('emu_x360') || has('emu_ps4') || has('emu_ps5');
       const hasDevAiApps = has('llm') || has('vscode');
       const hasCreativeCadApps = has('solidworks') || has('autocad') || has('flexsim') || has('datamine') || has('photoshop') || has('premiere') || has('after_effects') || has('davinci') || has('blender') || has('artcraft');
       const hasOfficeApps = has('office365') || has('minitab');
@@ -2095,7 +2232,153 @@
       'intel core 7 250h': { arch: 'Raptor Lake (Intel 7)', cores: '14 núcleos (6 P + 8 E) / 20 hilos', freq: 'Hasta 5.4 GHz • Caché: 24 MB', gpu: 'Intel Graphics (hasta 1.55 GHz)', ram: 'Hasta 96 GB (DDR5-5600, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 45 W • Turbo máx.: 115 W', launch: 'Q4 2024' },
       'intel core 9 270h': { arch: 'Raptor Lake (Intel 7)', cores: '14 núcleos (6 P + 8 E) / 20 hilos', freq: 'Hasta 5.8 GHz • Caché: 24 MB', gpu: 'Intel Graphics (hasta 1.55 GHz)', ram: 'Hasta 96 GB (DDR5-5600, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 45 W • Turbo máx.: 115 W', launch: 'Q4 2024' },
       'intel core 5 220u': { arch: 'Raptor Lake (Intel 7)', cores: '10 núcleos (2 P + 8 E) / 12 hilos', freq: 'Hasta 5.0 GHz • Caché: 12 MB', gpu: 'Intel Graphics (hasta 1.25 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 15 W • Turbo máx.: 55 W', launch: 'Q4 2024' },
-      'intel core 7 250u': { arch: 'Raptor Lake (Intel 7)', cores: '10 núcleos (2 P + 8 E) / 12 hilos', freq: 'Hasta 5.4 GHz • Caché: 12 MB', gpu: 'Intel Graphics (hasta 1.30 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 15 W • Turbo máx.: 55 W', launch: 'Q4 2024' }
+      'intel core 7 250u': { arch: 'Raptor Lake (Intel 7)', cores: '10 núcleos (2 P + 8 E) / 12 hilos', freq: 'Hasta 5.4 GHz • Caché: 12 MB', gpu: 'Intel Graphics (hasta 1.30 GHz)', ram: 'Hasta 96 GB (DDR5-5200, DDR4-3200, LPDDR5-6400, LPDDR4X-4267)', tdp: 'Base: 15 W • Turbo máx.: 55 W', launch: 'Q4 2024' },
+      'intel core i9-8950hk': { arch: 'Coffee Lake-H (14nm)', cores: '6 núcleos / 12 hilos', freq: '2.9 – 4.8 GHz (multiplicador desbloqueado)', gpu: 'Intel UHD 630', ram: 'DDR4-2666', tdp: '45 W', launch: '8ª Gen (2018)' },
+      'intel core i7-8750h': { arch: 'Coffee Lake-H (14nm)', cores: '6 núcleos / 12 hilos', freq: '2.2 – 4.1 GHz', gpu: 'Intel UHD 630', ram: 'DDR4-2666', tdp: '45 W', launch: '8ª Gen (2018)' },
+      'intel core i7-8809g': { arch: 'Kaby Lake-G (CPU Intel + GPU AMD en paquete)', cores: '4 núcleos / 8 hilos', freq: '3.2 – 4.2 GHz', gpu: 'AMD Radeon RX Vega M GH integrada en paquete', ram: 'DDR4-2400', tdp: '100 W', launch: '8ª Gen (2018)' },
+      'intel core i5-8250u': { arch: 'Kaby Lake Refresh (14nm)', cores: '4 núcleos / 8 hilos', freq: '1.6 – 3.4 GHz', gpu: 'Intel UHD 620', ram: 'DDR4-2400 / LPDDR3', tdp: '15 W', launch: '8ª Gen (2017)' },
+      'intel core i5-8300h': { arch: 'Coffee Lake-H (14nm)', cores: '4 núcleos / 8 hilos', freq: '2.3 – 4.0 GHz', gpu: 'Intel UHD 630', ram: 'DDR4-2666', tdp: '45 W', launch: '8ª Gen (2018)' },
+      'intel core m3-8100y': { arch: 'Amber Lake (ultra bajo consumo sin ventilador)', cores: '2 núcleos / 4 hilos', freq: '1.1 – 3.4 GHz', gpu: 'Intel UHD 615', ram: 'LPDDR3', tdp: '5 W', launch: '8ª Gen (2018)' },
+      'intel core i9-9980hk': { arch: 'Coffee Lake Refresh (14nm)', cores: '8 núcleos / 16 hilos', freq: '2.4 – 5.0 GHz • Caché: 16 MB', gpu: 'Intel UHD 630', ram: 'DDR4-2666', tdp: '45 W', launch: '9ª Gen (2019)' },
+      'intel core i7-9750h': { arch: 'Coffee Lake Refresh (14nm)', cores: '6 núcleos / 12 hilos', freq: '2.6 – 4.5 GHz • Caché: 12 MB', gpu: 'Intel UHD 630', ram: 'DDR4-2666', tdp: '45 W', launch: '9ª Gen (2019)' },
+      'intel core i7-9750hf': { arch: 'Coffee Lake Refresh (14nm)', cores: '6 núcleos / 12 hilos', freq: '2.6 – 4.5 GHz • Caché: 12 MB', gpu: 'SIN gráficos integrados (requiere GPU dedicada obligatoria)', ram: 'DDR4-2666', tdp: '45 W', launch: '9ª Gen (2019)' },
+      'intel core i5-9300hf': { arch: 'Coffee Lake Refresh (14nm)', cores: '4 núcleos / 8 hilos', freq: '2.4 – 4.1 GHz • Caché: 8 MB', gpu: 'SIN gráficos integrados (requiere GPU dedicada obligatoria)', ram: 'DDR4-2666', tdp: '45 W', launch: '9ª Gen (2019)' },
+      'intel xeon e-2286m': { arch: 'Coffee Lake Refresh Workstation (ECC)', cores: '8 núcleos / 16 hilos', freq: '2.4 – 5.0 GHz • Caché: 16 MB', gpu: 'Intel UHD P630', ram: 'DDR4-2666 ECC / no-ECC', tdp: '45 W', launch: '9ª Gen (2019)' },
+      'intel xeon e-2186m': { arch: 'Coffee Lake Workstation (14nm)', cores: '6 núcleos / 12 hilos', freq: '2.9 – 4.8 GHz • Caché L3: 12 MB', gpu: 'Intel UHD P630 (hasta 1.20 GHz)', ram: 'DDR4-2666 ECC', tdp: '45 W (cTDP 35 W)', launch: '8ª Gen (2018)' },
+      'intel xeon e-2276m': { arch: 'Coffee Lake Refresh Workstation (14nm)', cores: '6 núcleos / 12 hilos', freq: '2.8 – 4.7 GHz • Caché L3: 12 MB', gpu: 'Intel UHD P630 (hasta 1.20 GHz)', ram: 'DDR4-2666 ECC', tdp: '45 W (cTDP 35 W)', launch: '9ª Gen (2019)' },
+      'intel core i7-8569u': { arch: 'Coffee Lake-U (14nm)', cores: '4 núcleos / 8 hilos', freq: '2.8 – 4.7 GHz • L3: 8 MB + L4 eDRAM: 128 MB', gpu: 'Intel Iris Plus 655 (hasta 1.20 GHz)', ram: 'DDR4 / LPDDR3', tdp: '28 W', launch: '8ª Gen (2019)' },
+      'intel core i7-8559u': { arch: 'Coffee Lake-U (14nm)', cores: '4 núcleos / 8 hilos', freq: '2.7 – 4.5 GHz • L3: 8 MB + L4 eDRAM: 128 MB', gpu: 'Intel Iris Plus 655 (hasta 1.20 GHz)', ram: 'DDR4 / LPDDR3', tdp: '28 W (cTDP 20 W)', launch: '8ª Gen (2018)' },
+      'intel core i5-8400h': { arch: 'Coffee Lake-H (14nm)', cores: '4 núcleos / 8 hilos', freq: '2.5 – 4.2 GHz • Caché L3: 8 MB', gpu: 'Intel UHD 630 (hasta 1.10 GHz)', ram: 'DDR4-2666', tdp: '45 W (cTDP 35 W)', launch: '8ª Gen (2018)' },
+      'intel core i9-9880h': { arch: 'Coffee Lake Refresh (14nm)', cores: '8 núcleos / 16 hilos', freq: '2.3 – 4.8 GHz • Caché L3: 16 MB', gpu: 'Intel UHD 630 (hasta 1.20 GHz)', ram: 'DDR4-2666', tdp: '45 W (cTDP 35 W)', launch: '9ª Gen (2019)' },
+      'intel core i7-9850h': { arch: 'Coffee Lake Refresh (14nm • vPro)', cores: '6 núcleos / 12 hilos', freq: '2.6 – 4.6 GHz • Caché L3: 12 MB', gpu: 'Intel UHD 630 (hasta 1.15 GHz)', ram: 'DDR4-2666', tdp: '45 W (cTDP 35 W)', launch: '9ª Gen (2019)' },
+      'intel core i5-9400h': { arch: 'Coffee Lake Refresh (14nm)', cores: '4 núcleos / 8 hilos', freq: '2.5 – 4.3 GHz • Caché L3: 8 MB', gpu: 'Intel UHD 630 (hasta 1.10 GHz)', ram: 'DDR4-2666', tdp: '45 W (cTDP 35 W)', launch: '9ª Gen (2019)' },
+      'intel core i5-9300h': { arch: 'Coffee Lake Refresh (14nm)', cores: '4 núcleos / 8 hilos', freq: '2.4 – 4.1 GHz • Caché L3: 8 MB', gpu: 'Intel UHD 630 (hasta 1.05 GHz)', ram: 'DDR4-2666', tdp: '45 W (cTDP 35 W)', launch: '9ª Gen (2019)' },
+      'intel core i7-10710u': { arch: 'Comet Lake-U (14nm)', cores: '6 núcleos / 12 hilos', freq: '1.1 – 4.7 GHz', gpu: 'Intel UHD Graphics', ram: 'DDR4 / LPDDR3', tdp: '15 W', launch: '10ª Gen (2019)' },
+      'intel core i5-1035g7': { arch: 'Ice Lake (10nm)', cores: '4 núcleos / 8 hilos', freq: '1.2 – 3.7 GHz', gpu: 'Intel Iris Plus G7', ram: 'DDR4-3200 / LPDDR4X', tdp: '15 W', launch: '10ª Gen (2019)' },
+      'intel core i7-1065g7': { arch: 'Ice Lake (10nm)', cores: '4 núcleos / 8 hilos', freq: '1.3 – 3.9 GHz', gpu: 'Intel Iris Plus G7', ram: 'DDR4-3200 / LPDDR4X', tdp: '15–25 W', launch: '10ª Gen (2019)' },
+      'intel core i7-10875h': { arch: 'Comet Lake-H (14nm)', cores: '8 núcleos / 16 hilos', freq: '2.3 – 5.1 GHz', gpu: 'Intel UHD Graphics', ram: 'DDR4-2933', tdp: '45 W', launch: '10ª Gen (2020)' },
+      'intel core i5-10400h': { arch: 'Comet Lake-H (14nm • vPro)', cores: '4 núcleos / 8 hilos', freq: '2.6 – 4.6 GHz • Caché L3: 8 MB', gpu: 'Intel UHD Graphics', ram: 'DDR4-2933', tdp: '45 W', launch: '10ª Gen (2020)' },
+      'intel core i5-10300h': { arch: 'Comet Lake-H (14nm)', cores: '4 núcleos / 8 hilos', freq: '2.5 – 4.5 GHz • Caché L3: 8 MB', gpu: 'Intel UHD Graphics', ram: 'DDR4-2933', tdp: '45 W', launch: '10ª Gen (2020)' },
+      'intel core i7-10750h': { arch: 'Comet Lake-H (14nm)', cores: '6 núcleos / 12 hilos', freq: '2.6 – 5.0 GHz • Caché L3: 12 MB', gpu: 'Intel UHD Graphics', ram: 'DDR4-2933', tdp: '45 W', launch: '10ª Gen (2020)' },
+      'intel core i5-1135g7': { arch: 'Tiger Lake-U (10nm SuperFin • PCIe 4.0)', cores: '4 núcleos / 8 hilos', freq: '2.4 – 4.2 GHz', gpu: 'Intel Iris Xe (80 EU)', ram: 'DDR4-3200 / LPDDR4X', tdp: '12–28 W', launch: '11ª Gen (2020)' },
+      'intel core i5-11300h': { arch: 'Tiger Lake-H35 (10nm SuperFin)', cores: '4 núcleos / 8 hilos', freq: '3.1 – 4.4 GHz', gpu: 'Intel Iris Xe (80 EU)', ram: 'DDR4-3200 / LPDDR4X', tdp: '35 W (portátiles delgados con GPU dedicada)', launch: '11ª Gen (2021)' },
+      'intel core i7-11370h': { arch: 'Tiger Lake-H35 (10nm SuperFin)', cores: '4 núcleos / 8 hilos', freq: '3.3 – 4.8 GHz', gpu: 'Intel Iris Xe (96 EU)', ram: 'DDR4-3200 / LPDDR4X', tdp: '35 W (portátiles delgados con GPU dedicada)', launch: '11ª Gen (2021)' },
+      'intel core i5-11400h': { arch: 'Tiger Lake-H (10nm SuperFin • PCIe 4.0)', cores: '6 núcleos / 12 hilos', freq: '2.7 – 4.5 GHz', gpu: 'Intel UHD (16 EU)', ram: 'DDR4-3200', tdp: '45 W', launch: '11ª Gen (2021)' },
+      'intel core i7-11800h': { arch: 'Tiger Lake-H (10nm SuperFin • PCIe 4.0)', cores: '8 núcleos / 16 hilos', freq: '2.3 – 4.6 GHz', gpu: 'Intel UHD (32 EU)', ram: 'DDR4-3200', tdp: '45 W', launch: '11ª Gen (2021)' },
+      'intel core i3-1215u': { arch: 'Alder Lake-U (Intel 7 híbrida)', cores: '6 núcleos (2 P + 4 E) / 8 hilos', freq: 'Hasta 4.4 GHz', gpu: 'Intel UHD (64 EU)', ram: 'DDR5 / DDR4 / LPDDR5', tdp: '15 W', launch: '12ª Gen (2022)' },
+      'intel core i5-1235u': { arch: 'Alder Lake-U (Intel 7 híbrida)', cores: '10 núcleos (2 P + 8 E) / 12 hilos', freq: 'Hasta 4.4 GHz', gpu: 'Intel Iris Xe (80 EU)', ram: 'DDR5 / DDR4 / LPDDR5', tdp: '15 W', launch: '12ª Gen (2022)' },
+      'intel core i5-1240p': { arch: 'Alder Lake-P (Intel 7 híbrida)', cores: '12 núcleos (4 P + 8 E) / 16 hilos', freq: 'Hasta 4.4 GHz', gpu: 'Intel Iris Xe (80 EU)', ram: 'DDR5 / DDR4 / LPDDR5', tdp: '28 W (equilibrio en delgadas)', launch: '12ª Gen (2022)' },
+      'intel core i7-1260p': { arch: 'Alder Lake-P (Intel 7 híbrida)', cores: '12 núcleos (4 P + 8 E) / 16 hilos', freq: 'Hasta 4.7 GHz', gpu: 'Intel Iris Xe (96 EU)', ram: 'DDR5 / DDR4 / LPDDR5', tdp: '28 W (equilibrio en delgadas)', launch: '12ª Gen (2022)' },
+      'intel core i5-12500h': { arch: 'Alder Lake-H (Intel 7 híbrida)', cores: '12 núcleos (4 P + 8 E) / 16 hilos', freq: 'Hasta 4.5 GHz', gpu: 'Intel Iris Xe (80 EU)', ram: 'DDR5 / DDR4 / LPDDR5', tdp: '45 W', launch: '12ª Gen (2022)' },
+      'intel core i7-12700h': { arch: 'Alder Lake-H (Intel 7 híbrida)', cores: '14 núcleos (6 P + 8 E) / 20 hilos', freq: 'Hasta 4.7 GHz', gpu: 'Intel Iris Xe (96 EU)', ram: 'DDR5 / DDR4 / LPDDR5', tdp: '45 W', launch: '12ª Gen (2022)' },
+      'intel core i9-12950hx': { arch: 'Alder Lake-HX (Intel 7 híbrida)', cores: '16 núcleos (8 P + 8 E) / 24 hilos', freq: 'Hasta 5.0 GHz', gpu: 'Intel UHD (32 EU)', ram: 'DDR5 / DDR4 (hasta 128 GB)', tdp: '55 W+', launch: '12ª Gen (2022)' },
+      'intel core i5-14500hx': { arch: 'Raptor Lake-HX Refresh (14ª Gen solo H/HX)', cores: '14 núcleos (6 P + 8 E) / 20 hilos', freq: 'Hasta 4.9 GHz', gpu: 'Intel UHD (32 EU)', ram: 'DDR5-5600 / DDR4', tdp: '55 W+', launch: '14ª Gen (2024)' },
+      'intel core i7-14650hx': { arch: 'Raptor Lake-HX Refresh (14ª Gen solo H/HX)', cores: '16 núcleos (8 P + 8 E) / 24 hilos', freq: 'Hasta 5.2 GHz', gpu: 'Intel UHD (32 EU)', ram: 'DDR5-5600 / DDR4', tdp: '55 W+', launch: '14ª Gen (2024)' },
+      'intel core i7-14700hx': { arch: 'Raptor Lake-HX Refresh (14ª Gen solo H/HX)', cores: '20 núcleos (8P + 12E) / 28 hilos', freq: '2.1 – 5.5 GHz • L3: 33 MB', gpu: 'Intel UHD Graphics 770 (32 EU)', ram: 'DDR5-5600 / DDR4', tdp: '55W / 157W máx.', launch: '14ª Gen (2024)' },
+      'intel core i9-14900hx': { arch: 'Raptor Lake-HX Refresh (Desbloqueado)', cores: '24 núcleos (8P + 16E) / 32 hilos', freq: '2.2 – 5.8 GHz • L3: 36 MB', gpu: 'Intel UHD Graphics 770 (32 EU)', ram: 'DDR5-5600 / DDR4', tdp: '55W / 157W máx.', launch: '14ª Gen (2024)' },
+      'intel core ultra 5 125h': { arch: 'Meteor Lake (reemplazo real de 14ª Gen U/P)', cores: '14 núcleos (4P + 8E + 2LPE) / 18 hilos', freq: '1.2 – 4.5 GHz • L3: 18 MB • NPU IA', gpu: 'Intel Arc (7 Xe-cores)', ram: 'DDR5 / LPDDR5X', tdp: '28W / 115W máx.', launch: 'Core Ultra Serie 1 (2024)' },
+      'intel core ultra 7 155h': { arch: 'Meteor Lake (reemplazo real de 14ª Gen U/P)', cores: '16 núcleos (6P + 8E + 2LPE) / 22 hilos', freq: '1.4 – 4.8 GHz • L3: 24 MB • NPU IA', gpu: 'Intel Arc (8 Xe-cores)', ram: 'DDR5 / LPDDR5X', tdp: '28W / 115W máx.', launch: 'Core Ultra Serie 1 (2024)' },
+      'intel core ultra 9 185h': { arch: 'Meteor Lake (reemplazo real de 14ª Gen U/P)', cores: '16 núcleos (6P + 8E + 2LPE) / 22 hilos', freq: '2.3 – 5.1 GHz • L3: 24 MB • NPU IA', gpu: 'Intel Arc (8 Xe-cores)', ram: 'DDR5 / LPDDR5X', tdp: '28W / 115W máx.', launch: 'Core Ultra Serie 1 (2024)' },
+      'intel core ultra 5 226v': { arch: 'Lunar Lake (Serie 2 • batería extrema)', cores: '8 núcleos (4 P + 4 LPE) / 8 hilos', freq: 'Hasta 4.5 GHz • NPU 40+ TOPS', gpu: 'Intel Arc 130V (7 núcleos Xe2)', ram: '16 GB LPDDR5X integrada en paquete (no ampliable)', tdp: '17 W (máx. 37 W)', launch: 'Core Ultra Serie 2 (2024–25)' },
+      'intel core ultra 7 258v': { arch: 'Lunar Lake (Serie 2 • batería extrema 20h+)', cores: '8 núcleos (4P + 4LPE) / 8 hilos', freq: '1.7 – 4.8 GHz • L3: 12 MB • NPU 47 TOPS', gpu: 'Intel Arc 140V (8 Xe2, 66 TOPS IA)', ram: '32 GB LPDDR5X integrada en paquete (no ampliable)', tdp: '17W / 30W máx.', launch: 'Core Ultra Serie 2 (2024–25)' },
+      'intel core ultra 7 255h': { arch: 'Arrow Lake-H (Serie 2)', cores: '16 núcleos (6 P + 8 E + 2 LPE) / 16 hilos', freq: 'Hasta 5.1 GHz • NPU IA', gpu: 'Intel Arc 140T (8 núcleos Xe, hasta 75 TOPS IA)', ram: 'DDR5 / LPDDR5X', tdp: '28–45 W', launch: 'Core Ultra Serie 2 (2025)' },
+      'intel core ultra 7 265h': { arch: 'Arrow Lake-H (Serie 2)', cores: '16 núcleos (6 P + 8 E + 2 LPE) / 16 hilos', freq: 'Hasta 5.3 GHz • NPU IA', gpu: 'Intel Arc 140T (8 núcleos Xe, hasta 75 TOPS IA)', ram: 'DDR5 / LPDDR5X', tdp: '28–45 W', launch: 'Core Ultra Serie 2 (2025)' },
+      'intel core ultra 9 285h': { arch: 'Arrow Lake-H (Serie 2)', cores: '16 núcleos (6 P + 8 E + 2 LPE) / 16 hilos', freq: 'Hasta 5.4 GHz • NPU IA', gpu: 'Intel Arc 140T (8 núcleos Xe, hasta 75 TOPS IA)', ram: 'DDR5 / LPDDR5X', tdp: '45 W', launch: 'Core Ultra Serie 2 (2025)' },
+      'intel core ultra 9 285hx': { arch: 'Arrow Lake-HX (Serie 2 • Estación móvil)', cores: '24 núcleos (8 P + 16 E) / 24 hilos', freq: 'Hasta 5.5 GHz (desbloqueado)', gpu: 'Intel Graphics básica (acompañado de GPU RTX dedicada)', ram: 'DDR5-6400 (hasta 192 GB)', tdp: '55 W+', launch: 'Core Ultra Serie 2 (2025)' },
+      'intel core ultra 9 386h': { arch: 'Panther Lake (Serie 3 • Intel 18A)', cores: 'Arquitectura híbrida Panther Lake de gama alta', freq: 'Serie 3 (2026) con NPU avanzada', gpu: 'Intel Arc integrada de nueva generación', ram: 'LPDDR5X / DDR5', tdp: '45 W', launch: 'Core Ultra Serie 3 (2026)' },
+      'intel core ultra x7 368h': { arch: 'Panther Lake Ultra X (Serie 3 • Intel 18A)', cores: 'Gama premium con énfasis gráfico integrado', freq: 'Serie 3 (2026) con NPU avanzada', gpu: 'Intel Arc integrada avanzada (gama Ultra X)', ram: 'LPDDR5X de alta velocidad', tdp: '28–45 W', launch: 'Core Ultra Serie 3 (2026)' },
+      'intel core ultra x9 388h': { arch: 'Panther Lake Ultra X (Serie 3 • Intel 18A)', cores: 'Tope de gama Panther Lake Ultra X', freq: 'Serie 3 (2026) con NPU avanzada', gpu: 'Intel Arc integrada avanzada (máxima iGPU Intel)', ram: 'LPDDR5X de alta velocidad', tdp: '45 W', launch: 'Core Ultra Serie 3 (2026)' },
+      'amd ryzen 9 9955hx3d': { arch: 'Fire Range (Zen 5 + 2ª Gen 3D V-Cache)', cores: '16 núcleos / 32 hilos', freq: 'Hasta 5.4 GHz • Caché L3: 128 MB', gpu: 'Radeon integrada básica (acompañado de GPU RTX dedicada)', ram: 'DDR5', tdp: '55 W+', launch: 'Serie 9000 Móvil (2025–26)' },
+      'amd ryzen 9 9955hx': { arch: 'Fire Range (Zen 5)', cores: '16 núcleos / 32 hilos', freq: 'Hasta 5.1 – 5.2 GHz • Caché L3: 64 MB', gpu: 'Radeon integrada básica', ram: 'DDR5', tdp: '55 W+', launch: 'Serie 9000 Móvil (2025–26)' },
+      'amd ryzen 9 9850hx': { arch: 'Fire Range (Zen 5)', cores: '16 núcleos / 32 hilos', freq: 'Hasta 5.2 GHz • Caché L3: 64 MB', gpu: 'Radeon integrada básica', ram: 'DDR5', tdp: '55 W+', launch: 'Serie 9000 Móvil (2025–26)' },
+      'amd ryzen ai 9 hx 370': { arch: 'Strix Point (Zen 5 / Zen 5c)', cores: '12 núcleos (4 Zen 5 + 8 Zen 5c) / 24 hilos', freq: 'Hasta 5.1 GHz • NPU 50 TOPS', gpu: 'AMD Radeon 890M (16 CU RDNA 3.5)', ram: 'DDR5 / LPDDR5X', tdp: '28–54 W', launch: 'Ryzen AI 300 (2024–25)' },
+      'amd ryzen ai 9 365': { arch: 'Strix Point (Zen 5 / Zen 5c)', cores: '10 núcleos (4 Zen 5 + 6 Zen 5c) / 20 hilos', freq: 'Hasta 5.0 GHz • NPU 50 TOPS', gpu: 'AMD Radeon 880M (12 CU RDNA 3.5)', ram: 'DDR5 / LPDDR5X', tdp: '28–54 W', launch: 'Ryzen AI 300 (2024–25)' },
+      'amd ryzen ai 7 pro 360': { arch: 'Strix Point PRO (Empresarial)', cores: '8–10 núcleos / hasta 20 hilos', freq: 'Hasta 5.0 GHz • NPU 50 TOPS', gpu: 'AMD Radeon 880M', ram: 'LPDDR5X', tdp: '15–28 W', launch: 'Ryzen AI 300 PRO' },
+      'amd ryzen 5 4500u': { arch: 'Renoir (Zen 2 • ≈ época Intel 10ª Gen)', cores: '6 núcleos / 6 hilos', freq: '2.3 – 4.0 GHz', gpu: 'AMD Radeon Vega 6', ram: 'DDR4-3200 / LPDDR4X', tdp: '15 W', launch: 'Serie 4000 (2020)' },
+      'amd ryzen 5 4600h': { arch: 'Renoir (Zen 2 • ≈ época Intel 10ª Gen)', cores: '6 núcleos / 12 hilos', freq: '3.0 – 4.0 GHz', gpu: 'AMD Radeon Vega 6', ram: 'DDR4-3200', tdp: '45 W', launch: 'Serie 4000 (2020)' },
+      'amd ryzen 7 4800h': { arch: 'Renoir (Zen 2 • ≈ época Intel 10ª Gen)', cores: '8 núcleos / 16 hilos', freq: '2.9 – 4.2 GHz', gpu: 'AMD Radeon Vega 7', ram: 'DDR4-3200', tdp: '45 W', launch: 'Serie 4000 (2020)' },
+      'amd ryzen 5 5500u': { arch: 'Lucienne (Zen 2 refinado • ≈ Intel 11ª Gen)', cores: '6 núcleos / 12 hilos', freq: '2.1 – 4.0 GHz', gpu: 'AMD Radeon Vega 7', ram: 'DDR4-3200 / LPDDR4X', tdp: '15 W', launch: 'Serie 5000 (2021)' },
+      'amd ryzen 5 5600u': { arch: 'Cezanne (Zen 3 • más rápido que 5500U)', cores: '6 núcleos / 12 hilos', freq: '2.3 – 4.2 GHz', gpu: 'AMD Radeon Vega 7', ram: 'DDR4-3200 / LPDDR4X', tdp: '15 W', launch: 'Serie 5000 (2021)' },
+      'amd ryzen 5 5600h': { arch: 'Cezanne (Zen 3 • ≈ Intel 11ª Gen)', cores: '6 núcleos / 12 hilos', freq: '3.3 – 4.2 GHz', gpu: 'AMD Radeon Vega 7', ram: 'DDR4-3200', tdp: '45 W', launch: 'Serie 5000 (2021)' },
+      'amd ryzen 7 5700u': { arch: 'Lucienne (Zen 2 refinado)', cores: '8 núcleos / 16 hilos', freq: '1.8 – 4.3 GHz', gpu: 'AMD Radeon Vega 8', ram: 'DDR4-3200 / LPDDR4X', tdp: '15 W', launch: 'Serie 5000 (2021)' },
+      'amd ryzen 7 5800h': { arch: 'Cezanne (Zen 3 • ≈ Intel 11ª Gen)', cores: '8 núcleos / 16 hilos', freq: '3.2 – 4.4 GHz', gpu: 'AMD Radeon Vega 8', ram: 'DDR4-3200', tdp: '45 W', launch: 'Serie 5000 (2021)' },
+      'amd ryzen 9 5900hx': { arch: 'Cezanne (Zen 3 • desbloqueado)', cores: '8 núcleos / 16 hilos', freq: '3.3 – 4.6 GHz', gpu: 'AMD Radeon Vega 8', ram: 'DDR4-3200', tdp: '45 W+', launch: 'Serie 5000 (2021)' },
+      'amd ryzen 5 6600u': { arch: 'Rembrandt (Zen 3+ • ≈ época Intel 12ª Gen)', cores: '6 núcleos / 12 hilos', freq: '2.9 – 4.5 GHz', gpu: 'AMD Radeon 660M (RDNA 2)', ram: 'DDR5-4800 / LPDDR5', tdp: '15–28 W', launch: 'Serie 6000 (2022)' },
+      'amd ryzen 7 6800u': { arch: 'Rembrandt (Zen 3+ • ≈ época Intel 12ª Gen)', cores: '8 núcleos / 16 hilos', freq: '2.7 – 4.7 GHz', gpu: 'AMD Radeon 680M (12 CU RDNA 2)', ram: 'DDR5-4800 / LPDDR5', tdp: '15–28 W', launch: 'Serie 6000 (2022)' },
+      'amd ryzen 7 6800h': { arch: 'Rembrandt (Zen 3+ • ≈ época Intel 12ª Gen)', cores: '8 núcleos / 16 hilos', freq: '3.2 – 4.7 GHz', gpu: 'AMD Radeon 680M (12 CU RDNA 2)', ram: 'DDR5-4800', tdp: '45 W', launch: 'Serie 6000 (2022)' },
+      'amd ryzen 9 6900hx': { arch: 'Rembrandt (Zen 3+ • desbloqueado)', cores: '8 núcleos / 16 hilos', freq: '3.3 – 4.9 GHz', gpu: 'AMD Radeon 680M (12 CU RDNA 2)', ram: 'DDR5-4800', tdp: '45 W+', launch: 'Serie 6000 (2022)' },
+      'amd ryzen 5 7520u': { arch: 'Mendocino (Zen 2 antigua — evitar para gama media)', cores: '4 núcleos / 8 hilos', freq: '2.8 – 4.3 GHz', gpu: 'AMD Radeon 610M (2 CU)', ram: 'LPDDR5', tdp: '15 W', launch: 'Serie 7000 básica (2023)' },
+      'amd ryzen 5 7640hs': { arch: 'Phoenix (Zen 4 • ≈ Intel 13ª/14ª Gen)', cores: '6 núcleos / 12 hilos', freq: '4.3 – 5.0 GHz', gpu: 'AMD Radeon 760M (8 CU RDNA 3)', ram: 'DDR5-5600 / LPDDR5X', tdp: '35–54 W', launch: 'Serie 7000 (2023)' },
+      'amd ryzen 7 7840hs': { arch: 'Phoenix (Zen 4 • ≈ Intel 13ª/14ª Gen)', cores: '8 núcleos / 16 hilos', freq: '3.8 – 5.1 GHz', gpu: 'AMD Radeon 780M (12 CU RDNA 3)', ram: 'DDR5-5600 / LPDDR5X', tdp: '35–54 W', launch: 'Serie 7000 (2023)' },
+      'amd ryzen 9 7845hx': { arch: 'Dragon Range (Zen 4 de escritorio en móvil)', cores: '12 núcleos / 24 hilos', freq: '3.0 – 5.2 GHz', gpu: 'Radeon 610M (acompañado de GPU dedicada)', ram: 'DDR5-5200', tdp: '55 W+', launch: 'Serie 7000 HX (2023)' },
+      'amd ryzen 9 7945hx': { arch: 'Dragon Range (Zen 4 de escritorio en móvil)', cores: '16 núcleos / 32 hilos', freq: '2.5 – 5.4 GHz', gpu: 'Radeon 610M (acompañado de GPU dedicada)', ram: 'DDR5-5200', tdp: '55 W+', launch: 'Serie 7000 HX (2023)' },
+      'amd ryzen 9 7940hx': { arch: 'Dragon Range (Zen 4 de escritorio en móvil)', cores: '16 núcleos / 32 hilos', freq: '2.4 – 5.2 GHz', gpu: 'Radeon 610M (acompañado de GPU dedicada)', ram: 'DDR5-5200', tdp: '55 W+', launch: 'Serie 7000 HX (2023)' },
+      'amd ryzen 5 5625u': { arch: 'Barcelo / Cezanne-R (Zen 3 Refresh 2022)', cores: '6 núcleos / 12 hilos', freq: '2.3 – 4.3 GHz', gpu: 'AMD Radeon Vega 7', ram: 'DDR4-3200 / LPDDR4X', tdp: '15 W', launch: 'Serie 5000 Refresh (2022)' },
+      'amd ryzen 7 5825u': { arch: 'Barcelo / Cezanne-R (Zen 3 Refresh 2022)', cores: '8 núcleos / 16 hilos', freq: '2.0 – 4.5 GHz', gpu: 'AMD Radeon Vega 8', ram: 'DDR4-3200 / LPDDR4X', tdp: '15 W', launch: 'Serie 5000 Refresh (2022)' },
+      'amd ryzen 7 8840hs': { arch: 'Hawk Point (Zen 4 + NPU IA mejorada)', cores: '8 núcleos / 16 hilos', freq: '3.3 – 5.1 GHz', gpu: 'AMD Radeon 780M (12 CU RDNA 3)', ram: 'DDR5-5600 / LPDDR5X', tdp: '20–30 W', launch: 'Serie 8000 (2024)' },
+      'amd ryzen 7 8845hs': { arch: 'Hawk Point (Zen 4 + NPU IA mejorada)', cores: '8 núcleos / 16 hilos', freq: '3.8 – 5.1 GHz', gpu: 'AMD Radeon 780M (12 CU RDNA 3)', ram: 'DDR5-5600 / LPDDR5X', tdp: '35–54 W', launch: 'Serie 8000 (2024)' },
+      'amd ryzen 9 8945hs': { arch: 'Hawk Point (Zen 4 + NPU IA mejorada)', cores: '8 núcleos / 16 hilos', freq: '4.0 – 5.2 GHz', gpu: 'AMD Radeon 780M (12 CU RDNA 3)', ram: 'DDR5-5600 / LPDDR5X', tdp: '35–54 W', launch: 'Serie 8000 (2024)' },
+      'amd ryzen ai 5 340': { arch: 'Strix Point / Krackan (Zen 5 • Copilot+ PC)', cores: '8 núcleos / 16 hilos', freq: 'Hasta 4.8 GHz • NPU 50 TOPS', gpu: 'AMD Radeon 840M', ram: 'LPDDR5X / DDR5', tdp: '15–28 W', launch: 'Ryzen AI 300 (2024–25)' },
+      'amd ryzen ai 7 360': { arch: 'Strix Point (Zen 5 • Copilot+ PC)', cores: '10 núcleos / 20 hilos', freq: 'Hasta 5.0 GHz • NPU 50 TOPS', gpu: 'AMD Radeon 880M', ram: 'LPDDR5X', tdp: '15–28 W', launch: 'Ryzen AI 300 (2024–25)' },
+      // Intel 8th-14th Gen + Celeron/Pentium/N + AMD Ryzen 3000-8000/AI/Athlon (Tabla completa)
+      'intel core i7-8850h': { arch: 'Coffee Lake-H (14nm • vPro)', cores: '6 núcleos / 12 hilos', freq: '2.6 – 4.3 GHz • L3: 9 MB', gpu: 'Intel UHD 630', ram: 'DDR4-2666', tdp: '45 W', launch: '8ª Gen (2018)' },
+      'intel core i7-8550u': { arch: 'Kaby Lake-R (14nm)', cores: '4 núcleos / 8 hilos', freq: '1.8 – 4.0 GHz • L3: 8 MB', gpu: 'Intel UHD 620', ram: 'DDR4-2400 / LPDDR3', tdp: '15 W', launch: '8ª Gen (2017)' },
+      'intel core i7-8565u': { arch: 'Whiskey Lake (14nm)', cores: '4 núcleos / 8 hilos', freq: '1.8 – 4.6 GHz • L3: 8 MB', gpu: 'Intel UHD 620', ram: 'DDR4-2400 / LPDDR3', tdp: '15 W', launch: '8ª Gen (2018)' },
+      'intel core i7-8705g': { arch: 'Kaby Lake-G (14nm + GPU AMD)', cores: '4 núcleos / 8 hilos', freq: '3.1 – 4.1 GHz • L3: 8 MB', gpu: 'Radeon RX Vega M GL', ram: 'DDR4-2400', tdp: '100 W', launch: '8ª Gen (2018)' },
+      'intel core i5-8265u': { arch: 'Whiskey Lake (14nm)', cores: '4 núcleos / 8 hilos', freq: '1.6 – 3.9 GHz • L3: 6 MB', gpu: 'Intel UHD 620', ram: 'DDR4-2400 / LPDDR3', tdp: '15 W', launch: '8ª Gen (2018)' },
+      'intel core i3-8130u': { arch: 'Kaby Lake-R (14nm)', cores: '2 núcleos / 4 hilos', freq: '2.2 – 3.4 GHz • L3: 4 MB', gpu: 'Intel UHD 620', ram: 'DDR4-2400', tdp: '15 W', launch: '8ª Gen (2018)' },
+      'intel core i3-8145u': { arch: 'Whiskey Lake (14nm)', cores: '2 núcleos / 4 hilos', freq: '2.1 – 3.9 GHz • L3: 4 MB', gpu: 'Intel UHD 620', ram: 'DDR4-2400', tdp: '15 W', launch: '8ª Gen (2018)' },
+      'intel pentium 5405u': { arch: 'Whiskey Lake (Entrada)', cores: '2 núcleos / 2 hilos', freq: '2.3 GHz • L3: 2 MB', gpu: 'Intel UHD 610', ram: 'DDR4-2133', tdp: '15 W', launch: '8ª Gen (2019)' },
+      'intel celeron 4205u': { arch: 'Whiskey Lake (Entrada)', cores: '2 núcleos / 2 hilos', freq: '1.8 GHz • L3: 2 MB', gpu: 'Intel UHD 610', ram: 'DDR4-2133', tdp: '15 W', launch: '8ª Gen (2019)' },
+      'intel celeron n4100': { arch: 'Gemini Lake (Entrada)', cores: '4 núcleos / 4 hilos', freq: '1.1 – 2.4 GHz • L3: 4 MB', gpu: 'Intel UHD 600', ram: 'DDR4 / LPDDR4', tdp: '6 W', launch: '8ª Gen (2017)' },
+      'intel celeron n4000': { arch: 'Gemini Lake (Entrada)', cores: '2 núcleos / 2 hilos', freq: '1.1 – 2.6 GHz • L3: 4 MB', gpu: 'Intel UHD 600', ram: 'DDR4 / LPDDR4', tdp: '6 W', launch: '8ª Gen (2017)' },
+      'intel core i5-1035g1': { arch: 'Ice Lake (10nm)', cores: '4 núcleos / 8 hilos', freq: '1.0 – 3.6 GHz • L3: 6 MB', gpu: 'Intel UHD G1', ram: 'DDR4-3200 / LPDDR4', tdp: '15 W', launch: '10ª Gen (2019)' },
+      'intel core i5-10210u': { arch: 'Comet Lake-U (14nm)', cores: '4 núcleos / 8 hilos', freq: '1.6 – 4.2 GHz • L3: 6 MB', gpu: 'Intel UHD', ram: 'DDR4-2666', tdp: '15 W', launch: '10ª Gen (2019)' },
+      'intel core i3-10110u': { arch: 'Comet Lake-U (14nm)', cores: '2 núcleos / 4 hilos', freq: '2.1 – 4.1 GHz • L3: 4 MB', gpu: 'Intel UHD', ram: 'DDR4-2666', tdp: '15 W', launch: '10ª Gen (2019)' },
+      'intel core i3-1005g1': { arch: 'Ice Lake (10nm)', cores: '2 núcleos / 4 hilos', freq: '1.2 – 3.4 GHz • L3: 4 MB', gpu: 'Intel UHD G1', ram: 'DDR4-3200', tdp: '15 W', launch: '10ª Gen (2019)' },
+      'intel pentium gold 6405u': { arch: 'Comet Lake (Entrada)', cores: '2 núcleos / 4 hilos', freq: '2.4 GHz • L3: 2 MB', gpu: 'Intel UHD', ram: 'DDR4-2400', tdp: '15 W', launch: '10ª Gen (2019)' },
+      'intel celeron 5205u': { arch: 'Comet Lake (Entrada)', cores: '2 núcleos / 2 hilos', freq: '1.9 GHz • L3: 2 MB', gpu: 'Intel UHD', ram: 'DDR4-2400', tdp: '15 W', launch: '10ª Gen (2019)' },
+      'intel celeron 5305u': { arch: 'Comet Lake (Entrada)', cores: '2 núcleos / 2 hilos', freq: '2.3 GHz • L3: 2 MB', gpu: 'Intel UHD', ram: 'DDR4-2400', tdp: '15 W', launch: '10ª Gen (2020)' },
+      'intel core i9-11980hk': { arch: 'Tiger Lake-H (10nm SuperFin)', cores: '8 núcleos / 16 hilos', freq: '2.6 – 5.0 GHz • L3: 24 MB', gpu: 'Iris Xe (32 EU)', ram: 'DDR4-3200', tdp: '45 W+', launch: '11ª Gen (2021)' },
+      'intel core i9-11900h':  { arch: 'Tiger Lake-H (10nm SuperFin)', cores: '8 núcleos / 16 hilos', freq: '2.5 – 4.9 GHz • L3: 24 MB', gpu: 'Iris Xe (32 EU)', ram: 'DDR4-3200', tdp: '45 W', launch: '11ª Gen (2021)' },
+      'intel core i7-1165g7':  { arch: 'Tiger Lake-U (10nm SuperFin)', cores: '4 núcleos / 8 hilos', freq: '2.8 – 4.7 GHz • L3: 12 MB', gpu: 'Iris Xe (96 EU)', ram: 'DDR4-3200 / LPDDR4X', tdp: '12–28 W', launch: '11ª Gen (2020)' },
+      'intel core i7-11375h':  { arch: 'Tiger Lake-H35 (10nm SuperFin)', cores: '4 núcleos / 8 hilos', freq: '3.3 – 5.0 GHz • L3: 12 MB', gpu: 'Iris Xe (96 EU)', ram: 'DDR4-3200 / LPDDR4X', tdp: '35 W', launch: '11ª Gen (2021)' },
+      'intel core i3-1115g4':  { arch: 'Tiger Lake-U (10nm SuperFin)', cores: '2 núcleos / 4 hilos', freq: '3.0 – 4.1 GHz • L3: 6 MB', gpu: 'UHD Xe (48 EU)', ram: 'DDR4-3200 / LPDDR4X', tdp: '12–28 W', launch: '11ª Gen (2020)' },
+      'intel pentium gold 7505': { arch: 'Tiger Lake-U (Entrada)', cores: '2 núcleos / 4 hilos', freq: '2.0 – 3.5 GHz • L3: 4 MB', gpu: 'UHD Xe (48 EU)', ram: 'DDR4 / LPDDR4X', tdp: '15 W', launch: '11ª Gen (2020)' },
+      'intel celeron 6305': { arch: 'Tiger Lake-U (Entrada)', cores: '2 núcleos / 2 hilos', freq: '1.8 GHz • L3: 4 MB', gpu: 'UHD Xe (48 EU)', ram: 'DDR4 / LPDDR4X', tdp: '15 W', launch: '11ª Gen (2020)' },
+      'intel core i9-12900hk': { arch: 'Alder Lake-H (Intel 7 híbrida)', cores: '14 núcleos (6P+8E) / 20 hilos', freq: '2.5 – 5.0 GHz • L3: 24 MB', gpu: 'Iris Xe (96 EU)', ram: 'DDR5 / DDR4', tdp: '45 W', launch: '12ª Gen (2022)' },
+      'intel core i9-12900h':  { arch: 'Alder Lake-H (Intel 7 híbrida)', cores: '14 núcleos (6P+8E) / 20 hilos', freq: '2.5 – 5.0 GHz • L3: 24 MB', gpu: 'Iris Xe (96 EU)', ram: 'DDR5 / DDR4', tdp: '45 W', launch: '12ª Gen (2022)' },
+      'intel core i7-12650h':  { arch: 'Alder Lake-H (Intel 7 híbrida)', cores: '10 núcleos (6P+4E) / 16 hilos', freq: '2.3 – 4.7 GHz • L3: 24 MB', gpu: 'Iris Xe (64 EU)', ram: 'DDR5 / DDR4', tdp: '45 W', launch: '12ª Gen (2022)' },
+      'intel core i7-1280p':   { arch: 'Alder Lake-P (Intel 7 híbrida)', cores: '14 núcleos (6P+8E) / 20 hilos', freq: '1.8 – 4.8 GHz • L3: 24 MB', gpu: 'Iris Xe (96 EU)', ram: 'DDR5 / LPDDR5', tdp: '28 W', launch: '12ª Gen (2022)' },
+      'intel core i5-12450h':  { arch: 'Alder Lake-H (Intel 7 híbrida)', cores: '8 núcleos (4P+4E) / 12 hilos', freq: '2.0 – 4.4 GHz • L3: 12 MB', gpu: 'UHD (48 EU)', ram: 'DDR5 / DDR4', tdp: '45 W', launch: '12ª Gen (2022)' },
+      'intel pentium gold 8505': { arch: 'Alder Lake-U (Intel 7 híbrida)', cores: '5 núcleos (1P+4E) / 6 hilos', freq: '1.2 – 4.4 GHz • L3: 8 MB', gpu: 'UHD (48 EU)', ram: 'DDR5 / DDR4', tdp: '15 W', launch: '12ª Gen (2022)' },
+      'intel celeron 7305': { arch: 'Alder Lake-U (Intel 7 híbrida)', cores: '5 núcleos (1P+4E) / 6 hilos', freq: '1.1 GHz • L3: 8 MB', gpu: 'UHD (48 EU)', ram: 'DDR5 / DDR4', tdp: '15 W', launch: '12ª Gen (2022)' },
+      'intel core ultra 7 165h': { arch: 'Meteor Lake (Core Ultra Serie 1)', cores: '16 núcleos (6P+8E+2LPE) / 22 hilos', freq: '1.4 – 5.0 GHz • L3: 24 MB • NPU IA', gpu: 'Intel Arc (8 Xe)', ram: 'DDR5 / LPDDR5X', tdp: '28–55 W', launch: 'Core Ultra 1 (2024)' },
+      'intel core ultra 5 135h': { arch: 'Meteor Lake (Core Ultra Serie 1)', cores: '14 núcleos (4P+8E+2LPE) / 18 hilos', freq: '1.7 – 4.6 GHz • L3: 18 MB • NPU IA', gpu: 'Intel Arc (7 Xe)', ram: 'DDR5 / LPDDR5X', tdp: '28–55 W', launch: 'Core Ultra 1 (2024)' },
+      'intel core i5-14450hx': { arch: 'Raptor Lake-HX Refresh (14ª Gen)', cores: '10 núcleos (6P+4E) / 16 hilos', freq: '2.4 – 4.9 GHz • L3: 20 MB', gpu: 'Intel UHD (32 EU)', ram: 'DDR5 / DDR4', tdp: '55 W+', launch: '14ª Gen (2024)' },
+      'intel processor n100': { arch: 'Alder Lake-N (4 E-Cores eficientes)', cores: '4 núcleos (4E) / 4 hilos', freq: '1.0 – 3.4 GHz • L3: 6 MB', gpu: 'Intel UHD (24 EU)', ram: 'DDR4 / DDR5 / LPDDR5', tdp: '6 W', launch: 'Actual (muy superior a N4020)' },
+      'intel processor n200': { arch: 'Alder Lake-N (4 E-Cores eficientes)', cores: '4 núcleos (4E) / 4 hilos', freq: '1.0 – 3.7 GHz • L3: 6 MB', gpu: 'Intel UHD (32 EU)', ram: 'DDR4 / DDR5 / LPDDR5', tdp: '6 W', launch: 'Actual (viable para Win 11)' },
+      'amd ryzen 7 4800u': { arch: 'Renoir (Zen 2 • ≈ Intel 10ª Gen)', cores: '8 núcleos / 16 hilos', freq: '1.8 – 4.2 GHz • L3: 8 MB', gpu: 'Radeon Vega 8', ram: 'DDR4 / LPDDR4X', tdp: '15 W', launch: 'Serie 4000 (2020)' },
+      'amd ryzen 7 4700u': { arch: 'Renoir (Zen 2 • ≈ Intel 10ª Gen)', cores: '8 núcleos / 8 hilos', freq: '2.0 – 4.1 GHz • L3: 8 MB', gpu: 'Radeon Vega 7', ram: 'DDR4 / LPDDR4X', tdp: '15 W', launch: 'Serie 4000 (2020)' },
+      'amd ryzen 3 4300u': { arch: 'Renoir (Zen 2 • ≈ Intel 10ª Gen)', cores: '4 núcleos / 4 hilos', freq: '2.7 – 3.7 GHz • L3: 4 MB', gpu: 'Radeon Vega 5', ram: 'DDR4 / LPDDR4X', tdp: '15 W', launch: 'Serie 4000 (2020)' },
+      'amd ryzen 3 3250u': { arch: 'Dali (Zen • Entrada)', cores: '2 núcleos / 4 hilos', freq: '2.6 – 3.5 GHz • L3: 4 MB', gpu: 'Radeon Vega 3', ram: 'DDR4-2400', tdp: '15 W', launch: 'Serie 3000 (2020)' },
+      'amd athlon silver 3050u': { arch: 'Dali (Zen • Entrada)', cores: '2 núcleos / 2 hilos', freq: '2.3 – 3.2 GHz • L3: 4 MB', gpu: 'Radeon Vega 2', ram: 'DDR4-2400', tdp: '15 W', launch: 'Entrada (2020)' },
+      'amd ryzen 9 5980hx': { arch: 'Cezanne (Zen 3 • ≈ Intel 11ª Gen)', cores: '8 núcleos / 16 hilos', freq: '3.3 – 4.8 GHz • L3: 16 MB', gpu: 'Radeon Vega 8', ram: 'DDR4-3200', tdp: '45 W+', launch: 'Serie 5000 (2021)' },
+      'amd ryzen 7 5800u': { arch: 'Cezanne (Zen 3 • ≈ Intel 11ª Gen)', cores: '8 núcleos / 16 hilos', freq: '1.9 – 4.4 GHz • L3: 16 MB', gpu: 'Radeon Vega 8', ram: 'DDR4 / LPDDR4X', tdp: '15 W', launch: 'Serie 5000 (2021)' },
+      'amd ryzen 3 5300u': { arch: 'Lucienne (Zen 2 • ≈ Intel 11ª Gen)', cores: '4 núcleos / 8 hilos', freq: '2.6 – 3.8 GHz • L3: 4 MB', gpu: 'Radeon Vega 6', ram: 'DDR4 / LPDDR4X', tdp: '15 W', launch: 'Serie 5000 (2021)' },
+      'amd ryzen 9 6900hs': { arch: 'Rembrandt (Zen 3+ • ≈ Intel 12ª Gen)', cores: '8 núcleos / 16 hilos', freq: '3.3 – 4.9 GHz • L3: 16 MB', gpu: 'Radeon 680M (12 CU)', ram: 'DDR5 / LPDDR5', tdp: '35 W', launch: 'Serie 6000 (2022)' },
+      'amd ryzen 5 6600h': { arch: 'Rembrandt (Zen 3+ • ≈ Intel 12ª Gen)', cores: '6 núcleos / 12 hilos', freq: '3.3 – 4.5 GHz • L3: 16 MB', gpu: 'Radeon 660M (6 CU)', ram: 'DDR5 / LPDDR5', tdp: '45 W', launch: 'Serie 6000 (2022)' },
+      'amd ryzen 5 8645hs': { arch: 'Hawk Point (Zen 4 • ≈ Intel 13ª/14ª Gen)', cores: '6 núcleos / 12 hilos', freq: '4.3 – 5.0 GHz • L3: 16 MB • NPU 16 TOPS', gpu: 'Radeon 760M', ram: 'DDR5 / LPDDR5X', tdp: '35–54 W', launch: 'Serie 8000 (2024)' },
+      'amd ryzen 5 8540u': { arch: 'Hawk Point (Zen 4/4c)', cores: '6 núcleos (2Z4+4Z4c) / 12 hilos', freq: '3.2 – 4.9 GHz • L3: 16 MB • NPU 10 TOPS', gpu: 'Radeon 740M', ram: 'DDR5 / LPDDR5X', tdp: '15–30 W', launch: 'Serie 8000 (2024)' },
+      'amd ryzen 3 7330u': { arch: 'Barcelo-R (Zen 3 • Mejor relación costo/rendimiento)', cores: '4 núcleos / 8 hilos', freq: '2.3 – 4.3 GHz • L3: 4 MB', gpu: 'Radeon Vega 6', ram: 'DDR4-3200', tdp: '15 W', launch: 'Serie 7000 económica (2023)' },
+      'amd ryzen 3 7320u': { arch: 'Mendocino (Zen 2 • Aplasta a Celeron/Pentium)', cores: '4 núcleos / 8 hilos', freq: '2.4 – 4.1 GHz • L3: 4 MB', gpu: 'Radeon 610M (2 CU)', ram: 'LPDDR5', tdp: '15 W', launch: 'Serie 7000 económica (2023)' },
+      'amd athlon gold 7220u': { arch: 'Mendocino (Zen 2 • Entrada)', cores: '2 núcleos / 4 hilos', freq: '2.5 – 3.7 GHz • L3: 4 MB', gpu: 'Radeon 610M (2 CU)', ram: 'LPDDR5', tdp: '15 W', launch: 'Serie 7000 entrada (2023)' },
+      'intel core ultra 5 225h': { arch: 'Arrow Lake-H (Core Ultra Serie 2)', cores: '8 núcleos (4P + 4E) / 8 hilos', freq: '1.7 – 4.9 GHz • L3: 18 MB', gpu: 'Intel Arc (7 Xe-cores / 130T)', ram: 'DDR5 / LPDDR5X', tdp: '28W / 115W máx.', launch: 'Core Ultra Serie 2 (2025)' },
+      'intel core i7-13700h':    { arch: 'Raptor Lake-H (13ª Gen)', cores: '14 núcleos (6P + 8E) / 20 hilos', freq: '2.4 – 5.0 GHz • L3: 24 MB', gpu: 'Intel Iris Xe (96 EU)', ram: 'DDR5 / DDR4', tdp: '45W / 115W máx.', launch: '13ª Gen (2023)' },
+      'intel core i5-13500h':    { arch: 'Raptor Lake-H (13ª Gen • Punto dulce gaming)', cores: '12 núcleos (4P + 8E) / 16 hilos', freq: '2.6 – 4.7 GHz • L3: 18 MB', gpu: 'Intel Iris Xe (80 EU)', ram: 'DDR5 / DDR4', tdp: '45W / 115W máx.', launch: '13ª Gen (2023)' },
+      'intel core i3-1315u':     { arch: 'Raptor Lake-U (13ª Gen)', cores: '6 núcleos (2P + 4E) / 8 hilos', freq: '1.2 – 4.5 GHz • L3: 10 MB', gpu: 'Intel UHD Graphics (64 EU)', ram: 'DDR5 / DDR4 / LPDDR4X', tdp: '15W / 55W máx.', launch: '13ª Gen (2023)' },
+      'amd ryzen 7 6800hs':      { arch: 'Rembrandt (Zen 3+ • Eficiencia 35W)', cores: '8 núcleos / 16 hilos', freq: '3.2 – 4.7 GHz • L3: 16 MB', gpu: 'Radeon 680M (12 CU)', ram: 'DDR5 / LPDDR5', tdp: '35W / 54W máx.', launch: 'Serie 6000 (2022)' },
+      'amd athlon silver 7120u': { arch: 'Mendocino (Zen 2 • Entrada)', cores: '2 núcleos / 2 hilos', freq: '2.4 – 3.5 GHz • L3: 4 MB', gpu: 'Radeon 610M (2 CU)', ram: 'LPDDR5', tdp: '15 W', launch: 'Serie 7000 entrada (2023)' }
     };
 
     const CPU_IGPU_MAP = {
@@ -2156,6 +2439,12 @@
         suffixInfo = '<strong>HX3D:</strong> Máximo rendimiento móvil con tecnología 3D V-Cache (tope de gama para gaming y creación pesada).';
       } else if (/\b\d+[a-z]*hx\b/i.test(text) || /hx\b/i.test(text)) {
         suffixInfo = '<strong>HX:</strong> Máxima potencia móvil (estaciones de trabajo, SOLIDWORKS, Blender, 4K o gaming). Consume más batería.';
+      } else if (/\b\d+hf\b/i.test(text)) {
+        suffixInfo = '<strong>HF:</strong> Alto rendimiento (45 W) <strong>SIN gráficos integrados</strong> (iGPU desactivada: requiere tarjeta gráfica dedicada obligatoria).';
+      } else if (/\b8\d{3}g\b/i.test(text)) {
+        suffixInfo = '<strong>G (Kaby Lake-G):</strong> Exclusivo de 8.ª gen; integra CPU Intel + gráficos dedicados AMD Radeon RX Vega M en el mismo paquete.';
+      } else if (/\b\d+y\b/i.test(text) || /\bm3-/i.test(text)) {
+        suffixInfo = '<strong>Y / m3:</strong> Consumo ultra bajo (5–7 W) para tablets o laptops sin ventilador; solo para tareas ligeras.';
       } else if (/\b\d+[a-z]*hk\b/i.test(text) || /hk\b/i.test(text)) {
         suffixInfo = '<strong>HK:</strong> Alto rendimiento con multiplicador desbloqueado.';
       } else if (/\b\d+[a-z]*hs\b/i.test(text) || /hs\b/i.test(text)) {
@@ -2219,8 +2508,8 @@
         suffixInfo = isJ ? 'Serie J: bajo consumo pensada para mini PCs y equipos compactos. Ideal para Office, web y Linux ligero.' : 'Adecuado para Office, ONLYOFFICE, navegación, clases y Linux ligero; no recomendable para CAD 3D, Adobe ni gaming pesado.';
         verdict = (nNum >= 100 && nNum <= 305) || /7505|6000|5100|6412/.test(lower) ? 'Aprovechable para Office, clases y Linux ligero' : 'Uso muy básico (Office ligero / navegador)';
         badgeColor = 'bg-amber-100 text-amber-800';
-      } else if (lower.includes('athlon') || /\b3015e\b|\b3020e\b|\ba[468]-\d+/i.test(lower)) {
-        brand = /\ba[468]-\d+/i.test(lower) ? 'AMD Serie A (anterior)' : /3015e|3020e/.test(lower) ? 'AMD 3000e (Bajo consumo)' : 'AMD Athlon';
+      } else if (lower.includes('athlon') || /\b3015e\b|\b3020e\b|\ba(4|6|8|9|10|12)-\d+|\bfx-98\d+/i.test(lower)) {
+        brand = /\ba(4|6|8|9|10|12)-\d+|\bfx-98\d+/i.test(lower) ? 'AMD Serie A / FX (8ª Gen APU 2017 — Bristol/Stoney Ridge)' : /3015e|3020e/.test(lower) ? 'AMD 3000e (Bajo consumo)' : 'AMD Athlon';
         tier = lower.includes('gold') ? 'Athlon Gold (Entrada)' : 'Gama económica (equivalente a Celeron / Pentium N)';
         gen = /3015e|3020e|3050e|300u/.test(lower) ? 'Zen / Zen+ bajo consumo (≈ Celeron N4020–N5100 / Pentium N5000)' : 'Equivalente aproximado a Intel Celeron / Pentium';
         verdict = 'Solo para Office básico, navegación y Linux ligero';
@@ -2265,6 +2554,18 @@
           verdict = cTier >= '7' ? 'Muy capaz para productividad exigente y creación' : 'Excelente opción moderna (no confundir con Core Ultra)';
           badgeColor = 'bg-emerald-100 text-emerald-800';
         }
+      } else if (lower.includes('xeon')) {
+        brand = 'Intel Xeon E (Estación de trabajo móvil)';
+        tier = 'Workstation Profesional (soporte ECC)';
+        gen = '9.ª Gen móvil (Coffee Lake Refresh • 45 W)';
+        verdict = 'Excelente workstation seminueva para CAD/ingeniería';
+        badgeColor = 'bg-emerald-100 text-emerald-800';
+      } else if (lower.includes('m3-8')) {
+        brand = 'Intel Core m3 (8.ª Gen Amber Lake)';
+        tier = 'Ultra bajo consumo (5 W sin ventilador)';
+        gen = '8.ª Gen móvil (2018 • 2 núcleos / 4 hilos)';
+        verdict = 'Solo para navegación ligera y documentos';
+        badgeColor = 'bg-amber-100 text-amber-800';
       } else if (lower.includes('core i') || /\bi[3579]\b/i.test(lower)) {
         brand = 'Intel Core (Familia tradicional)';
         const iMatch = lower.match(/i([3579])/i);
@@ -2617,17 +2918,17 @@
     // ==================== TAB 3: COMMERCIAL CPU CATALOG ====================
     const CPU_FAMILIES = {
       amd_2000_5000: [
-        { title: 'Equipos usados económicos (≈ Celeron/i3 8ª)', models: ['AMD 3015e', 'AMD 3020e', 'AMD Athlon Silver 3050e', 'AMD Ryzen 3 2200U', 'AMD Ryzen 3 3200U', 'AMD Ryzen 3 5300U'], note: '3015e/3020e equivalen a Celeron N4020/Pentium N5000; Ryzen 3 2200U/3200U equivalen a Core i3-8130U/10110U.' },
+        { title: 'Equipos usados económicos (≈ Celeron/i3 8ª)', models: ['AMD 3015e', 'AMD 3020e', 'AMD Athlon Silver 3050e', 'AMD Ryzen 3 2200U', 'AMD Ryzen 3 3200U', 'AMD Ryzen 3 5300U'], note: 'Evita la antigua Serie A (A4–A12 / FX-9830P). Si compras usada, busca al menos Ryzen 5 3500U o 3550H.' },
         { title: 'Gama media seminueva (≈ i5 8ª–11ª U)', models: ['AMD Ryzen 5 2500U', 'AMD Ryzen 5 3500U', 'AMD Ryzen 5 4500U', 'AMD Ryzen 5 5500U', 'AMD Ryzen 7 4700U', 'AMD Ryzen 7 5700U'], note: '2500U ≈ i5-8250U; 4500U ≈ i5-1035G7; 5500U ≈ i5-1135G7. No compares un chip U (15 W) contra un H (45 W).' },
-        { title: 'Alto rendimiento usado (≈ i7/i9 8ª–11ª H)', models: ['AMD Ryzen 5 3550H', 'AMD Ryzen 5 4600H', 'AMD Ryzen 5 5600H', 'AMD Ryzen 7 4800H', 'AMD Ryzen 7 5800H', 'AMD Ryzen 9 4900H', 'AMD Ryzen 9 5900HX'], note: '4600H ≈ i7-8750H; 4800H ≈ i7-10750H; 5800H ≈ i7-11800H; 5900HX ≈ i9-11980HK.' }
+        { title: 'Alto rendimiento usado (≈ i7/i9 8ª–11ª H)', models: ['AMD Ryzen 5 3550H', 'AMD Ryzen 5 4600H', 'AMD Ryzen 5 5600H', 'AMD Ryzen 7 4800H', 'AMD Ryzen 7 5800H', 'AMD Ryzen 9 4900H', 'AMD Ryzen 9 4900HS', 'AMD Ryzen 9 5900HX', 'AMD Ryzen 9 5980HX', 'AMD Ryzen 9 5980HX'], note: '4600H ≈ i7-8750H; 4800H ≈ i7-10750H; 5800H ≈ i7-11800H; 5900HX ≈ i9-11980HK.' }
       ],
       intel_8_10: [
-        { title: '10.ª Gen (Comet Lake & Ice Lake)', models: ['Intel Core i3-10110U', 'Intel Core i5-10210U', 'Intel Core i5-1035G7', 'Intel Core i5-10300H', 'Intel Core i7-1065G7', 'Intel Core i7-10750H', 'Intel Core i9-10980HK'], note: 'Ice Lake (G4/G7) incluye mejores gráficos Iris Plus. Excelente en laptops seminuevas con 16 GB RAM y SSD.' },
-        { title: '9.ª Gen (Coffee Lake Refresh — Serie H)', models: ['Intel Core i5-9300H', 'Intel Core i7-9750H', 'Intel Core i9-9880H', 'Intel Core i9-9980HK'], note: 'En laptops se enfocó en serie H/HK de alto rendimiento (DDR4-2666, UHD 630 + GPU dedicada).' },
+        { title: '10.ª Gen (Comet Lake & Ice Lake)', models: ['Intel Core i3-10110U', 'Intel Core i5-10210U', 'Intel Core i5-10310U', 'Intel Core i5-1035G1', 'Intel Core i5-1035G4', 'Intel Core i5-1035G7', 'Intel Core i5-10200H', 'Intel Core i5-10300H', 'Intel Core i5-10400H', 'Intel Core i7-1065G7', 'Intel Core i7-10710U', 'Intel Core i7-1068G7', 'Intel Core i7-10750H', 'Intel Core i7-10850H', 'Intel Core i7-10875H', 'Intel Core i9-10885H', 'Intel Core i9-10980HK'], note: 'Ice Lake (G4/G7) incluye mejores gráficos Iris Plus. Excelente en laptops seminuevas con 16 GB RAM y SSD.' },
+        { title: '9.ª Gen (Coffee Lake Refresh — Serie H)', models: ['Intel Core i5-9300H', 'Intel Core i7-9750H', 'Intel Core i9-9880H', 'Intel Core i9-9980HK'], note: 'En 9ª gen móvil NO existió serie U, Y ni i3: solo serie H/HK/HF (45 W, HF sin iGPU) y Xeon E móviles.' },
         { title: '8.ª Gen (Kaby Lake-R / Whiskey Lake)', models: ['Intel Core i3-8130U', 'Intel Core i5-8250U', 'Intel Core i5-8350U', 'Intel Core i5-8300H', 'Intel Core i7-8550U', 'Intel Core i7-8750H', 'Intel Core i9-8950HK'], note: 'Primera generación con soporte oficial de Windows 11. Con 16 GB RAM y SSD sigue rindiendo muy bien en Office, VS Code, Linux y estudio.' }
       ],
       intel_core: [
-        { title: '14.ª Gen (2024 — Serie HX)', models: ['Intel Core i5-14450HX', 'Intel Core i5-14500HX', 'Intel Core i7-14650HX', 'Intel Core i7-14700HX', 'Intel Core i9-14900HX'], note: 'Enfocada en alto rendimiento para gaming, CAD y render.' },
+        { title: '14.ª Gen (2024 — Serie HX)', models: ['Intel Core i5-14450HX', 'Intel Core i5-14500HX', 'Intel Core i7-14650HX', 'Intel Core i7-14700HX', 'Intel Core i9-14900HX'], note: 'Nota crucial: Intel reservó 14ª gen móvil solo para H/HX (55W+); para ultrabooks U/P la sustituyó por Core Ultra Serie 1.' },
         { title: '13.ª Gen (2023)', models: ['Intel Core i3-1315U', 'Intel Core i5-1335U', 'Intel Core i5-13500H', 'Intel Core i7-1355U', 'Intel Core i7-13700H', 'Intel Core i7-13850HX', 'Intel Core i9-13980HX'], note: 'Muy comercial; busca H/HX para trabajo pesado y U para oficina.' },
         { title: '12.ª Gen (2022) y 11.ª Gen (2020–21)', models: ['Intel Core i3-1215U', 'Intel Core i5-1235U', 'Intel Core i5-1240P', 'Intel Core i7-12700H', 'Intel Core i5-1135G7', 'Intel Core i7-11800H'], note: '12ª gen H sigue siendo válida en gama media; 11ª gen solo si es económica.' }
       ],
@@ -2648,13 +2949,13 @@
       ],
       amd_ryzen: [
         { title: 'AMD Athlon y Ryzen 3 (Entrada/Básico)', models: ['AMD Athlon Silver 7120U', 'AMD Athlon Gold 7220U', 'AMD Ryzen 3 7320U', 'AMD Ryzen 3 7330U', 'AMD Ryzen 3 8440U'], note: 'Athlon equivale a Celeron/Pentium; Ryzen 3 equivale a Core i3.' },
-        { title: 'AMD Ryzen 5 y Ryzen 200 (Gama Media)', models: ['AMD Ryzen 5 5600U', 'AMD Ryzen 5 7535U', 'AMD Ryzen 5 7640HS', 'AMD Ryzen 5 8645HS', 'AMD Ryzen 5 230', 'AMD Ryzen 7 260'], note: 'Equivalentes a Core i5/i7; muy buen equilibrio precio-rendimiento.' },
+        { title: 'AMD Ryzen 5 y Ryzen 200 (Gama Media)', models: ['AMD Ryzen 5 5600U', 'AMD Ryzen 5 7535U', 'AMD Ryzen 5 7640HS', 'AMD Ryzen 5 8645HS', 'AMD Ryzen 5 230', 'AMD Ryzen 7 260'], note: 'Época equivalente: 4000≈10ª, 5000≈11ª, 6000≈12ª, 7000/8000≈13ª/14ª. Evita terminados en 20 (7320U/7520U = Zen 2 antigua).' },
         { title: 'AMD Ryzen 7 y Ryzen 9 (Media-Alta/Alta)', models: ['AMD Ryzen 7 7840HS', 'AMD Ryzen 7 8840U', 'AMD Ryzen 7 8845HS', 'AMD Ryzen 9 7945HX', 'AMD Ryzen 9 8945HS'], note: 'Excelentes para SOLIDWORKS, AutoCAD, edición de video y gaming.' }
       ],
       amd_ai: [
         { title: 'AMD Ryzen AI 400 (Actual)', models: ['AMD Ryzen AI 5 430', 'AMD Ryzen AI 7 450', 'AMD Ryzen AI 9 465', 'AMD Ryzen AI 9 HX 470', 'AMD Ryzen AI 9 HX 475'], note: 'Línea actual de AMD con CPU + GPU Radeon + NPU.' },
         { title: 'AMD Ryzen AI 300 y AI Max', models: ['AMD Ryzen AI 5 340', 'AMD Ryzen AI 7 350', 'AMD Ryzen AI 9 HX 370', 'AMD Ryzen AI Max 385', 'AMD Ryzen AI Max+ 395'], note: 'AI Max+ ofrece gráficos integrados muy potentes.' },
-        { title: 'AMD Ryzen 9000HX (Workstation / Gaming)', models: ['AMD Ryzen 9 9955HX', 'AMD Ryzen 9 9955HX3D'], note: 'Máximo rendimiento móvil para gaming extremo y renderizado.' }
+        { title: 'AMD Ryzen 9000HX (Workstation / Gaming)', models: ['AMD Ryzen 9 9850HX', 'AMD Ryzen 9 9955HX', 'AMD Ryzen 9 9955HX3D'], note: 'Máximo rendimiento móvil para gaming extremo y renderizado.' }
       ],
       apple_m: [
         { title: 'MacBook Air y Pro M5 (2026 — Actual)', models: ['Apple M5', 'Apple M5 Pro', 'Apple M5 Max'], note: 'Air M5 (16–32 GB, Wi-Fi 7, 153 GB/s); Pro M5 Pro/Max (hasta 18 CPU, 40 GPU, 128 GB RAM, 614 GB/s).' },
@@ -2707,27 +3008,34 @@
     const GPU_FAMILIES = {
       nvidia: [
         { title: 'GeForce RTX 50 (Arquitectura Blackwell — Actual)', items: 'RTX 5050 (8 GB GDDR6, 35–100W) • RTX 5060 (8 GB GDDR7) • RTX 5070 (8 GB GDDR7) • RTX 5070 Ti (12 GB GDDR7) • RTX 5080 (16 GB GDDR7) • RTX 5090 (24 GB GDDR7, 95–150W).' },
-        { title: 'GeForce RTX 40 (Arquitectura Ada Lovelace)', items: 'RTX 4050 (6 GB) • RTX 4060 (8 GB) • RTX 4070 (8 GB) • RTX 4080 (12 GB) • RTX 4090 (16 GB). Potencias de 35W a 150W según laptop; incluyen DLSS 3.' },
-        { title: 'GeForce RTX 30 (Arquitectura Ampere)', items: 'RTX 3050 / 3050 Ti (4 GB) • RTX 3060 (6 GB) • RTX 3070 / 3070 Ti (8 GB) • RTX 3080 (8 o 16 GB) • RTX 3080 Ti (16 GB).' },
-        { title: 'GeForce GTX 16 y RTX 20 (Equipos desde 2020)', items: 'GTX 1650 / 1650 Ti (4 GB) • GTX 1660 Ti / RTX 2060 (6 GB) • RTX 2070 / 2070 SUPER / 2080 SUPER (8 GB).' }
+        { title: 'GeForce RTX 40 (Ada Lovelace — CUDA, VRAM, Bus y TGP)', items: 'RTX 4050 (2560 CUDA, 6 GB, 96-bit, 115W) • RTX 4060 (3072 CUDA, 8 GB, 128-bit, 115W) • RTX 4070 (4608 CUDA, 8 GB, 128-bit, 140W) • RTX 4080 (7424 CUDA, 12 GB, 192-bit, 175W) • RTX 4090 (9728 CUDA, 16 GB, 256-bit, 175W).' },
+        { title: 'GeForce RTX 30 (Ampere — CUDA, VRAM, Bus y TGP)', items: 'RTX 3050 (2048 CUDA, 4/6 GB, 96/128-bit, 60W) • RTX 3050 Ti (2560 CUDA, 4 GB, 128-bit, 80W) • RTX 3060 (3840 CUDA, 6 GB, 192-bit, 115W) • RTX 3070 (5120 CUDA, 8 GB, 256-bit, 125W) • RTX 3070 Ti (5888 CUDA, 8 GB, 256-bit, 125W) • RTX 3080 (6144 CUDA, 8/16 GB, 256-bit, 165W) • RTX 3080 Ti (7424 CUDA, 16 GB, 256-bit, 175W).' },
+        { title: 'GeForce GTX 16 y RTX 20 (Turing — 128 a 256-bit)', items: 'GTX 1650 (896/1024 CUDA, 4 GB, 128-bit) • GTX 1650 Ti (1024 CUDA, 4 GB GDDR6, 128-bit) • GTX 1660 Ti (1536 CUDA, 6 GB GDDR6, 192-bit) • RTX 2060 (6 GB) • RTX 2070 / 2080 SUPER (8 GB).' },
+        { title: 'Línea Profesional RTX Ada / Ampere (Reemplazo de Quadro)', items: 'Ada: RTX 2000 Ada (3072 CUDA, 8 GB, 128-bit) • RTX 3000 Ada (4608 CUDA, 8 GB, 128-bit) • RTX 4000 Ada (7424 CUDA, 12 GB ECC, 192-bit) • RTX 5000 Ada (9728 CUDA, 16 GB ECC, 256-bit). Ampere: RTX A1000 (2048 CUDA, 4/6 GB, 128-bit) • RTX A2000 (2560 CUDA, 4/8 GB, 128-bit) • RTX A3000 (4096 CUDA, 6/12 GB, 192-bit) • RTX A4000 (5120 CUDA, 8 GB ECC, 256-bit) • RTX A5500 (7424 CUDA, 16 GB ECC, 256-bit).' },
+        { title: '⚠️ Los 3 detalles técnicos que nadie te explica', items: '1) El Ancho de Bus es la trampa: una MX350 (64-bit) queda estrangulada frente a una GTX 1050/1650 (128-bit). 2) La VRAM no lo es todo: una Quadro P2000 (4 GB, 128-bit, drivers certificados) es mucho más estable en SOLIDWORKS/AutoCAD que una RTX 3050 de 4 GB. 3) Naming engañoso en MX: MX450 y MX550 usan el mismo chip TU117 y bus de 64-bit (solo cambian los CUDA: 896 vs 1024).' }
       ],
       amd_ded: [
-        { title: 'Radeon RX 7000M y 7000S (RDNA 3)', items: 'RX 7600M / 7600M XT / 7600S / 7700S (8 GB GDDR6) • RX 7800M (12 GB, hasta 180W) • RX 7900M (16 GB, hasta 180W).' },
-        { title: 'Radeon RX 6000M y 6000S (RDNA 2)', items: 'RX 6300M / 6500M / 6600M / 6650M / 6600S / 6700S (hasta 8 GB) • RX 6800M / 6850M XT (12 GB). Las variantes S son para laptops delgadas. (Nota: RX 9070 es solo de escritorio).' }
+        { title: 'Radeon RX 7000M / 7000S (RDNA 3 — Ray Tracing, FSR 3, AV1)', items: 'RX 7900M (4608 SP / 72 CU, 16 GB, 256-bit, 64 MB IC) • RX 7800M (3840 SP / 60 CU, 12 GB, 192-bit, 48 MB IC) • RX 7600M XT / RX 7700S (2048 SP / 32 CU, 8 GB, 128-bit) • RX 7600M / RX 7600S (1792 SP / 28 CU, 8 GB, 128-bit).' },
+        { title: 'Radeon RX 6000M / 6000S (RDNA 2)', items: 'RX 6850M XT / 6800M (2560 SP / 40 CU, 12 GB, 192-bit, 96 MB IC) • RX 6700M (2304 SP / 36 CU, 10 GB, 160-bit) • RX 6650M XT (2048 SP, 8 GB, 128-bit) • RX 6650M / 6600M (1792 SP, 8 GB, 128-bit) • RX 6550M / 6500M (1024 SP, 4 GB, 64-bit) • RX 6450M / 6300M (768 SP, 2/4 GB, 64-bit). Serie S (6800S, 6700S, 6600S, 6550S): TDP reducido 35–50W para laptops delgadas.' },
+        { title: 'AMD Radeon PRO Móvil (Workstation Certificada ISV)', items: 'PRO W7000 (RDNA 3): W7700S / W7600S (hasta 8 GB, 128-bit) • PRO W6000 (RDNA 2): W6600M (8 GB, 128-bit), W6500M (4 GB, 64-bit), W6300M (2 GB, 64-bit) • PRO W5000 (RDNA 1): W5500M (8 GB), W5300M (4 GB) • Radeon Pro 5600M (Apple 2020: 1536 SP, 8 GB HBM2, bus 1024-bit).' }
       ],
       intel_ded: [
-        { title: 'Intel Arc A-Series Dedicadas (Xe-HPG)', items: 'Arc A350M / A370M (4 GB GDDR6) • Arc A530M / A550M / A570M (8 GB) • Arc A730M (12 GB) • Arc A770M (16 GB GDDR6, 120–150W).' },
-        { title: 'Aclaración importante', items: 'Las Intel Arc B370 y B390 recientes son gráficas integradas dentro del procesador, no tarjetas dedicadas.' }
+        { title: 'Intel Arc A-Series Dedicadas (Xe-HPG — 1 Xe Core = 16 EUs)', items: 'Arc A770M (32 Cores / 512 EUs, 8/16 GB GDDR6, 256-bit, 120–150W ≈ RTX 3060) • Arc A730M (24 Cores / 384 EUs, 12 GB, 192-bit, 100–120W ≈ RTX 3050 Ti) • Arc A570M (16 Cores / 256 EUs, 8 GB, 128-bit, 80–100W ≈ RTX 3050) • Arc A550M (16 Cores / 256 EUs, 8 GB, 128-bit, 60–80W) • Arc A530M / A370M (8 Cores / 128 EUs, 4 GB, 64-bit, 35–50W) • Arc A350M / A310M (6 Cores / 96 EUs, 4 GB, 64-bit, 25–35W).' },
+        { title: 'Aclaración importante (Arc B370 / B390 / Core Ultra)', items: 'Las Intel Arc B370, B390, 130V/140V y 130T/140T recientes son gráficas integradas dentro del procesador (SoC), no tarjetas dedicadas.' },
+        { title: '⚠️ Los 4 detalles técnicos críticos de Intel', items: '1) Dual-Channel OBLIGATORIO: en Iris Xe y Core Ultra usar un solo módulo de RAM (Single-Channel) reduce el rendimiento gráfico 30%–50% (Iris Xe 96 EU Dual ≈ GTX 1050; Single ≈ GT 1030). 2) Velocidad de RAM = Velocidad GPU: Core Ultra rinde al máximo con LPDDR5/x a 7467–8533 MT/s (DDR5-4800 la frena). 3) Drivers: Arc discretas mejoraron mucho en DX12/Vulkan, aunque NVIDIA conserva ventaja en juegos DX9/DX11 antiguos. 4) XeSS: escalado por IA que suma +40%–50% de FPS y excelente codificador AV1.' },
+        { title: '💡 ¿Cómo elegir entre Intel y NVIDIA?', items: 'Elige Intel Arc (A550M/A730M/A770M) por precio/rendimiento y edición AV1 en DX12/Vulkan; Intel Core Ultra integradas para ultradelgadas con gran batería y edición/gaming casual; y NVIDIA (RTX 4050/4060+) para compatibilidad total en juegos antiguos, 3D pesado (Blender/Maya) o IA local.' }
       ],
       legacy_gpu: [
-        { title: 'NVIDIA MX y GTX 10 / 16 / RTX 20 (2017–2020)', items: 'Entrada: MX110–MX450 • Media: GTX 1050/Ti (2–4 GB), GTX 1060 (6 GB), GTX 1650/Ti (4 GB), GTX 1660 Ti (6 GB) • Alta: GTX 1070/1080, RTX 2060 (6 GB), RTX 2070/2080/Super (8 GB). Revisa si es variante Max-Q (menor TGP).' },
-        { title: 'AMD Radeon 500 y RX 5000M (2017–2020)', items: 'Entrada: Radeon 520/530/540, RX 550 • Media: RX 560X, RX 5300M (3 GB), RX 5500M (4 GB) • Media-Alta: RX 5600M (6 GB). Nota: Vega 10/11 son integradas, no dedicadas.' },
-        { title: 'Workstations Seminuevas (Quadro y Radeon Pro)', items: 'NVIDIA Quadro P500–P5200 y Quadro RTX 3000/4000/5000 • AMD Radeon Pro WX 3100–7100 y Pro 5500M. Muy buscadas en Dell Precision / HP ZBook / ThinkPad P para SOLIDWORKS certificado.' },
-        { title: 'Consejo clave al comprar usada (2017–2020)', items: 'No te fíes solo de "Core i7": un Core i5 con GTX 1650 o Quadro P1000 rinde mucho más en gráficos, CAD y juegos que un Core i7 con Intel UHD 620 integrada.' }
+        { title: 'NVIDIA GeForce MX (Laptops delgadas — Bus 64-bit)', items: 'MX110/MX130 (Maxwell, 256/384 CUDA, 2 GB) • MX150/MX230/MX250/MX330 (Pascal GP108, 256–384 CUDA, 2 GB GDDR5) • MX350 (Pascal GP107, 640 CUDA, 2 GB) • MX450 (Turing TU117, 896 CUDA, 2 GB) • MX550 (Turing TU117, 1024 CUDA, 2 GB GDDR6) • MX570 (Ampere GA107, 2048 CUDA, 2 GB GDDR6). Todas tienen bus de 64-bit.' },
+        { title: 'NVIDIA GTX 10 y Series Antiguas (900M / 800M / 700M)', items: 'GTX 1050 (640 CUDA, 2/4 GB, 128-bit) • GTX 1050 Ti (768 CUDA, 4 GB, 128-bit) • GTX 1060 (1280 CUDA, 6 GB, 192-bit; hubo versión 3 GB) • GTX 1070 (2048 CUDA, 8 GB, 256-bit) • GTX 1080 (2560 CUDA, 8 GB GDDR5X, 256-bit). Antiguas: GTX 980M/970M/960M, GTX 880M/870M, GTX 780M y GT 940M/930M/920M/840M/820M (64-bit).' },
+        { title: 'Workstations Seminuevas (Quadro Serie T, P / M / K / FX y Radeon Pro)', items: 'Quadro Serie T (Turing 2019–2021 sin RT/Tensor, drivers ISV): T500 (512 CUDA, 4 GB, 64-bit) • T600 (896 CUDA, 4 GB, 64-bit) • T1000 (896 CUDA, 4 GB, 128-bit ≈ GTX 1650) • T1200 / T2000 (1024 CUDA, 4 GB, 128-bit ≈ GTX 1650 Ti). Quadro P: P600 (384 CUDA, 2 GB, 128-bit), P1000/P2000 (512/768 CUDA, 4 GB, 128-bit), P3000 (1280 CUDA, 6 GB, 192-bit), P4000 (1792 CUDA, 8 GB, 256-bit), P5000/P5200 (2048 CUDA, 16 GB, 256-bit). Quadro M: M520–M5500M. Quadro K: K1100M–K5100M. FX: 3800M/5000M. AMD Radeon Pro WX 3100–7100.' },
+        { title: 'AMD RX 5000M (RDNA 1) y Polaris / Vega Mobile (2016–2020)', items: 'RX 5700M (2304 SP, 8 GB, 256-bit) • RX 5600M (2304 SP, 6 GB, 192-bit) • RX 5500M (1408 SP, 4/8 GB, 128-bit) • RX 5300M (1408 SP, 3 GB, 96-bit). Polaris: RX 580/480 (2304 SP, 4/8 GB, 256-bit), RX 570/470 (2048 SP, 4 GB), RX 560X/460 (1024 SP, 128-bit), RX 550X (640 SP). Pro Vega 20 (MacBook Pro 2019: 4 GB HBM2, 1024-bit). Workstations: WX 3200 / 4150 / 4130, FirePro W7170M / M6100.' },
+        { title: '⚠️ Era del Rebranding AMD: R9/R7/R5 (2013–2016) y HD 7000M/8000M', items: 'La mayoría fueron chips GCN 1.0/1.1 renombrados (M200–M500): R9 M395X/M390X (2048 SP, 4 GB, 256-bit), R9 M385X/M370X (640 SP), R7 M445/M440/M380 (640 SP), R7 M360/M430/M520 y R5 M335–M515 (320 SP, 2 GB DDR3, 64-bit). HD 8970M/7970M (1280 SP, 256-bit) a HD 8350M/7450M (160 SP, 64-bit). Evitar para compra actual.' },
+        { title: '⚠️ Los 3 detalles técnicos que nadie te explica', items: '1) El Ancho de Bus (64-bit) estrangula a las MX frente a una GTX 1050 (128-bit). 2) Una Quadro P2000 (4 GB, 128-bit + drivers certificados) supera en estabilidad a GPUs gamer en SOLIDWORKS/AutoCAD. 3) No te fíes solo de "Core i7": un Core i5 con GTX 1650 o Quadro P1000 rinde mucho más que un i7 con UHD 620.' }
       ],
       integrated: [
-        { title: 'AMD Radeon Integradas (comparten RAM)', items: 'Vega 3–8 (Ryzen 4000/5000) • 610M/660M/680M (RDNA 2) • 740M/760M/780M (RDNA 3) • 840M/860M/880M/890M (RDNA 3.5) • Radeon 8060S (40 CU en Ryzen AI Max, alto rendimiento).' },
-        { title: 'Intel Integradas (UHD, Iris Xe, Arc)', items: 'Intel UHD (básicas) • Iris Xe 64/80/96 EU (11ª–13ª gen) • Intel Arc 7/8 núcleos Xe • Arc 130V / 140V (Xe2) • Arc 130T / 140T • Arc B370 / B390.' },
+        { title: 'AMD Radeon Integradas (APU — Dual-Channel obligatorio)', items: 'RDNA 3.5: 890M (16 CU, 1024 SP), 880M (12 CU, 768 SP), 860M (8 CU), 840M (4 CU, 256 SP), Radeon 8060S (40 CU en AI Max) • RDNA 3: 780M (12 CU, 768 SP), 760M (8 CU, 512 SP), 740M (4 CU) • RDNA 2: 680M (12 CU, 768 SP), 660M (6 CU, 384 SP), 610M (2 CU) • Vega: Vega 11 (704 SP), Vega 10 (640 SP), Vega 8 (512 SP), Vega 6 (384 SP), Vega 3 (192 SP) • Legacy GCN: R7/R5/R4/R3 Graphics (2014–2016).' },
+        { title: 'Intel Integradas (Core Ultra, Iris Xe/Plus, UHD/HD y GMA)', items: 'Core Ultra: Arc Graphics (8 Xe / 128 EUs, hasta 2.35 GHz), Arc 140V (8 Xe2, LPDDR5x-8533), Intel Graphics (4 Xe / 64 EUs), Arc 130V/130T/140T/B370/B390 • Iris Xe (2020–2023): 96 EU (i7/i9), 80 EU (i5), 64 EU (G7) • Iris Plus (2019–2020): G7 (64 EU), G4 (48 EU) • UHD/HD: UHD Xe-LP (32 EU, N100–N305), UHD G1 (32 EU), UHD 630/620/615/610 (24 EU), UHD 600/605 (12 EU), HD 630/620/520, HD 5500/5300/4400 • Legacy Pre-2010: GMA X3100/X3500, 4500MHD, 3150.' },
         { title: 'Apple Silicon (Memoria Unificada)', items: 'A18 Pro en MacBook Neo (5 GPU, 60 GB/s) • M1 (7–32 GPU) • M2 (8–38 GPU) • M3 (8–40 GPU) • M4 (8–40 GPU) • M5 (10–40 GPU, hasta 614 GB/s en M5 Max).' },
         { title: 'Qualcomm Adreno (Snapdragon X — Windows ARM)', items: 'Adreno X1-45, X1-65 y X1-85 integradas con memoria compartida del sistema.' }
       ]
@@ -2838,19 +3146,47 @@
         : '<strong>Compatibilidad total:</strong> Todas las aplicaciones seleccionadas tienen soporte nativo en este sistema.';
     }
 
-    function buildDynamicSixTiers(osMode, ctx) {
+    function buildDynamicSixTiers(osMode, ctx, condMode = 'all') {
       const mRam = ctx.maxRam || 8;
       const mVram = ctx.maxVram || 0;
       const mLevel = ctx.maxCpuLevel || 1;
       const bApp = ctx.bottleneckApp || 'tus aplicaciones';
       const noArmTag = (osMode === 'windows' && ctx.needsNoArm) ? ' (x64, NO ARM)' : '';
+      const startRam = mRam >= 16 ? '16 GB RAM' : mRam === 12 ? '12–16 GB RAM' : '8 GB RAM';
+      const bronzeRam = mRam >= 16 ? '16–24 GB RAM' : '16 GB RAM';
+      const silverRam = mRam >= 16 ? '32 GB RAM' : '16–24 GB RAM';
 
       if (osMode === 'apple') {
+        if (condMode === 'refurb') {
+          const rStartCpu = (mLevel >= 3 || mRam >= 16) ? 'Apple M1 / M1 Pro (8–10 CPU)' : 'Apple M1 (8 CPU)';
+          const rStartRam = mRam >= 16 ? '16 GB unificada' : '8 GB unificada';
+          return [
+            { name: 'Opción Inicial', badge: `Reacondicionado mínimo para ${bApp}`, cpu: rStartCpu, ram: rStartRam, gpu: 'GPU 7–8 núcleos', ssd: `${ctx.maxSsd || 256} GB SSD`, ideal: `MacBook Air/Pro M1 seminueva: excelente batería y soporte vigente para ${bApp}.` },
+            { name: 'Opción Bronce', badge: 'M1 / M2 seminueva 16 GB', cpu: 'Apple M1 / M2 (8 CPU)', ram: '16 GB unificada', gpu: 'GPU 8–10 núcleos', ssd: '512 GB SSD', ideal: 'Punto dulce reacondicionado para multitarea fluida sin pagar equipo nuevo.' },
+            { name: 'Opción Plata', badge: 'M2 / M3 seminueva', cpu: 'Apple M2 / M3 (8 CPU)', ram: mRam >= 16 ? '16–24 GB unificada' : '16 GB unificada', gpu: 'GPU 10 núcleos', ssd: '512 GB SSD', ideal: 'Generación reciente seminueva con mejor pantalla y autonomía.' },
+            { name: 'Opción Oro', badge: 'Workstation M1 Pro usada', cpu: 'Apple M1 Pro (10 CPU, 200 GB/s)', ram: '16–32 GB unificada', gpu: 'GPU 16 núcleos', ssd: '512 GB–1 TB SSD', ideal: 'Gran relación costo/potencia seminueva para edición 4K, Blender y CAD.' },
+            { name: 'Opción Diamante', badge: 'M2 Pro / M1 Max usada', cpu: 'Apple M2 Pro / M1 Max (10–12 CPU)', ram: '32 GB unificada', gpu: 'GPU 19–32 núcleos', ssd: '1 TB SSD', ideal: 'Estación portátil seminueva para proyectos pesados y modelos LLM.' },
+            { name: 'Opción Doble Diamante', badge: 'M1 Max / M2 Max tope usada', cpu: 'Apple M1 Max / M2 Max (12 CPU, 400 GB/s)', ram: '64 GB unificada', gpu: 'GPU 30–38 núcleos', ssd: '1–2 TB SSD', ideal: 'Máximo rendimiento Apple seminuevo para 3D, After Effects 4K e IA local.' }
+          ];
+        }
+        if (condMode === 'current') {
+          const cStartCpu = (mLevel >= 3 || ctx.minMacChip === 'M1' || mRam >= 12) ? 'Apple M4 (10 CPU, 120 GB/s)' : 'Apple A18 Pro (MacBook Neo 2026)';
+          const cStartRam = cStartCpu.includes('A18') ? '8 GB unificada (no ampliable)' : '16 GB unificada';
+          const cStartGpu = cStartCpu.includes('A18') ? 'GPU 5 núcleos (60 GB/s)' : 'GPU 10 núcleos';
+          return [
+            { name: 'Opción Inicial', badge: `Actual mínimo para ${bApp}`, cpu: cStartCpu, ram: cStartRam, gpu: cStartGpu, ssd: `${ctx.maxSsd || 256}–512 GB SSD`, ideal: `Equipo Apple nuevo más accesible que cumple el mínimo real para ${bApp}.` },
+            { name: 'Opción Bronce', badge: 'Actual equilibrado', cpu: 'Apple M4 (10 CPU, 120 GB/s)', ram: '16 GB unificada', gpu: 'GPU 10 núcleos', ssd: '512 GB SSD', ideal: 'MacBook Air/Pro actual fluida para estudio, oficina y edición ligera.' },
+            { name: 'Opción Plata', badge: 'Generación M4/M5', cpu: 'Apple M4 / M5 (10 CPU)', ram: '24 GB unificada', gpu: 'GPU 10 núcleos', ssd: '512 GB–1 TB SSD', ideal: 'Más margen de memoria unificada para multitarea y proyectos creativos.' },
+            { name: 'Opción Oro', badge: 'Avanzado M5', cpu: 'Apple M5 (10 CPU, 153 GB/s)', ram: '24–32 GB unificada', gpu: 'GPU 10 núcleos', ssd: '1 TB SSD', ideal: 'Ideal para edición 4K, Blender 5.x, CAD y LLM 7B–14B.' },
+            { name: 'Opción Diamante', badge: 'Profesional Pro actual', cpu: 'Apple M4 Pro / M5 Pro (14–18 CPU)', ram: '36–48 GB unificada (307 GB/s)', gpu: 'GPU 16–20 núcleos', ssd: '1–2 TB SSD', ideal: 'Renderizado 3D, After Effects 4K y modelos LLM medianos.' },
+            { name: 'Opción Doble Diamante', badge: 'Tope Apple Max actual', cpu: 'Apple M4 Max / M5 Max (16–18 CPU)', ram: '64–128 GB unificada (614 GB/s)', gpu: 'GPU 32–40 núcleos', ssd: '2–8 TB SSD', ideal: 'Estación audiovisual y de IA local actual sin límites.' }
+          ];
+        }
         const startCpu = (mLevel >= 3 || ctx.minMacChip === 'M1' || mRam >= 12) ? 'Apple M1 / M2 (8 CPU)' : 'Apple A18 Pro (MacBook Neo 2026)';
-        const startRam = mRam >= 16 ? '16 GB unificada' : '8 GB unificada (no ampliable)';
+        const startRamMac = mRam >= 16 ? '16 GB unificada' : '8 GB unificada (no ampliable)';
         const startGpu = startCpu.includes('A18') ? 'GPU 5 núcleos (60 GB/s)' : 'GPU 7–10 núcleos';
         return [
-          { name: 'Opción Inicial', badge: `Mínimo real para ${bApp}`, cpu: startCpu, ram: startRam, gpu: startGpu, ssd: `${ctx.maxSsd || 256} GB SSD`, ideal: `Cumple el mínimo funcional exacto en macOS para ${bApp}.` },
+          { name: 'Opción Inicial', badge: `Mínimo real para ${bApp}`, cpu: startCpu, ram: startRamMac, gpu: startGpu, ssd: `${ctx.maxSsd || 256} GB SSD`, ideal: `Cumple el mínimo funcional exacto en macOS para ${bApp}.` },
           { name: 'Opción Bronce', badge: 'Escalón cómodo', cpu: 'Apple M2 / M3 (8 CPU)', ram: mRam >= 16 ? '16–24 GB unificada' : '16 GB unificada', gpu: 'GPU 8–10 núcleos', ssd: '512 GB SSD', ideal: 'Más fluidez en multitarea y proyectos medianos.' },
           { name: 'Opción Plata', badge: 'Generación reciente', cpu: 'Apple M4 (10 CPU, 120 GB/s)', ram: mRam >= 16 ? '24 GB unificada' : '16 GB unificada', gpu: 'GPU 10 núcleos', ssd: '512 GB–1 TB SSD', ideal: 'Excelente autonomía, silencio total y velocidad diaria.' },
           { name: 'Opción Oro', badge: 'Avanzado actual', cpu: 'Apple M5 (10 CPU, 153 GB/s)', ram: '24–32 GB unificada', gpu: 'GPU 10 núcleos', ssd: '1 TB SSD', ideal: 'Ideal para edición 4K, Blender 5.x, CAD y LLM 7B–14B.' },
@@ -2859,9 +3195,66 @@
         ];
       }
 
-      // Windows 11 o Linux (escalando desde hardware seminuevo aprovechable / mínimo real hasta tope 2026)
       const mob = ctx.mobility || 'medium';
       const hasFlexSim = (ctx.apps || []).includes('flexsim') && osMode === 'windows';
+
+      if (condMode === 'refurb') {
+        let rStartCpu = hasFlexSim
+          ? `Intel Core i5-1135G7 / i5-11400H o AMD Ryzen 5 5500U / 5600H${noArmTag}`
+          : `Intel Core i5-8250U / i5-10210U o AMD Ryzen 5 3500U / 4500U${noArmTag}`;
+        if (mLevel >= 3) {
+          rStartCpu = hasFlexSim
+            ? `Intel Core i5-11400H / i7-11800H o AMD Ryzen 5 5600H / Ryzen 7 5800H${noArmTag}`
+            : `Intel Core i7-9750H / i7-10750H o AMD Ryzen 5 4600H / Ryzen 7 4800H${noArmTag}`;
+        } else if (mLevel === 2) {
+          rStartCpu = hasFlexSim
+            ? `Intel Core i5-1135G7 o AMD Ryzen 5 5500U${noArmTag}`
+            : `Intel Core i5-1035G7 / i5-1135G7 o AMD Ryzen 5 4500U / 5500U${noArmTag}`;
+        }
+        const rStartGpu = ctx.needsCertGpu
+          ? 'NVIDIA Quadro P1000 / P2000 / T1000 (4 GB ISV)'
+          : mVram >= 6
+            ? 'NVIDIA GTX 1660 Ti / RTX 2060 (6 GB VRAM)'
+            : mVram >= 2
+              ? 'NVIDIA GTX 1050 Ti / GTX 1650 (4 GB VRAM)'
+              : 'Integrada UHD 620 / Iris Plus / Radeon Vega 7–8';
+        return [
+          { name: 'Opción Inicial', badge: `Reacondicionado mínimo para ${bApp}`, cpu: rStartCpu, ram: startRam, gpu: rStartGpu, ssd: `${ctx.maxSsd || 256}–512 GB SSD`, ideal: `Seminuevo económico (8ª–11ª gen / Ryzen 3000–5000) funcional para ${bApp}.` },
+          { name: 'Opción Bronce', badge: 'Seminueva 10ª–11ª / Ryzen 5000', cpu: `Intel Core i5-1035G7 / i5-1135G7 o AMD Ryzen 5 5500U / 5600U${noArmTag}`, ram: bronzeRam, gpu: ctx.needsCertGpu ? 'NVIDIA Quadro T1000 / T2000 (4 GB)' : (mVram >= 4 ? 'NVIDIA GTX 1650 / RTX 3050 (4 GB)' : 'Integrada Iris Xe / Radeon Vega 7'), ssd: '512 GB SSD', ideal: 'Ultrabooks o ThinkPad/Latitude seminuevas con gran relación precio-valor.' },
+          { name: 'Opción Plata', badge: 'Seminueva Serie H (6+ núcleos)', cpu: `Intel Core i7-10750H / i5-11400H o AMD Ryzen 5 5600H / Ryzen 7 5800H${noArmTag}`, ram: silverRam, gpu: ctx.needsCertGpu ? 'NVIDIA Quadro T2000 / RTX 3000 (4–6 GB)' : (mVram >= 2 ? 'NVIDIA GTX 1660 Ti / RTX 2060 (6 GB)' : 'Integrada Iris Xe / Radeon 660M'), ssd: '512 GB–1 TB SSD', ideal: 'Excelente rendimiento seminuevo en CAD, edición HD y gaming 1080p.' },
+          { name: 'Opción Oro', badge: 'Gaming / Pro usada (2021–2022)', cpu: `Intel Core i7-11800H / i5-12500H o AMD Ryzen 7 5800H / 6800H${noArmTag}`, ram: '32 GB RAM', gpu: ctx.needsCertGpu ? 'NVIDIA Quadro RTX 3000 / RTX A2000' : 'NVIDIA RTX 3060 (6 GB) / RTX 2070 (8 GB)', ssd: '1 TB SSD NVMe', ideal: 'Potencia sólida reacondicionada para 3D, 4K y juegos exigentes.' },
+          { name: 'Opción Diamante', badge: 'Workstation / Alta usada', cpu: `Intel Core i7-12700H / i9-10885H o AMD Ryzen 9 5900HX / 6900HX`, ram: '32–64 GB RAM', gpu: ctx.needsCertGpu ? 'NVIDIA Quadro RTX 4000 / RTX A3000' : 'NVIDIA RTX 3070 / 3070 Ti (8 GB VRAM)', ssd: '1–2 TB SSD NVMe', ideal: 'Dell Precision / HP ZBook / ThinkPad P o gaming gama alta seminueva.' },
+          { name: 'Opción Doble Diamante', badge: 'Tope Reacondicionado', cpu: `Intel Core i9-12900HK / i9-12950HX o AMD Ryzen 9 6900HX`, ram: '64 GB RAM', gpu: ctx.needsCertGpu ? 'NVIDIA Quadro RTX 5000 (16 GB)' : 'NVIDIA RTX 3080 / 3080 Ti (16 GB VRAM)', ssd: '2 TB SSD NVMe', ideal: 'Estación móvil seminueva de gama máxima para cualquier carga pesada.' }
+        ];
+      }
+
+      if (condMode === 'current') {
+        let cStartCpu = `Intel Core 3 100U / i3-1315U o AMD Ryzen 3 7335U / Ryzen 5 7535U${noArmTag}`;
+        if (mLevel >= 3) {
+          cStartCpu = mob === 'high'
+            ? `Intel Core Ultra 5 225U / 226V o AMD Ryzen 5 8540U / AI 5 340${noArmTag}`
+            : `Intel Core 5 210H / Ultra 5 225H o AMD Ryzen 5 8645HS${noArmTag}`;
+        } else if (mLevel === 2) {
+          cStartCpu = `Intel Core 5 120U / Core Ultra 5 225U o AMD Ryzen 5 7535U / 8540U${noArmTag}`;
+        }
+        const cStartGpu = ctx.needsCertGpu
+          ? 'NVIDIA RTX 2000 Ada / RTX A1000 (8 GB ISV)'
+          : mVram >= 6
+            ? 'NVIDIA RTX 4050 / RTX 5050 (6–8 GB VRAM)'
+            : mVram >= 2
+              ? 'NVIDIA RTX 4050 (6 GB) o Integrada Arc 140V / Radeon 780M'
+              : 'Integrada Intel Graphics / Arc 130V / Radeon 740M–760M';
+        return [
+          { name: 'Opción Inicial', badge: `Actual mínimo para ${bApp}`, cpu: cStartCpu, ram: startRam, gpu: cStartGpu, ssd: `${ctx.maxSsd || 256}–512 GB SSD NVMe`, ideal: `Hardware nuevo actual más accesible que sí rinde bien en ${bApp}.` },
+          { name: 'Opción Bronce', badge: 'Actual fluido (Core / Ryzen 8000)', cpu: `Intel Core 5 220U / Ultra 5 225U o AMD Ryzen 5 8540U / AI 5 340${noArmTag}`, ram: bronzeRam, gpu: ctx.needsCertGpu ? 'NVIDIA RTX 2000 Ada (8 GB)' : (mVram >= 4 ? 'NVIDIA RTX 4050 / 5050 (6–8 GB)' : 'Integrada Arc 130T / Radeon 760M–780M'), ssd: '512 GB SSD NVMe', ideal: 'Laptop nueva moderna con buena batería y fluidez diaria.' },
+          { name: 'Opción Plata', badge: 'Equilibrio actual (2025–2026)', cpu: `Intel Core Ultra 5 225H / 226V o AMD Ryzen 5 8645HS / AI 7 350${noArmTag}`, ram: silverRam, gpu: ctx.needsCertGpu ? 'NVIDIA RTX 3000 Ada (8 GB)' : (mVram >= 2 ? 'NVIDIA RTX 4060 / 5060 (8 GB)' : 'Integrada Arc 140V / Radeon 880M'), ssd: '1 TB SSD NVMe', ideal: 'Punto dulce actual para trabajar, editar y jugar sin tirones.' },
+          { name: 'Opción Oro', badge: 'Rendimiento alto actual', cpu: `Intel Core 7 250H / Ultra 7 255H / Ultra X7 368H o AMD Ryzen 7 8845HS / AI 7 360${noArmTag}`, ram: '32 GB RAM', gpu: ctx.needsCertGpu ? 'NVIDIA RTX 3000 / 4000 Ada' : 'NVIDIA RTX 4060 / 5060 (8 GB VRAM)', ssd: '1 TB SSD NVMe', ideal: 'CAD 3D, edición 4K, gaming alto y modelos LLM 7B–8B.' },
+          { name: 'Opción Diamante', badge: 'Profesional actual', cpu: `Intel Core i7-14700HX / Ultra 7 265H o AMD Ryzen AI 9 HX 370 / 475`, ram: '32–64 GB RAM', gpu: ctx.needsCertGpu ? 'NVIDIA RTX 4000 Ada (12 GB ECC)' : 'NVIDIA RTX 4070 / 5070 Ti (8–12 GB VRAM)', ssd: '1–2 TB SSD NVMe', ideal: 'Proyectos pesados de ingeniería, After Effects 4K y LLM 14B.' },
+          { name: 'Opción Doble Diamante', badge: 'Estación móvil extrema (2026)', cpu: `Intel Core Ultra 9 285HX / 386H / Ultra X9 388H o Ryzen 9 9955HX / AI Max+ 395`, ram: '64–128 GB DDR5', gpu: ctx.needsCertGpu ? 'NVIDIA RTX 5000 Ada (16 GB ECC)' : 'NVIDIA RTX 4080/4090/5080/5090 (16–24 GB)', ssd: '2–4 TB SSD NVMe', ideal: 'Máxima potencia portátil actual para cualquier software sin límites.' }
+        ];
+      }
+
+      // Windows 11 o Linux Mixto
       let startCpu = hasFlexSim
         ? `Intel Core i5-1135G7 / i5-1235U o AMD Ryzen 5 5500U / 5600H${noArmTag}`
         : `Intel Core i5-8250U / i5-10210U / Core 3 100U o AMD Ryzen 5 3500U / 4500U / Ryzen 3 5425U${noArmTag}`;
@@ -2880,14 +3273,10 @@
       const startGpu = ctx.needsCertGpu
         ? 'GPU certificada (Quadro P2000 / Quadro RTX 3000 / Radeon Pro WX o RTX Ada)'
         : mVram >= 6
-          ? `GPU dedicada ${mVram} GB VRAM (RTX 2060 / RTX 3060 / RTX 4050)`
+          ? ((ctx.apps || []).includes('emu_x360') ? `GPU NVIDIA dedicada ${mVram}+ GB VRAM (RTX 2060 / RTX 3060 / RTX 4050 — Xenia)` : `GPU dedicada ${mVram} GB VRAM (RTX 2060 / RTX 3060 / RTX 4050)`)
           : mVram >= 2
             ? `GPU ${mVram}+ GB VRAM (GTX 1650 / RTX 3050 / RX 6600M o Radeon 780M)`
             : 'GPU integrada (UHD 620 / Iris Plus / Iris Xe / Radeon Vega–660M)';
-
-      const startRam = mRam >= 16 ? '16 GB RAM' : mRam === 12 ? '12–16 GB RAM' : '8 GB RAM';
-      const bronzeRam = mRam >= 16 ? '16–24 GB RAM' : '16 GB RAM';
-      const silverRam = mRam >= 16 ? '32 GB RAM' : '16–24 GB RAM';
 
       return [
         { name: 'Opción Inicial', badge: `Mínimo real (incluye seminuevas) para ${bApp}`, cpu: startCpu, ram: startRam, gpu: startGpu, ssd: `${ctx.maxSsd || 256}–512 GB SSD`, ideal: `Hardware mínimo funcional real (nuevo económico o seminuevo 8ª–11ª / Ryzen 3000–5000) para ${bApp}.` },
@@ -2910,6 +3299,11 @@
         { re: /i5-11400H/i, label: 'Core i5-11400H', term: '"i5-11400H"' },
         { re: /i7-9750H/i, label: 'Core i7-9750H', term: '"i7-9750H"' },
         { re: /i7-10750H/i, label: 'Core i7-10750H', term: '"i7-10750H"' },
+        { re: /i9-10885H/i, label: 'Core i9-10885H', term: '"i9-10885H"' },
+        { re: /i9-12900HK/i, label: 'Core i9-12900HK', term: '"i9-12900HK"' },
+        { re: /i9-12950HX/i, label: 'Core i9-12950HX', term: '"i9-12950HX"' },
+        { re: /5900HX/i, label: 'Ryzen 9 5900HX', term: '"Ryzen 9" "5900HX"' },
+        { re: /6900HX/i, label: 'Ryzen 9 6900HX', term: '"Ryzen 9" "6900HX"' },
         { re: /i7-11800H/i, label: 'Core i7-11800H', term: '"i7-11800H"' },
         { re: /3500U/i, label: 'Ryzen 5 3500U', term: '"Ryzen 5" "3500U"' },
         { re: /4500U/i, label: 'Ryzen 5 4500U', term: '"Ryzen 5" "4500U"' },
@@ -2972,6 +3366,10 @@
         if (/\bM3\b(?![\s-]*(Pro|Max))/i.test(cpuText)) chips.push({ label: 'Apple M3', term: 'MacBook M3' });
         if (/\bM4\b(?![\s-]*(Pro|Max))/i.test(cpuText)) chips.push({ label: 'Apple M4', term: 'MacBook M4' });
         if (/\bM5\b(?![\s-]*(Pro|Max))/i.test(cpuText)) chips.push({ label: 'Apple M5', term: 'MacBook M5' });
+        if (/M1\s*Pro/i.test(cpuText)) chips.push({ label: 'M1 Pro', term: 'MacBook Pro M1 Pro' });
+        if (/M2\s*Pro/i.test(cpuText)) chips.push({ label: 'M2 Pro', term: 'MacBook Pro M2 Pro' });
+        if (/M1\s*Max/i.test(cpuText)) chips.push({ label: 'M1 Max', term: 'MacBook Pro M1 Max' });
+        if (/M2\s*Max/i.test(cpuText)) chips.push({ label: 'M2 Max', term: 'MacBook Pro M2 Max' });
         if (/M4\s*Pro/i.test(cpuText)) chips.push({ label: 'M4 Pro', term: 'MacBook Pro M4 Pro' });
         if (/M5\s*Pro/i.test(cpuText)) chips.push({ label: 'M5 Pro', term: 'MacBook Pro M5 Pro' });
         if (/M4\s*Max/i.test(cpuText)) chips.push({ label: 'M4 Max', term: 'MacBook Pro M4 Max' });
@@ -3000,7 +3398,7 @@
         ramList.forEach(r => {
           cpuLinks.push({
             label: `${c.label} + ${r}GB`,
-            query: `"laptop" ${c.term} "${r}GB" "RAM" "SSD" -funda -cargador -mochila`
+            query: `"laptop" ${c.term} "${r}GB" "RAM" "SSD"`
           });
         });
       });
@@ -3043,7 +3441,7 @@
         ramList.forEach(r => {
           gpuLinks.push({
             label: `${g.label} + ${r}GB`,
-            query: `"laptop" ${g.term} "${r}GB" "RAM" "SSD" -funda -cargador -mochila`
+            query: `"laptop" ${g.term} "${r}GB" "RAM" "SSD"`
           });
         });
       });
@@ -3052,7 +3450,7 @@
         const ramOr = ramList.length > 1 ? `(${ramList.map(r => `"${r}GB"`).join(' OR ')})` : `"${ramList[0]}GB"`;
         gpuLinks.unshift({
           label: `Todas las GPUs (${gpus.length})`,
-          query: `"laptop" (${gpus.map(g => g.term).join(' OR ')}) ${ramOr} "RAM" "SSD" -funda -cargador -mochila`,
+          query: `"laptop" (${gpus.map(g => g.term).join(' OR ')}) ${ramOr} "RAM" "SSD"`,
           primary: true
         });
       } else if (gpuLinks.length > 0) {
@@ -3062,26 +3460,36 @@
       return { cpuLinks, gpuLinks };
     }
 
-    function renderSixTiers(mode, highlightIdx) {
+    function renderSixTiers(mode, highlightIdx, condMode) {
+      window._tierMode = mode;
+      if (condMode) window._tierCond = condMode;
+      const activeCond = window._tierCond || 'all';
       document.querySelectorAll('.tier-mode-btn').forEach(b => {
         const active = b.dataset.tiermode === mode;
         b.className = active
           ? 'tier-mode-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition bg-white text-indigo-700 shadow-sm'
           : 'tier-mode-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900';
       });
+      document.querySelectorAll('.tier-cond-btn').forEach(b => {
+        const active = b.dataset.tiercond === activeCond;
+        b.className = active
+          ? 'tier-cond-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition bg-white text-indigo-700 shadow-sm'
+          : 'tier-cond-btn px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900';
+      });
       const ctx = window._lastQuizContext || { apps: [] };
+      const condTag = activeCond === 'refurb' ? ' • Reacondicionados / Seminuevos' : activeCond === 'current' ? ' • Hardware actual (Nuevo)' : '';
       const sub = document.getElementById('tiers-subtitle');
       if (sub) {
-        sub.textContent = mode === 'apple'
+        sub.textContent = (mode === 'apple'
           ? 'Haz clic en cualquier botón para buscar en Google Shopping por cada Chip Apple + RAM.'
           : mode === 'linux'
             ? 'Haz clic en los botones para buscar en Google Shopping por cada Procesador + RAM o por cada GPU + RAM (Linux).'
-            : 'Haz clic en los botones para buscar en Google Shopping por cada Procesador + RAM o por cada GPU + RAM (Windows).';
+            : 'Haz clic en los botones para buscar en Google Shopping por cada Procesador + RAM o por cada GPU + RAM (Windows).') + condTag;
       }
       const mapEl = document.getElementById('os-software-map');
       if (mapEl) mapEl.innerHTML = buildOsSoftwareMap(mode, ctx);
 
-      const list = buildDynamicSixTiers(mode, ctx);
+      const list = buildDynamicSixTiers(mode, ctx, activeCond);
       const grid = document.getElementById('six-tiers-grid');
       if (!grid) return;
 
@@ -3131,7 +3539,12 @@
 
     document.querySelectorAll('.tier-mode-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        renderSixTiers(btn.dataset.tiermode, window._recommendedTierIdx ?? 1);
+        renderSixTiers(btn.dataset.tiermode, window._recommendedTierIdx ?? 1, window._tierCond || 'all');
+      });
+    });
+    document.querySelectorAll('.tier-cond-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        renderSixTiers(window._tierMode || 'windows', window._recommendedTierIdx ?? 1, btn.dataset.tiercond);
       });
     });
 
@@ -3146,7 +3559,155 @@
       'amd radeon 880m': { rank: '#2 Integrada (orientativa)', arch: 'AMD RDNA 3.5', units: '12 CU • 768 shaders • 48 TMU • 32 ROP', freq: 'Hasta 2,900 MHz (Ryzen AI 9 365)', apis: 'DirectX 12 Ultimate • Vulkan • OpenGL • Ray Tracing por hardware', cpus: 'Ryzen AI 9 365, Ryzen AI 9 465', ramTip: 'Comparte RAM del sistema: prioriza 16–32 GB de alta velocidad en doble canal.' },
       'intel arc 140v':  { rank: '#3 Integrada (orientativa)', arch: 'Intel Xe2 (Battlemage / Lunar Lake)', units: '8 núcleos Xe2 • 8 unidades Ray Tracing', freq: '400 MHz base • hasta 2,000 MHz • IA GPU hasta 66 TOPS (INT8, XMX)', apis: 'DirectX 12.2 • OpenGL 4.6 • OpenCL 3.0 • AV1 encode/decode', cpus: 'Core Ultra 7 256V, 258V, 266V, 268V', ramTip: 'Usa memoria LPDDR5X integrada en el paquete (16 o 32 GB) con gran eficiencia.' },
       'intel arc 140t':  { rank: '#4 Integrada (orientativa)', arch: 'Intel Xe LPG+ (Arrow Lake-H)', units: '8 núcleos Xe • 8 unidades Ray Tracing', freq: 'Hasta 2,300 MHz • IA GPU hasta 75 TOPS (INT8)', apis: 'DirectX 12.2 • OpenGL 4.6 • OpenCL 3.0 • AV1 • Intel Quick Sync Video', cpus: 'Core Ultra 7 255H, 265H y Core Ultra 9 285H', ramTip: 'Comparte RAM del sistema: ideal con 32 GB de alta velocidad (DDR5/LPDDR5X).' },
-      'amd radeon 780m': { rank: '#5 Integrada (orientativa)', arch: 'AMD RDNA 3', units: '12 CU • 768 shaders • 48 TMU • 32 ROP', freq: 'Hasta 2,700 MHz (Ryzen 7 8845HS)', apis: 'DirectX 12 Ultimate • Vulkan • OpenGL • Ray Tracing por hardware', cpus: 'Ryzen 7 7840U, 8840U, 8840HS, 8845HS y Ryzen 9 8945HS', ramTip: 'Comparte RAM del sistema: el doble canal y RAM rápida marcan gran diferencia.' }
+      'amd radeon 780m': { rank: '#5 Integrada (orientativa)', arch: 'AMD RDNA 3', units: '12 CU • 768 shaders • 48 TMU • 32 ROP', freq: 'Hasta 2,700 MHz (Ryzen 7 8845HS)', apis: 'DirectX 12 Ultimate • Vulkan • OpenGL • Ray Tracing por hardware', cpus: 'Ryzen 7 7840U, 8840U, 8840HS, 8845HS y Ryzen 9 8945HS', ramTip: 'Comparte RAM del sistema: el doble canal y RAM rápida marcan gran diferencia.' },
+      // Intel Workstation & Transición & UHD/HD adicionales
+      'intel arc pro a60m': { rank: 'Intel Workstation Certificada ISV', arch: 'Intel Xe-HPG (Alchemist Pro)', units: '16 Xe Cores • Bus 128-bit', freq: 'TGP 75W–95W', apis: 'Certificación ISV CAD/3D/IA • 4 displays • AV1', cpus: 'Estaciones de trabajo móviles', ramTip: '8 GB GDDR6 dedicada.' },
+      'intel iris xe max (dg1)': { rank: 'Dedicada de transición (Descontinuada)', arch: 'Intel Xe-LP Discreta (2020)', units: '96 EUs', freq: 'Lanzada en 2020 (reemplazada por Arc)', apis: 'DirectX 12 • Quick Sync', cpus: 'Ultrabooks 11ª Gen (2020)', ramTip: '4 GB LPDDR4X dedicada.' },
+      'intel uhd graphics 770 / 750 / 730 / 710': { rank: 'UHD Serie H (11ª–14ª Gen)', arch: 'Intel Xe-LP (hasta 32 EU)', units: 'Hasta 32 EUs', freq: 'Integrada en procesadores H/HX', apis: 'DirectX 12 • Quick Sync', cpus: 'Core i5/i7/i9 Serie H/HX (11ª–14ª Gen)', ramTip: 'Comparte RAM del sistema (en laptops HX suele ir acompañada de GPU RTX dedicada).' },
+      'intel hd 4000 / 4400': { rank: 'HD Muy Antigua (3ª–4ª Gen)', arch: 'Intel Gen 7 / 7.5', units: '16–20 EUs', freq: 'Legado (2012–2014)', apis: 'Obsoleta para software actual', cpus: 'Core 3ª y 4ª Gen', ramTip: 'DDR3L. No recomendable comprar.' },
+      // AMD RDNA 3 / 2 / 1 Discretas
+      'amd radeon rx 7900m': { rank: 'AMD RDNA 3 Tope de Gama', arch: 'AMD RDNA 3', units: '4,608 SP (72 CU) • Bus 256-bit', freq: '64 MB Infinity Cache • FSR 3 / AV1', apis: 'DirectX 12 Ultimate • Ray Tracing • SAM', cpus: 'Gaming extremo y 3D', ramTip: '16 GB GDDR6 (256-bit).' },
+      'amd radeon rx 7800m': { rank: 'AMD RDNA 3 Gama Alta', arch: 'AMD RDNA 3', units: '3,840 SP (60 CU) • Bus 192-bit', freq: '48 MB Infinity Cache • FSR 3 / AV1', apis: 'DirectX 12 Ultimate • Ray Tracing • SAM', cpus: 'Gaming 1440p y 3D', ramTip: '12 GB GDDR6 (192-bit).' },
+      'amd radeon rx 7600m xt': { rank: 'AMD RDNA 3 Gama Media', arch: 'AMD RDNA 3', units: '2,048 SP (32 CU) • Bus 128-bit', freq: '32 MB Infinity Cache • FSR 3 / AV1', apis: 'DirectX 12 Ultimate • Ray Tracing • SAM', cpus: 'Gaming 1080p y creación', ramTip: '8 GB GDDR6 (128-bit).' },
+      'amd radeon rx 7600m': { rank: 'AMD RDNA 3 Gama Media', arch: 'AMD RDNA 3', units: '1,792 SP (28 CU) • Bus 128-bit', freq: '32 MB Infinity Cache • FSR 3 / AV1', apis: 'DirectX 12 Ultimate • Ray Tracing • SAM', cpus: 'Gaming 1080p', ramTip: '8 GB GDDR6 (128-bit).' },
+      'amd radeon rx 7700s': { rank: 'AMD RDNA 3 Serie S Delgada', arch: 'AMD RDNA 3', units: '2,048 SP (32 CU) • Bus 128-bit', freq: 'Optimizada para laptops delgadas', apis: 'DirectX 12 Ultimate • FSR 3 / AV1', cpus: 'Laptops gaming delgadas', ramTip: '8 GB GDDR6 (128-bit).' },
+      'amd radeon rx 7600s': { rank: 'AMD RDNA 3 Serie S Delgada', arch: 'AMD RDNA 3', units: '1,792 SP (28 CU) • Bus 128-bit', freq: 'Optimizada para laptops delgadas', apis: 'DirectX 12 Ultimate • FSR 3 / AV1', cpus: 'Laptops gaming delgadas', ramTip: '8 GB GDDR6 (128-bit).' },
+      'amd radeon rx 6850m xt': { rank: 'AMD RDNA 2 Gama Alta', arch: 'AMD RDNA 2', units: '2,560 SP (40 CU) • Bus 192-bit', freq: '96 MB Infinity Cache', apis: 'DirectX 12 Ultimate • FSR 3 • SAM', cpus: 'Gaming 1440p y 3D', ramTip: '12 GB GDDR6 (192-bit).' },
+      'amd radeon rx 6800m': { rank: 'AMD RDNA 2 Gama Alta', arch: 'AMD RDNA 2', units: '2,560 SP (40 CU) • Bus 192-bit', freq: '96 MB Infinity Cache', apis: 'DirectX 12 Ultimate • FSR 3 • SAM', cpus: 'Gaming 1440p y 3D', ramTip: '12 GB GDDR6 (192-bit).' },
+      'amd radeon rx 6700m': { rank: 'AMD RDNA 2 Media-Alta', arch: 'AMD RDNA 2', units: '2,304 SP (36 CU) • Bus 160-bit', freq: '80 MB Infinity Cache', apis: 'DirectX 12 Ultimate • SAM', cpus: 'Gaming 1080p/1440p', ramTip: '10 GB GDDR6 (160-bit).' },
+      'amd radeon rx 6650m xt': { rank: 'AMD RDNA 2 Gama Media', arch: 'AMD RDNA 2', units: '2,048 SP (32 CU) • Bus 128-bit', freq: '32 MB Infinity Cache', apis: 'DirectX 12 Ultimate • SAM', cpus: 'Gaming 1080p', ramTip: '8 GB GDDR6 (128-bit).' },
+      'amd radeon rx 6600m': { rank: 'AMD RDNA 2 Gama Media', arch: 'AMD RDNA 2', units: '1,792 SP (28 CU) • Bus 128-bit', freq: '32 MB Infinity Cache', apis: 'DirectX 12 Ultimate • SAM', cpus: 'Gaming 1080p', ramTip: '8 GB GDDR6 (128-bit).' },
+      'amd radeon rx 6500m': { rank: 'AMD RDNA 2 Entrada', arch: 'AMD RDNA 2', units: '1,024 SP (16 CU) • Bus 64-bit', freq: 'Bus 64-bit', apis: 'DirectX 12 Ultimate', cpus: 'Gaming entrada', ramTip: '4 GB GDDR6 (64-bit).' },
+      'amd radeon rx 6300m': { rank: 'AMD RDNA 2 Entrada Básica', arch: 'AMD RDNA 2', units: '768 SP (12 CU) • Bus 64-bit', freq: 'Bus 64-bit', apis: 'DirectX 12 Ultimate', cpus: 'Oficina avanzada / entrada', ramTip: '2 GB o 4 GB GDDR6 (64-bit).' },
+      'amd radeon rx 5700m': { rank: 'AMD RDNA 1 Gama Media-Alta', arch: 'AMD RDNA 1', units: '2,304 SP (36 CU) • Bus 256-bit', freq: 'Sin Ray Tracing por hardware', apis: 'DirectX 12 • Vulkan', cpus: 'Gaming 2019–2020', ramTip: '8 GB GDDR6 (256-bit).' },
+      'amd radeon rx 5600m (6 gb)': { rank: 'AMD RDNA 1 Gama Media', arch: 'AMD RDNA 1', units: '2,304 SP (36 CU) • Bus 192-bit', freq: 'Sin Ray Tracing por hardware', apis: 'DirectX 12 • Vulkan', cpus: 'Gaming 2019–2020', ramTip: '6 GB GDDR6 (192-bit).' },
+      'amd radeon rx 5500m (4 gb)': { rank: 'AMD RDNA 1 Entrada', arch: 'AMD RDNA 1', units: '1,408 SP (22 CU) • Bus 128-bit', freq: 'También existió versión 8 GB', apis: 'DirectX 12 • Vulkan', cpus: 'Gaming entrada 2019–2020', ramTip: '4 GB u 8 GB GDDR6 (128-bit).' },
+      'amd radeon rx 5300m (3 gb)': { rank: 'AMD RDNA 1 Entrada', arch: 'AMD RDNA 1', units: '1,408 SP (22 CU) • Bus 96-bit', freq: 'Limitada a 3 GB VRAM', apis: 'DirectX 12 • Vulkan', cpus: 'Gaming entrada 2019–2020', ramTip: '3 GB GDDR6 (96-bit).' },
+      'amd radeon rx 580 mobile': { rank: 'AMD Polaris 20 (2017–2019)', arch: 'AMD Polaris (GCN 4)', units: '2,304 SP • Bus 256-bit', freq: 'Sin RT por hardware', apis: 'DirectX 12 • Vulkan', cpus: 'Gaming seminueva', ramTip: '4 GB u 8 GB GDDR5 (256-bit).' },
+      'amd radeon rx 570 mobile': { rank: 'AMD Polaris 20 (2017–2019)', arch: 'AMD Polaris (GCN 4)', units: '2,048 SP • Bus 256-bit', freq: 'Sin RT por hardware', apis: 'DirectX 12 • Vulkan', cpus: 'Gaming seminueva', ramTip: '4 GB GDDR5 (256-bit).' },
+      'amd radeon rx 560x': { rank: 'AMD Polaris 21 (2017–2019)', arch: 'AMD Polaris (GCN 4)', units: '1,024 SP • Bus 128-bit', freq: 'Entrada 1080p', apis: 'DirectX 12 • Vulkan', cpus: 'Entrada gaming 2018–2019', ramTip: '2 GB o 4 GB GDDR5 (128-bit).' },
+      // AMD Radeon PRO Móvil
+      'amd radeon pro w7700s / w7600s': { rank: 'Workstation AMD RDNA 3', arch: 'AMD RDNA 3 PRO', units: 'Workstation delgada', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • CAD', cpus: 'Workstations móviles actuales', ramTip: 'Hasta 8 GB GDDR6 (128-bit).' },
+      'amd radeon pro w6600m': { rank: 'Workstation AMD RDNA 2', arch: 'AMD RDNA 2 PRO', units: 'Workstation media', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • CAD', cpus: 'HP ZBook / Precision', ramTip: '8 GB GDDR6 (128-bit).' },
+      'amd radeon pro w6500m': { rank: 'Workstation AMD RDNA 2', arch: 'AMD RDNA 2 PRO', units: 'Workstation entrada', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations delgadas', ramTip: '4 GB GDDR6 (64-bit).' },
+      'amd radeon pro w6300m': { rank: 'Workstation AMD RDNA 2', arch: 'AMD RDNA 2 PRO', units: 'Workstation básica', freq: 'Drivers ISV certificados', apis: 'CAD 2D / 3D ligero', cpus: 'Workstations delgadas', ramTip: '2 GB GDDR6 (64-bit).' },
+      'amd radeon pro w5500m': { rank: 'Workstation AMD RDNA 1', arch: 'AMD RDNA 1 PRO', units: 'Workstation media', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2020', ramTip: '8 GB GDDR6 (128-bit).' },
+      'amd radeon pro w5300m': { rank: 'Workstation AMD RDNA 1', arch: 'AMD RDNA 1 PRO', units: 'Workstation entrada', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2020', ramTip: '4 GB GDDR6 (128-bit).' },
+      'amd radeon pro 5600m (apple hbm2)': { rank: 'Workstation Apple HBM2 (2020)', arch: 'AMD RDNA 1 HBM2', units: '1,536 SP (24 CU) • Bus 1,024-bit', freq: 'Exclusiva MacBook Pro 16" (2020)', apis: 'Metal • OpenCL • Edición Pro', cpus: 'MacBook Pro 16" Intel (2020)', ramTip: '8 GB HBM2 (bus 1024-bit: ancho de banda masivo).' },
+      'amd radeon pro vega 20 (apple hbm2)': { rank: 'Workstation Apple HBM2 (2019)', arch: 'AMD Vega Mobile', units: '1,280 SP (20 CU) • Bus 1,024-bit', freq: 'Exclusiva MacBook Pro (2019)', apis: 'Metal • OpenCL', cpus: 'MacBook Pro 15"/16" (2019)', ramTip: '4 GB HBM2 (bus 1024-bit).' },
+      // Intel Arc Discretas (Xe-HPG)
+      'intel arc a770m': { rank: 'Intel Arc Discreta (Gama Media-Alta)', arch: 'Intel Xe-HPG', units: '32 Xe Cores / 512 EUs • Bus 256-bit', freq: 'TGP 120W–150W', apis: 'DirectX 12 • Vulkan • XeSS • AV1', cpus: 'Equivalente aprox.: RTX 3060 Laptop / RX 6600M', ramTip: '8 GB o 16 GB GDDR6 dedicada (256-bit).' },
+      'intel arc a730m': { rank: 'Intel Arc Discreta (Gama Media)', arch: 'Intel Xe-HPG', units: '24 Xe Cores / 384 EUs • Bus 192-bit', freq: 'TGP 100W–120W', apis: 'DirectX 12 • Vulkan • XeSS • AV1', cpus: 'Equivalente aprox.: RTX 3050 Ti / RX 6600S', ramTip: '12 GB GDDR6 dedicada (192-bit).' },
+      'intel arc a570m': { rank: 'Intel Arc Discreta (Gama Media)', arch: 'Intel Xe-HPG', units: '16 Xe Cores / 256 EUs • Bus 128-bit', freq: 'TGP 80W–100W', apis: 'DirectX 12 • Vulkan • XeSS • AV1', cpus: 'Equivalente aprox.: RTX 3050 Laptop', ramTip: '8 GB GDDR6 dedicada (128-bit).' },
+      'intel arc a550m': { rank: 'Intel Arc Discreta (Entrada-Media)', arch: 'Intel Xe-HPG', units: '16 Xe Cores / 256 EUs • Bus 128-bit', freq: 'TGP 60W–80W', apis: 'DirectX 12 • Vulkan • XeSS • AV1', cpus: 'Equivalente aprox.: GTX 1650 Ti / RTX 3050 (45W)', ramTip: '8 GB GDDR6 dedicada (128-bit).' },
+      'intel arc a530m': { rank: 'Intel Arc Discreta (Entrada)', arch: 'Intel Xe-HPG', units: '8 Xe Cores / 128 EUs • Bus 64-bit', freq: 'TGP 35W–50W', apis: 'DirectX 12 • Vulkan • XeSS • AV1', cpus: 'Equivalente aprox.: GTX 1650 Max-Q', ramTip: '4 GB GDDR6 dedicada (64-bit).' },
+      'intel arc a370m': { rank: 'Intel Arc Discreta (Entrada)', arch: 'Intel Xe-HPG', units: '8 Xe Cores / 128 EUs • Bus 64-bit', freq: 'TGP 35W–50W', apis: 'DirectX 12 • Vulkan • XeSS • AV1', cpus: 'Equivalente aprox.: GTX 1650 Max-Q / MX450', ramTip: '4 GB GDDR6 dedicada (64-bit).' },
+      'intel arc a350m': { rank: 'Intel Arc Discreta (Entrada ligera)', arch: 'Intel Xe-HPG', units: '6 Xe Cores / 96 EUs • Bus 64-bit', freq: 'TGP 25W–35W', apis: 'DirectX 12 • Vulkan • XeSS • AV1', cpus: 'Equivalente aprox.: MX450 / MX350', ramTip: '4 GB GDDR6 dedicada (64-bit).' },
+      'intel arc a310m': { rank: 'Intel Arc Discreta (Entrada ligera)', arch: 'Intel Xe-HPG', units: '6 Xe Cores / 96 EUs • Bus 64-bit', freq: 'TGP 25W–35W', apis: 'DirectX 12 • Vulkan • XeSS • AV1', cpus: 'Equivalente aprox.: MX350 / UHD avanzada', ramTip: '4 GB GDDR6 dedicada (64-bit).' },
+      // Intel Core Ultra, Iris Xe, Iris Plus, UHD, HD & GMA
+      'intel arc graphics (8 xe)': { rank: 'Core Ultra Integrada (Meteor Lake)', arch: 'Intel Xe-LPG', units: '8 Xe Cores / 128 EUs', freq: '2.20–2.35 GHz • TGP 15W–30W', apis: 'Ray Tracing • XeSS • AV1', cpus: 'Core Ultra 5 125H, Ultra 7 155H, Ultra 9 185H', ramTip: 'Exige LPDDR5/x rápida (hasta 8533 MT/s) en Dual-Channel; DDR5-4800 la frena.' },
+      'intel graphics (4 xe)': { rank: 'Core Ultra Integrada (Entrada)', arch: 'Intel Xe-LPG', units: '4 Xe Cores / 64 EUs', freq: '1.90–2.20 GHz • TGP 15W–20W', apis: 'DirectX 12 • XeSS • AV1', cpus: 'Core Ultra serie U (125U / 155U)', ramTip: 'Comparte RAM LPDDR5/x: requiere Dual-Channel obligatorio.' },
+      'intel iris xe 96 eu (i7/i9)': { rank: 'Iris Xe Tope (2020–2023)', arch: 'Intel Xe-LP (Gen 12)', units: '96 EUs', freq: '1.30–1.50 GHz • TGP 12W–28W', apis: 'DirectX 12 • Quick Sync', cpus: 'Core i7 / i9 (11ª–13ª Gen U/P/H)', ramTip: 'Dual-Channel obligatorio (DDR4-3200 / LPDDR4x-4267): rinde ≈ GTX 1050 en Dual, pero cae 30–50% en Single-Channel.' },
+      'intel iris xe 80 eu (i5)': { rank: 'Iris Xe Media (2020–2023)', arch: 'Intel Xe-LP (Gen 12)', units: '80 EUs', freq: '1.10–1.35 GHz • TGP 12W–28W', apis: 'DirectX 12 • Quick Sync', cpus: 'Core i5 (11ª–13ª Gen U/P/H)', ramTip: 'Dual-Channel obligatorio (DDR4-3200 / LPDDR4x-4267) para evitar caída de 30–50%.' },
+      'intel iris xe (g7) 64 eu': { rank: 'Iris Xe Entrada (2020–2023)', arch: 'Intel Xe-LP (Gen 12)', units: '64 EUs', freq: '1.10–1.30 GHz • TGP 12W–15W', apis: 'DirectX 12 • Quick Sync', cpus: 'Ultrabooks Core i3/i5', ramTip: 'Comparte DDR4 / LPDDR4x: imprescindible en doble canal.' },
+      'intel iris plus g7': { rank: 'Iris Plus (Ice Lake 2019–2020)', arch: 'Intel Gen 11', units: '64 EUs', freq: '1.10 GHz • TGP 15W–25W', apis: 'DirectX 12 • Decodificación AV1 parcial', cpus: 'Core i5-1035G7 / i7-1065G7', ramTip: 'LPDDR4-3733 / DDR4 en doble canal.' },
+      'intel iris plus g4': { rank: 'Iris Plus (Ice Lake 2019–2020)', arch: 'Intel Gen 11', units: '48 EUs', freq: '1.00 GHz • TGP 15W–25W', apis: 'DirectX 12 • Gen 11', cpus: 'Core i5-1035G4', ramTip: 'LPDDR4-3733.' },
+      'intel uhd graphics (xe-lp 32 eu)': { rank: 'UHD Moderna Básica', arch: 'Intel Gen 12 (Tiger Lake)', units: '32 EUs', freq: 'Bajo consumo', apis: 'DirectX 12 • Quick Sync', cpus: 'Intel N100, N200, N305', ramTip: 'DDR4 / LPDDR4x. Ideal para ofimática y video, no para gaming 3D.' },
+      'intel uhd graphics g1': { rank: 'UHD Básica (Ice Lake)', arch: 'Intel Gen 11', units: '32 EUs', freq: 'Versión recortada de Iris Plus', apis: 'DirectX 12', cpus: 'Core i3-1005G1 / i5-1035G1', ramTip: 'DDR4 / LPDDR4x. Solo oficina y estudio.' },
+      'intel uhd graphics 620 / 630': { rank: 'UHD Clásica (2018–2021)', arch: 'Intel Gen 9.5 (Kaby/Coffee Lake)', units: '24 EUs', freq: 'Estándar oficina', apis: 'DirectX 12', cpus: 'Core 8.ª–10.ª Gen U/H', ramTip: 'DDR4-2400 / LPDDR3. Solo tareas básicas.' },
+      'intel uhd 615 / 610': { rank: 'UHD Ultra-baja', arch: 'Intel Gen 9.5', units: '24 EUs', freq: 'Bajo consumo', apis: 'DirectX 12', cpus: 'Serie Y (m3-8100Y) / Pentium / Celeron', ramTip: 'LPDDR3 / DDR4. Uso muy ligero.' },
+      'intel uhd 600 / 605': { rank: 'UHD Entrada (Gemini Lake)', arch: 'Intel Gen 9', units: '12 EUs', freq: 'Entrada básica', apis: 'DirectX 12', cpus: 'Celeron / Pentium N4000–N5000', ramTip: 'DDR4 / LPDDR4. Limitada a navegación y documentos.' },
+      'intel hd 630 / 620 / 520': { rank: 'HD Antigua (2016–2018)', arch: 'Intel Gen 9 (Skylake/Kaby Lake)', units: '24 EUs', freq: 'Legado', apis: 'DirectX 12 básico', cpus: 'Core 6.ª y 7.ª Gen', ramTip: 'DDR4 / LPDDR3. Equipo antiguo.' },
+      'intel hd 5500 / 5300 / 4400': { rank: 'HD Muy Antigua (2013–2015)', arch: 'Intel Gen 8 / Gen 7.5 (Haswell/Broadwell)', units: '20–24 EUs', freq: 'Legado', apis: 'Obsoleta para apps modernas', cpus: 'Core 4.ª y 5.ª Gen', ramTip: 'DDR3L / LPDDR3. No recomendable comprar.' },
+      'intel gma x3100 / x3500': { rank: 'Era Legacy Pre-2010', arch: 'Intel GMA', units: 'Gráfica pre-HD', freq: 'Pre-2010', apis: 'DirectX 9.0c', cpus: 'Equipos antiguos pre-2010', ramTip: 'Obsoleta para software moderno.' },
+      'intel gma 4500mhd': { rank: 'Era Legacy Pre-2010', arch: 'Intel GMA', units: 'Primera con H.264 HD', freq: 'Pre-2010', apis: 'DirectX 10 básico', cpus: 'Equipos antiguos pre-2010', ramTip: 'Obsoleta para software moderno.' },
+      'intel gma 3150': { rank: 'Era Legacy Netbooks', arch: 'Intel GMA', units: 'Netbooks Atom N450', freq: 'Pre-2010', apis: 'DirectX 9', cpus: 'Netbooks antiguas', ramTip: 'Muy limitada e incompatible con software actual.' },
+      // Serie GeForce MX
+      'nvidia geforce mx570': { rank: 'GeForce MX (Dedicada ligera)', arch: 'NVIDIA Ampere (GA107)', units: '2,048 núcleos CUDA • Bus 64-bit', freq: 'TGP 15W–35W', apis: 'DirectX 12 • CUDA • NVENC', cpus: 'Laptops delgadas (2022–2024)', ramTip: '2 GB GDDR6 (64-bit). El bus de 64-bit limita resoluciones >1080p.' },
+      'nvidia geforce mx550': { rank: 'GeForce MX (Dedicada ligera)', arch: 'NVIDIA Turing (TU117)', units: '1,024 núcleos CUDA • Bus 64-bit', freq: 'TGP 15W–25W', apis: 'DirectX 12 • CUDA', cpus: 'Laptops delgadas', ramTip: '2 GB GDDR6 (64-bit). Comparte chip TU117 con la MX450, pero con más CUDA.' },
+      'nvidia geforce mx450': { rank: 'GeForce MX (Dedicada ligera)', arch: 'NVIDIA Turing (TU117)', units: '896 núcleos CUDA • Bus 64-bit', freq: 'TGP 12W–25W', apis: 'DirectX 12 • CUDA', cpus: 'Laptops delgadas', ramTip: '2 GB GDDR5/GDDR6 (64-bit). Mismo chip TU117 que MX550, pero bus estrecho de 64-bit.' },
+      'nvidia geforce mx350': { rank: 'GeForce MX (Dedicada ligera)', arch: 'NVIDIA Pascal (GP107)', units: '640 núcleos CUDA • Bus 64-bit', freq: 'TGP 25W', apis: 'DirectX 12 • CUDA', cpus: 'Laptops delgadas (2020)', ramTip: '2 GB GDDR5 (64-bit). Su bus de 64-bit la frena frente a una GTX 1050 (128-bit).' },
+      'nvidia geforce mx330': { rank: 'GeForce MX (Dedicada ligera)', arch: 'NVIDIA Pascal (GP108)', units: '384 núcleos CUDA • Bus 64-bit', freq: 'TGP 10W–25W', apis: 'DirectX 12 • CUDA', cpus: 'Laptops delgadas', ramTip: '2 GB GDDR5 (64-bit). Una GTX 1050 antigua (128-bit) suele ser más rápida.' },
+      'nvidia geforce mx250': { rank: 'GeForce MX (Dedicada ligera)', arch: 'NVIDIA Pascal (GP108)', units: '384 núcleos CUDA • Bus 64-bit', freq: 'TGP 10W–25W', apis: 'DirectX 12 • CUDA', cpus: 'Laptops delgadas', ramTip: '2 GB GDDR5 (64-bit).' },
+      'nvidia geforce mx230': { rank: 'GeForce MX (Dedicada ligera)', arch: 'NVIDIA Pascal (GP108)', units: '256 núcleos CUDA • Bus 64-bit', freq: 'TGP 10W–25W', apis: 'DirectX 12 • CUDA', cpus: 'Laptops delgadas', ramTip: '2 GB GDDR5 (64-bit).' },
+      'nvidia geforce mx150': { rank: 'GeForce MX (Dedicada ligera)', arch: 'NVIDIA Pascal (GP108)', units: '384 núcleos CUDA • Bus 64-bit', freq: 'TGP 10W–25W', apis: 'DirectX 12 • CUDA', cpus: 'Laptops delgadas (2017–2019)', ramTip: '2 GB GDDR5 (64-bit).' },
+      'nvidia geforce mx130': { rank: 'GeForce MX (Entrada)', arch: 'NVIDIA Maxwell (GM108)', units: '384 núcleos CUDA • Bus 64-bit', freq: 'TGP 10W–25W', apis: 'DirectX 12 (nivel 11_0)', cpus: 'Laptops de entrada (2017–2019)', ramTip: '2 GB DDR3/GDDR5 (64-bit).' },
+      'nvidia geforce mx110': { rank: 'GeForce MX (Entrada)', arch: 'NVIDIA Maxwell (GM108)', units: '256 núcleos CUDA • Bus 64-bit', freq: 'TGP 10W–25W', apis: 'DirectX 12 (nivel 11_0)', cpus: 'Laptops de entrada (2017–2019)', ramTip: '2 GB DDR3/GDDR5 (64-bit).' },
+      // RTX 40
+      'nvidia rtx 4090': { rank: 'GeForce RTX 40 (Tope de gama)', arch: 'NVIDIA Ada Lovelace', units: '9,728 núcleos CUDA • Bus 256-bit', freq: 'TGP máximo hasta 175W', apis: 'DLSS 3 • Ray Tracing • AV1 dual NVENC', cpus: 'Workstations y gaming extremo', ramTip: '16 GB GDDR6 (256-bit).' },
+      'nvidia rtx 4080': { rank: 'GeForce RTX 40 (Gama Alta)', arch: 'NVIDIA Ada Lovelace', units: '7,424 núcleos CUDA • Bus 192-bit', freq: 'TGP máximo hasta 175W', apis: 'DLSS 3 • Ray Tracing • AV1 NVENC', cpus: 'Gaming alto y 3D/LLM', ramTip: '12 GB GDDR6 (192-bit).' },
+      'nvidia rtx 4070': { rank: 'GeForce RTX 40 (Gama Media-Alta)', arch: 'NVIDIA Ada Lovelace', units: '4,608 núcleos CUDA • Bus 128-bit', freq: 'TGP máximo hasta 140W', apis: 'DLSS 3 • Ray Tracing • AV1 NVENC', cpus: 'Gaming y creación 4K', ramTip: '8 GB GDDR6 (128-bit).' },
+      'nvidia rtx 4060': { rank: 'GeForce RTX 40 (Punto dulce)', arch: 'NVIDIA Ada Lovelace', units: '3,072 núcleos CUDA • Bus 128-bit', freq: 'TGP máximo hasta 115W', apis: 'DLSS 3 • Ray Tracing • AV1 NVENC', cpus: 'Equilibrada para 1080p/3D', ramTip: '8 GB GDDR6 (128-bit).' },
+      'nvidia rtx 4050': { rank: 'GeForce RTX 40 (Entrada RTX)', arch: 'NVIDIA Ada Lovelace', units: '2,560 núcleos CUDA • Bus 96-bit', freq: 'TGP máximo hasta 115W', apis: 'DLSS 3 • Ray Tracing • AV1 NVENC', cpus: 'Entrada gaming y edición', ramTip: '6 GB GDDR6 (96-bit).' },
+      // RTX 30
+      'nvidia rtx 3080 ti': { rank: 'GeForce RTX 30 (Tope Ampere)', arch: 'NVIDIA Ampere', units: '7,424 núcleos CUDA • Bus 256-bit', freq: 'TGP máximo hasta 175W', apis: 'DLSS 2 • Ray Tracing • NVENC', cpus: 'Gaming y 3D pesado', ramTip: '16 GB GDDR6 (256-bit).' },
+      'nvidia rtx 3080':    { rank: 'GeForce RTX 30 (Gama Alta)', arch: 'NVIDIA Ampere', units: '6,144 núcleos CUDA • Bus 256-bit', freq: 'TGP máximo hasta 165W', apis: 'DLSS 2 • Ray Tracing • NVENC', cpus: 'Gaming y 3D/LLM', ramTip: '8 GB o 16 GB GDDR6 (256-bit).' },
+      'nvidia rtx 3070 ti': { rank: 'GeForce RTX 30 (Gama Alta)', arch: 'NVIDIA Ampere', units: '5,888 núcleos CUDA • Bus 256-bit', freq: 'TGP máximo hasta 125W', apis: 'DLSS 2 • Ray Tracing • NVENC', cpus: 'Gaming y diseño 3D', ramTip: '8 GB GDDR6 (256-bit).' },
+      'nvidia rtx 3070':    { rank: 'GeForce RTX 30 (Gama Media-Alta)', arch: 'NVIDIA Ampere', units: '5,120 núcleos CUDA • Bus 256-bit', freq: 'TGP máximo hasta 125W', apis: 'DLSS 2 • Ray Tracing • NVENC', cpus: 'Gaming 1440p y creación', ramTip: '8 GB GDDR6 (256-bit).' },
+      'nvidia rtx 3060':    { rank: 'GeForce RTX 30 (Gama Media)', arch: 'NVIDIA Ampere', units: '3,840 núcleos CUDA • Bus 192-bit', freq: 'TGP máximo hasta 115W', apis: 'DLSS 2 • Ray Tracing • NVENC', cpus: 'Muy popular en 1080p/3D', ramTip: '6 GB GDDR6 (192-bit).' },
+      'nvidia rtx 3050 ti': { rank: 'GeForce RTX 30 (Entrada)', arch: 'NVIDIA Ampere', units: '2,560 núcleos CUDA • Bus 128-bit', freq: 'TGP máximo hasta 80W', apis: 'DLSS 2 • Ray Tracing • NVENC', cpus: 'Gaming entrada y CAD básico', ramTip: '4 GB GDDR6 (128-bit).' },
+      'nvidia rtx 3050':    { rank: 'GeForce RTX 30 (Entrada)', arch: 'NVIDIA Ampere', units: '2,048 núcleos CUDA • Bus 96/128-bit', freq: 'TGP máximo ~60W (varía hasta 95W)', apis: 'DLSS 2 • Ray Tracing • NVENC', cpus: 'Gaming entrada', ramTip: '4 GB o 6 GB GDDR6 (96/128-bit). Sin drivers certificados CAD.' },
+      // GTX 16 & 10
+      'nvidia gtx 1660 ti': { rank: 'GeForce GTX 16 (Más potente serie 16)', arch: 'NVIDIA Turing (sin RT/Tensor)', units: '1,536 núcleos CUDA • Bus 192-bit', freq: 'TGP ~60W–80W', apis: 'DirectX 12 • Turing NVENC', cpus: 'Seminuevas 2019–2021', ramTip: '6 GB GDDR6 (192-bit).' },
+      'nvidia gtx 1650 ti': { rank: 'GeForce GTX 16 (Entrada mejorada)', arch: 'NVIDIA Turing (sin RT/Tensor)', units: '1,024 núcleos CUDA • Bus 128-bit', freq: 'TGP ~50W–55W', apis: 'DirectX 12 • NVENC', cpus: 'Seminuevas 2020', ramTip: '4 GB GDDR6 (128-bit).' },
+      'nvidia gtx 1650':    { rank: 'GeForce GTX 16 (Entrada)', arch: 'NVIDIA Turing / Pascal', units: '896 o 1,024 núcleos CUDA • Bus 128-bit', freq: 'TGP ~50W', apis: 'DirectX 12 • NVENC', cpus: 'Seminuevas 2019–2022', ramTip: '4 GB GDDR5/GDDR6 (128-bit). Supera ampliamente a cualquier MX.' },
+      'nvidia gtx 1080 (8 gb)':    { rank: 'GeForce GTX 10 (Tope Pascal)', arch: 'NVIDIA Pascal', units: '2,560 núcleos CUDA • Bus 256-bit', freq: 'Incluyó versión Max-Q de 90W–110W', apis: 'DirectX 12 • Pascal NVENC', cpus: 'Gaming seminueva 2017–2018', ramTip: '8 GB GDDR5X (256-bit).' },
+      'nvidia gtx 1070 (8 gb)':    { rank: 'GeForce GTX 10 (Gama Alta Pascal)', arch: 'NVIDIA Pascal', units: '2,048 núcleos CUDA • Bus 256-bit', freq: 'Incluyó versión Max-Q', apis: 'DirectX 12 • Pascal NVENC', cpus: 'Gaming seminueva 2017–2018', ramTip: '8 GB GDDR5 (256-bit).' },
+      'nvidia gtx 1060 (6 gb)':    { rank: 'GeForce GTX 10 (Gama Media Pascal)', arch: 'NVIDIA Pascal', units: '1,280 núcleos CUDA • Bus 192-bit', freq: 'También existió versión recortada de 3 GB', apis: 'DirectX 12 • Pascal NVENC', cpus: 'Gaming seminueva 2017–2019', ramTip: '6 GB GDDR5 (192-bit).' },
+      'nvidia gtx 1050 ti (4 gb)': { rank: 'GeForce GTX 10 (Entrada Pascal)', arch: 'NVIDIA Pascal', units: '768 núcleos CUDA • Bus 128-bit', freq: 'TGP ~75W', apis: 'DirectX 12 • Pascal NVENC', cpus: 'Muy común en laptops de entrada 2017–2019', ramTip: '4 GB GDDR5 (128-bit).' },
+      'nvidia gtx 1050 (2/4 gb)':  { rank: 'GeForce GTX 10 (Entrada Pascal)', arch: 'NVIDIA Pascal', units: '640 núcleos CUDA • Bus 128-bit', freq: 'No requería conector extra en varios diseños', apis: 'DirectX 12 • Pascal NVENC', cpus: 'Laptops de entrada 2017–2019', ramTip: '2 GB o 4 GB GDDR5 (128-bit). Más rápida que MX330 gracias al bus de 128-bit.' },
+      // 900M / 800M / 700M
+      'nvidia gtx 980m': { rank: 'Serie Antigua 900M', arch: 'NVIDIA Maxwell', units: '1,536 núcleos CUDA • Bus 256-bit', freq: 'Legado (2014–2015)', apis: 'DirectX 12 (12_1)', cpus: 'Equipos antiguos', ramTip: '4 GB o 8 GB GDDR5 (256-bit).' },
+      'nvidia gtx 970m': { rank: 'Serie Antigua 900M', arch: 'NVIDIA Maxwell', units: '1,280 núcleos CUDA • Bus 192-bit', freq: 'Legado (2014–2015)', apis: 'DirectX 12 (12_1)', cpus: 'Equipos antiguos', ramTip: '3 GB o 6 GB GDDR5 (192-bit).' },
+      'nvidia gtx 960m': { rank: 'Serie Antigua 900M', arch: 'NVIDIA Maxwell', units: '640 núcleos CUDA • Bus 128-bit', freq: 'Legado (2015)', apis: 'DirectX 12 (11_0)', cpus: 'Equipos antiguos', ramTip: '2 GB o 4 GB GDDR5 (128-bit).' },
+      'nvidia gtx 880m': { rank: 'Serie Antigua 800M', arch: 'NVIDIA Kepler', units: '1,536 núcleos CUDA • Bus 256-bit', freq: 'Legado (2014)', apis: 'Sin drivers modernos activos', cpus: 'Equipos antiguos', ramTip: '4 GB o 8 GB GDDR5 (256-bit).' },
+      'nvidia gtx 870m': { rank: 'Serie Antigua 800M', arch: 'NVIDIA Kepler', units: '1,344 núcleos CUDA • Bus 192-bit', freq: 'Legado (2014)', apis: 'Sin drivers modernos activos', cpus: 'Equipos antiguos', ramTip: '3 GB o 6 GB GDDR5 (192-bit).' },
+      'nvidia gtx 780m': { rank: 'Serie Antigua 700M', arch: 'NVIDIA Kepler', units: '1,344 núcleos CUDA • Bus 256-bit', freq: 'Legado (2013)', apis: 'Sin drivers modernos activos', cpus: 'Equipos antiguos', ramTip: '4 GB GDDR5 (256-bit).' },
+      'nvidia gt 940m':  { rank: 'Serie Antigua Entrada', arch: 'NVIDIA Maxwell de entrada', units: '384 núcleos CUDA • Bus 64-bit', freq: 'Legado', apis: 'Uso muy básico', cpus: 'Laptops antiguas de oficina', ramTip: '2 GB DDR3/GDDR5 (64-bit).' },
+      'nvidia gt 930m':  { rank: 'Serie Antigua Entrada', arch: 'NVIDIA Maxwell de entrada', units: '384 núcleos CUDA • Bus 64-bit', freq: 'Legado', apis: 'Uso muy básico', cpus: 'Laptops antiguas de oficina', ramTip: '2 GB DDR3/GDDR5 (64-bit).' },
+      'nvidia gt 920m':  { rank: 'Serie Antigua Entrada', arch: 'NVIDIA Maxwell/Kepler', units: '384 núcleos CUDA • Bus 64-bit', freq: 'Legado', apis: 'Uso muy básico', cpus: 'Laptops antiguas de oficina', ramTip: '2 GB DDR3/GDDR5 (64-bit).' },
+      'nvidia gt 840m':  { rank: 'Serie Antigua Entrada', arch: 'NVIDIA Maxwell de entrada', units: '384 núcleos CUDA • Bus 64-bit', freq: 'Legado', apis: 'Uso muy básico', cpus: 'Laptops antiguas de oficina', ramTip: '2 GB DDR3 (64-bit).' },
+      'nvidia gt 820m':  { rank: 'Serie Antigua Entrada', arch: 'NVIDIA Kepler de entrada', units: '384 núcleos CUDA • Bus 64-bit', freq: 'Legado', apis: 'Uso muy básico', cpus: 'Laptops antiguas de oficina', ramTip: '2 GB DDR3 (64-bit).' },
+      // Workstation RTX Ada / Ampere
+      'nvidia rtx 5000 ada': { rank: 'Workstation Certificada (Ada)', arch: 'NVIDIA Ada Lovelace', units: '9,728 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • Datamine • ECC', cpus: 'Mobile Workstations actuales', ramTip: '16 GB GDDR6 con ECC (256-bit).' },
+      'nvidia rtx 4000 ada': { rank: 'Workstation Certificada (Ada)', arch: 'NVIDIA Ada Lovelace', units: '7,424 núcleos CUDA • Bus 192-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • Datamine • ECC', cpus: 'Mobile Workstations actuales', ramTip: '12 GB GDDR6 con ECC (192-bit).' },
+      'nvidia rtx 3000 ada': { rank: 'Workstation Certificada (Ada)', arch: 'NVIDIA Ada Lovelace', units: '4,608 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • Datamine', cpus: 'Mobile Workstations actuales', ramTip: '8 GB GDDR6 (128-bit).' },
+      'nvidia rtx 2000 ada': { rank: 'Workstation Certificada (Ada)', arch: 'NVIDIA Ada Lovelace', units: '3,072 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • Datamine', cpus: 'Mobile Workstations actuales', ramTip: '8 GB GDDR6 (128-bit).' },
+      'nvidia rtx a5500':    { rank: 'Workstation Certificada (Ampere)', arch: 'NVIDIA Ampere', units: '7,424 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • ECC', cpus: 'Workstations 2022–2023', ramTip: '16 GB GDDR6 con ECC (256-bit).' },
+      'nvidia rtx a4000':    { rank: 'Workstation Certificada (Ampere)', arch: 'NVIDIA Ampere', units: '5,120 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • ECC', cpus: 'Workstations 2021–2023', ramTip: '8 GB GDDR6 con ECC (256-bit).' },
+      'nvidia rtx a3000':    { rank: 'Workstation Certificada (Ampere)', arch: 'NVIDIA Ampere', units: '4,096 núcleos CUDA • Bus 192-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2021–2023', ramTip: '6 GB o 12 GB GDDR6 (192-bit).' },
+      'nvidia rtx a2000':    { rank: 'Workstation Certificada (Ampere)', arch: 'NVIDIA Ampere', units: '2,560 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2021–2023', ramTip: '4 GB o 8 GB GDDR6 (128-bit).' },
+      'nvidia rtx a1000':    { rank: 'Workstation Certificada (Ampere)', arch: 'NVIDIA Ampere', units: '2,048 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2022–2024', ramTip: '4 GB o 6 GB GDDR6 (128-bit).' },
+      // Quadro Serie T (Turing sin RT/Tensor, Drivers ISV)
+      'nvidia quadro t2000': { rank: 'Workstation Quadro Serie T (Turing)', arch: 'NVIDIA Turing (TU117, sin RT/Tensor)', units: '1,024 núcleos CUDA • Bus 128-bit', freq: 'Equiv. GTX 1650 Ti / 1660 (tuvo Max-Q)', apis: 'Drivers ISV certificados • SOLIDWORKS • AutoCAD', cpus: 'Dell Precision 5000, ZBook, ThinkPad P', ramTip: '4 GB GDDR6 (128-bit). Equivalente profesional de GTX 1650 Ti / 1660 Max-Q.' },
+      'nvidia quadro t1200': { rank: 'Workstation Quadro Serie T (Turing)', arch: 'NVIDIA Turing (TU117, sin RT/Tensor)', units: '1,024 núcleos CUDA • Bus 128-bit', freq: 'Equiv. GTX 1650 Ti Mobile', apis: 'Drivers ISV certificados • SOLIDWORKS • AutoCAD', cpus: 'Dell Precision 3000/5000, ZBook Firefly, ThinkPad P15s', ramTip: '4 GB GDDR6 (128-bit).' },
+      'nvidia quadro t1000': { rank: 'Workstation Quadro Serie T (Turing)', arch: 'NVIDIA Turing (TU117, sin RT/Tensor)', units: '896 núcleos CUDA • Bus 128-bit', freq: 'Equiv. GTX 1650 Mobile (tuvo Max-Q)', apis: 'Drivers ISV certificados • SOLIDWORKS • AutoCAD', cpus: 'Dell Precision 3000/5000, ZBook, ThinkPad P', ramTip: '4 GB GDDR6 (128-bit). Casi idéntica en hardware a GTX 1650, pero con drivers ISV.' },
+      'nvidia quadro t600':  { rank: 'Workstation Quadro Serie T (Turing)', arch: 'NVIDIA Turing (TU117, sin RT/Tensor)', units: '896 núcleos CUDA • Bus 64-bit', freq: 'Equiv. GTX 1650 (versión 64-bit)', apis: 'Drivers ISV certificados • CAD 2D/3D ligero', cpus: 'Workstations delgadas', ramTip: '4 GB GDDR6 (64-bit). El bus de 64-bit la limita frente a la T1000 (128-bit).' },
+      'nvidia quadro t500':  { rank: 'Workstation Quadro Serie T (Entrada)', arch: 'NVIDIA Turing (TU117, sin RT/Tensor)', units: '512 núcleos CUDA • Bus 64-bit', freq: 'Equiv. GTX 1650 recortada / MX450', apis: 'Drivers ISV certificados • CAD 2D / 3D básico', cpus: 'HP ZBook Firefly, ThinkPad P14s/P15s', ramTip: '4 GB GDDR6 (64-bit). Entrada profesional estable, pero limitada por bus de 64-bit.' },
+      // Quadro P / M / K / FX
+      'nvidia quadro p5200':  { rank: 'Workstation Quadro P', arch: 'NVIDIA Pascal', units: '2,048 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • CAD', cpus: 'Precision / ZBook / ThinkPad P', ramTip: '16 GB GDDR5 (256-bit).' },
+      'nvidia quadro p5000':  { rank: 'Workstation Quadro P', arch: 'NVIDIA Pascal', units: '2,048 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • CAD', cpus: 'Precision / ZBook / ThinkPad P', ramTip: '16 GB GDDR5 (256-bit).' },
+      'nvidia quadro p4000':  { rank: 'Workstation Quadro P', arch: 'NVIDIA Pascal', units: '1,792 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • CAD', cpus: 'Precision / ZBook / ThinkPad P', ramTip: '8 GB GDDR5 (256-bit).' },
+      'nvidia quadro p3000':  { rank: 'Workstation Quadro P', arch: 'NVIDIA Pascal', units: '1,280 núcleos CUDA • Bus 192-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • CAD', cpus: 'Precision / ZBook / ThinkPad P', ramTip: '6 GB GDDR5 (192-bit).' },
+      'nvidia quadro p2000':  { rank: 'Workstation Quadro P', arch: 'NVIDIA Pascal', units: '768 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • CAD', cpus: 'Precision / ZBook / ThinkPad P', ramTip: '4 GB GDDR5 (128-bit). Más estable en SOLIDWORKS que RTX 3050 de 4 GB.' },
+      'nvidia quadro p1000':  { rank: 'Workstation Quadro P', arch: 'NVIDIA Pascal', units: '512 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD • CAD', cpus: 'Precision / ZBook / ThinkPad P', ramTip: '4 GB GDDR5 (128-bit).' },
+      'nvidia quadro p620':   { rank: 'Workstation Quadro P', arch: 'NVIDIA Pascal', units: '512 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD básico', cpus: 'Workstations compactas', ramTip: '4 GB GDDR5 (128-bit).' },
+      'nvidia quadro p600':   { rank: 'Workstation Quadro P', arch: 'NVIDIA Pascal', units: '384 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'CAD 2D / 3D ligero', cpus: 'Workstations compactas', ramTip: '2 GB GDDR5 (128-bit).' },
+      'nvidia quadro m5500m': { rank: 'Workstation Quadro M', arch: 'NVIDIA Maxwell', units: '1,536 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2016–2017', ramTip: '8 GB GDDR5 (256-bit).' },
+      'nvidia quadro m5000m': { rank: 'Workstation Quadro M', arch: 'NVIDIA Maxwell', units: '1,536 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2015–2017', ramTip: '8 GB GDDR5 (256-bit).' },
+      'nvidia quadro m4000m': { rank: 'Workstation Quadro M', arch: 'NVIDIA Maxwell', units: '1,280 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2015–2017', ramTip: '4 GB GDDR5 (256-bit).' },
+      'nvidia quadro m3000m': { rank: 'Workstation Quadro M', arch: 'NVIDIA Maxwell', units: '1,024 núcleos CUDA • Bus 256-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2015–2017', ramTip: '4 GB GDDR5 (256-bit).' },
+      'nvidia quadro m2200':  { rank: 'Workstation Quadro M', arch: 'NVIDIA Maxwell', units: '1,024 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2017', ramTip: '4 GB GDDR5 (128-bit).' },
+      'nvidia quadro m1200':  { rank: 'Workstation Quadro M', arch: 'NVIDIA Maxwell', units: '640 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'SOLIDWORKS • AutoCAD', cpus: 'Workstations 2017', ramTip: '4 GB GDDR5 (128-bit).' },
+      'nvidia quadro m620':   { rank: 'Workstation Quadro M', arch: 'NVIDIA Maxwell', units: '512 núcleos CUDA • Bus 128-bit', freq: 'Drivers ISV certificados', apis: 'CAD 2D / 3D ligero', cpus: 'Workstations 2017', ramTip: '2 GB GDDR5 (128-bit).' },
+      'nvidia quadro m520':   { rank: 'Workstation Quadro M', arch: 'NVIDIA Maxwell', units: '384 núcleos CUDA • Bus 64-bit', freq: 'Drivers ISV certificados', apis: 'CAD 2D básico', cpus: 'Workstations delgadas 2017', ramTip: '2 GB GDDR5 (64-bit).' },
+      'nvidia quadro k5100m': { rank: 'Workstation Quadro K', arch: 'NVIDIA Kepler', units: '1,536 núcleos CUDA • Bus 256-bit', freq: 'Legado profesional', apis: 'CAD clásico', cpus: 'Workstations antiguas', ramTip: '8 GB GDDR5 (256-bit).' },
+      'nvidia quadro k4100m': { rank: 'Workstation Quadro K', arch: 'NVIDIA Kepler', units: '1,152 núcleos CUDA • Bus 256-bit', freq: 'Legado profesional', apis: 'CAD clásico', cpus: 'Workstations antiguas', ramTip: '4 GB GDDR5 (256-bit).' },
+      'nvidia quadro k3100m': { rank: 'Workstation Quadro K', arch: 'NVIDIA Kepler', units: '768 núcleos CUDA • Bus 256-bit', freq: 'Legado profesional', apis: 'CAD clásico', cpus: 'Workstations antiguas', ramTip: '4 GB GDDR5 (256-bit).' },
+      'nvidia quadro k2100m': { rank: 'Workstation Quadro K', arch: 'NVIDIA Kepler', units: '576 núcleos CUDA • Bus 128-bit', freq: 'Legado profesional', apis: 'CAD 2D/3D ligero', cpus: 'Workstations antiguas', ramTip: '2 GB GDDR5 (128-bit).' },
+      'nvidia quadro k1100m': { rank: 'Workstation Quadro K', arch: 'NVIDIA Kepler', units: '384 núcleos CUDA • Bus 128-bit', freq: 'Legado profesional', apis: 'CAD 2D básico', cpus: 'Workstations antiguas', ramTip: '2 GB GDDR5 (128-bit).' },
+      'nvidia quadro fx 5000m': { rank: 'Workstation Quadro FX', arch: 'NVIDIA Fermi', units: '256 núcleos CUDA • Bus 256-bit', freq: 'Legado antiguo', apis: 'Solo tareas básicas actuales', cpus: 'Equipos muy antiguos', ramTip: '2 GB GDDR5 (256-bit).' },
+      'nvidia quadro fx 3800m': { rank: 'Workstation Quadro FX', arch: 'NVIDIA Tesla/Fermi', units: '192 núcleos CUDA • Bus 256-bit', freq: 'Legado antiguo', apis: 'Obsoleta para software actual', cpus: 'Equipos muy antiguos', ramTip: '1 GB GDDR3 (256-bit).' }
     };
 
     function decodeGpu(raw) {
@@ -3159,27 +3720,60 @@
       const l = text.toLowerCase();
       let type = 'Por verificar', arch = 'Revisar ficha técnica', vram = 'Variable', useCase = 'Uso general', badge = 'bg-slate-200 text-slate-800', verdict = 'Verificar especificaciones';
 
-      if (/5090|5080|4090|7900m/i.test(l)) {
+      if (/quadro|radeon\s*pro|firepro|arc\s*pro\s*a60m|rtx\s*[2345]000\s*ada|rtx\s*a\d{4}/i.test(l)) {
+        type = 'Workstation Profesional Certificada (Drivers ISV)';
+        arch = /ada/i.test(l) ? 'NVIDIA Ada Lovelace Workstation'
+          : /rtx\s*a\d{4}/i.test(l) ? 'NVIDIA Ampere Workstation'
+          : /quadro\s*t/i.test(l) ? 'NVIDIA Turing (Quadro Serie T — sin RT/Tensor)'
+          : /quadro\s*rtx/i.test(l) ? 'NVIDIA Turing (Quadro RTX)'
+          : /quadro\s*p/i.test(l) ? 'NVIDIA Pascal (Quadro P)'
+          : /quadro\s*m/i.test(l) ? 'NVIDIA Maxwell (Quadro M)'
+          : /quadro\s*k/i.test(l) ? 'NVIDIA Kepler (Quadro K)'
+          : /quadro\s*fx/i.test(l) ? 'NVIDIA Fermi/Tesla (Quadro FX)'
+          : /arc\s*pro/i.test(l) ? 'Intel Xe-HPG Workstation (Arc Pro)'
+          : /hbm2/i.test(l) ? 'AMD RDNA / Vega HBM2 (Bus 1024-bit)'
+          : 'AMD Polaris / RDNA (Radeon PRO)';
+        vram = /5000\s*ada|a5500|p5200|p5000|rtx\s*5000/i.test(l) ? '16 GB VRAM'
+          : /4000\s*ada/i.test(l) ? '12 GB GDDR6 ECC'
+          : /3000\s*ada|2000\s*ada|a4000|p4000|m5500m|m5000m|k5100m|rtx\s*4000|wx\s*7100/i.test(l) ? '8 GB VRAM'
+          : /p3000|rtx\s*3000/i.test(l) ? '6 GB VRAM'
+          : /fx\s*3800m/i.test(l) ? '1 GB GDDR3 (obsoleta)'
+          : /p600|m620|m520|k2100m|k1100m|fx\s*5000m/i.test(l) ? '2 GB VRAM'
+          : '4 GB a 12 GB VRAM';
+        useCase = /k\d{4}m|fx\s*\d{4}m/i.test(l)
+          ? 'Hardware profesional muy antiguo (Kepler/Fermi): útil solo para CAD clásico o tareas básicas, limitado en software actual.'
+          : 'Drivers certificados ISV para SOLIDWORKS, AutoCAD y Datamine. Una Quadro P2000 (4 GB, 128-bit) supera en estabilidad a GPUs gamer en CAD.';
+        verdict = /k\d{4}m|fx\s*\d{4}m/i.test(l) ? 'Workstation antigua (Kepler/Fermi)' : 'Certificada para CAD / SOLIDWORKS';
+        badge = /k\d{4}m|fx\s*\d{4}m/i.test(l) ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800';
+      } else if (/mx\d{3}|gt\s*(820|840|920|930|940)m/i.test(l)) {
+        type = 'Dedicada — Gama de Entrada Ligera (Bus 64-bit)';
+        arch = /mx570/i.test(l) ? 'NVIDIA Ampere (GA107, 64-bit)' : /mx(450|550)/i.test(l) ? 'NVIDIA Turing (TU117, 64-bit)' : /mx(150|230|250|330|350)/i.test(l) ? 'NVIDIA Pascal (64-bit)' : 'NVIDIA Maxwell/Kepler (64-bit)';
+        vram = '2 GB VRAM (bus 64-bit)';
+        useCase = 'Oficina, Photoshop ligero, AutoCAD 2D y juegos básicos. Ojo: el bus de 64-bit estrangula el rendimiento en 3D o >1080p.';
+        verdict = 'Entrada ligera (bus 64-bit)'; badge = 'bg-amber-100 text-amber-800';
+      } else if (/5090|5080|4090|7900m/i.test(l)) {
         type = 'Dedicada — Gama Muy Alta'; arch = /7900m/i.test(l) ? 'AMD RDNA 3' : /50\d\d/.test(l) ? 'NVIDIA Blackwell (GDDR7)' : 'NVIDIA Ada Lovelace';
-        vram = /5090/.test(l) ? '24 GB GDDR7 (95–150 W)' : '16 GB VRAM (80–180 W)';
+        vram = /5090/.test(l) ? '24 GB GDDR7 (95–150 W)' : '16 GB VRAM (256-bit, hasta 175–180 W)';
         useCase = 'Renderizado 3D pesado, After Effects 4K/8K, LLM 14B–32B+ y gaming extremo.';
         verdict = 'Tope de gama profesional'; badge = 'bg-emerald-100 text-emerald-800';
-      } else if (/5070|4080|4070|7800m/i.test(l)) {
-        type = 'Dedicada — Gama Alta'; arch = /7800m/i.test(l) ? 'AMD RDNA 3' : /5070/.test(l) ? 'NVIDIA Blackwell (GDDR7)' : 'NVIDIA Ada Lovelace';
-        vram = /4080|5070\s*ti|7800m/i.test(l) ? '12 GB VRAM' : '8 GB VRAM';
+      } else if (/5070|4080|4070|3080|3070|7800m|6850m|6800m|6800s|6700m|6700s/i.test(l)) {
+        type = 'Dedicada — Gama Alta'; arch = /7800m/i.test(l) ? 'AMD RDNA 3' : /5070/.test(l) ? 'NVIDIA Blackwell (GDDR7)' : /40\d\d/.test(l) ? 'NVIDIA Ada Lovelace' : 'NVIDIA Ampere';
+        vram = /3080\s*ti/i.test(l) ? '16 GB GDDR6 (256-bit)' : /4080|5070\s*ti|7800m/i.test(l) ? '12 GB VRAM' : /3080/i.test(l) ? '8 / 16 GB GDDR6 (256-bit)' : '8 GB VRAM';
         useCase = 'AutoCAD 3D, Premiere/DaVinci 4K, Blender, LLM 7B–14B y juegos en calidad alta.';
         verdict = 'Excelente para 3D, 4K y gaming'; badge = 'bg-emerald-100 text-emerald-800';
-      } else if (/5060|5050|4060|4050|3060|7600m|a770m/i.test(l)) {
-        type = 'Dedicada — Gama Media'; arch = /50\d\d/.test(l) ? 'NVIDIA Blackwell' : /40\d\d/.test(l) ? 'NVIDIA Ada Lovelace' : /7600m/i.test(l) ? 'AMD RDNA 3' : /a770m/i.test(l) ? 'Intel Xe-HPG' : 'NVIDIA Ampere';
-        vram = /4050|3060/.test(l) ? '6 GB GDDR6' : /a770m/i.test(l) ? '16 GB GDDR6' : '8 GB GDDR6/GDDR7';
-        useCase = 'Punto dulce para edición HD/4K ligera, Blender, AutoCAD, GTA V, Fortnite y Warzone.';
-        verdict = 'Muy recomendable (revisa TGP ≥75 W)'; badge = 'bg-emerald-100 text-emerald-800';
-      } else if (/quadro|radeon\s*pro/i.test(l)) {
-        type = 'Workstation Profesional Certificada (2017–2020)';
-        arch = /quadro\s*rtx/i.test(l) ? 'NVIDIA Turing (Quadro RTX)' : /quadro/i.test(l) ? 'NVIDIA Pascal (Quadro P)' : 'AMD Polaris / RDNA (Radeon Pro)';
-        vram = /rtx\s*5000/i.test(l) ? '16 GB GDDR6' : /rtx\s*4000|p4000|p5000|wx\s*7100/i.test(l) ? '8 GB VRAM' : /rtx\s*3000/i.test(l) ? '6 GB GDDR6' : '4 GB VRAM (o 2 GB en P500/P600)';
-        useCase = 'Excelente en estaciones seminuevas (Dell Precision, HP ZBook, ThinkPad P) para SOLIDWORKS, AutoCAD y CAD certificado.';
-        verdict = 'Certificada para CAD / SOLIDWORKS'; badge = 'bg-emerald-100 text-emerald-800';
+      } else if (/5060|5050|4060|4050|3060|7600m|7600s|7700s|6650m|6600m|6600s|5700m|a770m|a730m|a570m|a550m/i.test(l)) {
+        type = 'Dedicada — Gama Media'; arch = /50\d\d/.test(l) ? 'NVIDIA Blackwell' : /40\d\d/.test(l) ? 'NVIDIA Ada Lovelace' : /7600m/i.test(l) ? 'AMD RDNA 3' : /a(770|730|570|550)m/i.test(l) ? 'Intel Xe-HPG (Arc Discreta)' : 'NVIDIA Ampere';
+        vram = /4050|3060/.test(l) ? '6 GB GDDR6' : /a770m/i.test(l) ? '8 / 16 GB GDDR6 (256-bit)' : /a730m/i.test(l) ? '12 GB GDDR6 (192-bit)' : /a5[57]0m/i.test(l) ? '8 GB GDDR6 (128-bit)' : '8 GB GDDR6/GDDR7';
+        useCase = /a(770|730|570|550)m/i.test(l)
+          ? 'Gran relación precio/rendimiento, codificación AV1 superior y juegos DX12/Vulkan con XeSS (en juegos DX9/11 antiguos NVIDIA es más estable).'
+          : 'Punto dulce para edición HD/4K ligera, Blender, AutoCAD, GTA V, Fortnite y Warzone.';
+        verdict = /a(770|730|570|550)m/i.test(l) ? 'Buena opción DX12 / AV1 (Xe-HPG)' : 'Muy recomendable (revisa TGP ≥75 W)'; badge = 'bg-emerald-100 text-emerald-800';
+      } else if (/gtx\s*(980|970|960|880|870|780)m/i.test(l)) {
+        type = 'Dedicada Antigua (Series 900M / 800M / 700M)';
+        arch = /9\d0m/i.test(l) ? 'NVIDIA Maxwell' : 'NVIDIA Kepler';
+        vram = /980m|880m/i.test(l) ? '4–8 GB GDDR5 (256-bit)' : /970m|870m/i.test(l) ? '3–6 GB GDDR5 (192-bit)' : '2–4 GB GDDR5';
+        useCase = 'Equipos de hace 10+ años. Rinde en juegos antiguos y oficina, pero carece de soporte de drivers moderno y es riesgosa por desgaste térmico.';
+        verdict = 'Hardware muy antiguo (900M/800M/700M)'; badge = 'bg-amber-100 text-amber-800';
       } else if (/rtx\s*2070|rtx\s*2080|gtx\s*1070|gtx\s*1080/i.test(l)) {
         type = 'Dedicada — Gama Alta (2017–2020)';
         arch = /rtx\s*20/i.test(l) ? 'NVIDIA Turing (con Ray Tracing / Tensor)' : 'NVIDIA Pascal';
@@ -3198,12 +3792,12 @@
         vram = '2 GB a 4 GB GDDR5';
         useCase = 'Oficina, Photoshop ligero, AutoCAD 2D y juegos poco exigentes. Supera a Intel UHD 620, pero no apta para 3D pesado ni 4K.';
         verdict = 'Entrada ligera (mejor que UHD 620)'; badge = 'bg-amber-100 text-amber-800';
-      } else if (/3050|1650|1050|1060|5300m|5500m|560x|560|570|580|6500m|a350m|a370m/i.test(l)) {
+      } else if (/3050|1650|1050|1060|5300m|5500m|560x|560|570|580|6550m|6500m|6450m|6300m|480|470|460|xe\s*max|a310m|a350m|a370m|a530m/i.test(l)) {
         type = 'Dedicada — Entrada'; arch = /3050/.test(l) ? 'NVIDIA Ampere' : /6500m/i.test(l) ? 'AMD RDNA 2' : 'Generación anterior';
         vram = /1660|2060/.test(l) ? '6 GB GDDR6' : '4 GB GDDR6';
         useCase = 'GTA V, Fortnite, Free Fire, Photoshop, AutoCAD 2D y Premiere HD. Limitada en 4K o LLM >7B.';
         verdict = 'Cumple en entrada (4–6 GB VRAM)'; badge = 'bg-amber-100 text-amber-800';
-      } else if (/8060s|890m|880m|780m|140v|130v|140t|130t|860m|b390|b370/i.test(l)) {
+      } else if (/8060s|890m|880m|780m|140v|130v|140t|130t|860m|b390|b370|arc\s*graphics\s*\(8\s*xe\)/i.test(l)) {
         type = 'Integrada de Alto Rendimiento'; arch = /8060s|890m|880m|860m/i.test(l) ? 'AMD RDNA 3.5 (12–16+ CU)' : /780m/i.test(l) ? 'AMD RDNA 3 (12 CU)' : /140t|130t/i.test(l) ? 'Intel Arrow Lake-H (7–8 núcleos Xe)' : 'Intel Lunar Lake Xe2 (7–8 núcleos Xe2) / Arc';
         vram = 'Memoria compartida del sistema (ideal 16–32 GB RAM)';
         useCase = 'Laptops delgadas: Photoshop, diseño, Minecraft, GTA V/Fortnite en ajustes medios y edición HD.';
@@ -3218,7 +3812,12 @@
         vram = 'Memoria compartida del sistema';
         useCase = 'Office, web y multimedia con gran batería. Ojo: incompatible con SOLIDWORKS, FlexSim, Minitab y Datamine.';
         verdict = 'Solo productividad (NO para CAD x86)'; badge = 'bg-amber-100 text-amber-800';
-      } else if (/uhd|iris|vega|610m|660m|680m|740m|760m|840m/i.test(l)) {
+      } else if (/intel\s*gma|intel\s*hd\s*(5500|5300|4400|4000|520|620|630)|radeon\s*(r9|r7|r5|r4|r3|hd\s*[78]\d{3}m)/i.test(l)) {
+        type = 'Integrada Antigua (Legacy / Pre-2018)'; arch = /gma/i.test(l) ? 'Intel GMA (Pre-2010)' : 'Intel HD (Gen 7.5–9)';
+        vram = 'Comparte RAM antigua (DDR3/DDR4)';
+        useCase = 'Solo navegación básica y documentos ligeros. Obsoleta para juegos modernos, CAD o edición.';
+        verdict = 'Hardware antiguo (evitar para compra)'; badge = 'bg-rose-100 text-rose-800';
+      } else if (/uhd|iris|vega|610m|660m|680m|740m|760m|840m|intel\s*graphics\s*\(4\s*xe\)/i.test(l)) {
         type = 'Integrada Básica / Estándar'; arch = /iris\s*plus/i.test(l) ? 'Intel Iris Plus (10ª Gen Ice Lake)' : /iris/i.test(l) ? 'Intel Iris Xe' : /vega|610m|660m|740m/i.test(l) ? 'AMD Radeon integrada' : 'Intel UHD';
         vram = 'Comparte RAM del sistema';
         useCase = 'Office, ONLYOFFICE, clases, navegación, Roblox, N64 y Photoshop ligero. No apta para 3D pesado ni juegos AAA.';
@@ -3243,11 +3842,11 @@
                 <div class="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Ficha técnica exacta (${gsp.rank})</div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-[11px] text-slate-800">
                   <div><strong>Arquitectura:</strong> ${gsp.arch}</div>
-                  <div><strong>Unidades gráficas:</strong> ${gsp.units}</div>
-                  <div><strong>Frecuencia / IA:</strong> ${gsp.freq}</div>
-                  <div><strong>APIs / Video:</strong> ${gsp.apis}</div>
-                  <div class="sm:col-span-2"><strong>Procesadores que la incluyen:</strong> ${gsp.cpus}</div>
-                  <div class="sm:col-span-2 text-indigo-900"><strong>Clave de memoria RAM:</strong> ${gsp.ramTip}</div>
+                  <div><strong>Núcleos / Unidades:</strong> ${gsp.units}</div>
+                  <div><strong>Frecuencia / TGP:</strong> ${gsp.freq}</div>
+                  <div><strong>APIs / Certificación:</strong> ${gsp.apis}</div>
+                  <div class="sm:col-span-2"><strong>Uso / Equipos habituales:</strong> ${gsp.cpus}</div>
+                  <div class="sm:col-span-2 text-indigo-900"><strong>VRAM / Ancho de Bus / Nota clave:</strong> ${gsp.ramTip}</div>
                 </div>
               </div>`;
           })()}
@@ -3355,10 +3954,11 @@
         } else if (isLegacyGen) {
           // Seminuevas 2017–2020: solo integrada de su marca + dedicadas de su época
           const legGpus = [];
-          if (isIntelCpu) legGpus.push({ value: 'intel', label: 'Intel Integrada (UHD 620/630 / Iris Plus)' });
+          if (isIntelCpu && !/\d+hf\b/i.test(cpuModel)) legGpus.push({ value: 'intel', label: 'Intel Integrada (UHD 620/630 / Iris Plus)' });
           if (isAmdCpu) legGpus.push({ value: 'amd_int', label: 'AMD Radeon Integrada (Vega)' });
           legGpus.push(
-            { value: 'nvidia_legacy', label: 'NVIDIA MX / GTX 10 / GTX 16 / RTX 20 / Quadro (2017–2020)' },
+            { value: 'nvidia_legacy', label: 'NVIDIA MX / GTX 10 / GTX 16 / RTX 20 / 900M (Seminuevas)' },
+            { value: 'nvidia_pro', label: 'NVIDIA Workstation (Quadro P / M / K / RTX Ada & Ampere)' },
             { value: 'amd_legacy', label: 'AMD Radeon 500 / RX 5000M / Pro WX (2017–2020)' }
           );
           populateSelect(gpuFamEl, legGpus, isIntelCpu ? 'intel' : 'amd_int');
@@ -3368,9 +3968,10 @@
           if (isIntelCpu) modGpus.push({ value: 'intel', label: 'Intel Integrada / Arc (UHD / Iris Xe / Arc 130T–140T / B390)' });
           if (isAmdCpu) modGpus.push({ value: 'amd_int', label: 'AMD Radeon Integrada (660M–890M / 8060S)' });
           modGpus.push(
-            { value: 'nvidia', label: 'NVIDIA Dedicadas (RTX 30 / 40 / 50)' },
+            { value: 'nvidia', label: 'NVIDIA Dedicadas (GTX 16 – RTX 50)' },
+            { value: 'nvidia_pro', label: 'NVIDIA Workstation (RTX Ada / Ampere / Quadro)' },
             { value: 'amd_ded', label: 'AMD Dedicadas (RX 6000M / 7000M)' },
-            { value: 'nvidia_legacy', label: 'NVIDIA Quadro / Workstation / GTX 16' }
+            { value: 'nvidia_legacy', label: 'NVIDIA MX / GTX 10 / Seminuevas' }
           );
           populateSelect(gpuFamEl, modGpus, isIntelCpu ? 'intel' : 'amd_int');
         }
@@ -3459,9 +4060,11 @@
           { value: '4', label: '4 GB' }, { value: '8', label: '8 GB' }, { value: '16', label: '16 GB' }
         ], '8');
       } else {
+        const ramTag = isLegacyGen ? 'DDR4' : 'DDR5 / LPDDR5X';
         populateSelect(ramEl, [
-          { value: '8', label: '8 GB' }, { value: '12', label: '12 GB' },
-          { value: '16', label: '16 GB' }, { value: '24', label: '24 GB' }, { value: '32', label: '32 GB' }, { value: '64', label: '64 GB+' }
+          { value: '8', label: `8 GB (${ramTag})` }, { value: '12', label: `12 GB (${ramTag})` },
+          { value: '16', label: `16 GB (${ramTag})` }, { value: '24', label: `24 GB (${ramTag})` },
+          { value: '32', label: `32 GB (${ramTag})` }, { value: '64', label: `64 GB+ (${ramTag})` }
         ], '16');
       }
 
@@ -3475,8 +4078,12 @@
         ], '512');
       } else {
         populateSelect(ssdEl, [
-          { value: 'emmc', label: 'eMMC / HDD' }, { value: '256', label: '256 GB SSD' },
-          { value: '512', label: '512 GB SSD' }, { value: '1024', label: '1 TB SSD' }, { value: '2048', label: '2 TB+ SSD' }
+          { value: 'emmc', label: 'eMMC / HDD mecánico (lento)' },
+          { value: '256_sata', label: '256 GB SSD SATA' },
+          { value: '512_sata', label: '512 GB SSD SATA' },
+          { value: '512', label: '512 GB SSD NVMe' },
+          { value: '1024', label: '1 TB SSD NVMe' },
+          { value: '2048', label: '2 TB+ SSD NVMe' }
         ], '512');
       }
 
@@ -3617,14 +4224,24 @@
 
       // 4. Exact GPU model evaluation
       let eqVram = 2;
-      const isCert = /quadro|radeon\s*pro/i.test(gpuLower);
-      if (/5090|5080|4090|7900m|a770m|m[3-5]\s*max|rtx\s*5000/i.test(gpuLower)) eqVram = 16;
+      const isCert = /quadro|rtx\s*[2345]000\s*ada|rtx\s*a\d{4}|radeon\s*pro|firepro|arc\s*pro\s*a60m/i.test(gpuLower);
+      const is64BitBus = /mx\d{3}|gt\s*(820|840|920|930|940)m|quadro\s*(m520|t500|t600)/i.test(gpuLower);
+      if (/5090|5080|4090|7900m|a770m|m[3-5]\s*max|rtx\s*5000|a5500|p5200|p5000/i.test(gpuLower)) eqVram = 16;
       else if (/4080|5070\s*ti|7800m|6800m|rtx\s*4000/i.test(gpuLower)) eqVram = 12;
-      else if (/4060|4070|5050|5060|5070|3070|3080|2070|2080|1070|1080|7600m|7700s|6600m|m[3-5]\s*pro|8060s/i.test(gpuLower)) eqVram = 8;
-      else if (/4050|3060|2060|1660|1060|5600m|rtx\s*3000/i.test(gpuLower)) eqVram = 6;
-      else if (/3050|1650|1050\s*ti|5500m|6500m|a350m|a550m|780m|860m|880m|890m|140v|140t|b390|p1000|p2000|wx\s*4|wx\s*7|apple\s*m[1-5]/i.test(gpuLower)) eqVram = 4;
-      else if (/mx\d{3}|1050|5300m|560x|iris|660m|680m|740m|760m|840m|130v|130t|b370|p620|wx\s*3/i.test(gpuLower)) eqVram = 2;
-      else if (/uhd|vega|610m|530|550|a18|adreno/i.test(gpuLower)) eqVram = 1;
+      else if (/4060|4070|5050|5060|5070|3070|3080|2070|2080|1070|1080|7600m|7700s|6600m|m[3-5]\s*pro|8060s|3000\s*ada|2000\s*ada|a4000|p4000|m5500m|m5000m|k5100m|980m|880m|a730m|a570m|a550m/i.test(gpuLower)) eqVram = 8;
+      else if (/4050|3060|2060|1660|1060|5600m|rtx\s*3000|a3000|p3000|970m|870m/i.test(gpuLower)) eqVram = 6;
+      else if (/3050|1650|1050\s*ti|5500m|6500m|a530m|a370m|a350m|a310m|780m|860m|880m|890m|140v|140t|b390|8\s*xe|a2000|a1000|t2000|t1200|t1000|t600|t500|p2000|p1000|p620|m4000m|m3000m|m2200|m1200|k4100m|k3100m|960m|780m|wx\s*4|wx\s*7|apple\s*m[1-5]/i.test(gpuLower)) eqVram = 4;
+      else if (/mx\d{3}|1050|5300m|560x|iris|660m|680m|740m|760m|840m|130v|130t|b370|p600|m620|m520|k2100m|k1100m|fx\s*5000m|gt\s*(820|840|920|930|940)m|wx\s*3/i.test(gpuLower)) eqVram = 2;
+      else if (/uhd|vega|610m|530|550|a18|adreno|fx\s*3800m|intel\s*hd|gma/i.test(gpuLower)) eqVram = 1;
+      if (is64BitBus && ctx.maxVram >= 2) {
+        cautions.push(`<strong>${gpuModel}</strong> usa un bus estrecho de <strong>64-bit</strong>: se estrangula en 3D o juegos exigentes (una GTX 1050/1650 o Quadro de 128-bit rinde mucho mejor).`);
+      }
+      if (/iris\s*xe|arc\s*graphics|arc\s*1[34]0|graphics\s*\(4\s*xe\)/i.test(gpuLower)) {
+        cautions.push(`<strong>${gpuModel}</strong> comparte la RAM del sistema: asegúrate de que la laptop tenga <strong>Dual-Channel</strong> y RAM rápida (en Single-Channel pierde 30%–50% de rendimiento gráfico).`);
+      }
+      if (/intel\s*gma|intel\s*hd\s*(5500|5300|4400|4000)|radeon\s*(r9|r7|r5|r4|r3|hd\s*[78]\d{3}m)/i.test(gpuLower)) {
+        blockers.push(`<strong>${gpuModel}</strong> es hardware muy antiguo (pre-2016) sin soporte para aplicaciones o juegos actuales.`);
+      }
 
       if (ctx.needsCertGpu && osVal.startsWith('windows') && !isCert) {
         cautions.push(`Para <strong>SOLIDWORKS</strong> oficial se recomienda GPU certificada (Quadro P/RTX o Radeon Pro WX); <strong>${gpuModel}</strong> no está certificada.`);
@@ -3638,12 +4255,16 @@
       }
 
       // 5. SSD evaluation
+      const ssdNum = parseInt(ssdVal, 10) || 0;
+      const isSata = String(ssdVal).includes('sata');
       if (ssdVal === 'emmc') {
         blockers.push('Evita discos <strong>HDD o eMMC</strong>: vuelven muy lenta la laptop.');
-      } else if (parseInt(ssdVal, 10) < ctx.maxSsd) {
-        cautions.push(`SSD de ${ssdVal} GB puede llenarse rápido (se recomiendan al menos ${ctx.maxSsd} GB).`);
+      } else if (ssdNum < ctx.maxSsd) {
+        cautions.push(`SSD de ${ssdNum} GB puede llenarse rápido (se recomiendan al menos ${ctx.maxSsd} GB).`);
+      } else if (isSata && ctx.maxCpuLevel >= 3) {
+        cautions.push(`SSD SATA de ${ssdNum} GB funciona bien, aunque para proyectos pesados de 4K/CAD/LLM/PS4 un <strong>SSD NVMe</strong> acelera cargas y caché.`);
       } else {
-        passes.push(`Almacenamiento SSD suficiente (${parseInt(ssdVal, 10) >= 1024 ? (parseInt(ssdVal, 10) / 1024) + ' TB' : ssdVal + ' GB'}).`);
+        passes.push(`Almacenamiento SSD adecuado (${ssdNum >= 1024 ? (ssdNum / 1024) + ' TB' : ssdNum + ' GB'}${isSata ? ' SATA' : ' NVMe'}).`);
       }
 
       const box = document.getElementById('eval-offer-result');
@@ -3671,7 +4292,7 @@
       { id: 'br_games', name: 'Fortnite + Warzone / Apex / PUBG', gb: 160, checked: false },
       { id: 'video_proj', name: 'Proyectos de video 4K / Blender 3D', gb: 250, checked: false },
       { id: 'llm_models', name: 'Modelos LLM locales (Llama / Qwen 7B–32B)', gb: 120, checked: false },
-      { id: 'emu_roms', name: 'ISOs de PlayStation 2 / N64 y Minecraft', gb: 60, checked: false }
+      { id: 'emu_roms', name: 'Juegos de Switch, PS3, Xbox 360, PS4/PS5, PS2 y N64', gb: 180, checked: false }
     ];
     let ssdState = {};
     SSD_ITEMS.forEach(i => { ssdState[i.id] = i.checked; });
@@ -3692,6 +4313,7 @@
       ssdState.gtav_game = !!a.game;
       ssdState.br_games = !!a.game;
       ssdState.llm_models = !!a.dev;
+      ssdState.emu_roms = !!a.emu_mod;
       renderSsdCalculator();
     }
 
@@ -3763,23 +4385,44 @@
         'Intel Core 9 270H',
         'Intel Core 3 201E', 'Intel Core 5 211E', 'Intel Core 5 221TE', 'Intel Core 7 251E'
       ],
-      intel_core: ['Intel Core 3 100U', 'Intel Core i3-1115G4', 'Intel Core i3-1215U', 'Intel Core i3-1305U', 'Intel Core i3-1315U', 'Intel Core i5-1135G7', 'Intel Core i5-1235U', 'Intel Core i5-1240P', 'Intel Core i5-1335U', 'Intel Core i5-13500H', 'Intel Core i5-14500HX', 'Intel Core i7-11800H', 'Intel Core i7-12700H', 'Intel Core i7-13700H', 'Intel Core i7-13850HX', 'Intel Core i7-14700HX', 'Intel Core i9-13980HX', 'Intel Core i9-14900HX'],
-      intel_legacy: ['Intel Core i3-8130U', 'Intel Core i3-8145U', 'Intel Core i5-8250U', 'Intel Core i5-8350U', 'Intel Core i5-8265U', 'Intel Core i5-8300H', 'Intel Core i7-8550U', 'Intel Core i7-8650U', 'Intel Core i7-8750H', 'Intel Core i9-8950HK', 'Intel Core i5-9300H', 'Intel Core i7-9750H', 'Intel Core i9-9880H', 'Intel Core i9-9980HK', 'Intel Core i3-1005G1', 'Intel Core i3-10110U', 'Intel Core i5-10210U', 'Intel Core i5-1035G7', 'Intel Core i5-10300H', 'Intel Core i7-10510U', 'Intel Core i7-1065G7', 'Intel Core i7-10750H', 'Intel Core i9-10980HK'],
-      intel_n: ['Intel Celeron N4000', 'Intel Celeron N4020', 'Intel Celeron N4120', 'Intel Celeron N4500', 'Intel Celeron N5100', 'Intel Celeron 5205U', 'Intel Celeron 6305', 'Intel Celeron J4125', 'Intel Celeron J6412', 'Intel Pentium Silver N5000', 'Intel Pentium Silver N5030', 'Intel Pentium Silver N6000', 'Intel Pentium J5040', 'Intel Pentium Gold 6500Y', 'Intel Pentium Gold 7505', 'Intel Processor N50', 'Intel Processor N95', 'Intel Processor N100', 'Intel Processor N150', 'Intel Processor N200', 'Intel Processor N300', 'Intel Processor N305'],
-      amd_ai: ['AMD Ryzen AI 5 340', 'AMD Ryzen AI 5 430', 'AMD Ryzen AI 7 350', 'AMD Ryzen AI 7 450', 'AMD Ryzen AI 9 365', 'AMD Ryzen AI 9 HX 370', 'AMD Ryzen AI 9 HX 475', 'AMD Ryzen AI Max 385', 'AMD Ryzen AI Max+ 395', 'AMD Ryzen 9 9955HX', 'AMD Ryzen 9 9955HX3D'],
-      amd_legacy: ['AMD 3015e', 'AMD 3020e', 'AMD Athlon Silver 3050e', 'AMD Athlon 300U', 'AMD Athlon Gold 3150U', 'AMD Ryzen 3 2200U', 'AMD Ryzen 3 3200U', 'AMD Ryzen 3 3250U', 'AMD Ryzen 5 2500U', 'AMD Ryzen 5 3500U', 'AMD Ryzen 5 3550H', 'AMD Ryzen 5 4500U', 'AMD Ryzen 5 4600H', 'AMD Ryzen 5 5500U', 'AMD Ryzen 5 5600H', 'AMD Ryzen 7 2700U', 'AMD Ryzen 7 3700U', 'AMD Ryzen 7 4700U', 'AMD Ryzen 7 4800H', 'AMD Ryzen 7 5700U', 'AMD Ryzen 7 5800H', 'AMD Ryzen 9 4900H', 'AMD Ryzen 9 5900HX'],
-      amd_ryzen: ['AMD Athlon Silver 7120U', 'AMD Athlon Gold 7220U', 'AMD Ryzen 3 4300U', 'AMD Ryzen 3 5300U', 'AMD Ryzen 3 5400U', 'AMD Ryzen 3 5425U', 'AMD Ryzen 3 7320U', 'AMD Ryzen 3 7330U', 'AMD Ryzen 3 7335U', 'AMD Ryzen 3 7440U', 'AMD Ryzen 5 5500U', 'AMD Ryzen 5 5600U', 'AMD Ryzen 5 6600U', 'AMD Ryzen 7 6800U', 'AMD Ryzen 7 6800H', 'AMD Ryzen 9 6900HX', 'AMD Ryzen 5 7520U', 'AMD Ryzen 5 7535U', 'AMD Ryzen 5 7640HS', 'AMD Ryzen 5 8540U', 'AMD Ryzen 5 8645HS', 'AMD Ryzen 5 230', 'AMD Ryzen 7 7840HS', 'AMD Ryzen 7 8840U', 'AMD Ryzen 7 8845HS', 'AMD Ryzen 7 260', 'AMD Ryzen 9 7945HX', 'AMD Ryzen 9 8945HS'],
+      intel_core: [
+        'Intel Core i3-1115G4', 'Intel Core i5-1135G7', 'Intel Core i5-1145G7', 'Intel Core i7-1160G7', 'Intel Core i7-1165G7', 'Intel Core i7-1180G7', 'Intel Core i7-1185G7',
+        'Intel Core i5-11300H', 'Intel Core i7-11320H', 'Intel Core i7-11370H', 'Intel Core i7-11375H', 'Intel Core i5-11400H', 'Intel Core i7-11800H', 'Intel Core i9-11900H', 'Intel Core i9-11950H', 'Intel Core i9-11980HK',
+        'Intel Core i3-1215U', 'Intel Core i5-1235U', 'Intel Core i7-1255U', 'Intel Core i7-1265U', 'Intel Core i5-1240P', 'Intel Core i7-1260P', 'Intel Core i7-1270P', 'Intel Core i7-1280P',
+        'Intel Core i5-12450H', 'Intel Core i5-12500H', 'Intel Core i5-12600H', 'Intel Core i7-12650H', 'Intel Core i7-12700H', 'Intel Core i7-12800H', 'Intel Core i9-12900H', 'Intel Core i9-12900HK', 'Intel Core i5-12450HX', 'Intel Core i5-12600HX', 'Intel Core i7-12800HX', 'Intel Core i7-12850HX', 'Intel Core i9-12900HX', 'Intel Core i9-12950HX',
+        'Intel Core i3-1305U', 'Intel Core i3-1315U', 'Intel Core i5-1335U', 'Intel Core i5-13500H', 'Intel Core i7-13700H', 'Intel Core i7-13850HX', 'Intel Core i9-13980HX',
+        'Intel Core i5-14450HX', 'Intel Core i5-14500HX', 'Intel Core i7-14650HX', 'Intel Core i7-14700HX', 'Intel Core i9-14900HX'
+      ],
+      intel_legacy: [
+        'Intel Core m3-8100Y', 'Intel Core i3-8130U', 'Intel Core i3-8145U', 'Intel Core i3-8109U', 'Intel Core i3-8100H',
+        'Intel Core i5-8200Y', 'Intel Core i5-8250U', 'Intel Core i5-8265U', 'Intel Core i5-8350U', 'Intel Core i5-8365U', 'Intel Core i5-8259U', 'Intel Core i5-8300H', 'Intel Core i5-8305G',
+        'Intel Core i7-8550U', 'Intel Core i7-8565U', 'Intel Core i7-8650U', 'Intel Core i7-8559U', 'Intel Core i7-8750H', 'Intel Core i7-8850H', 'Intel Core i7-8705G', 'Intel Core i7-8809G', 'Intel Core i5-8400H', 'Intel Core i5-8257U', 'Intel Core i7-8557U', 'Intel Core i7-8569U', 'Intel Core i9-8950HK', 'Intel Xeon E-2176M', 'Intel Xeon E-2186M',
+        'Intel Core i5-9300H', 'Intel Core i5-9300HF', 'Intel Core i5-9400H', 'Intel Core i7-9750H', 'Intel Core i7-9750HF', 'Intel Core i7-9850H', 'Intel Core i9-9880H', 'Intel Core i9-9980HK', 'Intel Xeon E-2276M', 'Intel Xeon E-2286M',
+        'Intel Core i3-1005G1', 'Intel Core i3-10110U', 'Intel Core i5-10210U', 'Intel Core i5-10310U', 'Intel Core i5-1035G1', 'Intel Core i5-1035G4', 'Intel Core i5-1035G7', 'Intel Core i5-10200H', 'Intel Core i5-10300H', 'Intel Core i5-10400H', 'Intel Core i7-10510U', 'Intel Core i7-1065G7', 'Intel Core i7-1068G7', 'Intel Core i7-10710U', 'Intel Core i7-10750H', 'Intel Core i7-10850H', 'Intel Core i7-10875H', 'Intel Core i9-10885H', 'Intel Core i9-10980HK'
+      ],
+      intel_n: ['Intel Celeron N4000', 'Intel Celeron N4100', 'Intel Celeron 4205U', 'Intel Pentium 5405U', 'Intel Celeron 5305U', 'Intel Pentium Gold 6405U', 'Intel Celeron 7305', 'Intel Pentium Gold 8505', 'Intel Celeron N4020', 'Intel Celeron N4120', 'Intel Celeron N4500', 'Intel Celeron N5100', 'Intel Celeron 5205U', 'Intel Celeron 6305', 'Intel Celeron J4125', 'Intel Celeron J6412', 'Intel Pentium Silver N5000', 'Intel Pentium Silver N5030', 'Intel Pentium Silver N6000', 'Intel Pentium J5040', 'Intel Pentium Gold 6500Y', 'Intel Pentium Gold 7505', 'Intel Processor N50', 'Intel Processor N95', 'Intel Processor N100', 'Intel Processor N150', 'Intel Processor N200', 'Intel Processor N300', 'Intel Processor N305'],
+      amd_ai: ['AMD Ryzen AI 5 340', 'AMD Ryzen AI 5 430', 'AMD Ryzen AI 7 350', 'AMD Ryzen AI 7 450', 'AMD Ryzen AI 7 360', 'AMD Ryzen AI 7 PRO 360', 'AMD Ryzen AI 9 365', 'AMD Ryzen AI 9 370', 'AMD Ryzen AI 9 HX 370', 'AMD Ryzen AI 9 HX 475', 'AMD Ryzen AI Max 385', 'AMD Ryzen AI Max+ 395', 'AMD Ryzen 9 9955HX', 'AMD Ryzen 9 9955HX3D'],
+      amd_legacy: [
+        'AMD A4-9125 (Serie A)', 'AMD A6-9225 (Serie A)', 'AMD A9-9425 (Serie A)', 'AMD A10-9620P (Serie A)', 'AMD A12-9720P (Serie A)', 'AMD FX-9830P (Serie A)',
+        'AMD 3015e', 'AMD 3020e', 'AMD Athlon Silver 3050e', 'AMD Athlon Silver 3050U', 'AMD Athlon 300U', 'AMD Athlon Gold 3150U',
+        'AMD Ryzen 3 2200U', 'AMD Ryzen 3 2300U', 'AMD Ryzen 3 3200U', 'AMD Ryzen 3 3250U', 'AMD Ryzen 3 3300U',
+        'AMD Ryzen 5 2500U', 'AMD Ryzen 5 2600H', 'AMD Ryzen 5 3450U', 'AMD Ryzen 5 3500U', 'AMD Ryzen 5 3550H', 'AMD Ryzen 5 4500U', 'AMD Ryzen 5 4600U', 'AMD Ryzen 5 4600H', 'AMD Ryzen 5 5500U', 'AMD Ryzen 5 5600U', 'AMD Ryzen 5 5625U', 'AMD Ryzen 5 5600H', 'AMD Ryzen 5 5600HS',
+        'AMD Ryzen 7 2700U', 'AMD Ryzen 7 2800H', 'AMD Ryzen 7 3700U', 'AMD Ryzen 7 3750H', 'AMD Ryzen 7 4700U', 'AMD Ryzen 7 4800U', 'AMD Ryzen 7 4800H', 'AMD Ryzen 7 4800HS', 'AMD Ryzen 7 5700U', 'AMD Ryzen 7 5800U', 'AMD Ryzen 7 5825U', 'AMD Ryzen 7 5800H', 'AMD Ryzen 7 5800HS',
+        'AMD Ryzen 9 4900H', 'AMD Ryzen 9 5900HX', 'AMD Ryzen 9 5980HX'
+      ],
+      amd_ryzen: ['AMD Athlon Silver 7120U', 'AMD Athlon Gold 7220U', 'AMD Ryzen 3 4300U', 'AMD Ryzen 3 5300U', 'AMD Ryzen 3 5400U', 'AMD Ryzen 3 5425U', 'AMD Ryzen 3 7320U', 'AMD Ryzen 3 7330U', 'AMD Ryzen 3 7335U', 'AMD Ryzen 3 7440U', 'AMD Ryzen 5 5500U', 'AMD Ryzen 5 5600U', 'AMD Ryzen 5 6600U', 'AMD Ryzen 5 6600H', 'AMD Ryzen 7 6800U', 'AMD Ryzen 7 6800H', 'AMD Ryzen 7 6800HS', 'AMD Ryzen 9 6900HS', 'AMD Ryzen 9 6900HX', 'AMD Ryzen 9 6980HX', 'AMD Ryzen 5 7520U', 'AMD Ryzen 5 7530U', 'AMD Ryzen 7 7730U', 'AMD Ryzen 5 7535U', 'AMD Ryzen 5 7640U', 'AMD Ryzen 5 7640HS', 'AMD Ryzen 7 7840U', 'AMD Ryzen 9 7940HS', 'AMD Ryzen 9 7845HX', 'AMD Ryzen 9 7940HX', 'AMD Ryzen 5 8540U', 'AMD Ryzen 5 8640U', 'AMD Ryzen 5 8640HS', 'AMD Ryzen 5 8645HS', 'AMD Ryzen 7 8840HS', 'AMD Ryzen 5 230', 'AMD Ryzen 7 7840HS', 'AMD Ryzen 7 8840U', 'AMD Ryzen 7 8845HS', 'AMD Ryzen 7 260', 'AMD Ryzen 9 7945HX', 'AMD Ryzen 9 8945HS'],
       qualcomm: ['Qualcomm Snapdragon X Plus (ARM)', 'Qualcomm Snapdragon X Elite (ARM)'],
       apple: ['Apple A18 Pro (MacBook Neo)', 'Apple M1', 'Apple M1 Pro', 'Apple M1 Max', 'Apple M2', 'Apple M2 Pro', 'Apple M2 Max', 'Apple M3', 'Apple M3 Pro', 'Apple M3 Max', 'Apple M4', 'Apple M4 Pro', 'Apple M4 Max', 'Apple M5', 'Apple M5 Pro', 'Apple M5 Max']
     };
 
     const GPU_DECODER_OPTIONS = {
-      nvidia_legacy: ['NVIDIA GeForce MX130', 'NVIDIA GeForce MX150', 'NVIDIA GeForce MX250', 'NVIDIA GeForce MX350', 'NVIDIA GeForce MX450', 'NVIDIA GTX 1050 (2/3 GB)', 'NVIDIA GTX 1050 Ti (4 GB)', 'NVIDIA GTX 1060 (6 GB)', 'NVIDIA GTX 1070 (8 GB)', 'NVIDIA GTX 1080 (8 GB)', 'NVIDIA RTX 2070 (8 GB)', 'NVIDIA RTX 2080 Super (8 GB)', 'NVIDIA Quadro P620', 'NVIDIA Quadro P1000', 'NVIDIA Quadro P2000', 'NVIDIA Quadro RTX 3000', 'NVIDIA Quadro RTX 4000', 'NVIDIA Quadro RTX 5000'],
-      amd_legacy: ['AMD Radeon 530', 'AMD Radeon RX 550', 'AMD Radeon RX 560X', 'AMD Radeon RX 5300M (3 GB)', 'AMD Radeon RX 5500M (4 GB)', 'AMD Radeon RX 5600M (6 GB)', 'AMD Radeon Pro WX 3200', 'AMD Radeon Pro WX 4150', 'AMD Radeon Pro WX 7100', 'AMD Radeon Pro 5500M'],
-      nvidia: ['NVIDIA GTX 1650', 'NVIDIA GTX 1660 Ti', 'NVIDIA RTX 2060', 'NVIDIA RTX 3050', 'NVIDIA RTX 3060', 'NVIDIA RTX 3070', 'NVIDIA RTX 3080 Ti', 'NVIDIA RTX 4050', 'NVIDIA RTX 4060', 'NVIDIA RTX 4070', 'NVIDIA RTX 4080', 'NVIDIA RTX 4090', 'NVIDIA RTX 5050', 'NVIDIA RTX 5060', 'NVIDIA RTX 5070', 'NVIDIA RTX 5070 Ti', 'NVIDIA RTX 5080', 'NVIDIA RTX 5090'],
-      amd_ded: ['AMD Radeon RX 6500M', 'AMD Radeon RX 6600M', 'AMD Radeon RX 6700S', 'AMD Radeon RX 6800M', 'AMD Radeon RX 7600M', 'AMD Radeon RX 7600M XT', 'AMD Radeon RX 7700S', 'AMD Radeon RX 7800M', 'AMD Radeon RX 7900M'],
-      amd_int: ['AMD Radeon Vega 7', 'AMD Radeon Vega 8', 'AMD Radeon 610M', 'AMD Radeon 660M', 'AMD Radeon 680M', 'AMD Radeon 740M', 'AMD Radeon 760M', 'AMD Radeon 780M', 'AMD Radeon 840M', 'AMD Radeon 860M', 'AMD Radeon 880M', 'AMD Radeon 890M', 'AMD Radeon 8060S'],
-      intel: ['Intel UHD Graphics 620 / 630', 'Intel Iris Plus G4 / G7', 'Intel Iris Xe Graphics', 'Intel Arc A350M', 'Intel Arc A550M', 'Intel Arc A770M', 'Intel Arc 130V', 'Intel Arc 140V', 'Intel Arc 130T', 'Intel Arc 140T', 'Intel Arc B370', 'Intel Arc B390'],
+      nvidia_legacy: ['NVIDIA GeForce MX110', 'NVIDIA GeForce MX130', 'NVIDIA GeForce MX150', 'NVIDIA GeForce MX230', 'NVIDIA GeForce MX250', 'NVIDIA GeForce MX330', 'NVIDIA GeForce MX350', 'NVIDIA GeForce MX450', 'NVIDIA GeForce MX550', 'NVIDIA GeForce MX570', 'NVIDIA GTX 1050 (2/4 GB)', 'NVIDIA GTX 1050 Ti (4 GB)', 'NVIDIA GTX 1060 (6 GB)', 'NVIDIA GTX 1070 (8 GB)', 'NVIDIA GTX 1080 (8 GB)', 'NVIDIA GTX 1650', 'NVIDIA GTX 1650 Ti', 'NVIDIA GTX 1660 Ti', 'NVIDIA RTX 2060', 'NVIDIA RTX 2070 (8 GB)', 'NVIDIA RTX 2080 Super (8 GB)', 'NVIDIA GT 820M', 'NVIDIA GT 840M', 'NVIDIA GT 920M', 'NVIDIA GT 930M', 'NVIDIA GT 940M', 'NVIDIA GTX 780M', 'NVIDIA GTX 870M', 'NVIDIA GTX 880M', 'NVIDIA GTX 960M', 'NVIDIA GTX 970M', 'NVIDIA GTX 980M'],
+      nvidia_pro: ['NVIDIA RTX 2000 Ada', 'NVIDIA RTX 3000 Ada', 'NVIDIA RTX 4000 Ada', 'NVIDIA RTX 5000 Ada', 'NVIDIA RTX A1000', 'NVIDIA RTX A2000', 'NVIDIA RTX A3000', 'NVIDIA RTX A4000', 'NVIDIA RTX A5500', 'NVIDIA Quadro RTX 3000', 'NVIDIA Quadro RTX 4000', 'NVIDIA Quadro RTX 5000', 'NVIDIA Quadro T500', 'NVIDIA Quadro T600', 'NVIDIA Quadro T1000', 'NVIDIA Quadro T1200', 'NVIDIA Quadro T2000', 'NVIDIA Quadro P600', 'NVIDIA Quadro P620', 'NVIDIA Quadro P1000', 'NVIDIA Quadro P2000', 'NVIDIA Quadro P3000', 'NVIDIA Quadro P4000', 'NVIDIA Quadro P5000', 'NVIDIA Quadro P5200', 'NVIDIA Quadro M520', 'NVIDIA Quadro M620', 'NVIDIA Quadro M1200', 'NVIDIA Quadro M2200', 'NVIDIA Quadro M3000M', 'NVIDIA Quadro M4000M', 'NVIDIA Quadro M5000M', 'NVIDIA Quadro M5500M', 'NVIDIA Quadro K1100M', 'NVIDIA Quadro K2100M', 'NVIDIA Quadro K3100M', 'NVIDIA Quadro K4100M', 'NVIDIA Quadro K5100M', 'NVIDIA Quadro FX 3800M', 'NVIDIA Quadro FX 5000M'],
+      amd_legacy: ['AMD Radeon RX 5700M', 'AMD Radeon RX 5600M (6 GB)', 'AMD Radeon RX 5500M (4 GB)', 'AMD Radeon RX 5300M (3 GB)', 'AMD Radeon RX 580 Mobile', 'AMD Radeon RX 570 Mobile', 'AMD Radeon RX 560X', 'AMD Radeon RX 550', 'AMD Radeon RX 480 / 470 / 460 Mobile', 'AMD Radeon 530', 'AMD Radeon PRO W5500M', 'AMD Radeon PRO W5300M', 'AMD Radeon Pro 5600M (Apple HBM2)', 'AMD Radeon Pro 5500M', 'AMD Radeon Pro Vega 20 (Apple HBM2)', 'AMD Radeon Pro WX 3200', 'AMD Radeon Pro WX 4150', 'AMD Radeon Pro WX 7100', 'AMD FirePro W7170M / M6100', 'AMD Radeon R9 M395X / M390X (Legacy)', 'AMD Radeon R9 M385X / M370X (Legacy)', 'AMD Radeon R7 M445 / M380 (Legacy)', 'AMD Radeon R7 M360 / R5 M330–M530 (Legacy)', 'AMD Radeon HD 8970M / 7970M (Legacy)', 'AMD Radeon HD 8870M / 7870M / 7670M (Legacy)'],
+      nvidia: ['NVIDIA GTX 1650', 'NVIDIA GTX 1650 Ti', 'NVIDIA GTX 1660 Ti', 'NVIDIA RTX 2060', 'NVIDIA RTX 3050', 'NVIDIA RTX 3050 Ti', 'NVIDIA RTX 3060', 'NVIDIA RTX 3070', 'NVIDIA RTX 3070 Ti', 'NVIDIA RTX 3080', 'NVIDIA RTX 3080 Ti', 'NVIDIA RTX 4050', 'NVIDIA RTX 4060', 'NVIDIA RTX 4070', 'NVIDIA RTX 4080', 'NVIDIA RTX 4090', 'NVIDIA RTX 5050', 'NVIDIA RTX 5060', 'NVIDIA RTX 5070', 'NVIDIA RTX 5070 Ti', 'NVIDIA RTX 5080', 'NVIDIA RTX 5090'],
+      amd_ded: ['AMD Radeon RX 6300M', 'AMD Radeon RX 6450M', 'AMD Radeon RX 6500M', 'AMD Radeon RX 6550M / 6550S', 'AMD Radeon RX 6600M / 6600S', 'AMD Radeon RX 6650M', 'AMD Radeon RX 6650M XT', 'AMD Radeon RX 6700M / 6700S', 'AMD Radeon RX 6800M / 6800S', 'AMD Radeon RX 6850M XT', 'AMD Radeon RX 7600S', 'AMD Radeon RX 7600M', 'AMD Radeon RX 7600M XT', 'AMD Radeon RX 7700S', 'AMD Radeon RX 7800M', 'AMD Radeon RX 7900M', 'AMD Radeon PRO W7700S / W7600S', 'AMD Radeon PRO W6600M', 'AMD Radeon PRO W6500M', 'AMD Radeon PRO W6300M'],
+      amd_int: ['AMD Radeon R3/R4/R5/R7 Graphics (Legacy GCN)', 'AMD Radeon Vega 3', 'AMD Radeon Vega 6', 'AMD Radeon Vega 7', 'AMD Radeon Vega 8', 'AMD Radeon Vega 10', 'AMD Radeon Vega 11', 'AMD Radeon 610M', 'AMD Radeon 660M', 'AMD Radeon 680M', 'AMD Radeon 740M', 'AMD Radeon 760M', 'AMD Radeon 780M', 'AMD Radeon 840M', 'AMD Radeon 860M', 'AMD Radeon 880M', 'AMD Radeon 890M', 'AMD Radeon 8060S'],
+      intel: ['Intel Arc Pro A60M', 'Intel Arc A770M', 'Intel Arc A730M', 'Intel Arc A570M', 'Intel Arc A550M', 'Intel Arc A530M', 'Intel Arc A370M', 'Intel Arc A350M', 'Intel Arc A310M', 'Intel Arc B390', 'Intel Arc B370', 'Intel Arc 140V', 'Intel Arc 130V', 'Intel Arc 140T', 'Intel Arc 130T', 'Intel Arc Graphics (8 Xe)', 'Intel Graphics (4 Xe)', 'Intel Iris Xe Graphics', 'Intel Iris Xe 96 EU (i7/i9)', 'Intel Iris Xe 80 EU (i5)', 'Intel Iris Xe (G7) 64 EU', 'Intel Iris Plus G4 / G7', 'Intel Iris Plus G7', 'Intel Iris Plus G4', 'Intel UHD Graphics (Xe-LP 32 EU)', 'Intel UHD Graphics G1', 'Intel Iris Xe MAX (DG1)', 'Intel UHD Graphics 770 / 750 / 730 / 710', 'Intel UHD Graphics 620 / 630', 'Intel UHD 615 / 610', 'Intel UHD 600 / 605', 'Intel HD 630 / 620 / 520', 'Intel HD 5500 / 5300 / 4400', 'Intel HD 4000 / 4400', 'Intel GMA X3100 / X3500', 'Intel GMA 4500MHD', 'Intel GMA 3150'],
       apple: ['Apple A18 Pro GPU (5 núcleos)', 'Apple M1 GPU', 'Apple M2 GPU', 'Apple M3 GPU', 'Apple M4 GPU', 'Apple M4 Pro GPU', 'Apple M4 Max GPU', 'Apple M5 GPU', 'Apple M5 Pro GPU', 'Apple M5 Max GPU'],
       qualcomm: ['Qualcomm Adreno X1-45', 'Qualcomm Adreno X1-65', 'Qualcomm Adreno X1-85']
     };
